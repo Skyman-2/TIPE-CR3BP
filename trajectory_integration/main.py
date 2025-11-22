@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Tableau des instants où on souhaite résoudre le système
 dt = 5
-t_max = 720000  # Durée totale de la simulation en secondes
+t_max = 20000  # Durée totale de la simulation en secondes
 t = 0
 i = 0
 
