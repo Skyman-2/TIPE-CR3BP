@@ -204,13 +204,13 @@ print(earth_moon_system["barycenter"])
 
 display_pretty_trajectory(
     simulate_trajectory(
-        [7e6,0.,0.,8e3], # initial conditions
-        1e7, # final time
-        10, # time step
+        [7e6,0.,0.,8.1e3], # initial conditions
+        1e7, # simulation time
+        5, # time step
         earth_moon_system
     ),
     earth_moon_system,
-    display_precision = 1
+    display_precision = 10
 )
 
 plt.savefig('destination_path.svg', format='svg', dpi=1200)
