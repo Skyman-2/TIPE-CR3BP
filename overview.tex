@@ -6,7 +6,8 @@
 \usepackage[a4paper, total={7in,9in}]{geometry}
 \usepackage{graphicx}
 \usepackage[french]{babel}
-
+\usepackage{amsmath}
+\usepackage[]{tcolorbox}
 
 
 
@@ -15,17 +16,108 @@
 	\tableofcontents
 	
 	\begin{abstract}
-		Le problème à trois corps restreint (CR3BP en anglais) est l'étude du mouvement relatif de trois masses, dont une de masse négligeable devant les trois autres. Nous chercherons à déterminer les coordonées des Points Lagrange, qui sont cinq points d'équilibre du CR3BP. Nous mènerons ensuite une étude de leur stabilité. A terme, nous chercherons à déterminer des orbites périodiques autour des points L1 et L2 en particulier, ainsi que mener une recherche de trajectoires de transfert qui ferait utilisation des variétés stables et instables liées aux Points Lagrange.
+		Le problème à trois corps restreint (CR3BP en anglais) est l'étude du mouvement relatif de trois masses, dont une de masse négligeable devant les trois autres. Nous chercherons à déterminer les coordonnées des Points Lagrange, qui sont cinq points d'équilibre du CR3BP. Nous mènerons ensuite une étude de leur stabilité. A terme, nous chercherons à déterminer des orbites périodiques autour des points L1 et L2 en particulier, ainsi que mener une recherche de trajectoires de transfert qui ferait utilisation des variétés stables et instables liées aux Points Lagrange.
 	\end{abstract}
 	
-	\section{Coordonées des Points Lagrange}
+	\section{Coordonnées des Points Lagrange}
 	\subsection{Définition du système}
 	Nous étudions le système \emph{satellite de masse m} que l'on associe au point matériel $M$. On se place dans le référentiel galiléen -- que l'on note $R_G$ -- qui à pour centre le barycentre des deux masses $M_1$ et $M_2$ qu'on confondera avec le point matériel auquel leur astre respectif est associé.
 	
-	On cherche à exprimer les coordonées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles. On mènera la majorité de notre étude dans ce référentiel.
+	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles. On mènera la majorité de notre étude dans ce référentiel.
 	
-	\subsection{Coordonées dans $R_{NG}$}
-	On se place comme 
+	\subsection{Coordonnées dans $R_{NG}$}
+	On cherche à déterminer les coordonnées d'un point $(x,y)$ dans $R_{NG}$. On note $(\vec{e}_x,\vec{e}_y)$ une base de $R_{G}$ et $(\vec{u}_x,\vec{u}_y)$ une base de $R_{NG}$, les deux en coordonnées cartésiennes. On note $\alpha$ l'angle entre $R_G$ et $R_{NG}$, ainsi que $\omega$ la vitesse angulaire de $R_{NG}$ par rapport à $R_G$, que l'on suppose constante. Notons $U$ l'énergie potentielle associée à $M_1$ et $M_2$. On a alors dans le référentiel galiléen $\vec{F} = -\vec{\nabla} U$ où $\vec{F}$ est la résultante des forces de gravitation, ce qui se traduit par le système :
+	\begin{large}
+		\begin{equation}
+			\label{potential_gal}
+			\begin{cases}
+				m\ddot{X}=-\frac{\partial{U}}{\partial{X}} 
+				\ =: \mathcal{U}_X \\
+				m\ddot{Y}=-\frac{\partial{U}}{\partial{X}}
+				\ =: \mathcal{U}_Y
+			\end{cases}
+		\end{equation}
+	\end{large}
+	où $(X,Y)$ sont les coordonnées d'un point $P$ dans $R_G$. On note $(x,y)$ ses coordonnées dans $R_{NG}$. On a alors $x=X\cos(\alpha)\vec{u}_x+Y\sin(\alpha)\vec{u}_y$ et $y=-X\sin(\alpha)\vec{u}_x+Y\cos(\alpha)\vec{u}_y$, ce qui se traduit matriciellement par 
+	\begin{equation}
+		\label{coord_change}
+		\begin{pmatrix}
+			x \\ y
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			\cos(\alpha) & \sin(\alpha)
+			\\
+			-\sin(\alpha) & \cos(\alpha)
+		\end{pmatrix}
+		\begin{pmatrix}
+			X \\ Y
+		\end{pmatrix}
+	\end{equation}
+	C'est une matrice inversible dont l'inverse est 		$\begin{pmatrix}
+		\cos(\alpha) & -\sin(\alpha)
+		\\
+		\sin(\alpha) & \cos(\alpha)
+	\end{pmatrix}=:A_t$. Cette dernière vérifie donc l'équation $\begin{pmatrix}
+	X\\Y
+	\end{pmatrix}
+	=
+	A_t \begin{pmatrix}
+		x\\y
+	\end{pmatrix}
+	$.
 	
+	On cherche maintenant à calculer $\begin{pmatrix}
+		\ddot{X} \\ \ddot{Y}
+	\end{pmatrix}$.
+	On détermine d'abord $\dot{A_t}$. Comme $\alpha=\omega t$ (en prenant $\alpha(t=0)=0$), on obtient immédiatement que $\dot{A_t} = \begin{pmatrix}
+		-\omega \sin(\omega t) & -\omega \cos(\omega t) \\
+		\omega \cos(\omega t) & -\omega \sin(\omega t) \\
+	\end{pmatrix}=-\omega J A_t$ 
+	\ où \
+	$J=\begin{pmatrix}
+	0 & 1 \\ -1 & 0
+	\end{pmatrix}$. On en déduit que :
+	
+	\begin{equation}
+		\label{acceleration_inertial}
+	\begin{pmatrix}
+		\ddot{X} \\ \ddot{Y}
+	\end{pmatrix}
+	=
+	A_t
+	\begin{pmatrix}
+		\ddot{x} - 2\omega\dot{y} - \omega^2x \\
+		\ddot{y} + 2\omega\dot{x} - \omega^2y
+	\end{pmatrix}
+	\end{equation}
+	
+	Avec l'équation \ref{potential_gal} multipliée par $A_t^{-1}$ on a 
+	$m A_t^{-1}
+	\begin{pmatrix}
+		\ddot{X} \\ \ddot{Y}
+	\end{pmatrix} 
+	=
+	-A_t^{-1} \begin{pmatrix}
+		\mathcal{U}_X \\ \mathcal{U}_Y
+	\end{pmatrix}
+	$. Le membre de gauche se simplifie en $m \times$ le membre de gauche de l'équation \ref{acceleration_inertial}. Le membre de droite correspond cependant au changement de base de la dérivée de l'énergie potentielle : le membre de droite devient $-\begin{pmatrix}
+		\mathcal{U}_x
+		\\ \mathcal{U}_y
+	\end{pmatrix}$. En posant $\bar{\mathcal{U}}_x := -\mathcal{U}_x + m\omega^2x$ et $\bar{\mathcal{U}}_y := -\mathcal{U}_y + m\omega^2y$,
+	on obtient finalement les équations du mouvement suivantes :
+	\begin{equation}
+		\begin{cases}
+			\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\bar{\mathcal{U}}_x \\
+			\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\bar{\mathcal{U}}_y
+		\end{cases}
+	\end{equation}
+	ainsi que l'équation de l'énergie potentielle effective dans $R_{NG}$ :
+
+	\begin{tcolorbox}[colframe=black,boxrule=0.8pt,colback=white]
+	\begin{equation}
+		\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
+	\end{equation}
+	\end{tcolorbox}
 	
 \end{document}
