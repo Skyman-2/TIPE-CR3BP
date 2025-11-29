@@ -8,6 +8,7 @@
 \usepackage[french]{babel}
 \usepackage{amsmath}
 \usepackage[]{tcolorbox}
+\graphicspath{{images/}}
 
 
 
@@ -25,7 +26,7 @@
 	
 	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles. On mènera la majorité de notre étude dans ce référentiel.
 	
-	\subsection{Coordonnées dans $R_{NG}$}
+	\subsection{Expression du potentiel effectif dans $R_{NG}$}
 	On cherche à déterminer les coordonnées d'un point $(x,y)$ dans $R_{NG}$. On note $(\vec{e}_x,\vec{e}_y)$ une base de $R_{G}$ et $(\vec{u}_x,\vec{u}_y)$ une base de $R_{NG}$, les deux en coordonnées cartésiennes. On note $\alpha$ l'angle entre $R_G$ et $R_{NG}$, ainsi que $\omega$ la vitesse angulaire de $R_{NG}$ par rapport à $R_G$, que l'on suppose constante. Notons $U$ l'énergie potentielle associée à $M_1$ et $M_2$. On a alors dans le référentiel galiléen $\vec{F} = -\vec{\nabla} U$ où $\vec{F}$ est la résultante des forces de gravitation, ce qui se traduit par le système :
 	\begin{large}
 		\begin{equation}
@@ -119,5 +120,17 @@
 		\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
 	\end{equation}
 	\end{tcolorbox}
+	
+	On peut tracer ce potentiel à l'aide du programme python en annexe (INSERT ANNEXE HERE). On obtient alors la figure suivante :
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{eff_u_diagram/potential_clear.png}
+		\caption{A nice orbit.}
+		\label{fig:orbits1}
+	\end{figure}
+	
+	
+	\subsection{Coordonnées des points colinéaires}
+	
 	
 \end{document}
