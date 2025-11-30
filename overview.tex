@@ -8,6 +8,7 @@
 \usepackage[french]{babel}
 \usepackage{amsmath}
 \usepackage[]{tcolorbox}
+\usepackage[]{float}
 \graphicspath{{images/}}
 
 
@@ -122,15 +123,27 @@
 	\end{tcolorbox}
 	
 	On peut tracer ce potentiel à l'aide du programme python en annexe (INSERT ANNEXE HERE). On obtient alors la figure suivante :
-	\begin{figure}[h]
+	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.5\linewidth]{eff_u_diagram/potential_clear.png}
-		\caption{A nice orbit.}
+		\includegraphics[width=0.75\linewidth]{eff_u_diagram/potential_clear.png}
+		\caption{A nice potential.}
 		\label{fig:orbits1}
 	\end{figure}
 	
 	
 	\subsection{Coordonnées des points colinéaires}
+	On cherche dans cette section à déterminer les coordonnées des points colinéaires, i.e. ceux que l'on peut observer sur l'axe des abscisses dans la figure (\ref{fig:orbits1}). Ainsi, dans cette partie, nous travaillerons en supposant aucun mouvement vertical : $\forall t$, $y(t)=0$, $v_y(t)=0$ and $a_y(t)=0$. Les points d'équilibres colinéaires correspondent ici aux points d'annulations de la dérivé de $\bar{U}(x,0)$ par rapport à $x$. Notons $\mu := \frac{M_2}{M_1+M_2}$ le coefficient de masse du sysème. Ainsi, le barycentre du système étant placé en $(0,0)$, on a :
+	\[
+	\bar{U}(x,0)=-\frac{1}{2}m\omega^2x^2-\frac{GmM_1}{|x+\mu R|}-\frac{GmM_2}{|x-(1-\mu)R|}
+	\]
+	En traçant ce potentiel, on obtient alors la figure suivante, sur laquelle on peut en observer la présence des trois points d'équilibre que l'on recherche. On les nommera $L1$, $L2$ et $L3$.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\linewidth]{}
+		\caption{Le potentiel effectif selon $x$ en $y=0$.}
+		\label{fig:potential_in_x}
+	\end{figure}
+	
 	
 	
 \end{document}
