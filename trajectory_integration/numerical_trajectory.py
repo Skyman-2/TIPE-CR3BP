@@ -129,6 +129,15 @@ def simulate_trajectory(initial_conditions,simulation_time,step,system):
     print("Simulation complete. Number of steps:", len(traj))
     return traj
 
+def verlet_traj(initial_conditions,simulation_time,total_steps,system):
+    dt = simulation_time/total_steps
+    x,y,vx,vy=0.,0.,0.,0.
+    lx,ly,lvx,lvy = [x],[y],[vx],[vy]
+    for i in range(total_steps-1):
+        
+        
+    return np.array([lx,ly,lvx,lvy]).T  # shape (
+
 
 # Display utilities
 def display_pretty_trajectory(traj,system,ax,fig,display_precision=10):

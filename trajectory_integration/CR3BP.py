@@ -35,7 +35,7 @@ fig, ax = plt.subplots(figsize=(8, 8))
 for i in range(2):
     traj.display_pretty_trajectory(
         traj.simulate_trajectory(
-            [3.15e8+i*1e5,0.,0.,1e1], # initial conditions
+            [3.15e8+i*1e8,0.,0.,1e1], # initial conditions
             1e6, # simulation time
             10, # time step
             earth_moon_system
@@ -45,7 +45,7 @@ for i in range(2):
         display_precision = 10
     )
 
-u.add_equipotential_contours(earth_moon_system,pmin=20,pmax=100,n_levels=100,alpha=0.3)
+u.add_equipotential_contours(earth_moon_system,pmin=20,pmax=100,n_levels=20,alpha=0.3)
 
 plt.savefig('destination_path.svg', format='svg', dpi=1200)
 plt.show()
