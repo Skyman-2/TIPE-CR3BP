@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numerical_trajectory as traj
 import potential_calculations as u
 import verlet_adaptation as va
+import VFVDP as vf
 
 def barycentre(m1,m2,r):
     return (m2*r)/(m1+m2)
@@ -57,9 +58,21 @@ fig, ax = plt.subplots(figsize=(8, 8))
 # )
 
 traj.display_pretty_trajectory(
+    vf.simulate_trajectory(
+        [3.15e8,0.,0.,1e1], # initial conditions
+        1e7, # simulation time
+        50, # time step
+        earth_moon_system
+    ),
+    earth_moon_system,
+    ax,fig,
+    display_precision = 10
+)
+
+traj.display_pretty_trajectory(
     va.simulate_trajectory(
         [3.15e8,0.,0.,1e1], # initial conditions
-        1e6, # simulation time
+        1e7, # simulation time
         50, # time step
         earth_moon_system
     ),
@@ -71,7 +84,7 @@ traj.display_pretty_trajectory(
 traj.display_pretty_trajectory(
     traj.simulate_trajectory(
         [3.15e8,0.,0.,1e1], # initial conditions
-        1e6, # simulation time
+        1e7, # simulation time
         50, # time step
         earth_moon_system
     ),
