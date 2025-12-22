@@ -1,0 +1,16 @@
+{
+    "earth_moon":
+    {
+        "body1": {
+            "name": "Earth",
+            "mass": 5.972e24,
+            "radius": 6.371e6
+        },
+        "body2": {
+            "name": "Moon",
+            "mass": 7.34767309e22,
+            "radius": 1.737e6
+        },
+        "radius": 3.844e8
+    }
+}
