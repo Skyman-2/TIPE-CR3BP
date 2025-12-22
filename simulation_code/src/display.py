@@ -5,7 +5,7 @@ from matplotlib.colors import Normalize
 import src.phase_space as ps
 import src.potential_overlay as uo
 
-def plot_on_ax(ax, graph, display_precision=10, isTraj=False):
+def plot_on_ax(ax,graph,color_palette,display_precision=10,isTraj=False):
     traj_arr = np.array(graph)
     x = traj_arr[::display_precision, 0]
     y = traj_arr[::display_precision, 1]
@@ -16,7 +16,7 @@ def plot_on_ax(ax, graph, display_precision=10, isTraj=False):
     t_idx = np.arange(len(segments))
     norm = Normalize(t_idx.min(), t_idx.max())
 
-    lc = LineCollection(segments, cmap="plasma", norm=norm)
+    lc = LineCollection(segments, cmap=color_palette, norm=norm)
     lc.set_array(t_idx)
     lc.set_linewidth(1.5)
 
@@ -68,7 +68,7 @@ def plot_potential(ax, working_system, pmin=20, steps=250, levels=25,
 
 
 
-def one_traj_display(traj,working_system):
+def one_traj_display(traj,working_system,color_palette="plasma"):
     layout = [
         ["traj","traj","phase","phase"],
         ["traj","traj","phase","phase"],
@@ -77,8 +77,30 @@ def one_traj_display(traj,working_system):
     ]
     fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
     
-    plot_on_ax(axes["traj"],traj,isTraj=True)
+    plot_on_ax(axes["traj"],traj,color_palette,isTraj=True)
     plot_on_ax_bodies(axes["traj"],working_system)
     plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
 
-    plot_on_ax(axes["phase"],ps.phase_space_diag(traj))
+    axes["phase"].grid(True)
+    plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
+
+def phase_spaces(traj,working_system,color_palette):
+    layout = [
+        ["traj","phase1","phase2"],
+        ["traj","phase1","phase2"],
+        ["phase","phase1","phase2"],
+        ["phase","phase1","phase2"]
+    ]
+    fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
+    plot_on_ax(axes["traj"],traj,color_palette,isTraj=True)
+    plot_on_ax_bodies(axes["traj"],working_system)
+    plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
+
+    axes["phase"].grid(True)
+    plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
+
+    axes["phase1"].grid(True)
+    plot_on_ax(axes["phase1"],ps.phase_space_xslice(traj),color_palette)
+
+    axes["phase2"].grid(True)
+    plot_on_ax(axes["phase2"],ps.phase_space_yslice(traj),color_palette)

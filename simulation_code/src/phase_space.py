@@ -22,3 +22,19 @@ def phase_space_diag(traj):
         diag.append([abs_pos,abs_vel])
         # print(diag[i])
     return diag
+
+def phase_space_xslice(traj):
+    diag = []
+    for i in range(len(traj)):
+        x = traj[i][0]
+        vx = traj[i][2]
+        diag.append([x,vx])
+    return diag
+
+def phase_space_yslice(traj):
+    diag = []
+    for i in range(len(traj)):
+        x = traj[i][1]
+        vx = traj[i][3]
+        diag.append([x,vx])
+    return diag

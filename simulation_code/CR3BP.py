@@ -25,12 +25,12 @@ working_system = __init__("earth_moon")
 
 
 traj = rk.simulate_trajectory(
-    [3.15e8,0.,0.,1e1],
-    1e7,
-    50,
+    [7e6,0.,0.,8e3],
+    1e6,
+    1,
     working_system
 )
 
-display.one_traj_display(traj,working_system)
+display.phase_spaces(traj,working_system,color_palette="inferno")
 
 plt.show()
