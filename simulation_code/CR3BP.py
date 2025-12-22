@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 import src.verlet as vt
-import src.potential_overlay as uo
-import src.phase_space as ps
 import src.rk as rk
 import src.display as display
 
