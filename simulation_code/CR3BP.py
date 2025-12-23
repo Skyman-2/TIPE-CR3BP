@@ -5,6 +5,7 @@ from pathlib import Path
 
 import src.verlet as vt
 import src.rk as rk
+import src.VFVDP as ei
 import src.display as display
 
 # plt.style.use('dark_background')
@@ -26,23 +27,23 @@ def __init__(system):
 working_system = __init__("earth_moon")
 
 
-traj1 = rk.simulate_trajectory(
+traj1 = vt.simulate_trajectory(
     [7e6,0.,0.,8e3],
-    1e6,
-    10,
+    2.5e6,
+    1,
     working_system
 )
 
 traj2 = rk.simulate_trajectory(
     [7e6,0.,0.,8e3],
-    1e6,
-    5,
+    2.5e6,
+    1,
     working_system
 )
 
-traj3 = rk.simulate_trajectory(
+traj3 = ei.simulate_trajectory(
     [7e6,0.,0.,8e3],
-    1e6,
+    2.5e6,
     1,
     working_system
 )

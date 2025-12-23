@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  22 DEC 2025 17:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  23 DEC 2025 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -509,14 +509,25 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks40
 \@floatcapt=\box76
 )
+(c:/texlive/2025/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen285
+\WF@size=\dimen286
+\c@WF@wrappedlines=\count333
+\WF@box=\box77
+\WF@everypar=\toks41
+Package: wrapfig 2003/01/31  v 3.6
+)
+(c:/texlive/2025/texmf-dist/tex/latex/interval/interval.sty
+Package: interval 2019/03/06 v0.4
+)
 
 Package french3.ldf Warning: OT1 encoding should not be used for French.
 (french3.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french3.ldf)                of your document; reported on input line 16.
+(french3.ldf)                of your document; reported on input line 20.
 
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
+\l__color_backend_stack_int=\count334
 )
 (./overview.aux
 Package babel Info: 'french' activates 'french' shorthands.
@@ -524,20 +535,20 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `overview.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -575,17 +586,17 @@ LaTeX Font Info:    ... okay on input line 16.
 
 (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
-\scratchdimen=\dimen285
-\scratchbox=\box77
-\nofMPsegments=\count335
-\nofMParguments=\count336
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count337
-\MPscratchDim=\dimen286
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count335
+\scratchdimen=\dimen287
+\scratchbox=\box78
+\nofMPsegments=\count336
+\nofMParguments=\count337
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count338
+\MPscratchDim=\dimen288
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
+\everyMPtoPDFconversion=\toks43
 ) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -595,7 +606,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 16.
+LaTeX Info: Redefining \degres on input line 20.
 
 (./overview.toc)
 \tf@toc=\write4
@@ -604,33 +615,33 @@ LaTeX Info: Redefining \degres on input line 16.
  [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../images/potential_clear.png, id=19, 1387.584pt x 658.3797pt>
+<../images/potential_clear.png, id=18, 1387.584pt x 658.3797pt>
 File: ../images/potential_clear.png Graphic file (type png)
 <use ../images/potential_clear.png>
-Package pdftex.def Info: ../images/potential_clear.png  used on input line 128.
+Package pdftex.def Info: ../images/potential_clear.png  used on input line 133.
 
 (pdftex.def)             Requested size: 379.4175pt x 180.02525pt.
  [2]
 <../images/colinear-graph.png, id=27, 1190.4475pt x 718.685pt>
 File: ../images/colinear-graph.png Graphic file (type png)
 <use ../images/colinear-graph.png>
-Package pdftex.def Info: ../images/colinear-graph.png  used on input line 142.
-(pdftex.def)             Requested size: 252.94499pt x 152.70483pt.
+Package pdftex.def Info: ../images/colinear-graph.png  used on input line 152.
+(pdftex.def)             Requested size: 202.3529pt x 122.1529pt.
  [3 <../images/potential_clear.png> <../images/colinear-graph.png (PNG copy)>] 
-(./overview.aux)
+[4] [5] (./overview.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17444 strings out of 467538
- 359941 string characters out of 5423724
- 769214 words of memory out of 5000000
- 46093 multiletter control sequences out of 15000+600000
+ 17590 strings out of 467538
+ 362627 string characters out of 5423724
+ 772590 words of memory out of 5000000
+ 46231 multiletter control sequences out of 15000+600000
  635270 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,9n,118p,660b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,9n,118p,875b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2025/texmf-d
@@ -645,10 +656,10 @@ dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb>
-Output written on overview.pdf (3 pages, 1826057 bytes).
+Output written on overview.pdf (5 pages, 1837450 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

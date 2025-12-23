@@ -9,7 +9,11 @@
 \usepackage{amsmath}
 \usepackage[]{tcolorbox}
 \usepackage[]{float}
+\usepackage{wrapfig}
+\usepackage{interval}
 \graphicspath{{../images/}}
+
+\DeclareMathOperator{\sign}{sign}
 
 
 
@@ -23,6 +27,7 @@
 	
 	\section{Coordonnées des Points Lagrange}
 	\subsection{Définition du système}
+	\label{def_system}
 	Nous étudions le système \emph{satellite de masse m} que l'on associe au point matériel $M$. On se place dans le référentiel galiléen -- que l'on note $R_G$ -- qui à pour centre le barycentre des deux masses $M_1$ et $M_2$ qu'on confondera avec le point matériel auquel leur astre respectif est associé.
 	
 	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles. On mènera la majorité de notre étude dans ce référentiel.
@@ -133,16 +138,65 @@
 	
 	\subsection{Coordonnées des points colinéaires}
 	On cherche dans cette section à déterminer les coordonnées des points colinéaires, i.e. ceux que l'on peut observer sur l'axe des abscisses dans la figure (\ref{fig:orbits1}). Ainsi, dans cette partie, nous travaillerons en supposant aucun mouvement vertical : $\forall t$, $y(t)=0$, $v_y(t)=0$ and $a_y(t)=0$. Les points d'équilibres colinéaires correspondent ici aux points d'annulations de la dérivé de $\bar{U}(x,0)$ par rapport à $x$. Notons $\mu := \frac{M_2}{M_1+M_2}$ le coefficient de masse du sysème. Ainsi, le barycentre du système étant placé en $(0,0)$, on a :
-	\[
-	\bar{U}(x,0)=-\frac{1}{2}m\omega^2x^2-\frac{GmM_1}{|x+\mu R|}-\frac{GmM_2}{|x-(1-\mu)R|}
-	\]
-	En traçant ce potentiel, on obtient alors la figure suivante, sur laquelle on peut en observer la présence des trois points d'équilibre que l'on recherche. On les nommera $L1$, $L2$ et $L3$.
+	\begin{equation}
+		\label{potential_in_y=0}
+		\bar{U}(x,0)=-\frac{1}{2}m\omega^2x^2-\frac{GmM_1}{|x+\mu R|}-\frac{GmM_2}{|x-(1-\mu)R|}
+	\end{equation}
+	et en dérivant :
+	\begin{equation}
+		\label{bilan_force_y=0}
+		\frac{\partial \bar{U}}{\partial x}=-m\omega^2x+\frac{GmM_1}{(x+\mu R)^2}\sign(x+\mu R)+\frac{GmM_2}{(x-(1-\mu)R)^2}\sign(x-(1-\mu)R)
+	\end{equation}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.5\linewidth]{colinear-graph.png}
+		\includegraphics[width=0.4\textwidth]{colinear-graph.png}
 		\caption{Le potentiel effectif selon $x$ en $y=0$.}
 		\label{fig:potential_in_x}
 	\end{figure}
+	En traçant ce potentiel, on obtient alors la figure \ref{fig:potential_in_x} précédente, sur laquelle on peut en observer la présence des trois points d'équilibre que l'on recherche. On les nommera $L3$, $L1$ et $L2$ selon leur ordre d'apparition sur la figure \ref{fig:potential_in_x}. On cherche maintenant à déterminer les points d'annulation du potentiel effectif (i.e. les points d'équilibres précédemment mentionnés). Pour ce faire, nous travaillerons avec l'hypothèse que $\mu \to 0^+$ qui nous simplifiera la résolution des calculs. Il peut être montré (pas discuté ici) que le polynôme de degré cinq, qui apparait lors de la résolution analytique des points d'annulation de la formule \ref{bilan_force_y=0}, n'admet pas de racine calculable (cf. The Lagrange Points by Neil J. Cornish). On distingue trois cas.
+	
+	
+	\subsubsection{Coordonnées de L1}
+	On cherche ici à déterminer les coordonnées du point L1. Ce point ce situe entre $M_1$ et $M_2$. On prend alors $x \in \interval[open]{-\mu}{1-\mu}$. Sur cet intervalle, on a $x+\mu R>0$ et $x-(1-\mu)R<0$. En utilisant la forme dérivé de l'équation \ref{potential_in_y=0} et en se plaçant sur le segment considéré, la condition nécessaire d'équilibre s'écrit :
+	\begin{equation}
+		\label{L1_equilibrium_eq}
+		\omega^2x - \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation}
+	On peut noter que les masses se simplifient.
+	Du fait que l'on suppose $\mu \to 0$, on peut affirmer qualitativement que le point d'équilibre est bien plus proche de $M_2$ que de $M_1$, sous peine que l'attraction de $M_2$ soit négligeable devant celle de $M_1$. On pose alors $\varepsilon := x - (1-\mu)R$ la distance entre $M_2$ et L1. Ici, on s'attend à ce que $\varepsilon < 0$ dû à l'orientation du référentiel. On obtient ainsi :
+	\begin{equation}
+		\omega^2((1-\mu)R+\varepsilon) - \frac{GM_1}{(R+\varepsilon)^2} + \frac{GM_2}{\varepsilon^2} = 0
+	\end{equation}
+	On peut alors procéder à un DL à l'ordre 1 en $\varepsilon$ (car on a émis l'hypothèse $\varepsilon \to 1$) ce qui, après quelques calculs longs donne :
+	\begin{equation}
+		\frac{\varepsilon}{R^3}(3M_1+M_2)+\frac{M_2}{\varepsilon^2}=0 \implies \varepsilon = -(\frac{M_2}{3M_1+M_2})^\frac{1}{3}R
+	\end{equation}
+	
+	
+	\subsubsection{Coordonnées de L2}
+	Déterminer les coordonnées de L2 est très similaire au processus pour L1. Dans ce cas, le point se trouve à l'opposé de $M_2$ par rapport à $M_1$. Ainsi on a $x \in \interval[open]{1-\mu}{+\infty}$. Sur cet intervalle, on a $x+\mu R>0$ et $x-(1-\mu)R>0$. On peut ainsi écrire comme précédemment l'équation liée à la condition nécessaire d'équilibre. Pour L2, nous pouvons reposer le même $\varepsilon$ et tenir le même raisonnement pour obtenir au final que
+	\begin{equation}
+		\varepsilon = +(\frac{M_2}{3M_1+M_2})^\frac{1}{3}R
+	\end{equation}
+	Dans ce cas, on peut raisonner à nouveau qualitativement pour justifier ce $\varepsilon$. Le point L2 se situe au delà de l'astre $M_2$ ce qui implique que l'attraction de $M_2$ et celle de $M_1$ attire dans le sens $M \to M_2$ (où M est le point matériel associé au satellite, défini ainsi au \ref{def_system}). Or, si l'on se place loin de $M_2$, seul l'attraction de $M_1$ sera ressentie, ce qui revient à traiter le problème à 2-corps, et on peut facilement montrer que l'on obtient une orbite pour laquelle la coordonnée en y dans $R_{NG}$ est non constante égale à 0. Donc on n'aurait pas à faire à un point d'équilibre. Il faut ainsi se placer proche de $M_2$.
+	
+	
+	\subsubsection{Coordonnées de L3}
+	Dernier des points colinéaires, L3 est bien différent de ses deux frères L1 et L2. Ce point se positionne de l'autre côté de $M_1$ par rapport à $M_2$, et se situe, comme l'on va le voir, environ à la même distance de $M_1$ que $M_2$.
+	On a alors $x \in \interval[open]{-\infty}{-\mu}$. Sur cet intervalle, on se retrouve avec $x+\mu R<0$ et $x-(1-\mu)R<0$, ce qui se traduit dans l'équation liée à la condition nécessaire d'équilibre par :
+	\begin{equation}
+		\label{L3_equilibrium_eq}
+		\omega^2x + \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation}
+	Or, avec l'hypothèse que $\mu \to 0$, qui se traduit par $M_2 << M_1$, on obtient l'approximation $x + \frac{GM_1}{(x+\mu R)^2}=0$ d'où $x \approx -R$. On cherche maintenant à déterminer l'écart que l'on note $\delta$ entre l'approximation et la véritable position d'équilibre. On a alors $x = \delta-R$. En remplaçant dans \ref{L3_equilibrium_eq} on a :
+	\begin{equation}
+		\omega^2(\delta-R) + \frac{GM_1}{(\delta-(1-\mu)R)^2}+\frac{GM_2}{(\delta-(2-\mu)R)^2} = 0
+	\end{equation}
+	On peut maintenant procéder à résoudre pour $\delta$ à l'aide de deux développements limités, un sur chacun des deux termes droits (DL en $\frac{\delta}{R}+\mu$). On peut ainsi montrer que :
+	\begin{equation}
+		\delta = \frac{(\frac{3}{4}-\frac{\mu}{4})M_2-2\mu M_1}{3M_1+\frac{5}{4}M_2}
+	\end{equation}
+
 	
 	
 	
