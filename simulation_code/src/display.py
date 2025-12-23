@@ -4,6 +4,23 @@ from matplotlib.collections import LineCollection
 from matplotlib.colors import Normalize
 import src.phase_space as ps
 import src.potential_overlay as uo
+import src.energy as en
+
+
+
+### CHATGPT FUNCTION TO FORCE OFFSET
+import matplotlib.ticker as mticker
+
+def force_offset_scale(ax):
+    fmt = mticker.ScalarFormatter(useMathText=True)
+
+    fmt.set_useOffset(True)      # ✅ force le "+4.322e6"
+    fmt.set_scientific(False)    # ❌ interdit le "×10^6"
+
+    ax.yaxis.set_major_formatter(fmt)
+### CHATGPT STUFF ENDED
+
+
 
 def plot_on_ax(ax,graph,color_palette,display_precision=10,isTraj=False):
     traj_arr = np.array(graph)
@@ -67,8 +84,7 @@ def plot_potential(ax, working_system, pmin=20, steps=250, levels=25,
 
 
 
-
-def one_traj_display(traj,working_system,color_palette="plasma"):
+def one_traj_display(traj,working_system,time_step=10,color_palette="plasma"):
     layout = [
         ["traj","traj","phase","phase"],
         ["traj","traj","phase","phase"],
@@ -83,6 +99,57 @@ def one_traj_display(traj,working_system,color_palette="plasma"):
 
     axes["phase"].grid(True)
     plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
+
+    axes["energy"].grid(True)
+    plot_on_ax(axes["energy"],en.energy(traj,working_system,time_step),color_palette)
+    plot_on_ax(axes["energy"],en.radius_through_time(traj,time_step),"viridis")
+
+
+
+def three_traj_comp(traj1,traj2,traj3,working_system,time_step=10,color_palette="plasma"):
+    layout = [
+        ["traj1","phase1","energy1","energy1"],
+        ["traj2","phase2","energy2","energy2"],
+        ["traj3","phase3","energy3","energy3"]
+    ]
+    fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
+    
+    plot_on_ax(axes["traj1"],traj1,color_palette,isTraj=True)
+    plot_on_ax_bodies(axes["traj1"],working_system)
+    plot_potential(axes["traj1"],working_system,pmin=30,levels=50,alpha=0.2)
+
+    plot_on_ax(axes["traj2"],traj2,color_palette,isTraj=True)
+    plot_on_ax_bodies(axes["traj2"],working_system)
+    plot_potential(axes["traj2"],working_system,pmin=30,levels=50,alpha=0.2)
+
+    plot_on_ax(axes["traj3"],traj3,color_palette,isTraj=True)
+    plot_on_ax_bodies(axes["traj3"],working_system)
+    plot_potential(axes["traj3"],working_system,pmin=30,levels=50,alpha=0.2)
+
+    axes["phase1"].grid(True)
+    plot_on_ax(axes["phase1"],ps.phase_space_diag(traj1),color_palette)
+
+    axes["phase2"].grid(True)
+    plot_on_ax(axes["phase2"],ps.phase_space_diag(traj2),color_palette)
+
+    axes["phase3"].grid(True)
+    plot_on_ax(axes["phase3"],ps.phase_space_diag(traj3),color_palette)
+
+    axes["energy1"].grid(True)
+    plot_on_ax(axes["energy1"],en.energy(traj1,working_system,time_step),color_palette)
+    # plot_on_ax(axes["energy1"],en.radius_through_time(traj1,time_step),"viridis")
+
+    axes["energy2"].grid(True)
+    plot_on_ax(axes["energy2"],en.energy(traj2,working_system,time_step),color_palette)
+    # plot_on_ax(axes["energy2"],en.radius_through_time(traj2,time_step),"viridis")
+
+    axes["energy3"].grid(True)
+    plot_on_ax(axes["energy3"],en.energy(traj3,working_system,time_step),color_palette)
+    # plot_on_ax(axes["energy3"],en.radius_through_time(traj3,time_step),"viridis")
+
+    for k in ["energy1", "energy2", "energy3"]:
+        force_offset_scale(axes[k])
+
 
 def phase_spaces(traj,working_system,color_palette):
     layout = [

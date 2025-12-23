@@ -1,11 +1,13 @@
 import json
 import matplotlib.pyplot as plt
+import matplotlib
 from pathlib import Path
 
 import src.verlet as vt
 import src.rk as rk
 import src.display as display
 
+# plt.style.use('dark_background')
 
 def __init__(system):
     def barycentre(m1,m2,r):
@@ -24,13 +26,30 @@ def __init__(system):
 working_system = __init__("earth_moon")
 
 
-traj = rk.simulate_trajectory(
+traj1 = rk.simulate_trajectory(
+    [7e6,0.,0.,8e3],
+    1e6,
+    10,
+    working_system
+)
+
+traj2 = rk.simulate_trajectory(
+    [7e6,0.,0.,8e3],
+    1e6,
+    5,
+    working_system
+)
+
+traj3 = rk.simulate_trajectory(
     [7e6,0.,0.,8e3],
     1e6,
     1,
     working_system
 )
 
-display.phase_spaces(traj,working_system,color_palette="inferno")
+
+# Conjecture : dt/n => delta_spike/n^2 (cf petit papier bureau)
+
+display.three_traj_comp(traj1,traj2,traj3,working_system,time_step=20,color_palette="inferno")
 
 plt.show()
