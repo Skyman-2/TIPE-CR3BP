@@ -122,4 +122,7 @@ def simulate_trajectory(initial_conditions,simulation_time,step,system):
         i += 1
 
     print("Simulation complete. Number of steps:", len(P))
-    return P
+    result = []
+    for i in range(len(P)):
+        result.append([P[i][0],P[i][1],V[i][0],V[i][1]])
+    return result

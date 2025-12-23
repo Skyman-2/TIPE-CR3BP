@@ -30,21 +30,21 @@ working_system = __init__("earth_moon")
 traj1 = vt.simulate_trajectory(
     [7e6,0.,0.,8e3],
     2.5e6,
-    1,
+    10,
     working_system
 )
 
 traj2 = rk.simulate_trajectory(
     [7e6,0.,0.,8e3],
     2.5e6,
-    1,
+    10,
     working_system
 )
 
 traj3 = ei.simulate_trajectory(
     [7e6,0.,0.,8e3],
     2.5e6,
-    1,
+    10,
     working_system
 )
 
