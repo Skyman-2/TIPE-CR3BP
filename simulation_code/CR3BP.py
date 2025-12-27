@@ -29,28 +29,28 @@ working_system = __init__("earth_moon")
 
 traj1 = vt.simulate_trajectory(
     [7e6,0.,0.,8e3],
-    2.5e6,
-    10,
+    1e6,
+    20,
     working_system
 )
 
-traj2 = rk.simulate_trajectory(
-    [7e6,0.,0.,8e3],
-    2.5e6,
-    10,
-    working_system
-)
+# traj2 = rk.simulate_trajectory(
+#     [7e6,0.,0.,8e3],
+#     2.5e6,
+#     10,
+#     working_system
+# )
 
 traj3 = ei.simulate_trajectory(
     [7e6,0.,0.,8e3],
-    2.5e6,
-    10,
+    1e6,
+    20,
     working_system
 )
 
 
-# Conjecture : dt/n => delta_spike/n^2 (cf petit papier bureau)
+# Conjecture : dt/n => delta_spike/n^2 (in RK) (cf petit papier bureau)
 
-display.three_traj_comp(traj1,traj2,traj3,working_system,time_step=20,color_palette="inferno")
+display.ref_traj_comp(traj1,traj3,working_system,time_step=20,color_palette="inferno")
 
 plt.show()
