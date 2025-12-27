@@ -30,10 +30,17 @@
 	\label{def_system}
 	Nous étudions le système \emph{satellite de masse m} que l'on associe au point matériel $M$. On se place dans le référentiel galiléen -- que l'on note $R_G$ -- qui à pour centre le barycentre des deux masses $M_1$ et $M_2$ qu'on confondera avec le point matériel auquel leur astre respectif est associé.
 	
-	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles. On mènera la majorité de notre étude dans ce référentiel.
+	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles (cf. figure \ref{fig:RNG_diag}). On mènera la majorité de notre étude dans ce référentiel.
 	
 	\subsection{Expression du potentiel effectif dans $R_{NG}$}
-	On cherche à déterminer les coordonnées d'un point $(x,y)$ dans $R_{NG}$. On note $(\vec{e}_x,\vec{e}_y)$ une base de $R_{G}$ et $(\vec{u}_x,\vec{u}_y)$ une base de $R_{NG}$, les deux en coordonnées cartésiennes. On note $\alpha$ l'angle entre $R_G$ et $R_{NG}$, ainsi que $\omega$ la vitesse angulaire de $R_{NG}$ par rapport à $R_G$, que l'on suppose constante. Notons $U$ l'énergie potentielle associée à $M_1$ et $M_2$. On a alors dans le référentiel galiléen $\vec{F} = -\vec{\nabla} U$ où $\vec{F}$ est la résultante des forces de gravitation, ce qui se traduit par le système :
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\linewidth]{RNG_diag.pdf}
+		\caption{Schéma du référentiel $R_{NG}$.}
+		\label{fig:RNG_diag}
+	\end{figure}
+	\label{eff_u_calculation}
+	On cherche à déterminer les coordonnées d'un point $(x,y)$ dans $R_{NG}$ défini comme ci-dessus dans la figure \ref{fig:RNG_diag}. On note $(\vec{e}_x,\vec{e}_y)$ une base de $R_{G}$ et $(\vec{u}_x,\vec{u}_y)$ une base de $R_{NG}$, les deux en coordonnées cartésiennes. On note $\alpha$ l'angle entre $R_G$ et $R_{NG}$, ainsi que $\omega$ la vitesse angulaire de $R_{NG}$ par rapport à $R_G$, que l'on suppose constante. Notons $U$ l'énergie potentielle associée à $M_1$ et $M_2$. On a alors dans le référentiel galiléen $\vec{F} = -\vec{\nabla} U$ où $\vec{F}$ est la résultante des forces de gravitation, ce qui se traduit par le système :
 	\begin{large}
 		\begin{equation}
 			\label{potential_gal}
@@ -196,7 +203,75 @@
 	\begin{equation}
 		\delta = \frac{(\frac{3}{4}-\frac{\mu}{4})M_2-2\mu M_1}{3M_1+\frac{5}{4}M_2}
 	\end{equation}
-
+	
+	
+	\subsection{Coordonnées des points équilatéraux}
+	Comme spoilé par le nom de cette section, les points L4 et L5 se trouvent aux sommets des deux triangles équilatéraux dont les deux autres sommets sont $M_1$ et $M_2$. Dans cette partie, nous nous plaçons dans le plan $(O,\vec{u}_x,\vec{u}_y$, comme défini au \ref{eff_u_calculation}. On définit $r_1$ (\textit{resp.} $r_2$) comme la distance entre $M_1$ (\textit{resp.} $M_2$) et la position $(x,y)$ du satellite. On peut alors exprimer $\bar{U}$ en fonction de $r_1,r_2,x,y$ ainsi que $r_1$ et $r_2$ en fonction de $x$ et $y$ :
+	\begin{equation}
+		\begin{cases}
+			r_1=\sqrt{(x+\mu R)^2+y^2}
+			\\ r_2 = \sqrt{(x-(1-\mu)R)^2+y^2}
+			\\ \bar{U}(x,y)=-\frac{1}{2}m\omega^2(x^2+y^2)-\frac{GmM_1}{r_1}-\frac{GmM_2}{r_2}
+		\end{cases}
+	\end{equation}
+	ce qui donne en dérivant $\bar{U}$ selon x, et selon y :
+	\begin{equation}
+		\begin{cases}
+			\frac{\partial \bar{U}}{\partial x} = -\omega^2x+\frac{GM_1(x+\mu R)}{r_1^3}+\frac{GM_2(x-(1-\mu)R)}{r_2^3}
+			\\
+			\frac{\partial \bar{U}}{\partial y} = -\omega^2+\frac{GM_1}{r_1^3}+\frac{GM_2}{r_2^3}
+		\end{cases}
+	\end{equation}
+	On peut alors remplacer $\omega = \frac{G(M_1+M_2)}{R^3}$ dans les expressions et retrouver ainsi, en imposant la condition nécessaire d'équilibre, que :
+	\begin{equation}
+		\begin{cases}
+			\frac{x}{R^3}=\frac{(1-\mu)(x+\mu R)}{r_1^3}+\frac{\mu(x-(1-\mu)R)}{r_2^3}=(\frac{1-\mu}{r_1^3}+\frac{\mu}{r_2^3})x+\frac{\mu(1-\mu)R}{r_1^3}+\frac{\mu(1-\mu)R}{r_2^3}
+			\\
+			\frac{1}{R^3}=\frac{1-\mu}{r_1^3}+\frac{\mu}{r_2^3}
+		\end{cases}
+	\end{equation}
+	et en remplaçant la deuxième expression dans la première, on obtient après simplification que :
+	\begin{equation}
+		r_1=r_2 \ \ \text{ et } \ \ \frac{1}{R^3} = \frac{1}{r_1^3} \iff r_1 = R
+	\end{equation}
+	ce qui démontre que L$_i$, $i \in \{4,5\}$ est un sommet d'un triangle équilatéral dont les deux autres sommets sont $M_1$ et $M_2$. Notre étude étant menée dans le plan $(O,\vec{u}_x,\vec{u}_y)$, il n'existe que deux triangles équilatéraux qui vérifient cela. On décide arbitrairement de nommé L4 le point d'équilibre en ordonnées positives, et donc L5 celui en ordonnées négatives (cf figure \ref{fig:lagrange_points_represented}).
+	
+	NB : On peut remarquer que L4 est alors en avance de $60°$ par rapport à l'orbite de $M_1$, et que L5 est en retard de phase identique. Cela permet de les caractériser indépendemment du référentiel choisi.
+	
+	\subsection{Représentation des points Lagrange}
+	Grâce aux sections précédentes, on peut récapituler les coordonnées de chacun des points de Lagrange. On a en effet les valeurs approchées pour les points colinéaires, et un peu de trigonométrie simple nous donne immédiatement les coordonnées des points équilatéraux.
+	
+	\begin{table}[H]
+		\centering
+		\label{tab:coordinates_recap}
+		\renewcommand{\arraystretch}{1.6}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Point & Coordonnée en $x$ & Coordonnée en $y$
+			\\ \hline
+			L1 & $(1-(\frac{M_2}{3M_1+M_2})^\frac{1}{3})R$ & 0
+			\\ \hline
+			L2 & $(1+(\frac{M_2}{3M_1+M_2})^\frac{1}{3})R$ & 0
+			\\ \hline
+			L3 & $(1+\frac{(\frac{3}{4}-\frac{\mu}{4})M_2-2\mu M_1}{3M_1+\frac{5}{4}M_2})R$ & 0
+			\\ \hline
+			L4 & ($(\frac{1}{2}-\mu)R$) & $\frac{\sqrt{3}}{2}R$
+			\\ \hline
+			L5 & ($(\frac{1}{2}-\mu)R$) & $-\frac{\sqrt{3}}{2}R$
+			\\ \hline
+		\end{tabular}
+		\caption{Coordonnées des cinq points de Lagrange}
+	\end{table}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\textwidth]{CR3BP_w_lagrange.pdf}
+		\caption{Représentation de $R_{NG}$ avec les points d'équilibre marqués.}
+		\label{fig:CR3BP_w_lagrange}
+	\end{figure}
+	
+	Et ceci achève la recherche des coordonnées des points de Lagrange. Cependant, l'utilisation de ces points dans des missions spatiales (zone de parking pour satellite ou utilisation dans des trajectoires de transferts de coup minimal) requiert l'étude de la stabilité de ces points. Nous allons donc chercher à étudier cela par la suite.
+	
 	
 	
 	
