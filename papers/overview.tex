@@ -11,6 +11,7 @@
 \usepackage[]{float}
 \usepackage{wrapfig}
 \usepackage{interval}
+\usepackage{amssymb}
 \graphicspath{{../images/}}
 
 \DeclareMathOperator{\sign}{sign}
@@ -22,10 +23,10 @@
 	\tableofcontents
 	
 	\begin{abstract}
-		Le problème à trois corps restreint (CR3BP en anglais) est l'étude du mouvement relatif de trois masses, dont une de masse négligeable devant les trois autres. Nous chercherons à déterminer les coordonnées des Points Lagrange, qui sont cinq points d'équilibre du CR3BP. Nous mènerons ensuite une étude de leur stabilité. A terme, nous chercherons à déterminer des orbites périodiques autour des points L1 et L2 en particulier, ainsi que mener une recherche de trajectoires de transfert qui ferait utilisation des variétés stables et instables liées aux Points Lagrange.
+		Le problème à trois corps restreint circulaire planaire (PCR3BP en anglais) est l'étude du mouvement relatif d'une des masses, supposée négligeable devant les deux autres. Nous chercherons à déterminer les coordonnées des points de Lagrange, qui sont cinq points d'équilibre du PCR3BP. Nous mènerons ensuite une étude de leur stabilité. A terme, nous chercherons à déterminer des orbites périodiques autour des points L1 et L2 en particulier, ainsi que mener une recherche de trajectoires de transfert qui ferait utilisation des variétés stables et instables liées aux points de Lagrange.
 	\end{abstract}
 	
-	\section{Coordonnées des Points Lagrange}
+	\section{Coordonnées des Points de Lagrange}
 	\subsection{Définition du système}
 	\label{def_system}
 	Nous étudions le système \emph{satellite de masse m} que l'on associe au point matériel $M$. On se place dans le référentiel galiléen -- que l'on note $R_G$ -- qui à pour centre le barycentre des deux masses $M_1$ et $M_2$ qu'on confondera avec le point matériel auquel leur astre respectif est associé.
@@ -43,17 +44,15 @@
 	\end{figure}
 	\label{eff_u_calculation}
 	On cherche à déterminer les coordonnées d'un point $(x,y)$ dans $R_{NG}$ défini comme ci-dessus dans la figure \ref{fig:RNG_diag}. On note $(\vec{e}_x,\vec{e}_y)$ une base de $R_{G}$ et $(\vec{u}_x,\vec{u}_y)$ une base de $R_{NG}$, les deux en coordonnées cartésiennes. On note $\alpha$ l'angle entre $R_G$ et $R_{NG}$, ainsi que $\omega$ la vitesse angulaire de $R_{NG}$ par rapport à $R_G$, que l'on suppose constante. Notons $U$ l'énergie potentielle associée à $M_1$ et $M_2$. On a alors dans le référentiel galiléen $\vec{F} = -\vec{\nabla} U$ où $\vec{F}$ est la résultante des forces de gravitation, ce qui se traduit par le système :
-	\begin{large}
-		\begin{equation}
-			\label{potential_gal}
-			\begin{cases}
-				m\ddot{X}=-\frac{\partial{U}}{\partial{X}} 
-				\ =: \mathcal{U}_X \\
-				m\ddot{Y}=-\frac{\partial{U}}{\partial{Y}}
-				\ =: \mathcal{U}_Y
-			\end{cases}
-		\end{equation}
-	\end{large}
+	\begin{equation}
+		\label{potential_gal}
+		\begin{cases}
+			m\ddot{X}=-\frac{\partial{U}}{\partial{X}} 
+			\ =: \mathcal{U}_X \\
+			m\ddot{Y}=-\frac{\partial{U}}{\partial{Y}}
+			\ =: \mathcal{U}_Y
+		\end{cases}
+	\end{equation}
 	où $(X,Y)$ sont les coordonnées d'un point $P$ dans $R_G$. On note $(x,y)$ ses coordonnées dans $R_{NG}$. C'est alors l'image de $(X,Y)$ par une certaine rotation, à savoir $A_t^{-1}$ ($A_t$ étant défini juste après) :
 	\begin{equation}
 		\label{coord_change}
@@ -123,6 +122,7 @@
 	\end{pmatrix}$. En posant $\bar{\mathcal{U}}_x := -\mathcal{U}_x + m\omega^2x$ et $\bar{\mathcal{U}}_y := -\mathcal{U}_y + m\omega^2y$,
 	on obtient finalement les équations du mouvement suivantes :
 	\begin{equation}
+		\label{equation of motion}
 		\begin{cases}
 			\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\bar{\mathcal{U}}_x \\
 			\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\bar{\mathcal{U}}_y
@@ -178,14 +178,14 @@
 	\end{equation}
 	On peut alors procéder à un DL à l'ordre 1 en $\varepsilon$ (car on a émis l'hypothèse $\varepsilon \to 1$) ce qui, après quelques calculs longs donne :
 	\begin{equation}
-		\frac{\varepsilon}{R^3}(3M_1+M_2)+\frac{M_2}{\varepsilon^2}=0 \implies \varepsilon = -(\frac{M_2}{3M_1+M_2})^\frac{1}{3}R
+		\varepsilon = -(\frac{\mu}{3})^\frac{1}{3}R
 	\end{equation}
 	
 	
 	\subsubsection{Coordonnées de L2}
 	Déterminer les coordonnées de L2 est très similaire au processus pour L1. Dans ce cas, le point se trouve à l'opposé de $M_2$ par rapport à $M_1$. Ainsi on a $x \in \interval[open]{1-\mu}{+\infty}$. Sur cet intervalle, on a $x+\mu R>0$ et $x-(1-\mu)R>0$. On peut ainsi écrire comme précédemment l'équation liée à la condition nécessaire d'équilibre. Pour L2, nous pouvons reposer le même $\varepsilon$ et tenir le même raisonnement pour obtenir au final que
 	\begin{equation}
-		\varepsilon = +(\frac{M_2}{3M_1+M_2})^\frac{1}{3}R
+		\varepsilon = (\frac{\mu}{3})^\frac{1}{3}R
 	\end{equation}
 	Dans ce cas, on peut raisonner à nouveau qualitativement pour justifier ce $\varepsilon$. Le point L2 se situe au delà de l'astre $M_2$ ce qui implique que l'attraction de $M_2$ et celle de $M_1$ attire dans le sens $M \to M_2$ (où M est le point matériel associé au satellite, défini ainsi au \ref{def_system}). Or, si l'on se place loin de $M_2$, seul l'attraction de $M_1$ sera ressentie, ce qui revient à traiter le problème à 2-corps, et on peut facilement montrer que l'on obtient une orbite pour laquelle la coordonnée en y dans $R_{NG}$ est non constante égale à 0. Donc on n'aurait pas à faire à un point d'équilibre. Il faut ainsi se placer proche de $M_2$.
 	
@@ -210,6 +210,7 @@
 	\subsection{Coordonnées des points équilatéraux}
 	Comme spoilé par le nom de cette section, les points L4 et L5 se trouvent aux sommets des deux triangles équilatéraux dont les deux autres sommets sont $M_1$ et $M_2$. Dans cette partie, nous nous plaçons dans le plan $(O,\vec{u}_x,\vec{u}_y$, comme défini au \ref{eff_u_calculation}. On définit $r_1$ (\textit{resp.} $r_2$) comme la distance entre $M_1$ (\textit{resp.} $M_2$) et la position $(x,y)$ du satellite. On peut alors exprimer $\bar{U}$ en fonction de $r_1,r_2,x,y$ ainsi que $r_1$ et $r_2$ en fonction de $x$ et $y$ :
 	\begin{equation}
+		\label{equi_underived_eq}
 		\begin{cases}
 			r_1=\sqrt{(x+\mu R)^2+y^2}
 			\\ r_2 = \sqrt{(x-(1-\mu)R)^2+y^2}
@@ -218,6 +219,7 @@
 	\end{equation}
 	ce qui donne en dérivant $\bar{U}$ selon x, et selon y :
 	\begin{equation}
+		\label{equi_derived_eq}
 		\begin{cases}
 			\frac{\partial \bar{U}}{\partial x} = -m\omega^2x+\frac{GmM_1(x+\mu R)}{r_1^3}+\frac{GmM_2(x-(1-\mu)R)}{r_2^3}
 			\\
@@ -227,6 +229,7 @@
 	On peut alors remplacer $\omega^2 = \frac{G(M_1+M_2)}{R^3}$ dans les expressions et retrouver ainsi, en imposant la condition nécessaire d'équilibre, et après simplification, que :
 	\begin{equation}
 		\begin{cases}
+			\label{equilateral_CN}
 			\frac{x}{R^3}=\frac{(1-\mu)(x+\mu R)}{r_1^3}+\frac{\mu(x-(1-\mu)R)}{r_2^3}=(\frac{1-\mu}{r_1^3}+\frac{\mu}{r_2^3})x+\frac{\mu(1-\mu)R}{r_1^3}+\frac{\mu(1-\mu)R}{r_2^3}
 			\\
 			\frac{1}{R^3}=\frac{1-\mu}{r_1^3}+\frac{\mu}{r_2^3}
@@ -234,13 +237,14 @@
 	\end{equation}
 	et en remplaçant la deuxième expression dans la première, on obtient après simplification que :
 	\begin{equation}
+		\label{equilateral_result}
 		r_1=r_2 \ \ \text{ et } \ \ \frac{1}{R^3} = \frac{1}{r_1^3} \iff r_1 = R
 	\end{equation}
 	ce qui démontre que L$_i$, $i \in \{4,5\}$ est un sommet d'un triangle équilatéral dont les deux autres sommets sont $M_1$ et $M_2$. Notre étude étant menée dans le plan $(O,\vec{u}_x,\vec{u}_y)$, il n'existe que deux triangles équilatéraux qui vérifient cela. On décide arbitrairement de nommé L4 le point d'équilibre en ordonnées positives, et donc L5 celui en ordonnées négatives (cf figure \ref{fig:lagrange_points_represented}).
 	
-	NB : On peut remarquer que L4 est alors en avance de $60°$ par rapport à l'orbite de $M_1$, et que L5 est en retard de phase identique. Cela permet de les caractériser indépendemment du référentiel choisi.
+	NB : On peut remarquer que L4 est alors en avance de $60\degres$ par rapport à l'orbite de $M_1$, et que L5 est en retard de phase identique. Cela permet de les caractériser indépendemment du référentiel choisi.
 	
-	\subsection{Représentation des points Lagrange}
+	\subsection{Représentation des points de Lagrange}
 	Grâce aux sections précédentes, on peut récapituler les coordonnées de chacun des points de Lagrange. On a en effet les valeurs approchées pour les points colinéaires, et un peu de trigonométrie simple nous donne immédiatement les coordonnées des points équilatéraux.
 	
 	\begin{table}[H]
@@ -272,7 +276,45 @@
 		\label{fig:CR3BP_w_lagrange}
 	\end{figure}
 	
-	Et ceci achève la recherche des coordonnées des points de Lagrange. Cependant, l'utilisation de ces points dans des missions spatiales (zone de parking pour satellite ou utilisation dans des trajectoires de transferts de coup minimal) requiert l'étude de la stabilité de ces points. Nous allons donc chercher à étudier cela par la suite.
+	\clearpage
+	\section{Stabilité des Points de Lagrange}
+	Nous avons établis que le PCR3BP admet cinq points d'équilibres. Il n'est pas compliqué de montrer que cela en va aussi pour le CR3BP (c'est-à-dire les cas où $z = 0$ n'est pas nécessairement vérifiée) et que ce sont les mêmes points d'équilibres (on se ramène en fait au PCR3BP simplement). Il suit que nous devons étudier la stabilité de ces points. La figure (\ref{fig:orbits1}) nous permet d'émettre des conjectures, mais pour une étude rigoureuse, il faut linéariser les équations du mouvement autour de chaques points, ce qui nous permettra de conclure cas par cas sur la stabilité des points.
+	
+	\subsection{Linéarisation des équations du mouvement}
+	On se place en $(x_i,y_i)$ la position du $i^{\text{ème}}$ point de Lagrange. Avec la relation (\ref{equation of motion}) on obtient que
+	\begin{equation}
+		\label{full motion equation}
+		\begin{cases}
+			\dot{x} = v_x
+			\\
+			\dot{y} = v_y
+			\\
+			\dot{v_x} = \ddot{x} = 2\omega\dot{y} - \frac{1}{m}\bar{\mathcal{U}}_x
+			\\
+			\dot{v_y} = \ddot{y} = - 2\omega\dot{x} - \frac{1}{m}\bar{\mathcal{U}}_y
+		\end{cases}
+	\end{equation}
+	i.e. il existe $f: \mathbb{R}^4 \longrightarrow \mathbb{R}^4$ tel que $\dot{X} = f(X)$ où $X = (x,y,v_x,v_y)^T$ est l'état du système. On cherche alors à linéariser (\ref{full motion equation}) de manière à obtenir $A \in \mathcal{M}_{4,4}(\mathbb{R})$ qui vérifie autour de l'équilibre que $\dot{X} = AX$.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -324,7 +366,198 @@
 		\varepsilon = -(\frac{\mu}{3})^\frac{1}{3}R
 	\end{equation*}
 	\end{tcolorbox}
-	Ainsi, notre DL en $\varepsilon$ est légitime car on observe que $\frac{\varepsilon}{R} = \underset{\mu \to 0}{O}(\mu^\frac{1}{3})$.
+	Ainsi, notre DL en $\frac{\varepsilon}{R}$ est légitime car on observe que $\varepsilon = \underset{\mu \to 0}{O}(\mu^\frac{1}{3})$, R étant une constante.
+	
+	
+	
+	\clearpage
+	\subsection*{Calcul pour L2 \footnote{On pourra remarquer que les calculs sont identiques à ceux de L1 au signe près du terme en $\frac{\mu}{\varepsilon^2}$.} }
+	
+	On a
+	\begin{equation*}
+		\omega^2x - \frac{GM_1}{(x+\mu R)^2} - \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en remplaçant $\omega^2$ par son expression on obtient
+	\begin{equation*}
+		\frac{G(M_1 + M_2)}{R^3}x - \frac{GM_1}{(x+\mu R)^2} - \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en reconnaissant $\mu = \frac{M_2}{M_1+M_2}$ on peut simplifier en
+	\begin{equation*}
+		\frac{x}{R^3} - \frac{1-\mu}{(x+\mu R)^2} - \frac{\mu}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en utilisant le fait que $x=\varepsilon + (1-\mu)R$ on obtient
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{\varepsilon}{R^3} - \frac{1-\mu}{(\varepsilon+R)^2} - \frac{\mu}{\varepsilon^2} = 0
+	\end{equation*}
+	
+	On peut alors procéder à un développement limité en $\frac{\varepsilon}{R}$. Ce dernier est ici supposé, motivé par le fait que l'on suppose $\mu \to 0$ ce qui nous a permis de, qualitativement, supposer $\varepsilon \to 0$. Le résultat final permettra, ou non, de légitimiser notre supposition. On obtient ainsi
+	\begin{equation*}
+		\frac{1-\mu}{(\varepsilon+R)^2}=\frac{1-\mu}{R^2}(1+\frac{\varepsilon}{R})^{-2} \underset{\varepsilon \to 0}{=} \frac{1-\mu}{R^2}(1-\frac{2\varepsilon}{R}+O(\frac{\varepsilon^2}{R^2}))
+		\underset{\varepsilon \to 0}{=}
+		\frac{1-\mu}{R^2}-\frac{2(1-\mu)\varepsilon}{R^3} + O(\frac{\varepsilon^2}{R^4})
+	\end{equation*}
+	et en remplaçant dans l'expression que l'on avait avant on obtient
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{\varepsilon}{R^3} - \frac{1-\mu}{R^2}+\frac{2(1-\mu)\varepsilon}{R^3} - \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\frac{\varepsilon^2}{R^4}) = 0
+	\end{equation*}
+	ce qui se simplifie en
+	\begin{equation*}
+		\frac{\varepsilon}{R^3} +\frac{(2-2\mu)\varepsilon}{R^3} - \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\varepsilon^2) = \frac{3-2\mu}{R^3}\varepsilon - \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\varepsilon^2) = 0
+	\end{equation*}
+	et donc à l'ordre 1, cela devient
+	\begin{equation*}
+		\varepsilon^3 = \frac{\mu}{3-2\mu}R^3 \underset{\mu \to 0}{\sim} \frac{\mu}{3}R^3
+	\end{equation*}
+	et finalement
+	\begin{tcolorbox}[colframe=black,boxrule=0.8pt,colback=white]
+		\begin{equation*}
+			\varepsilon = (\frac{\mu}{3})^\frac{1}{3}R
+		\end{equation*}
+	\end{tcolorbox}
+	Ainsi, notre DL en $\frac{\varepsilon}{R}$ est légitime car on observe que $\varepsilon = \underset{\mu \to 0}{O}(\mu^\frac{1}{3})$, R étant une constante.
+	
+	
+	\clearpage
+	\subsection*{Calcul pour L3}
+	On a
+	\begin{equation*}
+		\omega^2x + \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en remplaçant $\omega^2$ par son expression on obtient
+	\begin{equation*}
+		\frac{G(M_1 + M_2)}{R^3}x + \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en reconnaissant $\mu = \frac{M_2}{M_1+M_2}$ on peut simplifier en
+	\begin{equation*}
+		\frac{x}{R^3} + \frac{1-\mu}{(x+\mu R)^2} + \frac{\mu}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en utilisant le fait que $x= \delta - R$ on obtient
+	\begin{equation*}
+		 \frac{\delta}{R^3} - \frac{1}{R^2} + \frac{1-\mu}{(\delta-(1-\mu)R)^2} + \frac{\mu}{(\delta-(2-\mu)R)^2} = 0
+	\end{equation*}
+	
+	On peut alors procéder à deux développements limités en $w := \mu + \frac{\delta}{R}$. Ces derniers sont supposés, motivée par le fait que l'on suppose $\mu \to 0$ ce qui nous a permis de, qualitativement, supposer $\delta \to 0$ et donc $w \to 0$. Le résultat final permettra ici aussi de légitimiser, ou non, notre supposition. On obtient alors
+	\begin{equation*}
+		\frac{1-\mu}{(\delta-(1-\mu)R)^2}
+		= \frac{1-\mu}{R^2} (1-w)^{-2}
+		\underset{w \to 0}{=}
+		\frac{1-\mu}{R^2} (1 + 2w + o(w))
+		\underset{w \to 0}{=}
+		\frac{1-\mu}{R^2} + \frac{2(1-\mu)w}{R^2} + o(w))
+	\end{equation*}
+	or on a $(1-\mu)w = w - \mu w \underset{\mu \to 0}{=} w + o(w)$ ce qui simplifie le terme précédent en
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{2w}{R^2} + \underset{w \to 0}{o}(w) = \frac{1+\mu+2\frac{\delta}{R}}{R^2} + \underset{w \to 0}{o}(w)
+	\end{equation*}
+
+	On calcule de même
+	\begin{equation*}
+		\frac{\mu}{(\delta-(2-\mu)R)^2}
+		= \frac{\mu}{4R^2} (1-\frac{1}{2}w)^{-2}
+		\underset{w \to 0}{=}
+		\frac{\mu}{4R^2} (1 + w + o(w))
+		\underset{w \to 0}{=}
+		\frac{\mu}{4R^2} + \frac{\mu w}{4R^2} + o(w))
+		\underset{w \to 0}{=}
+		\frac{\mu}{4R^2} + o(w)
+	\end{equation*}
+	\\
+	
+	On peut remplacer ces deux expressions dans l'expression originale, et obtenir ainsi
+	\begin{equation*}
+		\frac{\delta}{R^3} - \frac{1}{R^2} + \frac{1+\mu+2\delta}{R^2} + \underset{w \to 0}{o}(w) + \frac{\mu}{4R^2} + \underset{w \to 0}{o}(w)
+		= \frac{3\delta}{R^3} + \frac{5\mu}{4R^2} + \underset{w \to 0}{o}(w) = 0
+	\end{equation*}
+	ce qui devient à l'ordre 1
+	\begin{equation*}
+		\frac{\delta}{R^3} = -\frac{5\mu}{12R^2}
+	\end{equation*}
+	et donc
+	\begin{tcolorbox}[colframe=black,boxrule=0.8pt,colback=white]
+		\begin{equation*}
+			\delta = - \frac{5\mu}{12}R
+		\end{equation*}
+	\end{tcolorbox}
+	
+	On peut alors constater que $o(w) = o(\mu + \frac{\delta}{R}) = o(\mu - \frac{5\mu}{12}) = o(\mu)$ ou aussi $o(w) = o(\delta)$. On vérifie ainsi que l'ordre 1 que l'on a écrit est bien celui en $\delta$.
+	
+	
+	\clearpage
+	\subsection*{Calcul pour L4 et L5}
+	On souhaite d'abord démontrer le passage des relations (\ref{equi_underived_eq}) aux relations (\ref{equi_derived_eq}). On utilise alors $(\frac{1}{u})' = \frac{u'}{u^2}$. On sépare chaque cas suivant si l'on dérive par rapport à $x$, où $y$.	
+	\\
+	
+	Cas de dérivation selon $x$ : \\
+	On a dans ce cas $f_1 : (x,y) \longmapsto \frac{GmM_1}{r_1} = \frac{GmM_1}{\sqrt{(x+\mu R)^2 + y^2}}$ et $f_2 : (x,y) \longmapsto \frac{GmM_2}{r_2}$, toutes deux des fonctions dérivables selon $x$ sur $\mathbb{R}^*$ comme inverse de fonctions dérivables selon x, à savoir $r_1$ et $r_2$. Ces dernières sont de dérivées partielles selon x
+	\begin{equation*}
+		\begin{cases}
+			\frac{\partial r_1}{\partial x}(x,y) = \frac{2(x+\mu R)}{2\sqrt{(x+\mu R)^2 + y^2}} = \frac{(x+\mu R)}{r_1(x,y)}
+			\\
+			\frac{\partial r_2}{\partial x}(x,y) = \frac{(x-(1-\mu)R)}{r_2(x,y)}
+		\end{cases}
+	\end{equation*}
+	ce qui nous donne les expressions des dérivées partielles de $f_1$ et $f_2$ suivantes (on utilisera la simple notation $f'$ par souci de lisibilité, mais on a bien à faire à des dérivés partielles, le contexte indiquant clairement que c'est selon $x$ ici) :
+	\begin{equation*}
+		\begin{cases}
+			f_1'(x,y) = \frac{GmM_1 r_1'(x,y)}{r_1^2(x,y)} = \frac{GmM_1}{r_1^2(x,y)} \times \frac{(x+\mu R)}{r_1(x,y)} = \frac{GmM_1(x+\mu R)}{r_1^3(x,y)}
+			\\
+			f_2'(x,y) = \frac{GmM_2 r_2'(x,y)}{r_2^2(x,y)} = \frac{GmM_2(x-(1-\mu)R)}{r_2^3(x,y)}
+		\end{cases}
+	\end{equation*}
+	et assez trivialement, $x \longmapsto -\frac{1}{2}m\omega^2(x^2+y^2)$ admet $x \longmapsto -m\omega^2x$ pour dérivée. On obtient ainsi exactement le terme pour $\frac{\partial \bar{U}}{\partial x}$ en sommant chacune des dérivées.
+	Quand au cas selon $y$, on peut appliquer exactement le même principe. Les calculs seront même plus simple car on voit assez clairement que dans ce cas, $\frac{\partial r_1}{\partial y}(x,y) = \frac{y}{r_1(x,y)}$.
+	Et on obtient bien ainsi les relations (\ref{equi_derived_eq}).
+	\\
+	
+	Explicitons le passage de la relation (\ref{equi_derived_eq}) à la relation (\ref{equilateral_CN}). On commence par imposer la condition d'équilibre, et remplacer par son expression $\omega^2 = \frac{G(M_1+M_2)}{R^3}$ :
+	\begin{equation*}
+		\begin{cases}
+			0 = -\frac{Gm(M_1+M_2)}{R^3}x+\frac{GmM_1(x+\mu R)}{r_1^3}+\frac{GmM_2(x-(1-\mu)R)}{r_2^3}
+			\\
+			0 = -\frac{Gm(M_1+M_2)}{R^3}y+\frac{GmM_1y}{r_1^3}+\frac{GmM_2y}{r_2^3}
+		\end{cases}
+	\end{equation*}
+	ce qui se simplifie en
+	\begin{equation*}
+		\begin{cases}
+			\frac{M_1+M_2}{R^3}x = \frac{M_1(x+\mu R)}{r_1^3}+\frac{M_2(x-(1-\mu)R)}{r_2^3}
+			\\
+			\frac{M_1+M_2}{R^3} = \frac{M_1}{r_1^3}+\frac{M_2}{r_2^3}
+		\end{cases}
+	\end{equation*}
+	On peut alors diviser par $M_1+M_2$. On reconnait alors deux termes : $1-\mu = \frac{M_1}{M_1+M_2}$ et $\mu = \frac{M_2}{M_1+M_2}$ ce qui donne alors
+	\begin{equation*}
+		\begin{cases}
+			\frac{x}{R^3} = \frac{(1-\mu)(x+\mu R)}{r_1^3}+\frac{\mu(x-(1-\mu)R)}{r_2^3}
+			\\
+			\frac{1}{R^3} = \frac{(1-\mu)}{r_1^3}+\frac{\mu}{r_2^3}
+		\end{cases}
+	\end{equation*}
+	et on peut simplifier encore plus la première expression de manière à faire apparaître la deuxième relation, donnant alors
+	
+	\begin{equation*}
+		\frac{x}{R^3} = (\frac{1-\mu}{r_1^3} + \frac{\mu}{r_2^3})x + \frac{\mu(1-\mu)R}{r_1^3} - \frac{\mu(1-\mu)R}{r_2^3}
+	\end{equation*}
+	ce qui est le résultat voulu.
+	\\
+	
+	Explicitons le passage des relations (\ref{equilateral_CN}) à la relation (\ref{equilateral_result}).
+	\begin{equation*}
+		\frac{x}{R^3} = \frac{x}{R^3} + \mu(1-\mu)(\frac{1}{r_1^3}-\frac{1}{r_2^3})R \ \ \text{i.e.} \ \ \frac{1}{r_1^3}-\frac{1}{r_2^3} = 0
+	\end{equation*}
+	ce qui, dans $\mathbb{R}$, nous donne
+	\begin{equation*}
+		r_1=r_2
+	\end{equation*}
+	et en remplaçant cela dans la deuxième relation de (\ref{equilateral_CN}) on obtient aussi
+	\begin{equation*}
+		\frac{1}{R^3} = \frac{1-\mu}{r_1^3} + \frac{\mu}{r_1^3} = \frac{1}{r_1^3}
+	\end{equation*}
+	et on a alors dans $\mathbb{R}$ que
+	\begin{equation*}
+		R=r_1=r_2
+	\end{equation*}
+	d'où la relation (\ref{equilateral_result}).
 	
 	
 \end{document}

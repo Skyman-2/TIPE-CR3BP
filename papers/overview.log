@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  27 DEC 2025 21:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  3 JAN 2026 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,10 +520,21 @@ Package: wrapfig 2003/01/31  v 3.6
 (c:/texlive/2025/texmf-dist/tex/latex/interval/interval.sty
 Package: interval 2019/03/06 v0.4
 )
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 
 Package french3.ldf Warning: OT1 encoding should not be used for French.
 (french3.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french3.ldf)                of your document; reported on input line 20.
+(french3.ldf)                of your document; reported on input line 21.
 
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
@@ -535,20 +546,20 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `overview.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -606,19 +617,30 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 20.
+LaTeX Info: Redefining \degres on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
 
-(./overview.toc)
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (./overview.toc)
 \tf@toc=\write4
 \openout4 = `overview.toc'.
 
- [1
+
+[1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <../images/RNG_diag.pdf, id=18, 283.15788pt x 146.85063pt>
 File: ../images/RNG_diag.pdf Graphic file (type pdf)
 <use ../images/RNG_diag.pdf>
-Package pdftex.def Info: ../images/RNG_diag.pdf  used on input line 40.
+Package pdftex.def Info: ../images/RNG_diag.pdf  used on input line 41.
 (pdftex.def)             Requested size: 379.4175pt x 196.7721pt.
  [2 <../images/RNG_diag.pdf>]
 <../images/potential_clear.png, id=66, 1387.584pt x 658.3797pt>
@@ -636,25 +658,47 @@ Package pdftex.def Info: ../images/colinear-graph.png  used on input line 161.
  [4 <../images/colinear-graph.png (PNG copy)>] [5]
 
 LaTeX Warning: Reference `fig:lagrange_points_represented' on page 6 undefined 
-on input line 239.
+on input line 243.
 
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 241.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 241.
-
-Missing character: There is no ° in font cmr12!
-[6]
-<../images/CR3BP_w_lagrange.pdf, id=83, 578.56152pt x 385.84149pt>
+[6{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<../images/CR3BP_w_lagrange.pdf, id=84, 578.56152pt x 385.84149pt>
 File: ../images/CR3BP_w_lagrange.pdf Graphic file (type pdf)
 <use ../images/CR3BP_w_lagrange.pdf>
-Package pdftex.def Info: ../images/CR3BP_w_lagrange.pdf  used on input line 270
+Package pdftex.def Info: ../images/CR3BP_w_lagrange.pdf  used on input line 274
 .
 (pdftex.def)             Requested size: 379.4175pt x 253.04298pt.
- [7 <../images/CR3BP_w_lagrange.pdf>] [8
 
-] (./overview.aux)
+[7 <../images/CR3BP_w_lagrange.pdf>] [8
+
+] [9
+
+] [10
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
+
+ []
+
+[11
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 487--489
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--511
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--543
+
+ []
+
+[12
+
+] [13] (./overview.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -665,11 +709,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17624 strings out of 467538
- 363532 string characters out of 5423724
- 772688 words of memory out of 5000000
- 46264 multiletter control sequences out of 15000+600000
- 635607 words of font info for 67 fonts, out of 8000000 for 9000
+ 18167 strings out of 467538
+ 369782 string characters out of 5423724
+ 775480 words of memory out of 5000000
+ 46787 multiletter control sequences out of 15000+600000
+ 638722 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,11n,118p,875b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
@@ -679,18 +723,22 @@ ist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c
-:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-12.pfb>
-Output written on overview.pdf (8 pages, 1942251 bytes).
+mi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c
+:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/
+2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/t
+exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/202
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/
+fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on overview.pdf (13 pages, 1989595 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 228 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
