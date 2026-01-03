@@ -78,3 +78,6 @@ display.ref_traj_comp(traj,trajNew,working_system,time_step=10,color_palette="pl
 
 
 plt.show()
+
+
+# IDEE : (cf * dans MCOT) CE DERNIER POINT FAIT REF A L’IDEE DE RAJOUTER DU BRUIT SUR UNE TRAJECTOIRE POUR ETUDIER SON EVOLUTION  SIMULATION DES FORCES ATTRACTIVES D’AUTRES CORPS DU SYSTEME
