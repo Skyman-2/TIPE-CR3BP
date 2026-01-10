@@ -294,10 +294,110 @@
 			\dot{v_y} = \ddot{y} = - 2\omega\dot{x} - \frac{1}{m}\bar{\mathcal{U}}_y
 		\end{cases}
 	\end{equation}
-	i.e. il existe $f: \mathbb{R}^4 \longrightarrow \mathbb{R}^4$ tel que $\dot{X} = f(X)$ où $X = (x,y,v_x,v_y)^T$ est l'état du système. On cherche alors à linéariser (\ref{full motion equation}) de manière à obtenir $A \in \mathcal{M}_{4,4}(\mathbb{R})$ qui vérifie autour de l'équilibre que $\dot{X} = AX$.
+	i.e. il existe $f: \mathbb{R}^4 \longrightarrow \mathbb{R}^4$ tel que $\dot{X} = f(X)$ où $X = (x,y,v_x,v_y)^T$ est l'état du système. On cherche alors à linéariser (\ref{full motion equation}) de manière à obtenir $A \in \mathcal{M}_{4,4}(\mathbb{R})$ qui vérifie autour de l'équilibre que $\dot{X} = AX$. On cherche alors à linéariser $\bar{\mathcal{U}}$. Grâce à l'expansion en série de Taylor à l'ordre 1 en $(x_i,y_i)$ on obtient
+	\begin{equation}
+		\begin{cases}
+			\bar{\mathcal{U}}_x(x,y) = \bar{\mathcal{U}}_x(x_i,y_i) + \frac{\partial \bar{\mathcal{U}}_x}{\partial x} (x_i,y_i) \times (x - x_i) + \frac{\partial \bar{\mathcal{U}}_x}{\partial y} (x_i,y_i) \times (y - y_i)
+			\\
+			\bar{\mathcal{U}}_y(x,y) = \bar{\mathcal{U}}_y(x_i,y_i) + \frac{\partial \bar{\mathcal{U}}_y}{\partial x} (x_i,y_i) \times (x - x_i) + \frac{\partial \bar{\mathcal{U}}_y}{\partial y} (x_i,y_i) \times (y - y_i)
+		\end{cases}
+	\end{equation}
+	que l'on peut plus simplement écrire, en reprenant les mêmes notations que précédemment, et en considérant le point L$_i$ comme l'origine (donc que $(x_i,y_i)=(0,0)$) comme
+		\begin{equation}
+		\begin{cases}
+			\bar{\mathcal{U}}_x(x,y) = \bar{\mathcal{U}}_x^i + 
+			\bar{\mathcal{U}}_{xx}^i x + 
+			\bar{\mathcal{U}}_{xy}^i y
+			\\
+			\bar{\mathcal{U}}_y(x,y) = \bar{\mathcal{U}}_y^i +  
+			\bar{\mathcal{U}}_{yx}^{i} x + 
+			\bar{\mathcal{U}}_{yy}^{i} y
+		\end{cases}
+	\end{equation}
+	
+	On peut alors linéariser les équations du mouvement et on obtient
+	\begin{equation}
+		\dot{X}
+		=
+		\begin{bmatrix}
+			\dot{x} \\
+			\dot{y} \\
+			\dot{v_x} \\
+			\dot{v_y}
+		\end{bmatrix}
+		=
+		\underbrace{
+			\begin{bmatrix}
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 \\
+				-\frac{1}{m}\bar{\mathcal{U}}_{xx}^i & -\frac{1}{m}\bar{\mathcal{U}}_{xy}^i
+				& 0 & 2\omega \\
+				-\frac{1}{m}\bar{\mathcal{U}}_{yx}^i & -\frac{1}{m}\bar{\mathcal{U}}_{yy}^i
+				& -2\omega & 0
+			\end{bmatrix}
+		}_{=: A}
+		\begin{bmatrix}
+			x \\ y \\ v_x \\ v_y
+		\end{bmatrix}
+	\end{equation}
+	cependant le reste du calcul dépendra du point étudié. On va donc étudier la stabilité de L1 et L2 ensemble, puis celle de L3, et pour finir celle de L4 et L5.
 	
 	
+	\subsection{Stabilité de L1 et L2}
+	Dans cette situation, on a exactement le potentiel de la relation (\ref{potential_in_y=0}). On peut alors dériver la relation (\ref{bilan_force_y=0}) selon $x$ et selon $y$. Pour simplifier le processus, on va d'abord dériver un élément $V := -\frac{a}{r(X,y)}$ où $r(X,y) = \sqrt{X^2+y^2}$. On a
+	\begin{equation}
+		\begin{cases}
+			\mathcal{V}_{x} = \frac{a X}{r^3}
+			\\
+			\mathcal{V}_{y} = \frac{a y}{r^3}
+		\end{cases}
+		\implies
+		\begin{cases}
+			\mathcal{V}_{xx} = \frac{a}{r^3} + X\frac{-3aX}{r^5} = \frac{r^2-3X^2}{r^5}a
+			\\
+			\mathcal{V}_{xy} = aX \frac{\partial}{\partial y}(\frac{1}{r^3}) = -\frac{3aXy}{r^5}
+			\\
+			\mathcal{V}_{yx} = ay \frac{\partial}{\partial x}(\frac{1}{r^3}) = -\frac{3aXy}{r^5}
+			\\
+			\mathcal{V}_{yy} = \frac{a}{r^3} + y\frac{-3ay}{r^5} = \frac{r^2-3y^2}{r^5}a
+		\end{cases}
+	\end{equation}
+	et utilisant ces formules avec les variables du problème on obtient 
+	\begin{equation}
+		\begin{cases}
+			\bar{\mathcal{U}}_{xx} = -m\omega^2 
+			+ GmM_1\frac{r_1^2 - 3(x+\mu R)^2}{r_1^5} 
+			+ GmM_2\frac{r_2^2 - 3(x-(1-\mu)R)^2}{r_2^5}
+			\\
+			\bar{\mathcal{U}}_{xy} = \bar{\mathcal{U}}_{yx} =
+			-3Gm(\frac{M_1(x+\mu R)y}{r_1^5}+\frac{M_2(x-(1-\mu)R)y}{r_2^5})
+			\\
+			\bar{\mathcal{U}}_{yy} = -m\omega^2 
+			+ GmM_1\frac{r_1^2 - 3y^2}{r_1^5} 
+			+ GmM_2\frac{r_2^2 - 3y^2}{r_2^5}
+		\end{cases}
+	\end{equation}
 	
+	On peut alors remplacer les coordonnées de L1 dans ces équations (on fait alors une composition de développements limités). On sait que L1 a pour coordonnée $((1-\mu)R-(\frac{\mu}{3})^\frac{1}{3}R, 0)$ ce qui nous permet d'écrire $r_1^2(L_1) = (1-(\frac{\mu}{3})^\frac{1}{3}R)^2$ ainsi que $r_2^2(L_1) = (\frac{\mu}{3})^\frac{2}{3}R$. On peut reconnaitre, grâce à $y=0$, que
+	\begin{equation}
+		 \begin{cases}
+		 	\bar{\mathcal{U}}_{xx} = -m\omega^2 - 2Gm(\frac{M_1}{r_1^3} + \frac{M_2}{r_2^3})
+		 	\\
+		 	\bar{\mathcal{U}}_{yy} = -m\omega^2 + Gm(\frac{M_1}{r_1^3} + \frac{M_2}{r_2^3})
+		 	\\
+		 	\bar{\mathcal{U}}_{xy} = \bar{\mathcal{U}}_{yx} = 0
+		 \end{cases}
+	\end{equation}
+	et on observe que $\frac{M_2}{r_2^3} = \frac{M_2}{\frac{\mu}{3}R^3} = 3w^2$ et que $\frac{M_1}{r_1^3} = \frac{M_1}{(R-(\frac{\mu}{3})^\frac{1}{3}R)^3} \sim \frac{3M_1}{R^3} \sim \omega^2$ en supposant que $\mu \to 0$ et que $r_1 \simeq R$ (ce qui est vraie si la supposition précédente est correcte). On obtient ainsi, en remplaçant dans les équations précédentes, que
+	\begin{equation}
+		\begin{cases}
+		 	\bar{\mathcal{U}}_{xx} = -9m\omega^2
+			\\
+			\bar{\mathcal{U}}_{yy} = 3m\omega^2
+			\\
+			\bar{\mathcal{U}}_{xy} = \bar{\mathcal{U}}_{yx} = 0
+		\end{cases}
+	\end{equation}
 	
 	
 	
