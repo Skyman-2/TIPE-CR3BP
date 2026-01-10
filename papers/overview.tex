@@ -378,7 +378,7 @@
 		\end{cases}
 	\end{equation}
 	
-	On peut alors remplacer les coordonnées de L1 dans ces équations (on fait alors une composition de développements limités). On sait que L1 a pour coordonnée $((1-\mu)R-(\frac{\mu}{3})^\frac{1}{3}R, 0)$ ce qui nous permet d'écrire $r_1^2(L_1) = (1-(\frac{\mu}{3})^\frac{1}{3}R)^2$ ainsi que $r_2^2(L_1) = (\frac{\mu}{3})^\frac{2}{3}R$. On peut reconnaitre, grâce à $y=0$, que
+	On peut alors remplacer les coordonnées de L1 dans ces équations (on fait alors une composition de développements limités). On sait que L1 a pour coordonnée $((1-\mu)R-(\frac{\mu}{3})^\frac{1}{3}R, 0)$ ce qui nous permet d'écrire $r_1^2(L_1) = (1-(\frac{\mu}{3})^\frac{1}{3}R)^2$ ainsi que $r_2^2(L_1) = (\frac{\mu}{3})^\frac{2}{3}R^2$. On peut reconnaitre, grâce à $y=0$, que
 	\begin{equation}
 		 \begin{cases}
 		 	\bar{\mathcal{U}}_{xx} = -m\omega^2 - 2Gm(\frac{M_1}{r_1^3} + \frac{M_2}{r_2^3})
@@ -399,11 +399,112 @@
 		\end{cases}
 	\end{equation}
 	
+	Le processus est le même pour le point L2. Il faut noter que une partie de la littérature trouvée en ligne affirme que $\frac{1}{m}\bar{\mathcal{U}}_{xx} = \mp \omega^2$. Cette erreur apparait plusieurs fois à travers plusieurs papiers différents, cependant on peut remarquer la présence dans chacun de ces papiers une référence à un texte éducatif de Neil J. Cornish appelé \textit{The Lagrange Points} dans lequel il affirme cette égalité. Nous continuerons l'étude en supposant cette littérature erronée.
 	
+	La linéarisation des équations du mouvement devient alors pour L1 et L2
+	\begin{equation}
+		A =
+		\begin{bmatrix}
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1 \\
+			9\omega^2 & 0
+			& 0 & 2\omega \\
+			0 & -3\omega^2
+			& -2\omega & 0
+		\end{bmatrix}
+	\end{equation}
+	et on peut maintenant chercher les valeurs propres de cette matrice, de manière à obtenir une solution de l'équation différentielle $\dot{X} = AX$ que l'on peut visualiser clairement dans un espace de phase à l'aide de sa version diagonalisée. Il sera important de noter que les axes de l'espace de phase correspondront à la base des vecteurs propres.
 	
-	
-	
-	
+	On calcule le polynôme caractéristique de $A$ :
+	\begin{equation}
+		\label{polynome carac de A}
+		\chi_A =
+		\begin{vmatrix}
+			X & 0 & -1 & 0 
+			\\
+			0 & X & 0 & -1
+			\\
+			-9\omega^2 & 0 & X & - 2 \omega
+			\\
+			0 & 3\omega^2 & 2\omega & X
+		\end{vmatrix}
+		=
+		X\begin{vmatrix}
+			X & 0 & -1
+			\\
+			0 & X & - 2 \omega
+			\\
+			3\omega^2 & 2\omega & X
+		\end{vmatrix}
+		- \begin{vmatrix}
+			0 & X & -1
+			\\
+			-9\omega^2 & 0 & - 2 \omega
+			\\
+			0 & 3\omega^2 & X
+		\end{vmatrix}
+	\end{equation}
+	\begin{equation*}
+		=
+		X^2\begin{vmatrix}
+			X & - 2 \omega
+			\\
+			2\omega & X
+		\end{vmatrix}
+		-X\begin{vmatrix}
+			0 & X
+			\\
+			3\omega^2 & 2\omega
+		\end{vmatrix}
+		-9\omega^2\begin{vmatrix}
+			X & -1
+			\\
+			3\omega^2 & X
+		\end{vmatrix}
+		=
+		X^2(X^2+4\omega^2) + 3\omega^2X^2 - 9\omega^2(X^2+3\omega^2)
+	\end{equation*}
+	\begin{equation*}
+		= X^4 -2\omega^2X^2 - 27\omega^2
+	\end{equation*}
+	qui est un polynôme de degré deux en $X^2$ dont les racines sont
+	\begin{equation}
+		\Delta = 112\omega^2 > 0
+		\implies
+		\begin{cases}
+			r_1 = \omega^2(1 + 2\sqrt{7}) > 0
+			\\
+			r_2 = \omega^2(1 - 2\sqrt{7}) < 0
+		\end{cases}
+	\end{equation}
+	ce qui nous permet de factoriser $\chi_A$, et en utilisant l'identité remarquable $a^2-b^2 = (a+b)(a-b)$ on peut factoriser encore une fois, en remarquant que une solution de $z^2 = r_2$, d'inconnue $z \in \mathbb{C}$ est $i\omega\sqrt{2\sqrt{7}-1}$. On obtient alors la forme factorisée de $\chi_A$, à savoir
+	\begin{equation}
+		\label{polynome carac A scindé}
+		\chi_A = (X-\lambda)(X+\lambda)(X-i\nu)(X+i\nu)
+	\text{ où }
+	\begin{cases}
+		\lambda := \omega\sqrt{1+2\sqrt{7}} \in \mathbb{R}_+
+		\\
+		\nu := \omega\sqrt{2\sqrt{7}-1} \in \mathbb{R}_+
+	\end{cases}
+	\end{equation}
+	ce qui, en notant $Z(P)$ les racines de $P \in \mathbb{R}[X]$, s'écrit simplement $Z(\chi_A) = \{\lambda, -\lambda, i\nu, -i\nu\}$. Et comme on est en dimension finie (à savoir 4 ici), les racines de $\chi_A$ sont exactement les valeurs propres de $A$ : $Sp(A) = Z(\chi_A)$. Il existe alors une base de vecteurs propres que l'on note $B_{p} := (\xi, \eta, \zeta_1, \zeta_2)$ que l'on utilisera aussi comme système de coordonnées pour représenter le mouvement autour de L$_i$. On peut alors écrire
+	\begin{equation}
+		A
+		=
+		P
+		\begin{bmatrix}
+			\lambda & 0 & 0 & 0
+			\\
+			0 & -\lambda & 0 & 0
+			\\
+			0 & 0 & i\nu & 0
+			\\
+			0 & 0 & 0 & -i\nu
+		\end{bmatrix}
+		P^{-1}
+	\end{equation}
+	avec $P$ une matrice de passage à une base de vecteurs propres.
 	
 	
 	
