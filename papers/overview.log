@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  10 JAN 2026 19:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  1 FEB 2026 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,35 +670,35 @@ Package pdftex.def Info: ../images/CR3BP_w_lagrange.pdf  used on input line 274
 
 [7 <../images/CR3BP_w_lagrange.pdf>] [8
 
-] [9] [10] [11
+] [9] [10] [11] [12
 
-] [12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 664--666
-
- []
-
-[13
+] [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 688--690
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 707--712
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 741--744
+Underfull \hbox (badness 10000) in paragraph at lines 700--702
 
  []
 
 [14
 
-] [15] (./overview.aux)
+]
+Underfull \hbox (badness 10000) in paragraph at lines 724--726
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--780
+
+ []
+
+[15
+
+] [16] (./overview.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -709,10 +709,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18173 strings out of 467538
- 369945 string characters out of 5423724
- 776534 words of memory out of 5000000
- 46793 multiletter control sequences out of 15000+600000
+ 18174 strings out of 467538
+ 369960 string characters out of 5423724
+ 777561 words of memory out of 5000000
+ 46794 multiletter control sequences out of 15000+600000
  638722 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,16n,118p,875b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -735,10 +735,10 @@ exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/
 fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on overview.pdf (15 pages, 2006861 bytes).
+Output written on overview.pdf (16 pages, 2009933 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
+ 237 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

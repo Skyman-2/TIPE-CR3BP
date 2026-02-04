@@ -344,6 +344,7 @@
 	
 	
 	\subsection{Stabilité de L1 et L2}
+	\subsubsection{Calcul explicite approché du linéarisé}
 	Dans cette situation, on a exactement le potentiel de la relation (\ref{potential_in_y=0}). On peut alors dériver la relation (\ref{bilan_force_y=0}) selon $x$ et selon $y$. Pour simplifier le processus, on va d'abord dériver un élément $V := -\frac{a}{r(X,y)}$ où $r(X,y) = \sqrt{X^2+y^2}$. On a
 	\begin{equation}
 		\begin{cases}
@@ -413,8 +414,10 @@
 			& -2\omega & 0
 		\end{bmatrix}
 	\end{equation}
-	et on peut maintenant chercher les valeurs propres de cette matrice, de manière à obtenir une solution de l'équation différentielle $\dot{X} = AX$ que l'on peut visualiser clairement dans un espace de phase à l'aide de sa version diagonalisée. Il sera important de noter que les axes de l'espace de phase correspondront à la base des vecteurs propres.
+	et on peut maintenant chercher les valeurs propres de cette matrice, de manière à obtenir une solution de l'équation différentielle $\dot{X} = AX$, ce qui nous permettra d'obtenir une compréhension et de la stabilité du système, et de l'espace de phase.
 	
+	
+	\subsubsection{Réducation du linéarisé sur les sous-espaces stables réels}
 	On calcule le polynôme caractéristique de $A$ :
 	\begin{equation}
 		\label{polynome carac de A}
@@ -488,7 +491,10 @@
 		\nu := \omega\sqrt{2\sqrt{7}-1} \in \mathbb{R}_+
 	\end{cases}
 	\end{equation}
-	ce qui, en notant $Z(P)$ les racines de $P \in \mathbb{R}[X]$, s'écrit simplement $Z(\chi_A) = \{\lambda, -\lambda, i\nu, -i\nu\}$. Et comme on est en dimension finie (à savoir 4 ici), les racines de $\chi_A$ sont exactement les valeurs propres de $A$ : $Sp(A) = Z(\chi_A)$. Il existe alors une base de vecteurs propres que l'on note $B_{p} := (\xi, \eta, \zeta_1, \zeta_2)$ que l'on utilisera aussi comme système de coordonnées pour représenter le mouvement autour de L$_i$. On peut alors écrire
+	ce qui, en notant $Z(P)$ les racines de $P \in \mathbb{R}[X]$, s'écrit simplement $Z(\chi_A) = \{\lambda, -\lambda, i\nu, -i\nu\}$. Et comme on est en dimension finie (à savoir 4 ici), les racines de $\chi_A$ sont exactement les valeurs propres de $A$ : $Sp(A) = Z(\chi_A)$.
+	
+	Soit $z \in \mathbb{C} \setminus \{0\}$ tel que $Az = i\nu z$. Il existe alors $(x,y) \in \mathcal{R}^2$ tel que $z=x+iy$, ce qui donne $Az = Ax + iAy = i\nu x - \nu y$ car $A \in \mathcal{M}_n(\mathbb{R})$. Par unicité de l'écriture complexe, on a que $Ax = -\nu y$ et $Ay = \nu x$ ce qui caractérise l'action de la matrice sur le plan réel $Vect(x,y)$. En notant alors $B_d := (\eta,\xi,\zeta_1,\zeta_2)$ une base où les deux premiers vecteurs sont propres pour $\lambda$ et $-\lambda$, et où les $\zeta_i$ sont tel que $\zeta_1 + i\zeta_2$ est un vecteur propre pour la valeur propre $i\nu$. Avec ces notations, $A$ s'écrit alors
+	
 	\begin{equation}
 		A
 		=
@@ -498,14 +504,44 @@
 			\\
 			0 & -\lambda & 0 & 0
 			\\
-			0 & 0 & i\nu & 0
+			0 & 0 & 0 & \nu
 			\\
-			0 & 0 & 0 & -i\nu
+			0 & 0 & -\nu & 0
 		\end{bmatrix}
 		P^{-1}
 	\end{equation}
-	avec $P$ une matrice de passage à une base de vecteurs propres.
+	avec $P$ la matrice de passage entre la base originale et $B_d$.
 	
+	L'intérêt de cette écriture réside alors dans l'explicitation d'une action d'oscillateur harmonique sur un plan stable de l'espace de phase. Cela nous permet aussi d'éviter la présence de nombres complexes, facilitant notre raisonnement.
+	
+	
+	\subsubsection{Calcul de la matrice de passage}
+	Dans cette partie, on cherche à calculer les vecteurs propres $\eta$, $\xi$, et $\zeta_1 + i\zeta_2 =: \zeta$ associés respectivement aux valeurs propres $\lambda$, $-\lambda$ et $i\nu$.
+	On résout alors les équations aux valeurs propres
+	\begin{equation}
+		\label{eq aux vp eta}
+		\begin{cases}
+			A\eta = \lambda \eta
+			\\
+			A\xi = -\lambda \xi
+			\\
+			A\zeta = i\nu \zeta
+		\end{cases}
+	\end{equation}
+	
+	Pour ce faire, on pose $\eta =: (\eta_1, \eta_2, \eta_3, \eta_4)$. Alors $\eta$ vérifie l'équation \ref{eq aux vp eta}.1 si, et seulement si $\eta$ vérifie le système
+	\begin{equation}
+		(S) \ \
+		\begin{cases}
+			\eta_3 = \lambda \eta_1
+			\\
+			\eta_4 = \lambda \eta_2
+			\\
+			9\omega^2 \eta_1 + 2\omega \eta_4 = \lambda \eta_3
+			\\
+			-3\omega^2 \eta_2 + -\omega \eta_3 = \lambda \eta_4	
+		\end{cases}
+	\end{equation}
 	
 	
 	
