@@ -493,9 +493,10 @@
 	\end{equation}
 	ce qui, en notant $Z(P)$ les racines de $P \in \mathbb{R}[X]$, s'écrit simplement $Z(\chi_A) = \{\lambda, -\lambda, i\nu, -i\nu\}$. Et comme on est en dimension finie (à savoir 4 ici), les racines de $\chi_A$ sont exactement les valeurs propres de $A$ : $Sp(A) = Z(\chi_A)$.
 	
-	Soit $z \in \mathbb{C} \setminus \{0\}$ tel que $Az = i\nu z$. Il existe alors $(x,y) \in \mathcal{R}^2$ tel que $z=x+iy$, ce qui donne $Az = Ax + iAy = i\nu x - \nu y$ car $A \in \mathcal{M}_n(\mathbb{R})$. Par unicité de l'écriture complexe, on a que $Ax = -\nu y$ et $Ay = \nu x$ ce qui caractérise l'action de la matrice sur le plan réel $Vect(x,y)$. En notant alors $B_d := (\eta,\xi,\zeta_1,\zeta_2)$ une base où les deux premiers vecteurs sont propres pour $\lambda$ et $-\lambda$, et où les $\zeta_i$ sont tel que $\zeta_1 + i\zeta_2$ est un vecteur propre pour la valeur propre $i\nu$. Avec ces notations, $A$ s'écrit alors
+	Soit $z \in \mathbb{C} \setminus \{0\}$ tel que $Az = i\nu z$. Il existe alors $(x,y) \in \mathbb{R}^2$ tel que $z=x+iy$, ce qui donne $Az = Ax + iAy = i\nu x - \nu y$ car $A \in \mathcal{M}_n(\mathbb{R})$. Par unicité de l'écriture complexe, on a que $Ax = -\nu y$ et $Ay = \nu x$ ce qui caractérise l'action de la matrice sur le plan réel $Vect(x,y)$. En notant alors $B_d := (\eta,\xi,\zeta_1,\zeta_2)$ une base où les deux premiers vecteurs sont propres pour $\lambda$ et $-\lambda$, et où les $\zeta_i$ sont tel que $\zeta_1 + i\zeta_2$ est un vecteur propre pour la valeur propre $i\nu$. Avec ces notations, $A$ s'écrit alors
 	
 	\begin{equation}
+		\label{eq du mvt dz}
 		A
 		=
 		P
@@ -517,9 +518,9 @@
 	
 	\subsubsection{Calcul de la matrice de passage}
 	Dans cette partie, on cherche à calculer les vecteurs propres $\eta$, $\xi$, et $\zeta_1 + i\zeta_2 =: \zeta$ associés respectivement aux valeurs propres $\lambda$, $-\lambda$ et $i\nu$.
-	On résout alors les équations aux valeurs propres
+	On résout alors les équations
 	\begin{equation}
-		\label{eq aux vp eta}
+		\label{eq aux vps}
 		\begin{cases}
 			A\eta = \lambda \eta
 			\\
@@ -528,21 +529,84 @@
 			A\zeta = i\nu \zeta
 		\end{cases}
 	\end{equation}
+	que l'on simplifie en l'équation $(E) \ : \ AX = \rho X$, d'inconnue $X \in \mathcal{M}_{4,1}(\mathbb{C})$, où $\rho$ désigne une valeur propre de $A$.
 	
-	Pour ce faire, on pose $\eta =: (\eta_1, \eta_2, \eta_3, \eta_4)$. Alors $\eta$ vérifie l'équation \ref{eq aux vp eta}.1 si, et seulement si $\eta$ vérifie le système
+	Pour ce faire, on pose $X =: (x_1, x_2, x_3, x_4)$. Alors $X$ vérifie l'équation $(E)$ si, et seulement si $X$ vérifie le système
 	\begin{equation}
-		(S) \ \
 		\begin{cases}
-			\eta_3 = \lambda \eta_1
+			x_3 = \rho x_1
 			\\
-			\eta_4 = \lambda \eta_2
+			x_4 = \rho x_2
 			\\
-			9\omega^2 \eta_1 + 2\omega \eta_4 = \lambda \eta_3
+			9\omega^2 x_1 + 2\omega x_4 = \rho x_3
 			\\
-			-3\omega^2 \eta_2 + -\omega \eta_3 = \lambda \eta_4	
+			-3\omega^2 x_2 + -\omega x_3 = \rho x_4	
 		\end{cases}
+		\underset{(1),(2) \text{ dans } (3),(4)}{\iff}
+		\begin{cases}
+			9\omega^2 x_1 + 2\omega \rho x_2 = \rho^2 x_1
+			\\
+			-3\omega^2 x_2 - 2\omega \rho x_1 = \rho^2 x_2
+		\end{cases}
+		\ \ (S)
 	\end{equation}
+	\begin{equation*}
+		\underset{\omega \neq 0 \text{ et } \rho \neq 0}{\iff} 
+		\begin{cases}
+			x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
+			\\
+			-2\omega \rho x_1 = (\rho^2+3\omega^2)x_2
+		\end{cases}
+		\iff
+		\begin{cases}
+		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
+		\\
+		-4\omega^2 \rho^2 x_1 = (\rho^2-9\omega^2)(\rho^2+3\omega^2)x_1
+		\end{cases}
+	\end{equation*}
+	\begin{equation*}
+	\iff
+	\begin{cases}
+		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
+		\\
+		(\rho^2-9\omega^2)(\rho^2+3\omega^2)+4\omega^2 \rho^2 = 0
+	\end{cases}
+	\iff
+	\begin{cases}
+		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
+		\\
+		\rho^4 + 3\omega^2\rho^2 - 9\omega^2\rho^2 - 27\omega^4 + 4\omega^2 \rho^2 = \chi_A(\rho) = 0
+	\end{cases}
+	\end{equation*}
+	\begin{equation*}
+		\iff x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
+		\iff
+		X = \begin{bmatrix}
+			2\omega \rho
+			\\ 
+			\rho^2-9\omega^2
+			\\
+			2\omega \rho^2
+			\\
+			(\rho^2-9\omega^2) \rho
+		\end{bmatrix}
+	\end{equation*}
 	
+	Le vecteur propre associé à une valeur propre réelle (\textit{resp.} complexe) est alors réel (\textit{resp.} complexe). On cherche maintenant $\zeta_1$ et $\zeta_2$ en sachant que $\zeta = (2\omega \nu i, -(\nu^2+9\omega^2), -2\omega \nu^2,-i(\nu^2+9\omega^2)\nu)^T$. Par unicité de l'écriture complexe, on a immédiatement $\zeta_1 = (0, -(\nu^2+9\omega^2), -2\omega\nu^2, 0)^T$ et $\zeta_2 = (2\omega\nu,0,0,-\nu(\nu^2+9\omega^2))$.
+	
+	Ainsi, la matrice de passage de la relation \ref{eq du mvt dz} s'écrit
+	\begin{equation}
+		P = (\eta, \xi, \zeta_1, \zeta_2) =
+		\begin{bmatrix}
+			2\omega \lambda & -2\omega\lambda & 0 & 2\omega\nu
+			\\
+			\lambda^2 - 9\omega^2 & \lambda^2 - 9\omega^2 & -(\nu^2+9\omega^2) & 0
+			\\
+			2\omega\lambda^2 & 2\omega\lambda^2 & -2\omega\nu^2 & 0
+			\\
+			\lambda(\lambda^2 - 9\omega^2) & -\lambda(\lambda^2 - 9\omega^2) & 0 & -\nu(\nu^2+9\omega^2)
+		\end{bmatrix}
+	\end{equation}
 	
 	
 	
