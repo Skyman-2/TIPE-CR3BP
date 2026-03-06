@@ -14,3 +14,4 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Calcul explicite approché du linéarisé}{9}{}%
 \contentsline {subsubsection}{\numberline {2.2.2}Réducation du linéarisé sur les sous-espaces stables réels}{10}{}%
 \contentsline {subsubsection}{\numberline {2.2.3}Calcul de la matrice de passage}{11}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}Calcul des solutions du linéarisé}{12}{}%

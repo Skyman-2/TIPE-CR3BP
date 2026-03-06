@@ -25,7 +25,7 @@ def __init__(system):
         data = json.load(f)[system]
     update_system(data)
     return data
-working_system = __init__("earth_moon")
+working_system = __init__("sun_earth")
 
 
 # traj1 = vt.simulate_trajectory(
@@ -60,21 +60,22 @@ vm = 1023.15
 # )
 
 traj = vt.simulate_trajectory(
-    [7e6, 0., 0., 8e3],
-    2.5e6,
+    [1.47e11, 0., 0., 8e3],
+    2.5e7,
     10,
     working_system
 )
 
-trajNew = rk.simulate_trajectory(
-    [7e6, 0., 0., 8e3],
-    2.5e6,
-    10,
-    working_system
-)
+# trajNew = rk.simulate_trajectory(
+#     [7e9, 0., 0., 8e4],
+#     2.5e6,
+#     10,
+#     working_system
+# )
 
 # display.phase_spaces(traj,working_system,"plasma")
-display.ref_traj_comp(traj,trajNew,working_system,time_step=10,color_palette="plasma")
+# display.ref_traj_comp(traj,trajNew,working_system,time_step=10,color_palette="plasma")
+display.phase_spaces(traj,working_system,"plasma")
 
 
 plt.show()

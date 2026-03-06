@@ -12,5 +12,19 @@
             "radius": 1.737e6
         },
         "radius": 3.844e8
+    },
+    "sun_earth":
+    {
+        "body1": {
+            "name": "Sun",
+            "mass": 1.988e30,
+            "radius": 6.96e8
+        },
+        "body2": {
+            "name": "Earth",
+            "mass": 5.972e24,
+            "radius": 6.371e6
+        },
+        "radius": 1.484e11
     }
 }

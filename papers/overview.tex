@@ -317,6 +317,7 @@
 	
 	On peut alors linéariser les équations du mouvement et on obtient
 	\begin{equation}
+		\label{eq du mvt}
 		\dot{X}
 		=
 		\begin{bmatrix}
@@ -607,21 +608,41 @@
 			\lambda(\lambda^2 - 9\omega^2) & -\lambda(\lambda^2 - 9\omega^2) & 0 & -\nu(\nu^2+9\omega^2)
 		\end{bmatrix}
 	\end{equation}
+	et on peut maintenant chercher la forme explicite des solutions de l'équation du mouvement linéarisé.
 	
+	\subsubsection{Calcul des solutions du linéarisé}
+	On peut réécrire la relation (\ref{eq du mvt}) à savoir $\dot{X} = AX$ sous la forme $\dot{Y} = DY$ où $Y := P^{-1}X$ et $D$ est la matrice dans la relation (\ref{eq du mvt dz}). Alors l'ensemble des solutions est 
 	
+	\begin{equation}
+		\mathcal{S}_{dz} = \{
+		t \mapsto 
+			\begin{bmatrix}
+				C_1e^{\lambda t} \\ C_2e^{- \lambda t} \\ C_3 \cos(\nu t) + C_4 \sin(\nu t) \\ -C_3\cos(\nu t) + C_4\cos(\nu t)
+			\end{bmatrix}
+		, (C_1, C_2, C_3, C_4) \in \mathbb{R}^4
+		\}
+	\end{equation} 
+	et pour obtenir l'ensemble des solutions $\mathcal{S}$ de la relation (\ref{eq du mvt}) il suffit de calculer $X = PY$. De plus, comme on recherche les trajectoires, on peut se limiter au calcul des deux premières composantes de $X$, et après calcul on obtient que
 	
+	\begin{equation}
+		X_{pos} \in \{
+		\begin{bmatrix}
+			2\omega\lambda(C_1e^{\lambda t} - C_2e^{-\lambda t}) + 2\omega\nu(-C_3\sin(\nu t) + C_4\cos(\nu t))
+			\\
+			(\lambda^2 - 9\omega^2)(C_1e^{\lambda t} + C_2e^{-\lambda t}) - (\nu^2+9\omega^2)(C_3\cos(\nu t) + C_4\sin(\nu t))
+		\end{bmatrix},
+		(C_1,C_2,C_3,C_4) \in \mathbb{R}^4
+		\}
+	\end{equation}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	On observe clairement que la position présente un comportement oscillatoire de fréquence $\frac{\nu}{2\pi}$ modulé par une exponentielle, dont le temps caractéristique est $\frac{1}{\lambda}$. On peut alors faire une application numérique avec l'expression approché de $\lambda$ de la relation (\ref{polynome carac A scindé}), ce qui donne dans le cadre du système Terre-Lune, puis du système Terre-Soleil
+	\begin{equation}
+		\begin{cases}
+			\frac{1}{\lambda_{Lune/Terre}} = \frac{T_Lune}{2\pi}\frac{1}{\sqrt{1+2\sqrt{7}}} \approxeq \frac{28\times24\times3600}{2\pi}\times\frac{1}{\sqrt{1+2\sqrt{7}}} = 1,54.10^{5}s = 1,8 \ \text{jours}
+			\\
+			\frac{1}{\lambda_{Terre/Soleil}} = 2,0.10^6s = 23 \ \text{jours}
+		\end{cases}
+	\end{equation}
 	
 	\clearpage
 	\section*{Calculs détaillés}
