@@ -281,3 +281,60 @@ def phase_spaces(traj,working_system,color_palette):
 
     axes["phase2"].grid(True)
     plot_on_ax(axes["phase2"],ps.phase_space_yslice(traj),color_palette)
+
+
+
+def one_traj_relative_origin_display(traj,working_system,time_step=10,color_palette="plasma"):
+    layout = [
+        ["traj","traj","phase","phase"],
+        ["traj","traj","phase","phase"],
+        ["relative_radius", "relative_radius", "energy", "energy"],
+        ["relative_radius", "relative_radius", "energy", "energy"]
+    ]
+    fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
+    plot_on_ax(axes["traj"],traj,color_palette,isTraj=True)
+    plot_on_ax_bodies(axes["traj"],working_system)
+    plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
+
+    axes["phase"].grid(True)
+    plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
+
+    axes["energy"].grid(True)
+    plot_on_ax(axes["energy"],en.energy(traj,working_system,time_step),color_palette)
+
+    origin_constant_traj = [traj[0]+[0.1,0,0,0] for i in range(len(traj))]
+    origin_radius = en.radius_through_time(origin_constant_traj,time_step)
+    traj_radius = en.radius_through_time(traj,time_step)
+    orbit_degenerescence = rd.relative_diff_1D(traj_radius, origin_radius, time_step)
+
+    axes["relative_radius"].grid(True)
+    plot_on_ax(axes["relative_radius"],orbit_degenerescence,color_palette)
+
+    labels = {
+        "traj": {
+            "name": "Trajectory",
+            "xlabel": "x [m]",
+            "ylabel": "y [m]",
+        },
+        "phase": {
+            "name": "Phase Space",
+            "xlabel": "r [m]",
+            "ylabel": "v [m/s]",
+        },
+        "energy": {
+            "name": "Energy",
+            "xlabel": "Time [s]",
+            "ylabel": "Energy [J]",
+        },
+        "relative_radius": {
+            "name": "Relative Radius",
+            "xlabel": "Time [s]",
+            "ylabel": "Ratio",
+        },
+    }
+    autonamed_subplot(axes, labels)
+
+    for k in ["energy", "relative_radius"]:
+        force_offset_scale(axes[k])
+    
+    return orbit_degenerescence

@@ -206,7 +206,7 @@
 			\end{cases}
 		\end{equation*}
 		ce qui se linéarise en
-		\begin{equation*}
+		\begin{equation}
 			\begin{bmatrix}
 				0 & 0 & 1 & 0 \\
 				0 & 0 & 0 & 1 \\
@@ -216,8 +216,57 @@
 				& -2\omega & 0
 			\end{bmatrix}
 			=: A
-		\end{equation*}
+		\end{equation}
 		où $\mathcal{\bar{U}}_{wz}^i = \frac{\partial ^2\bar{U}}{\partial w \partial z}(x_{L_i}, y_{L_i})$
+	\end{frame}
+	
+	
+	\subsection{Stabilité de L1 et L2}
+	\begin{frame}
+		Par calcul d'équivalent, on obtient
+		\begin{equation*}
+			\begin{cases}
+				\bar{\mathcal{U}}_{xx} = -9m\omega^2
+				\\
+				\bar{\mathcal{U}}_{yy} = 3m\omega^2
+				\\
+				\bar{\mathcal{U}}_{xy} = \bar{\mathcal{U}}_{yx} = 0
+			\end{cases}
+		\end{equation*}
+		donc le linéarisé autour de L1 et L2 est
+		\begin{equation*}
+			A =
+			\begin{bmatrix}
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 \\
+				9\omega^2 & 0
+				& 0 & 2\omega \\
+				0 & -3\omega^2
+				& -2\omega & 0
+			\end{bmatrix}
+		\end{equation*}
+	\end{frame}
+	
+	\begin{frame}
+		Diagonalisation de $A$ :
+		\begin{equation*}
+			\label{eq du mvt dz}
+			A
+			=
+			P
+			\begin{bmatrix}
+				\lambda & 0 & 0 & 0
+				\\
+				0 & -\lambda & 0 & 0
+				\\
+				0 & 0 & 0 & \nu
+				\\
+				0 & 0 & -\nu & 0
+			\end{bmatrix}
+			P^{-1}
+		\end{equation*}
+		
+		avec $\lambda = \omega\sqrt{1+2\sqrt{7}} \text{, }\nu = \omega\sqrt{2\sqrt{7}-1}$.
 	\end{frame}
 	
 	
