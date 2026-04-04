@@ -7,12 +7,17 @@
 \usepackage{graphicx}
 \usepackage[french]{babel}
 \usepackage{amsmath}
-\usepackage[]{tcolorbox}
+\usepackage[most]{tcolorbox}
 \usepackage[]{float}
 \usepackage{wrapfig}
 \usepackage{interval}
 \usepackage{amssymb}
 \graphicspath{{../../images/}}
+
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=section]{theorem}{Théorème}%
+{colback=red!5,colframe=red!35!black,fonttitle=\bfseries}{th}
 
 \DeclareMathOperator{\sign}{sign}
 
@@ -31,9 +36,11 @@
 	\label{def_system}
 	Nous étudions le système \emph{satellite de masse m} que l'on associe au point matériel $M$. On se place dans le référentiel galiléen -- que l'on note $R_G$ -- qui à pour centre le barycentre des deux masses $M_1$ et $M_2$ qu'on confondera avec le point matériel auquel leur astre respectif est associé.
 	
-	On supposera que $M_1$ et $M_2$ sont en orbite parfaitement circulaire autour du barycentre, de pulsation de rotation identique $\omega$ constante. Dans le cadre de cette étude, nous considérerons le mouvement plan (à noter qu'il est simple de montrer qu'il n'existe aucun point d'équilibre en dehors du plan $Z=0$).
+	On montre dans la sous-partie suivante que $M_1$ et $M_2$ sont en orbite parfaitement circulaire autour du barycentre, de pulsation de rotation identique $\omega$ constante. Dans le cadre de cette étude, nous considérerons le mouvement plan (à noter qu'il est simple de montrer qu'il n'existe aucun point d'équilibre en dehors du plan $Z=0$).
 	
 	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles (cf. figure \ref{fig:RNG_diag}). On mènera la majorité de notre étude dans ce référentiel.
+	
+	\subsection{Mouvement relatif des masses $M_1$ et $M_2$}
 	
 	\subsection{Expression du potentiel effectif dans $R_{NG}$}
 	\begin{figure}[H]
@@ -541,55 +548,40 @@
 			\\
 			9\omega^2 x_1 + 2\omega x_4 = \rho x_3
 			\\
-			-3\omega^2 x_2 + -\omega x_3 = \rho x_4	
-		\end{cases}
-		\underset{(1),(2) \text{ dans } (3),(4)}{\iff}
-		\begin{cases}
-			9\omega^2 x_1 + 2\omega \rho x_2 = \rho^2 x_1
-			\\
-			-3\omega^2 x_2 - 2\omega \rho x_1 = \rho^2 x_2
-		\end{cases}
-		\ \ (S)
-	\end{equation}
-	\begin{equation*}
-		\underset{\omega \neq 0 \text{ et } \rho \neq 0}{\iff} 
-		\begin{cases}
-			x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
-			\\
-			-2\omega \rho x_1 = (\rho^2+3\omega^2)x_2
+			-3\omega^2 x_2 -2\omega x_3 = \rho x_4	
 		\end{cases}
 		\iff
 		\begin{cases}
-		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
-		\\
-		-4\omega^2 \rho^2 x_1 = (\rho^2-9\omega^2)(\rho^2+3\omega^2)x_1
+			x_3 = \rho x_1
+			\\
+			x_4 = \rho x_2
+			\\
+			(9\omega^2-\rho^2) x_1 + 2\omega \rho x_2 = 0
+			\\
+			(-3\omega^2-\rho^2) x_2 -2\omega \rho x_1 =	0
 		\end{cases}
-	\end{equation*}
+	\end{equation}
+	et on résout le système de Cramer $2\times 2$ défini par les lignes 3 et 4, or si le déterminant de ce système est non-nul, alors $x_1 = x_2 = 0$ et on veut des solutions non-nulles, donc les lignes du système sont liées, et avec la ligne 3 par exemple, on a
 	\begin{equation*}
-	\iff
-	\begin{cases}
 		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
-		\\
-		(\rho^2-9\omega^2)(\rho^2+3\omega^2)+4\omega^2 \rho^2 = 0
-	\end{cases}
-	\iff
-	\begin{cases}
-		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
-		\\
-		\rho^4 + 3\omega^2\rho^2 - 9\omega^2\rho^2 - 27\omega^4 + 4\omega^2 \rho^2 = \chi_A(\rho) = 0
-	\end{cases}
-	\end{equation*}
-	\begin{equation*}
-		\iff x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
 		\iff
 		X = \begin{bmatrix}
-			2\omega \rho
+			1
 			\\ 
-			\rho^2-9\omega^2
+			\frac{\rho^2-9\omega^2}{2\omega \rho}
 			\\
-			2\omega \rho^2
+			\rho
 			\\
-			(\rho^2-9\omega^2) \rho
+			\frac{(\rho^2-9\omega^2)\rho}{2\omega \rho}
+		\end{bmatrix}
+		= \begin{bmatrix}
+			1
+			\\
+			\sigma
+			\\
+			\rho
+			\\
+			\sigma \rho
 		\end{bmatrix}
 	\end{equation*}
 	
@@ -638,11 +630,23 @@
 	On observe clairement que la position présente un comportement oscillatoire de fréquence $\frac{\nu}{2\pi}$ modulé par une exponentielle, dont le temps caractéristique est $\frac{1}{\lambda}$. On peut alors faire une application numérique avec l'expression approché de $\lambda$ de la relation (\ref{polynome carac A scindé}), ce qui donne dans le cadre du système Terre-Lune, puis du système Terre-Soleil
 	\begin{equation}
 		\begin{cases}
-			\frac{1}{\lambda_{Lune/Terre}} = \frac{T_Lune}{2\pi}\frac{1}{\sqrt{1+2\sqrt{7}}} \approxeq \frac{28\times24\times3600}{2\pi}\times\frac{1}{\sqrt{1+2\sqrt{7}}} = 1,54.10^{5}s = 1,8 \ \text{jours}
+			\frac{1}{\lambda_{Lune/Terre}} = \frac{T_{Lune}}{2\pi}\frac{1}{\sqrt{1+2\sqrt{7}}} \approxeq \frac{28\times24\times3600}{2\pi}\times\frac{1}{\sqrt{1+2\sqrt{7}}} = 1,54.10^{5}s = 1,8 \ \text{jours}
 			\\
 			\frac{1}{\lambda_{Terre/Soleil}} = 2,0.10^6s = 23 \ \text{jours}
 		\end{cases}
 	\end{equation}
+	
+	
+	
+	\clearpage
+	
+	\section{Dégénérescence des orbites autour de L1 et L2}
+	Il a été établi dans la partie précédente que les points L1 et L2 ne sont pas des points d'équilibre stable, mais des points d'équilibre de type "col", ou encore "selle". Un théorème de Lyapunov, souvent connu sous le nom de \textit{Lyapunov Center Theorem}, démontre l'existence d'une famille d'orbites dite de Lyapunov dans le plan sous réserve de vérification des hypothèses. Ces orbites sont instables. On mènera alors une étude dans le cadre de la théorie de Floquet qui visera à caractériser la dégénérescence de ces orbites.
+	
+	\subsection{Existence d'orbites périodiques}
+	\begin{theorem}{du centre de Lyapunov}
+		Soit $\dot{x} = H(x)$ un système Hamiltonien de $\mathbb{R}^{2n}$, $x_0$ une position d'équilibre identifiée à $0$, $A = \frac{\partial H}{\partial x}(0)$ la matrice du système linéarisé. On suppose que le spectre de A est de la forme $Sp(A) = \{ \pm i\omega, \lambda_3, \dots, \lambda_{2n} \}$, où $\omega > 0$. Si $\forall j \in [|3,2!n|], \frac{\lambda_j}{iw}\notin\mathbb{Z}$, alors il existe une famille à un paramètre d'orbites périodiques issues de 0.
+	\end{theorem}
 	
 	
 	

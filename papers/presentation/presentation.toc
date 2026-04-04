@@ -1,8 +1,10 @@
 \babel@toc {french}{}\relax 
 \beamer@sectionintoc {1}{Coordonnées des points d'équilibre}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{Définition du système, expression du potentiel effectif}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Coordonnées des points colinéaires}{6}{0}{1}
-\beamer@subsectionintoc {1}{3}{Coordonnées des points équilatéraux}{8}{0}{1}
-\beamer@sectionintoc {2}{Stabilité des points de Lagrange}{11}{0}{2}
-\beamer@subsectionintoc {2}{1}{Linéarisation des équations du mouvement}{12}{0}{2}
-\beamer@subsectionintoc {2}{2}{Stabilité de L1 et L2}{13}{0}{2}
+\beamer@subsectionintoc {1}{1}{Système, potentiel apparent}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Coordonnées des points colinéaires}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Coordonnées des points équilatéraux}{9}{0}{1}
+\beamer@sectionintoc {2}{Stabilité des points de Lagrange}{12}{0}{2}
+\beamer@subsectionintoc {2}{1}{Linéarisation des équations du mouvement}{13}{0}{2}
+\beamer@subsectionintoc {2}{2}{Stabilité de L1 et L2}{14}{0}{2}
+\beamer@sectionintoc {3}{Orbites autour de L1 et L2}{16}{0}{3}
+\beamer@subsectionintoc {3}{1}{Existence d'orbites planaires}{17}{0}{3}
