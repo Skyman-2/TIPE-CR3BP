@@ -561,7 +561,8 @@
 			(-3\omega^2-\rho^2) x_2 -2\omega \rho x_1 =	0
 		\end{cases}
 	\end{equation}
-	et on résout le système de Cramer $2\times 2$ défini par les lignes 3 et 4, or si le déterminant de ce système est non-nul, alors $x_1 = x_2 = 0$ et on veut des solutions non-nulles, donc les lignes du système sont liées, et avec la ligne 3 par exemple, on a
+	
+	On résout alors le système de Cramer $2\times 2$ défini par les lignes 3 et 4. Or, si le déterminant de ce système est non-nul, alors $x_1 = x_2 = 0$, et comme on cherche des solutions non-nulles, on se place dans le cas où les lignes du système sont liées. Avec la ligne 3 par exemple, on obtient
 	\begin{equation*}
 		x_2 = \frac{\rho^2-9\omega^2}{2\omega \rho}x_1
 		\iff
@@ -585,20 +586,14 @@
 		\end{bmatrix}
 	\end{equation*}
 	
-	Le vecteur propre associé à une valeur propre réelle (\textit{resp.} complexe) est alors réel (\textit{resp.} complexe). On cherche maintenant $\zeta_1$ et $\zeta_2$ en sachant que $\zeta = (2\omega \nu i, -(\nu^2+9\omega^2), -2\omega \nu^2,-i(\nu^2+9\omega^2)\nu)^T$. Par unicité de l'écriture complexe, on a immédiatement $\zeta_1 = (0, -(\nu^2+9\omega^2), -2\omega\nu^2, 0)^T$ et $\zeta_2 = (2\omega\nu,0,0,-\nu(\nu^2+9\omega^2))$.
-	
 	Ainsi, la matrice de passage de la relation \ref{eq du mvt dz} s'écrit
 	\begin{equation}
-		P = (\eta, \xi, \zeta_1, \zeta_2) =
-		\begin{bmatrix}
-			2\omega \lambda & -2\omega\lambda & 0 & 2\omega\nu
-			\\
-			\lambda^2 - 9\omega^2 & \lambda^2 - 9\omega^2 & -(\nu^2+9\omega^2) & 0
-			\\
-			2\omega\lambda^2 & 2\omega\lambda^2 & -2\omega\nu^2 & 0
-			\\
-			\lambda(\lambda^2 - 9\omega^2) & -\lambda(\lambda^2 - 9\omega^2) & 0 & -\nu(\nu^2+9\omega^2)
-		\end{bmatrix}
+		P = \begin{bmatrix}
+			1 & 1 & 1 & 1 \\
+			-\sigma & \sigma & -i\tau & i\tau \\
+			\lambda & -\lambda & i\nu & -i\nu \\
+			-\lambda\sigma & -\lambda\sigma & \nu\tau & \nu\tau
+		\end{bmatrix}, \text{ avec } \sigma = \frac{9\omega^2-\lambda^2}{2\omega\lambda} \text{ et } \tau = -\frac{9\omega^2+\nu^2}{2\omega\nu}
 	\end{equation}
 	et on peut maintenant chercher la forme explicite des solutions de l'équation du mouvement linéarisé.
 	

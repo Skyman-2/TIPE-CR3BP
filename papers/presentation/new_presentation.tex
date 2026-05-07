@@ -1,0 +1,380 @@
+\documentclass{beamer}
+
+
+\usepackage[]{inputenc}
+\usepackage[]{graphicx}
+\usetheme{CambridgeUS}
+\usefonttheme{serif}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage[]{float}
+\usepackage{wrapfig}
+\usepackage{interval}
+\usepackage{amssymb}
+\usepackage[]{tikz}
+\usetikzlibrary{calc}
+\usepackage{caption}
+\usepackage{subcaption}\usepackage{chngcntr}
+
+\graphicspath{{./figures/}}
+
+\newcommand{\textcircledd}[1]{%
+	\tikz[baseline=(letter.base)] \node[draw, circle, inner sep=1pt] (letter) {#1};%
+}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamerfont{subsection in toc}{size=\scriptsize}
+\setbeamerfont{section in toc}{size=\small}
+
+\title[Les points de Lagrange]{Orbiter autour de... rien?\\{\normalsize Stabilité des points de Lagrange et cinématique dans leur voisinage}}
+\author[ABDELOUAHAB Yannis]{\textbf{ABDELOUAHAB Yannis}, DUPLOUY Paul-Emmanuel}
+\institute[21691]{SCEI 21691}
+\date{Session 2026}
+
+
+% Associé au package chngcntr pour numéroter les figures en 2.1.3 à la place de 17 par exemple
+\counterwithin{figure}{subsection}
+\renewcommand{\thefigure}{\thesubsection.\arabic{figure}}
+
+
+\definecolor{darkred}{HTML}{7a2626}
+\definecolor{captioncolor}{HTML}{660000}
+\setbeamercolor{caption name}{fg=captioncolor}
+
+
+% Compteur par ChatGPT
+\setbeamertemplate{caption}[numbered]
+\makeatletter
+\@addtoreset{figure}{section}
+\@addtoreset{figure}{subsection}
+\makeatother
+\renewcommand{\thefigure}{%
+	\ifnum\value{subsection}=0
+	\arabic{section}.\arabic{figure}%
+	\else
+	\arabic{section}.\arabic{subsection}.\arabic{figure}%
+	\fi
+}
+\captionsetup[figure]{justification=centering}
+% Fin du code par ChatGPT (fonctionne normalement bien)
+\setbeamerfont{caption}{size=\scriptsize}
+
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[circle]
+\setbeamercolor{itemize item}{fg=black}
+\setbeamercolor{itemize subitem}{fg=black}
+\setbeamercolor{itemize subsubitem}{fg=black}
+
+
+% Pour faire les sources des photos
+\newcommand{\photosources}[1]{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[
+		anchor=south west,
+		yshift=0.28cm,
+		font=\tiny,
+		text=gray!110
+		] at (current page.south west)
+		{\textit{Source(s)} : #1};
+	\end{tikzpicture}%
+}
+
+\newtcolorbox{importantresult}[1]{
+	coltitle=darkred,
+	title={#1},
+	colback=red!2,
+	colframe=darkred!20,
+	boxrule=1pt,
+	arc=.5mm
+}
+
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Sommaire}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+
+\begin{document}	
+	
+	
+	
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	
+	
+	
+	\section{Objectif}
+	\begin{frame}
+		\frametitle{Introduction}
+		\begin{figure}[h]
+			\centering
+			\begin{subfigure}[b]{0.2\textwidth}
+				\centering
+				\uncover<1->{\includegraphics[width=\linewidth]{./euler_portrait.jpg}}
+				\caption{Leonhard Euler}
+				\label{fig:portrait de Euler}
+			\end{subfigure}\hfill
+			\begin{subfigure}[b]{0.23\textwidth}
+				\centering
+				\uncover<1->{\includegraphics[width=\linewidth]{lagrange_portrait.jpg}}
+				\caption{Joseph-Louis Lagrange}
+				\label{fig:portrait de Lagrange}
+			\end{subfigure}\hfill
+			\begin{subfigure}[b]{0.45\textwidth}
+				\centering
+				\uncover<2->{\includegraphics[width=\linewidth]{webb_orbit.png}}
+				\uncover<2->{\caption{Orbite du James Webb Space Telescope}}
+				\label{fig:orbite de JWST}
+			\end{subfigure}
+			\label{fig:firstfig}
+			\caption{}
+		\end{figure}
+
+		\photosources{NASA \;|\; Wikimedia Commons}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Objectif}
+		\textbf{Objectif :}
+		\linebreak
+		
+		Comprendre en quoi les points de Lagrange $L_1$ et $L_2$ sont intéressants pour les missions spatiales d'observation, et leur utilité dans la création de trajectoires moins demandeuses en carburant.
+	\end{frame}
+	
+
+	
+	
+	
+	\section[Étude des points colinéaires]{Dynamique au voisinage des points d'équilibres colinéaires}
+	
+	\subsection{Définition du système, équations du mouvement}
+	\begin{frame}
+		\frametitle{Choix du référentiel}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{ref_rng_diag.pdf}
+			\caption{Plan $(O, \vec{u}_x, \vec{u_y})$ dans le référentiel barycentrique $R_{NG}$ en co-rotation avec le système Soleil–Terre.}
+			\label{fig:schéma du référentiel de co-rotation avec la ligne M1-M2}
+		\end{figure}
+		{\footnotesize Avec $\mu := \frac{M_2}{M_1+M_2}$ le \textit{coefficient de masse} du système.}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Équations du mouvement}
+		Les équations du mouvement dans le plan défini à la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2} sont :
+		\begin{equation*}
+			\label{eq du mvt}
+			\begin{cases}
+				\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\bar{\mathcal{U}}_x \\
+				\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\bar{\mathcal{U}}_y
+			\end{cases}
+		\end{equation*}
+		\pause
+		et on en déduit :
+		\begin{importantresult}{Expression du potentiel apparent}
+			\begin{equation}
+				\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
+				\label{expression du potentiel apparent}
+			\end{equation}
+		\end{importantresult}
+		{\small où $U(x,y) = \mathcal{E}_{p,1} + \mathcal{E}_{p,2}$ est la somme des énergies potentielles.}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Représentation du potentiel apparent}
+		\begin{figure}
+			\includegraphics[width=1\linewidth]{potential_apparent_2D_moi.png}
+			\caption{Tracé du potentiel apparent $\bar{U}$ en Python (cf. Annexe \ref{code python du tracé de potentiel apparent}) avec des grandeurs arbitraires.}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Représentation du potentiel apparent}
+		\begin{figure}
+			\includegraphics[width=0.7\linewidth]{potentiel_apparent_3D.png}
+			\caption{Représentation 3D du potentiel apparent.}
+		\end{figure}
+		\photosources{Dynamical Systems, the Three-Body Problem
+			and Space Mission Design}
+	\end{frame}
+	
+	\subsection{Localisation des points d'équilibre}
+	\begin{frame}
+		\begin{importantresult}{Condition nécessaire d'équilibre :}
+			\begin{equation}
+				\label{condition nécessaire d'équilibre}
+				\nabla \bar{U}(x,y) = \begin{bmatrix}
+					\frac{\partial \bar{U}}{\partial x} (x,y) \\ 
+					\frac{\partial \bar{U}}{\partial y} (x,y)
+				\end{bmatrix} = 0
+			\end{equation}
+		\end{importantresult}
+		
+		\bigskip
+		\bigskip
+		
+		\pause
+		
+		\begin{columns}
+			\column{0.48\linewidth}
+			\textbf{Cas $y=0$ :}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\textwidth]{graphe_potentiel_en_x.png}
+				\caption{Tracé de $\bar{U}(\cdot, 0)$.}
+			\end{figure}
+			
+			\column{0.04\textwidth}
+			\centering
+			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
+			
+			\pause
+			\column{0.48\linewidth}
+			\textbf{Cas général :}
+			
+			{\small Si on suppose $y \neq 0$ alors on a la condition}
+			\begin{equation*}
+				r_1 = r_2 = R
+			\end{equation*}
+			{\small où $r_1$ et $r_2$ sont défini comme dans la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2}.}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Solutions à la condition (\ref{condition nécessaire d'équilibre})}
+		\begin{figure}[H]
+			\centering
+			\label{tab:toutes_les_coord}
+			\renewcommand{\arraystretch}{1.6}
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Point & Coordonnée en $x$ & Coordonnée en $y$
+				\\ \hline
+				L1 & $((1-\mu) - (\frac{\mu}{3})^{\frac{1}{3}})R$ & 0
+				\\ \hline
+				L2 & $((1-\mu) + (\frac{\mu}{3})^{\frac{1}{3}})R$ & 0
+				\\ \hline
+				L3 & $(-1-\frac{5\mu}{12})R$ & 0
+				\\ \hline
+				L4 & ($(\frac{1}{2}-\mu)R$) & $\frac{\sqrt{3}}{2}R$
+				\\ \hline
+				L5 & ($(\frac{1}{2}-\mu)R$) & $-\frac{\sqrt{3}}{2}R$
+				\\ \hline
+			\end{tabular}
+			\caption{Coordonnées des points de Lagrange.}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Représentation des points de Lagrange}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\textwidth]{ref_rng_avec_points_deq.pdf}
+			\caption{Positions des points de Lagrange dans le plan d'étude.}
+		\end{figure}
+	\end{frame}
+	
+	
+	\subsection{Stabilité des points colinéaires}
+	\begin{frame}
+		\frametitle{Linéarisation des équations du mouvement}
+		Les équations du mouvements sont
+		\begin{equation*}
+			\label{équations du mouvement}
+			\begin{cases}
+				\dot{x} = v_x
+				\\
+				\dot{y} = v_y
+				\\
+				\dot{v_x} = \ddot{x} = 2\omega\dot{y} - \frac{1}{m}\bar{\mathcal{U}}_x
+				\\
+				\dot{v_y} = \ddot{y} = - 2\omega\dot{x} - \frac{1}{m}\bar{\mathcal{U}}_y
+			\end{cases}
+		\end{equation*}
+		Ce qui se linéarise en
+		\begin{equation}
+			\begin{bmatrix}
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 \\
+				-\frac{1}{m}\bar{\mathcal{U}}_{xx}^i & -\frac{1}{m}\bar{\mathcal{U}}_{xy}^i
+				& 0 & 2\omega \\
+				-\frac{1}{m}\bar{\mathcal{U}}_{yx}^i & -\frac{1}{m}\bar{\mathcal{U}}_{yy}^i
+				& -2\omega & 0
+			\end{bmatrix}
+			=: A
+		\end{equation}
+		où $\mathcal{\bar{U}}_{wz}^i = \frac{\partial ^2\bar{U}}{\partial w \partial z}(x_{L_i}, y_{L_i})$
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Résolution}
+		Le calcul du polynôme caractéristique $\chi_A$ de $A$ nous donne :
+		\begin{equation*}
+			A = P
+			\begin{bmatrix}
+				\lambda & 0 & 0 & 0 \\
+				0 & -\lambda & 0 & 0 \\
+				0 & 0 & i\nu & 0 \\
+				0 & 0 & 0 & -i\nu
+			\end{bmatrix}
+			P^{-1}
+		\end{equation*}
+		On en déduit l'expression explicite des solutions dans l'espace :
+		{\scriptsize 		
+		\begin{equation}
+			X_{pos} \in \{ t \to
+			\begin{bmatrix}
+				C_1e^{\lambda t} + C_2e^{-\lambda t} + C_3\sin(\nu t) + C_4\cos(\nu t)
+				\\
+				C_1e^{\lambda t} + C_2e^{-\lambda t} + C_3\cos(\nu t) + C_4\sin(\nu t)
+			\end{bmatrix},
+			(C_1,C_2,C_3,C_4) \in \mathbb{R}^4
+			\}
+		\end{equation}}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Caractéristiques d'instabilités : théorie et simulation}
+	\end{frame}
+	
+	
+	
+	
+	
+
+	
+	\section[Orbites autour de L1 et L2]{Dynamique et stabilité des orbites autour de L1 et L2}
+	\subsection{Existence d'orbites périodiques}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}
