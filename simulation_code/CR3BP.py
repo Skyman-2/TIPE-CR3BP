@@ -51,25 +51,25 @@ working_system = __init__("earth_moon")
 #     working_system
 # )
 
-x_L1 = dich.dichotomy(0, working_system["radius"], 10, working_system, 10)
+x_L1 = dich.dichotomy(0, working_system["radius"], precision=10, system=working_system, step=10)
 
 traj_startatL1_1 = rk4.simulate_trajectory(
     [x_L1, 0., 0., 0.],
-    1e4,
-    0.1,
+    1e6,
+    1,
     working_system
 )
 
 degenerescence = display.one_traj_relative_origin_display(
     traj_startatL1_1,
     working_system,
-    0.1,
+    1,
     "plasma"
 )
 
 plt.show()
 
-with open("output.csv", "w", newline="") as f:
+with open("processing_code/output.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerows(degenerescence)
 

@@ -16,6 +16,7 @@
 \usetikzlibrary{calc}
 \usepackage{caption}
 \usepackage{subcaption}\usepackage{chngcntr}
+\usepackage{pgfplots}
 
 \graphicspath{{./figures/}}
 
@@ -346,6 +347,72 @@
 	
 	\begin{frame}
 		\frametitle{Caractéristiques d'instabilités : théorie et simulation}
+		
+		\begin{columns}
+			\column{0.7\linewidth}
+			\begin{figure}
+				\scriptsize
+				\centering
+				\begin{tikzpicture}[trim axis left, trim axis right]
+					\begin{axis}[
+							width=0.7\linewidth,
+							height=0.4\linewidth,
+							scale only axis,
+							xlabel={$t$},
+							xlabel style={
+								at={(axis description cs:0.5,0.06)}
+							},
+							ylabel={$x(t)-x_{L1}$},
+							ylabel style={
+								at={(axis description cs:0.1,0.5)}
+							},
+							trim axis left,
+							grid=major,
+							legend style={
+								at={(0.03,0.97)},
+								anchor=north west
+							}
+						]
+						
+						\addplot[
+						only marks,
+						mark=*,
+						]
+						table[
+						col sep=comma,
+						x=t,
+						y=d
+						]
+						{figures/output.csv};
+						
+						\addlegendentry{Simulation}
+						
+        				\addplot[
+						domain=0:1e6,
+						samples=200,
+						thick,
+						] {2e-12*exp(1e-5*x)};
+						
+						\addlegendentry{$y(t) = 2\cdot10^{-12}e^{10^{-5}t}$}
+						
+					\end{axis}
+				\end{tikzpicture}
+				
+				\caption{Interpolation exponentielle de la dégénerescence de la position en $L1$. \textit{Coefficient de détermination de $R^2=0.9893$.}}
+			\end{figure}
+			
+			\column{0.3\linewidth}
+			{\scriptsize \begin{tabular}{|c|c|}
+				\hline
+				$\lambda_{th}$ & $\lambda_{sim}$
+				\\ \hline
+				$\lambda$ & $1\cdot10^{-5}$
+				\\ \hline
+			\end{tabular}}
+			
+		\end{columns}
+		
+		
 	\end{frame}
 	
 	

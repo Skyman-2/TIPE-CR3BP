@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  7 MAY 2026 16:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  7 MAY 2026 20:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1008,14 +1008,121 @@ Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
 )
+(c:/texlive/2025/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
+
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks57
+\t@pgfplots@tokb=\toks58
+\t@pgfplots@tokc=\toks59
+\pgfplots@tmpa=\dimen343
+\c@pgfplots@coordindex=\count399
+\c@pgfplots@scanlineindex=\count400
+
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.te
+x))
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_loader.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfs
+upp_pgfutil-common-lists.tex))
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+cture.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststru
+ctureext.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.co
+de.tex
+\c@pgfplotsarray@tmp=\count401
+)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.c
+ode.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.c
+ode.tex
+\c@pgfplotstable@counta=\count402
+\t@pgfplotstable@a=\toks60
+)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.co
+de.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.
+tex))
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.te
+x)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfsh
+ading.code.tex
+\c@pgfplotslibrarysurf@no=\count403
+
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfsha
+ding.pgfsys-pdftex.def)))
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.t
+ex
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex
+))) (c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.t
+ex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.t
+ex
+\pgfdecoratedcompleteddistance=\dimen344
+\pgfdecoratedremainingdistance=\dimen345
+\pgfdecoratedinputsegmentcompleteddistance=\dimen346
+\pgfdecoratedinputsegmentremainingdistance=\dimen347
+\pgf@decorate@distancetomove=\dimen348
+\pgf@decorate@repeatstate=\count404
+\pgfdecorationsegmentamplitude=\dimen349
+\pgfdecorationsegmentlength=\dimen350
+)
+\tikz@lib@dec@box=\box101
+)
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathmorphing.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathmorphing.code.tex))
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+brarydecorations.pathreplacing.code.tex
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydec
+orations.pathreplacing.code.tex))
+(c:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.conto
+urlua.code.tex)
+\pgfplots@numplots=\count405
+\pgfplots@xmin@reg=\dimen351
+\pgfplots@xmax@reg=\dimen352
+\pgfplots@ymin@reg=\dimen353
+\pgfplots@ymax@reg=\dimen354
+\pgfplots@zmin@reg=\dimen355
+\pgfplots@zmax@reg=\dimen356
+)
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzli
+braryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+
+(c:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.
+tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
 
 Package french3.ldf Warning: OT1 encoding should not be used for French.
 (french3.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french3.ldf)                of your document; reported on input line 103.
+(french3.ldf)                of your document; reported on input line 104.
 
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count399
+\l__color_backend_stack_int=\count406
 )
 (./new_presentation.aux
 Package babel Info: 'french' activates 'french' shorthands.
@@ -1023,24 +1130,24 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `new_presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1078,17 +1185,17 @@ LaTeX Font Info:    ... okay on input line 103.
 
 (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count400
-\scratchdimen=\dimen343
-\scratchbox=\box101
-\nofMPsegments=\count401
-\nofMParguments=\count402
-\everyMPshowfont=\toks57
-\MPscratchCnt=\count403
-\MPscratchDim=\dimen344
-\MPnumerator=\count404
-\makeMPintoPDFobject=\count405
-\everyMPtoPDFconversion=\toks58
+\scratchcounter=\count407
+\scratchdimen=\dimen357
+\scratchbox=\box102
+\nofMPsegments=\count408
+\nofMParguments=\count409
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count410
+\MPscratchDim=\dimen358
+\MPnumerator=\count411
+\makeMPintoPDFobject=\count412
+\everyMPtoPDFconversion=\toks62
 ) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1098,7 +1205,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 103.
+Package hyperref Info: Link coloring OFF on input line 104.
 
 (./new_presentation.out) (./new_presentation.out)
 \@outlinefile=\write5
@@ -1129,11 +1236,18 @@ Dictionary: translator-numbers-dictionary, Language: English
 English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \degres on input line 103.
-\c@lstlisting=\count406
+LaTeX Info: Redefining \degres on input line 104.
+\c@lstlisting=\count413
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./new_presentation.nav) [1
+
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
+your preamble.
+ on input line 104.
+
+(./new_presentation.nav) [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./new_presenta
 tion.toc) [2
@@ -1142,19 +1256,19 @@ tion.toc) [2
 <./figures/./euler_portrait.jpg, id=163, 963.6pt x 1245.65375pt>
 File: ./figures/./euler_portrait.jpg Graphic file (type jpg)
 <use ./figures/./euler_portrait.jpg>
-Package pdftex.def Info: ./figures/./euler_portrait.jpg  used on input line 143
+Package pdftex.def Info: ./figures/./euler_portrait.jpg  used on input line 144
 .
 (pdftex.def)             Requested size: 68.45801pt x 88.47815pt.
 <./figures/lagrange_portrait.jpg, id=164, 963.6pt x 1078.0275pt>
 File: ./figures/lagrange_portrait.jpg Graphic file (type jpg)
 <use ./figures/lagrange_portrait.jpg>
 Package pdftex.def Info: ./figures/lagrange_portrait.jpg  used on input line 14
-3.
+4.
 (pdftex.def)             Requested size: 78.72646pt x 88.06984pt.
 <./figures/webb_orbit.png, id=165, 359.09157pt x 239.39438pt>
 File: ./figures/webb_orbit.png Graphic file (type png)
 <use ./figures/webb_orbit.png>
-Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 143.
+Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 144.
 (pdftex.def)             Requested size: 154.03183pt x 102.68918pt.
  [3
 
@@ -1162,28 +1276,28 @@ Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 143.
 webb_orbit.png>]
 File: ./figures/./euler_portrait.jpg Graphic file (type jpg)
 <use ./figures/./euler_portrait.jpg>
-Package pdftex.def Info: ./figures/./euler_portrait.jpg  used on input line 143
+Package pdftex.def Info: ./figures/./euler_portrait.jpg  used on input line 144
 .
 (pdftex.def)             Requested size: 68.45801pt x 88.47815pt.
 File: ./figures/lagrange_portrait.jpg Graphic file (type jpg)
 <use ./figures/lagrange_portrait.jpg>
 Package pdftex.def Info: ./figures/lagrange_portrait.jpg  used on input line 14
-3.
+4.
 (pdftex.def)             Requested size: 78.72646pt x 88.06984pt.
 File: ./figures/webb_orbit.png Graphic file (type png)
 <use ./figures/webb_orbit.png>
-Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 143.
+Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 144.
 (pdftex.def)             Requested size: 154.03183pt x 102.68918pt.
-
-[4
+ [4
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 151
+LaTeX Font Info:    Trying to load font information for U+msa on input line 152
 .
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 151
+LaTeX Font Info:    Trying to load font information for U+msb on input line 152
 .
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1197,7 +1311,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <./figures/ref_rng_diag.pdf, id=296, 283.15788pt x 146.85063pt>
 File: ./figures/ref_rng_diag.pdf Graphic file (type pdf)
 <use ./figures/ref_rng_diag.pdf>
-Package pdftex.def Info: ./figures/ref_rng_diag.pdf  used on input line 171.
+Package pdftex.def Info: ./figures/ref_rng_diag.pdf  used on input line 172.
 (pdftex.def)             Requested size: 239.60567pt x 124.26343pt.
  [7
 
@@ -1210,16 +1324,16 @@ Package pdftex.def Info: ./figures/ref_rng_diag.pdf  used on input line 171.
 File: ./figures/potential_apparent_2D_moi.png Graphic file (type png)
 <use ./figures/potential_apparent_2D_moi.png>
 Package pdftex.def Info: ./figures/potential_apparent_2D_moi.png  used on input
- line 200.
+ line 201.
 (pdftex.def)             Requested size: 342.2953pt x 162.40448pt.
 
 
 LaTeX Warning: Reference `code python du tracé de potentiel apparent' on page 
-10 undefined on input line 200.
+10 undefined on input line 201.
 
 
 LaTeX Warning: Reference `code python du tracé de potentiel apparent' on page 
-10 undefined on input line 200.
+10 undefined on input line 201.
 
 [10
 
@@ -1228,7 +1342,7 @@ LaTeX Warning: Reference `code python du tracé de potentiel apparent' on page
 File: ./figures/potentiel_apparent_3D.png Graphic file (type png)
 <use ./figures/potentiel_apparent_3D.png>
 Package pdftex.def Info: ./figures/potentiel_apparent_3D.png  used on input lin
-e 210.
+e 211.
 (pdftex.def)             Requested size: 239.60567pt x 169.30078pt.
  [11
 
@@ -1237,7 +1351,7 @@ e 210.
 File: ./figures/graphe_potentiel_en_x.png Graphic file (type png)
 <use ./figures/graphe_potentiel_en_x.png>
 Package pdftex.def Info: ./figures/graphe_potentiel_en_x.png  used on input lin
-e 252.
+e 253.
 (pdftex.def)             Requested size: 131.44072pt x 79.35167pt.
  [12
 
@@ -1245,7 +1359,7 @@ e 252.
 File: ./figures/graphe_potentiel_en_x.png Graphic file (type png)
 <use ./figures/graphe_potentiel_en_x.png>
 Package pdftex.def Info: ./figures/graphe_potentiel_en_x.png  used on input lin
-e 252.
+e 253.
 (pdftex.def)             Requested size: 131.44072pt x 79.35167pt.
  [13
 
@@ -1253,7 +1367,7 @@ e 252.
 File: ./figures/graphe_potentiel_en_x.png Graphic file (type png)
 <use ./figures/graphe_potentiel_en_x.png>
 Package pdftex.def Info: ./figures/graphe_potentiel_en_x.png  used on input lin
-e 252.
+e 253.
 (pdftex.def)             Requested size: 131.44072pt x 79.35167pt.
  [14
 
@@ -1265,7 +1379,7 @@ e 252.
 File: ./figures/ref_rng_avec_points_deq.pdf Graphic file (type pdf)
 <use ./figures/ref_rng_avec_points_deq.pdf>
 Package pdftex.def Info: ./figures/ref_rng_avec_points_deq.pdf  used on input l
-ine 286.
+ine 287.
 (pdftex.def)             Requested size: 273.83728pt x 182.62898pt.
  [16
 
@@ -1273,7 +1387,9 @@ ine 286.
 
 ] [18
 
-] [19
+]
+PGFPlots: reading {figures/output.csv}
+ [19
 
 ]
 (./new_presentation.toc) [20
@@ -1301,13 +1417,13 @@ Package rerunfilecheck Info: File `new_presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 75F0E844360D7A02AFCFB8FA2C886ACA;1562.
  ) 
 Here is how much of TeX's memory you used:
- 35071 strings out of 467538
- 733015 string characters out of 5423724
- 1151600 words of memory out of 5000000
- 63265 multiletter control sequences out of 15000+600000
- 637808 words of font info for 79 fonts, out of 8000000 for 9000
+ 45479 strings out of 467538
+ 1083916 string characters out of 5423724
+ 1648136 words of memory out of 5000000
+ 73533 multiletter control sequences out of 15000+600000
+ 638160 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,410b,855s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,21n,123p,712b,2600s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{code\040python\040du\040trac\303\251\040de\040poten
 tiel\040apparent} has been referenced but does not exist, replaced by a fixed o
@@ -1333,15 +1449,17 @@ type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 ><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
-ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2025/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb>
-Output written on new_presentation.pdf (20 pages, 2717173 bytes).
+ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2025/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on new_presentation.pdf (20 pages, 2743339 bytes).
 PDF statistics:
- 936 PDF objects out of 1000 (max. 8388607)
- 734 compressed objects within 8 object streams
+ 946 PDF objects out of 1000 (max. 8388607)
+ 740 compressed objects within 8 object streams
  62 named destinations out of 1000 (max. 500000)
  311 words of extra memory for PDF output out of 10000 (max. 10000000)
 
