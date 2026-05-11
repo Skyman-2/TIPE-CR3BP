@@ -33,20 +33,22 @@
 \headcommand {\slideentry {2}{2}{3}{16/16}{Localisation des points d'équilibre}{0}}
 \headcommand {\beamer@framepages {16}{16}}
 \headcommand {\beamer@subsectionpages {12}{16}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{17}{Stabilité des points colinéaires}}
-\headcommand {\slideentry {2}{3}{1}{17/17}{Stabilité des points colinéaires}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{17}{Résolution du système linéarisé}}
+\headcommand {\slideentry {2}{3}{1}{17/17}{Résolution du système linéarisé}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {2}{3}{2}{18/18}{Stabilité des points colinéaires}{0}}
-\headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {2}{3}{3}{19/19}{Stabilité des points colinéaires}{0}}
-\headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@sectionpages {6}{19}}
+\headcommand {\slideentry {2}{3}{2}{18/19}{Résolution du système linéarisé}{0}}
+\headcommand {\beamer@framepages {18}{19}}
 \headcommand {\beamer@subsectionpages {17}{19}}
-\headcommand {\sectionentry {3}{Orbites autour de L1 et L2}{20}{Dynamique et stabilité des orbites autour de L1 et L2}{0}}
-\headcommand {\slideentry {3}{0}{1}{20/20}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{20}{Schéma numérique pour le système non-linéaire}}
+\headcommand {\slideentry {2}{4}{1}{20/20}{Schéma numérique pour le système non-linéaire}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@partpages {1}{20}}
-\headcommand {\beamer@subsectionpages {21}{20}}
-\headcommand {\beamer@sectionpages {20}{20}}
-\headcommand {\beamer@documentpages {20}}
+\headcommand {\beamer@sectionpages {6}{20}}
+\headcommand {\beamer@subsectionpages {20}{20}}
+\headcommand {\sectionentry {3}{Orbites autour de L1 et L2}{21}{Dynamique et stabilité des orbites autour de L1 et L2}{0}}
+\headcommand {\slideentry {3}{0}{1}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@partpages {1}{21}}
+\headcommand {\beamer@subsectionpages {22}{21}}
+\headcommand {\beamer@sectionpages {21}{21}}
+\headcommand {\beamer@documentpages {21}}
 \headcommand {\gdef \inserttotalframenumber {16}}

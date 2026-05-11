@@ -177,8 +177,8 @@
 		\begin{equation*}
 			\label{eq du mvt}
 			\begin{cases}
-				\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\bar{\mathcal{U}}_x \\
-				\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\bar{\mathcal{U}}_y
+				\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\frac{\partial \bar{U}}{\partial x} \\
+				\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\frac{\partial \bar{U}}{\partial y}
 			\end{cases}
 		\end{equation*}
 		\pause
@@ -248,7 +248,7 @@
 			\begin{equation*}
 				r_1 = r_2 = R
 			\end{equation*}
-			{\small où $r_1$ et $r_2$ sont défini comme dans la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2}.}
+			{\small où $r_1$ et $r_2$ sont définis comme dans la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2}.}
 		\end{columns}
 	\end{frame}
 	
@@ -287,7 +287,7 @@
 	\end{frame}
 	
 	
-	\subsection{Stabilité des points colinéaires}
+	\subsection{Résolution du système linéarisé}
 	\begin{frame}
 		\frametitle{Linéarisation des équations du mouvement}
 		Les équations du mouvements sont
@@ -308,14 +308,14 @@
 			\begin{bmatrix}
 				0 & 0 & 1 & 0 \\
 				0 & 0 & 0 & 1 \\
-				-\frac{1}{m}\bar{\mathcal{U}}_{xx}^i & -\frac{1}{m}\bar{\mathcal{U}}_{xy}^i
+				-\frac{1}{m}\bar{U}_{xx}^i & -\frac{1}{m}\bar{U}_{xy}^i
 				& 0 & 2\omega \\
-				-\frac{1}{m}\bar{\mathcal{U}}_{yx}^i & -\frac{1}{m}\bar{\mathcal{U}}_{yy}^i
+				-\frac{1}{m}\bar{U}_{yx}^i & -\frac{1}{m}\bar{U}_{yy}^i
 				& -2\omega & 0
 			\end{bmatrix}
 			=: A
 		\end{equation}
-		où $\mathcal{\bar{U}}_{wz}^i = \frac{\partial ^2\bar{U}}{\partial w \partial z}(x_{L_i}, y_{L_i})$
+		où $\bar{U}_{wz}^i = \frac{\partial ^2\bar{U}}{\partial w \partial z}(x_{L_i}, y_{L_i})$
 	\end{frame}
 	
 	\begin{frame}
@@ -329,22 +329,32 @@
 				0 & 0 & i\nu & 0 \\
 				0 & 0 & 0 & -i\nu
 			\end{bmatrix}
-			P^{-1}
+			P^{-1}, \text{ avec } 
+			{\footnotesize \begin{cases}
+				\lambda = \omega\sqrt{1+2\sqrt{7}} \\
+				\nu = \omega\sqrt{2\sqrt{7}-1}
+			\end{cases}}
 		\end{equation*}
-		On en déduit l'expression explicite des solutions dans l'espace :
+		
+		\pause
+		On en déduit l'expression explicite des solutions dans le plan :
 		{\scriptsize 		
 		\begin{equation}
-			X_{pos} \in \{ t \to
+			\mathcal{S}_{lin}^{pos} = \{ t \to
 			\begin{bmatrix}
-				C_1e^{\lambda t} + C_2e^{-\lambda t} + C_3\sin(\nu t) + C_4\cos(\nu t)
+				C_1e^{\lambda t} + C_2e^{-\lambda t} + A\cos(\nu t)
 				\\
-				C_1e^{\lambda t} + C_2e^{-\lambda t} + C_3\cos(\nu t) + C_4\sin(\nu t)
+				-\sigma C_1e^{\lambda t} + \sigma C_2e^{-\lambda t} + \tau A \sin(\nu t)
 			\end{bmatrix},
-			(C_1,C_2,C_3,C_4) \in \mathbb{R}^4
+			(C_1,C_2,A) \in \mathbb{R}^3
 			\}
 		\end{equation}}
+		
+		où $\sigma > 0$ et $\tau < 0$ sont des constantes.
 	\end{frame}
 	
+	
+	\subsection{Schéma numérique pour le système non-linéaire}
 	\begin{frame}
 		\frametitle{Caractéristiques d'instabilités : théorie et simulation}
 		
@@ -362,7 +372,7 @@
 							xlabel style={
 								at={(axis description cs:0.5,0.06)}
 							},
-							ylabel={$x(t)-x_{L1}$},
+							ylabel={$d_{L1}(t)$},
 							ylabel style={
 								at={(axis description cs:0.1,0.5)}
 							},
@@ -398,7 +408,7 @@
 					\end{axis}
 				\end{tikzpicture}
 				
-				\caption{Interpolation exponentielle de la dégénerescence de la position en $L1$. \textit{Coefficient de détermination de $R^2=0.9893$.}}
+				\caption{Interpolation exponentielle de la dégénerescence de la position en $L1$ par simulation Python (\textit{cf.} Annexe \ref{}). \textit{Coefficient de détermination de $R^2=0.9893$.}}
 			\end{figure}
 			
 			\column{0.3\linewidth}
@@ -406,7 +416,7 @@
 				\hline
 				$\lambda_{th}$ & $\lambda_{sim}$
 				\\ \hline
-				$\lambda$ & $1\cdot10^{-5}$
+				$6,5\cdot10^{-6}$ & $1\cdot10^{-5}$
 				\\ \hline
 			\end{tabular}}
 			

@@ -3,5 +3,6 @@
 \beamer@sectionintoc {2}{Dynamique au voisinage des points d'équilibres colinéaires}{6}{0}{2}
 \beamer@subsectionintoc {2}{1}{Définition du système, équations du mouvement}{7}{0}{2}
 \beamer@subsectionintoc {2}{2}{Localisation des points d'équilibre}{12}{0}{2}
-\beamer@subsectionintoc {2}{3}{Stabilité des points colinéaires}{17}{0}{2}
-\beamer@sectionintoc {3}{Dynamique et stabilité des orbites autour de L1 et L2}{20}{0}{3}
+\beamer@subsectionintoc {2}{3}{Résolution du système linéarisé}{17}{0}{2}
+\beamer@subsectionintoc {2}{4}{Schéma numérique pour le système non-linéaire}{20}{0}{2}
+\beamer@sectionintoc {3}{Dynamique et stabilité des orbites autour de L1 et L2}{21}{0}{3}

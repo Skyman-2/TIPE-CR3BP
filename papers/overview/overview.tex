@@ -612,6 +612,7 @@
 	et pour obtenir l'ensemble des solutions $\mathcal{S}$ de la relation (\ref{eq du mvt}) il suffit de calculer $X = PY$. De plus, comme on recherche les trajectoires, on peut se limiter au calcul des deux premières composantes de $X$, et après calcul on obtient que
 	
 	\begin{equation}
+		\label{forme de la solution pour la position}
 		X_{pos} \in \{
 		\begin{bmatrix}
 			2\omega\lambda(C_1e^{\lambda t} - C_2e^{-\lambda t}) + 2\omega\nu(-C_3\sin(\nu t) + C_4\cos(\nu t))
@@ -635,14 +636,30 @@
 	
 	\clearpage
 	
-	\section{Dégénérescence des orbites autour de L1 et L2}
-	Il a été établi dans la partie précédente que les points L1 et L2 ne sont pas des points d'équilibre stable, mais des points d'équilibre de type "col", ou encore "selle". Un théorème de Lyapunov, souvent connu sous le nom de \textit{Lyapunov Center Theorem}, démontre l'existence d'une famille d'orbites dite de Lyapunov dans le plan sous réserve de vérification des hypothèses. Ces orbites sont instables. On mènera alors une étude dans le cadre de la théorie de Floquet qui visera à caractériser la dégénérescence de ces orbites.
+	\section{Approche asymptotique des orbites autour de L1 et L2}
+	On a établi dans la partie précédente que les points L1 et L2 sont des points "cols". La forme des solutions données par la relation \ref{forme de la solution pour la position} montre l'existence d'orbites dans le système linéarisé (lorsque les conditions initiales forcent $C_1 = C_2 = 0$). On remarque que dans le cas où seule l'une des deux constantes $C_1$ ou $C_2$ est nulle, on approche (avec $t$ croissant ou décroissant) asymptotiquement la solution périodique du linéarisé. Cette partie cherche à étudier ces directions dans l'espace de phase qui permet de tendre asymptotiquement vers une solution périodiques. Ces directions sont les "variétés", dont l'une (celle associée à $-\lambda$) est dite "stable" et l'autre (celle associée à $\lambda$) est dite "instable". Le calcul de ces dernières permet la fabrication de trajectoires coutant moins chères en carburant.
 	
 	\subsection{Existence d'orbites périodiques}
-	\begin{theorem}{du centre de Lyapunov}
-		Soit $\dot{x} = H(x)$ un système Hamiltonien de $\mathbb{R}^{2n}$, $x_0$ une position d'équilibre identifiée à $0$, $A = \frac{\partial H}{\partial x}(0)$ la matrice du système linéarisé. On suppose que le spectre de A est de la forme $Sp(A) = \{ \pm i\omega, \lambda_3, \dots, \lambda_{2n} \}$, où $\omega > 0$. Si $\forall j \in [|3,2!n|], \frac{\lambda_j}{iw}\notin\mathbb{Z}$, alors il existe une famille à un paramètre d'orbites périodiques issues de 0.
-	\end{theorem}
+	Comme dit précédement, les solutions du système linéarisé se mettent sous la forme donnée par la relation \ref{forme de la solution pour la position}. Ainsi le système admet les solutions particulières suivantes :
+	\begin{equation}
+		\mathcal{S}_{periodiques} = \{
+		\begin{bmatrix}
+			\alpha e^{i\nu t} + \beta e^{-i\nu t} \\
+			-i \alpha \tau e^{i\nu t} + i \tau \beta e^{-i\nu t}
+		\end{bmatrix}, (\alpha,\beta) \in \mathbb{R}^2
+		\}
+	\end{equation}
+	qui sont clairement périodique, de période $\frac{2\pi}{\nu}$.
 	
+	
+	\subsection{Introduction des variétés}
+	\textbf{Définition :} Soit un système différentiel $\dot{X} = F(X)$ où $F \in \mathcal{C}^1(\mathbb{R}^n, \mathbb{R}^n)$. Pour une condition initiale $x_0$, on pose $\varphi(t,x_0)$ l'état du système à un instant $t$ tel que $\varphi(t_0,x_0)=x_0$. Soit $\gamma \in \mathcal{F}(\mathbb{R}, \mathbb{R}^{2n})$ une orbite de référence de période $T$. Alors on définit la variété \textit{stable} (resp. \textit{instable}) associée à $\gamma$ notée $W^s(\Gamma)$ (resp. $W^u(\Gamma)$) comme
+	\begin{equation*}
+		W^s(\Gamma) = \{ x_0 \in \mathbb{R}^n | d(\varphi(t,x_0),\Gamma) \underset{t \to  +\infty}{\longrightarrow} 0 \}
+	\end{equation*}
+	(resp. \textit{quand $t \to -\infty$}), où $\Gamma = \{\gamma(t), t\in\mathbb{R}\}$.
+	
+	On cherche à calculer alors les variétés stables et instables associées à une orbite donnée. On déterminera d'abord l'approximation numérique des variétés à l'aide de la matrice de monodromie. A partir de cela, on intègrera le vecteur d'état associé à la variété étudiée selon les équations non-linéaires.
 	
 	
 	

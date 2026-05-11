@@ -16,5 +16,6 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Réducation du linéarisé sur les sous-espaces stables réels}{11}{}%
 \contentsline {subsubsection}{\numberline {2.2.3}Calcul de la matrice de passage}{12}{}%
 \contentsline {subsubsection}{\numberline {2.2.4}Calcul des solutions du linéarisé}{12}{}%
-\contentsline {section}{\numberline {3}Dégénérescence des orbites autour de L1 et L2}{14}{}%
+\contentsline {section}{\numberline {3}Approche asymptotique des orbites autour de L1 et L2}{14}{}%
 \contentsline {subsection}{\numberline {3.1}Existence d'orbites périodiques}{14}{}%
+\contentsline {subsection}{\numberline {3.2}Introduction des variétés}{14}{}%
