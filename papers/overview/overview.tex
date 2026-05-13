@@ -12,16 +12,16 @@
 \usepackage{wrapfig}
 \usepackage{interval}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \graphicspath{{../../images/}}
-
-\tcbuselibrary{theorems}
-
-\newtcbtheorem[number within=section]{theorem}{Théorème}%
-{colback=red!5,colframe=red!35!black,fonttitle=\bfseries}{th}
 
 \DeclareMathOperator{\sign}{sign}
 
+\theoremstyle{definition}
+\newtheorem*{definition}{Définition}
 
+\theoremstyle{definition}
+\newtheorem*{theorem}{Théorème}
 
 \begin{document}
 	\maketitle
@@ -652,14 +652,122 @@
 	qui sont clairement périodique, de période $\frac{2\pi}{\nu}$.
 	
 	
-	\subsection{Introduction des variétés}
-	\textbf{Définition :} Soit un système différentiel $\dot{X} = F(X)$ où $F \in \mathcal{C}^1(\mathbb{R}^n, \mathbb{R}^n)$. Pour une condition initiale $x_0$, on pose $\varphi(t,x_0)$ l'état du système à un instant $t$ tel que $\varphi(t_0,x_0)=x_0$. Soit $\gamma \in \mathcal{F}(\mathbb{R}, \mathbb{R}^{2n})$ une orbite de référence de période $T$. Alors on définit la variété \textit{stable} (resp. \textit{instable}) associée à $\gamma$ notée $W^s(\Gamma)$ (resp. $W^u(\Gamma)$) comme
-	\begin{equation*}
-		W^s(\Gamma) = \{ x_0 \in \mathbb{R}^n | d(\varphi(t,x_0),\Gamma) \underset{t \to  +\infty}{\longrightarrow} 0 \}
-	\end{equation*}
-	(resp. \textit{quand $t \to -\infty$}), où $\Gamma = \{\gamma(t), t\in\mathbb{R}\}$.
-	
+	\subsection{Introduction aux variétés d'une orbite périodique}
+	\begin{definition}
+		Soit un système différentiel $\dot{X} = F(X)$ où $F \in \mathcal{C}^1(\mathbb{R}^n, \mathbb{R}^n)$. Pour une condition initiale $x_0$, on pose $\varphi(t,x_0)$ l'état du système à un instant $t$ tel que $\varphi(t_0,x_0)=x_0$. Soit $\gamma \in \mathcal{F}(\mathbb{R}, \mathbb{R}^{2n})$ une orbite de référence de période $T$. Alors on définit la variété \emph{stable} (resp. \emph{instable}) associée à $\gamma$ notée $W^s(\Gamma)$ (resp. $W^u(\Gamma)$) comme
+		\begin{equation*}
+			W^s(\Gamma) = \{ x_0 \in \mathbb{R}^n | d(\varphi(t,x_0),\Gamma) \underset{t \to  +\infty}{\longrightarrow} 0 \}
+		\end{equation*}
+		(resp. \textit{quand $t \to -\infty$}), où $\Gamma = \{\gamma(t), t\in\mathbb{R}\}$.
+		
+	\end{definition}
 	On cherche à calculer alors les variétés stables et instables associées à une orbite donnée. On déterminera d'abord l'approximation numérique des variétés à l'aide de la matrice de monodromie. A partir de cela, on intègrera le vecteur d'état associé à la variété étudiée selon les équations non-linéaires.
+	
+	\subsection{La matrice de Monodromie}
+	On se fixe $\gamma \in \mathcal{S}_{periodiques}$ une solution $T$-périodique du système différentiel défini par la relation \ref{equation of motion}. Pour tout $t \in \mathbb{R}$, on note $A(t)$ le linéarisé de ce système en le point de l'espace des phases $\gamma(t)$. Par périodicité de $\gamma$, $A$ est aussi $T$-périodique. Alors on étudie le système différentiel $\dot{X} = AX$ d'inconnue $X \in \mathcal{C}^1(\mathbb{R}, \mathbb{R}^4)$, à coefficients $T$-périodiques.
+	\begin{definition}
+		Soit $(E)$ $\dot{X} = AX$ un système différentiel. Un système fondamental de solutions de l'équation différentielle $(E)$ est une famille $(y_1,\dots,y_n)$ de $n$ solutions indépentantes de $(E)$. On appelle \emph{matrice fondamentale du système} une matrice constituée de ces solutions sous forme de vecteurs colonnes (c'est un abus de notation, car c'est en toute rigueur une \textit{application}, mais on réfèrera à l'application, et la matrice en un point $t$, de la même manière).
+	\end{definition}
+	
+	\begin{definition}
+		On appelle \emph{matrice fondamentale principale du système} l'unique matrice fondamentale $\Phi$ qui vérifie que $\Phi(0)=I_n$.
+	\end{definition}
+	
+	Montrons que cette dernière définition est légitime. Soit $\Phi, \Psi$ deux matrices fondamentales. Montrons que $\exists M \in GL_n(\mathbb{K}), \Phi = \Psi M$ où $M$ est indépendante du temps, et que réciproquement, si $M \in GL_n(\mathbb{K})$, alors $\Psi M$ est une matrice fondamentale du système. Soit $y_0 \in \mathbb{K}^n$. Par théorème de Cauchy-Lipschitz linéaire, il existe une unique $y \in \mathcal{S}$ vérifiant $y(t_0) = y_0$. Alors on a $\forall t \in \mathbb{R}, y(t) = \Phi(t)\Phi(t_0)^{-1}y_0$. De même, on a $\forall t \in \mathbb{R}, y(t) = \Psi(t)\Psi(t_0)^{-1}y_0$. Donc 
+	\begin{equation}
+		\forall t \in \mathbb{R}, \Psi(t)\Psi(t_0)^{-1}y_0 = \Phi(t)\Phi(t_0)^{-1}y_0
+	\end{equation}
+	
+	Et cette égalité étant vraie pour tout $y_0 \in \mathbb{K}^n$, on a 
+	\begin{equation}
+		\forall t \in \mathbb{R}, \Psi(t)\Psi(t_0)^{-1} = \Phi(t)\Phi(t_0)^{-1}.
+	\end{equation}
+	ce qui, en posant $M := \Psi(t_0)^{-1}\Phi(t_0)$, on obtient bien
+	\begin{equation}
+		\forall t \in \mathbb{R}, \Phi = \Psi M
+	\end{equation}
+	avec $M$ est inversible en tant que produit de matrices inversibles.
+	\\
+	
+	\begin{theorem}
+		de Floquet : Soit $X'=AX$ une équation différentielle où $A$ est à coefficients $T$-périodiques, et $\Phi$ la matrice fondamentale principale du système. Alors il existe $P \in \mathcal{C}^1_T(\mathbb{R}, \mathcal(M)_n(\mathbb{C}))$ et $B \in \mathcal(M)_n(\mathbb{C})$ tel que
+		\begin{equation*}
+			\forall t \in \mathbb{R}, \Phi(t) = P(t)e^{tB}
+		\end{equation*}
+		que l'on appelle la \textit{forme normale de Floquet}. En particulier, on appelle $e^{TB}=\Phi(T)$ la \textit{matrice de Monodromie} du système, et \textit{multiplicateurs caractéristiques du système} les valeurs propres de la matrice de Monodromie. Les multiplicateurs caractéristiques sont non nuls et indépendants du choix de $\Phi$ et du choix de $B$.
+	\end{theorem}
+	
+	\textit{Démonstration} : Soit $t \in \mathbb{R}$. Par $T$-périodicité de $A$, on a 
+	\begin{equation}
+		\Phi'(t+T) = A(t+T)\Phi(t+T) = A(t)\Phi(t+T)
+	\end{equation}
+	
+	De plus, $\det(\Phi(t+T)) = \det(\Phi(t)) \neq 0$ donc $t\mapsto\Phi(t+T)$ est une matrice fondamentale du système car vérifiant l'équation différentielle, et inversible.
+	
+	Alors il existe $M \in \mathcal{M}_n(\mathbb{C})$ tel que $\Phi(t+T) = \Phi(t)M$, ($M = \Phi(T)$ en évaluant en $0$). Par surjectivité de l'exponentielle sur $GL_n(\mathbb{C})$, il existe $B \in \mathcal{M}_n(\mathbb{C})$ tel que $M = e^{TB}$. On pose alors $\forall t \in \mathbb{R}, P(t) := \Phi(t)e^{-tB}$. Ainsi $P$ est une application continue de $\mathbb{R}$ dans $GL_n(\mathbb{C})$, et pour tout $t \in \mathbb{R}$,
+	\begin{equation}
+		P(t+T) = \Phi(t+T)e^{-(t+T)B} = \Phi(t)Me^{-TB}e^{-tB} = \Phi(t)e^{-tB} = P(t)
+	\end{equation}
+	car $e^{-tB}$ et $e^{-TB}$ commutent. Alors $P$ est $T$-périodique.
+	
+	On a ainsi $\Phi(T) = P(T)e^{TB} = P(0)e^{TB} = \Phi(0)e^{TB} = e^{TB}$ la matrice de Monodromie, car $\Phi$ est la matrice fondamentale principale. Comme elle est inversible, ses valeurs propres sont non-nulles. Soit $\Psi$ une matrice fondamentale du même système, et $C \in \mathcal{M}_n(\mathbb{C})$ qui vérifie que $\Psi(0)^{-1}\Psi(T) = e^{TC}$. Il existe $Q \in GL_n(\mathbb{C})$ tel que $\Psi = \Phi Q$. Alors
+	\begin{equation}
+		e^{TC} = \Psi(0)^{-1}\Psi(T) = (\Phi(0)Q)^{-1}(\Phi(T)Q) = Q^{-1}\Phi(T)Q = Q^{-1}e^{TB}Q
+	\end{equation}
+	i.e. les matrices sont semblables. Or les valeurs propres sont un invariant de similitude. Donc les valeurs propres sont indépendantes du choix de $B$ et de la matrice fondamentale.
+	
+	
+	\subsection{Lien avec le flot}
+	
+	\begin{definition}
+		Soient une équation différentielle $X' = AX$, et $\Phi$ la matrice fondamentale principale de ce système. On appelle \textit{flot} l'application définie pour $t \in \mathbb{R}$ fixé par $\forall x_0 \in \mathbb{K}^n, \eta(t,x_0) := \Phi(t)x_0$. Le flot pour un certain $t$ est alors l'application qui, à une condition initiale $x_0$ donnée, associe le vecteur $x(t)$ où $x$ est l'unique solution au problème de Cauchy de condition initiale $x_0$.
+	\end{definition}
+	
+	Avec les mêmes notations que la définition précédente, on observe que la différentielle du flot en un $x_0$ est $x \mapsto \eta(t,x_0)$ car le flot est une application linéaire. On a alors $J\eta(t,x_0) = \Phi(t)$ la Jacobienne du flot. Ainsi, on voit que $\Phi(t)$ rend compte de la variation de l'état à un instant $t$ pour une variation des conditions initiales. Alors la variation de l'état après une pseudo-orbite selon la variation des conditions initiales est quantifiée par la matrice de Monodrome $\Phi(T) = M$. On peut remarquer que $\forall k \in \mathbb{N}^*, \Phi(kT) = M^k$ donc la matrice de Monodromie quantifie exactement les variations après $k$ orbites.
+	
+	%On va maintenant montrer que l'on peut utiliser cette relation pour quantifier la sensibilité aux variations des conditions initiales du système. On rappelle que $\gamma$ est une solution périodique fixée du problème non-linéaire, elle est donc aussi solution du système linéarisé. On pose $\gamma_0 = \gamma(0)$. Alors 
+	%\begin{equation}
+	%	\forall t \in \mathbb{R}, \gamma(t) = \Phi(t)\gamma_0
+	%\end{equation}
+	
+	%Soit $\delta x_0 \in \mathbb{R}^4$ une petite variation de la condition initiale. On considère alors $y$ l'unique solution du problème de Cauchy de condition initiale $\gamma_0 + \delta x_0$. On a donc
+	%\begin{equation}
+	%	\forall t \in \mathbb{R}, y(t) = \Phi(t) (\gamma_0 + \delta x_0)
+	%\end{equation}
+	
+	%On pose $\delta x(t) := y(t) - \gamma(t)$ la variation à l'instant $t$ de la trajectoire pour la variation $\delta x_0$ des conditions initiales. On a donc $\delta x(t) = \Phi(t)\delta x_0$.
+	
+	
+	
+	\subsection{Étude de la matrice de Monodromie}
+	
+	Comme on a vu précédemment, la matrice de Monodromie nous permet de quantifier la sensibilité aux variations de l'orbite $\gamma$. On cherche alors à étudier les valeurs propres, et les directions propres associées, pour déterminer les directions stables et instables de l'orbite. Le calcul des valeurs propres différentes de $1$ nous aidera au calcul des variétés stable et instable de $\gamma$. On travaille avec la matrice fondamentale principale, donc on a toujours $M = \Phi(T)$ et $\Phi(0) = I_n$, en considérant $0$ comme l'origine temporelle pour nos conditions initiales (i.e. $t_0 = 0$).
+	
+	\subsubsection{Première multiplicité de $1$ comme valeur propre}
+	On sait que $\gamma$ vérifie l'équation différentielle du système linéarisé, car $A = Df(\gamma)$ où $f$ est la fonction qui donne le système (\ref{full motion equation}). Alors $\gamma(t) = A \gamma(0)$. Par périodicité de $\gamma$, on a
+	\begin{equation}
+		\gamma(0) = \gamma(T) = \Phi(T)\gamma(0)
+	\end{equation} 
+	donc 1 est une valeur propre de la matrice de Monodromie, et $\gamma(0)$ en est un vecteur propre. On peut remarquer que ce résultat est généralement valable pour toute matrice de Monodromie de tout système à coefficients périodiques continues.
+	
+	\subsubsection{Deuxième multiplicité de $1$ comme valeur propre}
+	La deuxième multiplicité de 1 est spécifique à notre cadre. On sait que l'énergie est une constante pour une trajectoire donnée, c'est-à-dire que pour une solution $y$ de notre équation différentielle linéarisée, $\forall t \in \mathbb{R}, E(y(t)) = E(y(0))$, où $E : \mathbb{R}^4 \to \mathbb{R}$. Dans la suite de cette section, on travaille à $t$ fixé : notre variable est $x_0$ la condition initiale, et on utilie alors le flot. L'égalité précédente se traduit par
+	\begin{equation}
+		\forall x_0 \in \mathbb{R}^4, E(\eta(t,x_0)) = E(x_0)
+	\end{equation}
+	où $\eta$ est le flot. On prend maintenant la jacobienne de l'égalité. Soit $x_0 \in \mathbb{R}^4$,
+	\begin{equation}
+		JE(\eta(x_0,t)) \cdot J\eta(x_0,t) = JE(x_0)
+	\end{equation}
+	et en remplaçant
+	\begin{equation}
+		JE(x_0)M = JE(x_0)
+	\end{equation}
+	ce qui montre bien que $JE(x_0)$ est un vecteur propre.
+	
+	Montrons que $JE(x_0)$ et $\gamma(0)$ sont indépendants.
+	
+	
 	
 	
 	

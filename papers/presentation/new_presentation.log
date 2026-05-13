@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.14)  11 MAY 2026 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.14)  13 MAY 2026 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1449,7 +1449,7 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `new_presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 41198F357A4808D36DBC324ABC1B650B;1873.
+(rerunfilecheck)             Checksum: D424FF3E5D5FD29FFAF51DC75633D622;1896.
  ) 
 Here is how much of TeX's memory you used:
  45421 strings out of 474222
@@ -1493,7 +1493,7 @@ cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on new_presentation.pdf (21 pages, 2766632 bytes).
+Output written on new_presentation.pdf (21 pages, 2767163 bytes).
 PDF statistics:
  991 PDF objects out of 1000 (max. 8388607)
  780 compressed objects within 8 object streams
