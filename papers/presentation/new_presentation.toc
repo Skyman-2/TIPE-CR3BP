@@ -6,3 +6,5 @@
 \beamer@subsectionintoc {2}{3}{Résolution du système linéarisé}{17}{0}{2}
 \beamer@subsectionintoc {2}{4}{Schéma numérique pour le système non-linéaire}{20}{0}{2}
 \beamer@sectionintoc {3}{Globalisation des variétés des orbites autour de L1 et L2}{21}{0}{3}
+\beamer@subsectionintoc {3}{1}{Existence d'orbites périodiques}{22}{0}{3}
+\beamer@subsectionintoc {3}{2}{Introduction à la théorie de Floquet}{26}{0}{3}

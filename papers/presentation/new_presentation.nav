@@ -47,8 +47,20 @@
 \headcommand {\sectionentry {3}{Variétés autour de L1 et L2}{21}{Globalisation des variétés des orbites autour de L1 et L2}{0}}
 \headcommand {\slideentry {3}{0}{1}{21/21}{}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\beamer@partpages {1}{21}}
-\headcommand {\beamer@subsectionpages {22}{21}}
-\headcommand {\beamer@sectionpages {21}{21}}
-\headcommand {\beamer@documentpages {21}}
-\headcommand {\gdef \inserttotalframenumber {16}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{22}{Existence d'orbites périodiques}}
+\headcommand {\slideentry {3}{1}{1}{22/23}{Existence d'orbites périodiques}{0}}
+\headcommand {\beamer@framepages {22}{23}}
+\headcommand {\slideentry {3}{1}{2}{24/25}{Existence d'orbites périodiques}{0}}
+\headcommand {\beamer@framepages {24}{25}}
+\headcommand {\beamer@subsectionpages {22}{25}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{26}{Introduction à la théorie de Floquet}}
+\headcommand {\slideentry {3}{2}{1}{26/26}{Introduction à la théorie de Floquet}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {3}{2}{2}{27/28}{Introduction à la théorie de Floquet}{0}}
+\headcommand {\beamer@framepages {27}{28}}
+\headcommand {\beamer@partpages {1}{28}}
+\headcommand {\beamer@subsectionpages {26}{28}}
+\headcommand {\beamer@sectionpages {21}{28}}
+\headcommand {\beamer@documentpages {28}}
+\headcommand {\gdef \inserttotalframenumber {20}}

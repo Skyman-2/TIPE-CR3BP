@@ -632,6 +632,20 @@
 		\end{cases}
 	\end{equation}
 	
+	Cependant, ces valeurs sont à prendre avec des pincettes du aux approximations faites. Pour plus de détails, on peut utiliser des méthodes de résolutions numériques qui permettent de calculer précisement les valeurs propres, ainsi que les constantes $\sigma$ et $\tau$. Dans le cadre du système Terre-Lune, on obtient grâce à une évaluation numérique de la matrice du linéarisé, et du module \verb|numpy|, on obtient que 
+	\begin{equation}
+		\begin{cases}
+			\lambda = 7.81469 \cdot 10^{-6} \: s^{-1}
+			\\
+			\nu = 6,62217\cdot 10^{-6} \: s^{-1}
+			\\
+			\sigma = -3,39222
+			\\
+			\tau = -3,58654
+		\end{cases}
+	\end{equation}
+	
+	Ces valeurs nous permettront de faire de meilleures prédictions pour les conditions initiales d'orbites dans le système non-linéaire, ainsi qu'avoir une meilleure précision quand à la période de ces dernières. (On peut remarquer que $\sigma < 0$. Cela pose en effet un \textbf{problème auquel je n'ai pas encore la réponse}.)
 	
 	
 	\clearpage
@@ -744,11 +758,15 @@
 	Comme on a vu précédemment, la matrice de Monodromie nous permet de quantifier la sensibilité aux variations de l'orbite $\gamma$. On cherche alors à étudier les valeurs propres, et les directions propres associées, pour déterminer les directions stables et instables de l'orbite. Le calcul des valeurs propres différentes de $1$ nous aidera au calcul des variétés stable et instable de $\gamma$. On travaille avec la matrice fondamentale principale, donc on a toujours $M = \Phi(T)$ et $\Phi(0) = I_n$, en considérant $0$ comme l'origine temporelle pour nos conditions initiales (i.e. $t_0 = 0$).
 	
 	\subsubsection{Première multiplicité de $1$ comme valeur propre}
-	On sait que $\gamma$ vérifie l'équation différentielle du système linéarisé, car $A = Df(\gamma)$ où $f$ est la fonction qui donne le système (\ref{full motion equation}). Alors $\gamma(t) = A \gamma(0)$. Par périodicité de $\gamma$, on a
+	On sait que $\gamma$ vérifie l'équation différentielle du système non-linéaire $X' = f(X)$ où $f$ est la fonction qui donne le système (\ref{full motion equation}). De plus,
 	\begin{equation}
-		\gamma(0) = \gamma(T) = \Phi(T)\gamma(0)
-	\end{equation} 
-	donc 1 est une valeur propre de la matrice de Monodromie, et $\gamma(0)$ en est un vecteur propre. On peut remarquer que ce résultat est généralement valable pour toute matrice de Monodromie de tout système à coefficients périodiques continues.
+		\forall t \in \mathbb{R}, \frac{d}{dt}\gamma'(t) = \frac{d}{dt}f(\gamma(t)) = Jf(\gamma(t)) \cdot \gamma'(t) = A(t)\gamma'(t)
+	\end{equation}
+	donc $\gamma'$ vérifie l'équation différentielle linéarisée. Alors $\gamma'(t) = \Phi(t)\gamma'_0$ pour tout instant $t$. En particulier, pour $t=T$, on a
+	\begin{equation}
+		\gamma'_0 = \gamma'(T) = \Phi(T)\gamma'_0 = M\gamma'_0
+	\end{equation}
+	i.e. $\gamma'_0$ est un vecteur propre de $M$ pour la valeur propre 1.
 	
 	\subsubsection{Deuxième multiplicité de $1$ comme valeur propre}
 	La deuxième multiplicité de 1 est spécifique à notre cadre. On sait que l'énergie est une constante pour une trajectoire donnée, c'est-à-dire que pour une solution $y$ de notre équation différentielle linéarisée, $\forall t \in \mathbb{R}, E(y(t)) = E(y(0))$, où $E : \mathbb{R}^4 \to \mathbb{R}$. Dans la suite de cette section, on travaille à $t$ fixé : notre variable est $x_0$ la condition initiale, et on utilie alors le flot. L'égalité précédente se traduit par
@@ -759,13 +777,21 @@
 	\begin{equation}
 		JE(\eta(x_0,t)) \cdot J\eta(x_0,t) = JE(x_0)
 	\end{equation}
-	et en remplaçant
+	et en évaluant le flot en $\gamma_0$ la condition initiale de l'orbite de référence, on a $\eta(T,\gamma_0) = \gamma_0$. Ainsi on obtient
 	\begin{equation}
-		JE(x_0)M = JE(x_0)
+		JE(\gamma_0)M = JE(\gamma_0)
 	\end{equation}
-	ce qui montre bien que $JE(x_0)$ est un vecteur propre.
+	ce qui montre bien que $JE(\gamma_0)$ est un vecteur propre pour la valeur propre 1.
 	
-	Montrons que $JE(x_0)$ et $\gamma(0)$ sont indépendants.
+	Montrons que $JE(\gamma_0)$ et $\gamma'_0$ sont bien indépendants et donc que 1 est de multiplicité 2 ou plus. Pour cela, on utilise la conservation de l'énergie à nouveau, mais en travaillant avec $t$ comme variable. On a $\forall t \in \mathbb{R}, \frac{dE}{dt}(\gamma(t)) = 0$. Or par formule de composition des dérivées, on a
+	\begin{equation}
+		\forall t \in \mathbb{R}, \frac{\partial E}{\partial x}(\gamma(t)) \cdot \frac{d\gamma}{dt}(t) = 0
+	\end{equation}
+	et en particulier
+	\begin{equation}
+		\frac{\partial E}{\partial x}(\gamma_0) \cdot \gamma'_0 = <(\frac{\partial E}{\partial x}(\gamma_0))^T,\gamma'_0> = 0
+	\end{equation}
+	donc les deux vecteurs propres sont orthogonaux pour le produit scalaire usuel sur $\mathcal{M}_n(\mathbb{R})$. Ils sont donc indépendants.
 	
 	
 	

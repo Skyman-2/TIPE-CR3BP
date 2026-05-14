@@ -92,6 +92,17 @@
 	arc=.5mm
 }
 
+\definecolor{brown}{HTML}{663705}
+\definecolor{lightbrown}{HTML}{996a39}
+\newtcolorbox{mydefinition}[1]{
+	coltitle=brown,
+	title={Définition : #1},
+	colback=lightbrown!2,
+	colframe=brown!20,
+	boxrule=1pt,
+	arc=.5mm
+}
+
 \AtBeginSection[]
 {
 	\begin{frame}
@@ -102,8 +113,6 @@
 
 
 \begin{document}	
-	
-	
 	
 	
 	\begin{frame}
@@ -342,11 +351,11 @@
 		\begin{equation}
 			\mathcal{S}_{lin}^{pos} = \{ t \to
 			\begin{bmatrix}
-				C_1e^{\lambda t} + C_2e^{-\lambda t} + A\cos(\nu t)
+				C_1e^{\lambda t} + C_2e^{-\lambda t} + (C_3+C_4)\cos(\nu t)
 				\\
-				-\sigma C_1e^{\lambda t} + \sigma C_2e^{-\lambda t} + \tau A \sin(\nu t)
+				-\sigma C_1e^{\lambda t} + \sigma C_2e^{-\lambda t} + \tau (C_3+C_4) \sin(\nu t)
 			\end{bmatrix},
-			(C_1,C_2,A) \in \mathbb{R}^3
+			(C_1,C_2,C_3,C_4) \in \mathbb{R}^3
 			\}
 		\end{equation}}
 		
@@ -356,71 +365,14 @@
 	
 	\subsection{Schéma numérique pour le système non-linéaire}
 	\begin{frame}
-		\frametitle{Caractéristiques d'instabilités : théorie et simulation}
+		\frametitle{Simulation de la dégénérescence autour de L1}
 		
-		\begin{columns}
-			\column{0.7\linewidth}
-			\begin{figure}
-				\scriptsize
-				\centering
-				\begin{tikzpicture}[trim axis left, trim axis right]
-					\begin{axis}[
-							width=0.7\linewidth,
-							height=0.4\linewidth,
-							scale only axis,
-							xlabel={$t$},
-							xlabel style={
-								at={(axis description cs:0.5,0.06)}
-							},
-							ylabel={$d_{L1}(t)$},
-							ylabel style={
-								at={(axis description cs:0.1,0.5)}
-							},
-							trim axis left,
-							grid=major,
-							legend style={
-								at={(0.03,0.97)},
-								anchor=north west
-							}
-						]
-						
-						\addplot[
-						only marks,
-						mark=*,
-						]
-						table[
-						col sep=comma,
-						x=t,
-						y=d
-						]
-						{figures/output.csv};
-						
-						\addlegendentry{Simulation}
-						
-        				\addplot[
-						domain=0:1e6,
-						samples=200,
-						thick,
-						] {2e-12*exp(1e-5*x)};
-						
-						\addlegendentry{$y(t) = 2\cdot10^{-12}e^{10^{-5}t}$}
-						
-					\end{axis}
-				\end{tikzpicture}
-				
-				\caption{Interpolation exponentielle de la dégénerescence de la position en $L1$ par simulation Python (\textit{cf.} Annexe \ref{}). \textit{Coefficient de détermination de $R^2=0.9893$.}}
-			\end{figure}
-			
-			\column{0.3\linewidth}
-			{\scriptsize \begin{tabular}{|c|c|}
-				\hline
-				$\lambda_{th}$ & $\lambda_{sim}$
-				\\ \hline
-				$6,5\cdot10^{-6}$ & $1\cdot10^{-5}$
-				\\ \hline
-			\end{tabular}}
-			
-		\end{columns}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.75\linewidth]{degenerescence_L1_plots_RK4.png}
+			\label{fig:instability simulation}
+			\caption[width=0.75\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la dégénérescence de l'orbite autour de L1.}
+		\end{figure}
 		
 		
 	\end{frame}
@@ -433,6 +385,123 @@
 	
 	\section[Variétés autour de L1 et L2]{Globalisation des variétés des orbites autour de L1 et L2}
 	\subsection{Existence d'orbites périodiques}
+	
+	\begin{frame}
+		\frametitle{Obtention d'une orbite}
+		\begin{importantresult}{Forme générale des solutions dans l'espace de phase}
+			{\scriptsize
+			\begin{equation}
+				\mathcal{S}_{lin} = \{ t \to
+				\begin{bmatrix}
+					C_1e^{\lambda t} + C_2e^{-\lambda t} + R\cos(\nu t - \varphi)
+					\\
+					-\sigma (C_1e^{\lambda t} - C_2e^{-\lambda t}) +  \tau R\sin(\nu t - \varphi)
+					\\
+					\lambda (C_1e^{\lambda t} - C_2e^{-\lambda t}) + \nu R\sin(\nu t - \varphi)
+					\\
+					-\lambda\sigma (C_1e^{\lambda t} + C_2e^{-\lambda t}) + \nu\tau R\cos(\nu t - \varphi)
+				\end{bmatrix},
+				(C_1,C_2,R,\varphi) \in \mathbb{R}^4
+				\}
+			\end{equation}
+			}
+		\end{importantresult}
+		
+		\bigskip
+		
+		\pause
+		
+		{\footnotesize	
+		On en déduit qu'une orbite de rayon $R$ à pour condition initiale	
+		$
+			\begin{cases}
+				x_0 = R
+				\\
+				y_0 = 0
+				\\
+				v_{x0} = 0
+				\\
+				v_{y0} = \nu\tau R
+			\end{cases}
+		$}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Optimisation numérique des caractéristiques de l'orbite}
+		\begin{columns}[T]
+			\column{0.4\linewidth}
+			{\small Conditions initiales proposées :
+			\begin{itemize}
+				\item $x_0 = 10 \: km$
+				\item $y_0 = 0 \: km$
+				\item $v_{x0} = 0 \: m.s^{-1}$
+				\item $v_{y0} = 0,237 \: m.s^{-1}$
+			\end{itemize}
+		car $\nu\tau = -2,37 \cdot 10^{-5} \: s^{-1}$
+		}
+		
+			\column{0.02\textwidth}
+			\centering
+			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
+			
+			\pause
+			
+			\column{0.58\linewidth}
+			{\small Orbite corrigée par correction itérative :}
+			\begin{figure}
+				\centering
+				\includegraphics[width=1\linewidth]{acceptable_orbit_tmp.png}
+				\caption{Simulation d'une orbite, notée $\gamma$, avec les conditions initiales $x_0 = 10 \: km$, $y_0 = 0 \: km$, $v_{x0} = 0 \: m.s^{-1}$, et $v_{y0} = 0,231 \: m.s^{-1}$.}
+			\end{figure}
+		\end{columns}
+	\end{frame}
+	
+	
+	\subsection{Introduction à la théorie de Floquet}
+	
+	\begin{frame}
+		\frametitle{Une petite définition...}
+		{\footnotesize
+		\begin{mydefinition}{Matrice fondamentale}
+			Soit $(y_1,\dots,y_n)$ un système fondamentale de solutions d'une équation différentielle. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Phi(t)$ où $\Phi(t)$ est la matrice dont les colonnes sont les vecteurs $(y_1(t),\dots,y_n(t))$.
+			
+			Si $\Phi$ et $\Psi$ sont deux matrices fondamentales de la même équation différentielle, alors
+			\begin{equation*}
+				\exists M \in \mathcal{M}_n(\mathbb{C}), \Phi = \Psi M
+			\end{equation*}
+		\end{mydefinition}
+		
+		\bigskip
+		
+		\textit{Remarque :} Un résultat utile
+		
+		Si $y$ est une solution de l'équation différentielle, alors $\forall t \in \mathbb{R}, y(t) = \Phi(t)y_0$ où $\Phi$ est \textbf{la} matrice fondamentale principale.
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{...et deux autres...}
+		{\footnotesize
+		\begin{mydefinition}{Le flot}
+			On définit le flot comme l'application $ \eta :
+			\begin{array}{rcl}
+				\mathbb{R} \times \mathbb{R}^4 & \to & \mathbb{R}^4 \\
+				(t,x_0) & \mapsto & x(t)
+			\end{array}
+			$ où $x$ correspond à l'unique solution au problème de Cauchy de condition initiale $x_0$.
+			
+			On peut remarquer qu'on a alors la relation
+			\begin{equation*}
+				\forall x_0 \in \mathbb{R}^4, \forall t \in \mathbb{R}, \eta(t,x_0) = \Phi(t)x_0
+			\end{equation*}
+		\end{mydefinition}
+		\pause
+		\begin{mydefinition}{Matrice de Monodromie}
+			Soit une équation différentielle de la forme $X'=A(t)X$ où A est à coefficients $T$-périodiques. On appelle \textit{matrice de Monodromie} la matrice $M = \Phi(T)$ où $\Phi$ est la matrice fondamentale principale du système.
+		\end{mydefinition}
+		}
+	\end{frame}
 	
 	
 	
