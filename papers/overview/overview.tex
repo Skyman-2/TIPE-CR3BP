@@ -13,7 +13,25 @@
 \usepackage{interval}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{listings}
+\usepackage{xcolor}
 \graphicspath{{../../images/}}
+
+\lstdefinestyle{pythonstyle}{
+	language=Python,
+	backgroundcolor=\color{gray!5},
+	commentstyle=\color{green!50!black},
+	keywordstyle=\color{blue},
+	stringstyle=\color{orange},
+	basicstyle=\ttfamily\small,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	frame=single,
+	showstringspaces=false,
+	tabsize=4
+}
+
 
 \DeclareMathOperator{\sign}{sign}
 
@@ -753,7 +771,7 @@
 	
 	
 	
-	\subsection{Étude de la matrice de Monodromie}
+	\subsection{Étude théorique de la matrice de Monodromie}
 	
 	Comme on a vu précédemment, la matrice de Monodromie nous permet de quantifier la sensibilité aux variations de l'orbite $\gamma$. On cherche alors à étudier les valeurs propres, et les directions propres associées, pour déterminer les directions stables et instables de l'orbite. Le calcul des valeurs propres différentes de $1$ nous aidera au calcul des variétés stable et instable de $\gamma$. On travaille avec la matrice fondamentale principale, donc on a toujours $M = \Phi(T)$ et $\Phi(0) = I_n$, en considérant $0$ comme l'origine temporelle pour nos conditions initiales (i.e. $t_0 = 0$).
 	
@@ -793,6 +811,84 @@
 	\end{equation}
 	donc les deux vecteurs propres sont orthogonaux pour le produit scalaire usuel sur $\mathcal{M}_n(\mathbb{R})$. Ils sont donc indépendants.
 	
+	
+	\subsection{Etude numérique de la matrice de Monodromie}
+	Dans cette sous-partie, on cherche à expliciter une méthode pour calculer numériquement les directions propres d'une orbite d'amplitude fixée. Les caractéristiques de l'orbite dépendent directement de ce paramètre. La forme des solutions de l'équation linéarisée est
+	\begin{equation}
+		\mathcal{S}_{lin} = \{ t \to
+		\begin{bmatrix}
+			C_1e^{\lambda t} + C_2e^{-\lambda t} + R\cos(\nu t - \varphi)
+			\\
+			-\sigma (C_1e^{\lambda t} - C_2e^{-\lambda t}) +  \tau R\sin(\nu t - \varphi)
+			\\
+			\lambda (C_1e^{\lambda t} - C_2e^{-\lambda t}) + \nu R\sin(\nu t - \varphi)
+			\\
+			-\lambda\sigma (C_1e^{\lambda t} + C_2e^{-\lambda t}) + \nu\tau R\cos(\nu t - \varphi)
+		\end{bmatrix},
+		(C_1,C_2,R,\varphi) \in \mathbb{R}^4
+		\}
+	\end{equation}
+	alors pour une solution périodique, on a nécessairement $C_1 = C_2 = 0$. Cela nous laisse deux paramètres, à savoir l'amplitude et le déphasage de l'orbite. Ce dernier paramètre ne change pas la famille de courbes solutions obtenue, mais seulement la position de la condition initiale. On a alors une famille à un paramètre d'orbite périodique dans le système linéarisé. 
+	
+	
+	\subsubsection{Calcul d'une orbite}
+	On se fixe une amplitude $R_0$ désirée selon l'axe $Ox$. On cherche une solution réelle ayant cette amplitude. Pour cela, on part de la solution que nous propose le système linéaire. Avec ce qui précède, une orbite du système linéaire d'amplitude $R_0$ selon l'axe $Ox$ vérifie
+	\begin{equation}
+		\begin{cases}
+			x(0) = R_0\cos(\varphi) \\
+			y(0) = - \tau R_0 \sin(\varphi) \\
+			v_x(0) = -\nu R_0 \sin(\varphi) \\
+			v_y(0) = \nu\tau R_0 \cos(\varphi)
+		\end{cases} 
+		\text{ ou s.p.d.g. }
+		\begin{cases}
+			x(0) = R_0 \\
+			y(0) = 0 \\
+			v_x(0) = 0 \\
+			v_y(0) = \nu\tau R_0
+		\end{cases} 
+	\end{equation}
+	car quitte à déphaser l'orbite, on considère $\varphi = 0$ sans perte de généralité.
+	
+	Pour avoir de meilleurs résultats, on se débarasse de nos approximations pour $\lambda$ et $\nu$ que l'on avait précédemment faite, et on utilise la fonction \verb|linalg.eig| du module \verb|numpy| qui renvoie les valeurs propres et les vecteurs propres d'une matrice donnée. Il faut alors se mouiller quand à nos données. Par la suite, nous prendrons $R_0 = 1000 \: km$. Pour les valeurs propres du linéarisé en $L1$, ce n'est pas encore nécessaire. Le code python
+	\lstinputlisting[
+	style=pythonstyle
+	]{codes/eigen_stuff_extract.py}
+	permet de calculer numériquement ces valeurs. On obtient ainsi
+	\begin{equation}
+		\begin{cases}
+			\nu = 6,62217\cdot 10^{-6} \: s^{-1}
+			\\
+			\tau = -3,58654
+		\end{cases}
+	\end{equation}
+	et donc que $\nu\tau = 2,37\cdot10^{-5} \: s^{-1}$. Alors on peut faire une prévision initiale $v_{y0} \approx 23,7 \: m.s^{-1}$. Cette prévision va nous permettre d'initier une sorte de dichotomie qui cherchera à minimiser $v_x(t)$ à l'instant $t$ qui vérifie que $y(t) = 0$ pour la première fois en dehors de $t = 0$. C'est ce qu'on va appeler \textit{l'instant de premier retour} (à la droite $D:y=0$ sous-entendu). La raison pour laquelle on cherche à faire cela est que si $v_x(t_{1^{er}\text{retour}}) = 0$, alors par symétrie du système, et son invariance selon le sens du temps, on aura une orbite périodique (Il y a toute une théorie qui utilise les applications de poincarrés, où l'instant cherché en est un point fixe, mais nous nous contendrons d'admettre que l'explication précédente est vraie).
+	
+	Cette méthode de correction itérative procède de la manière suivante :
+	\begin{enumerate}
+		\item On fait une estimation initiale de l'orbite grâce au système linéaire
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/IOC_initial_guess.py}
+		
+		\item On trouve un intervalle de $v_{y0}$ tel que les $v_x$ au premier retour ne soit pas du même signe. Cela nous permet de mettre en place une méthode de résolution par dichotomie.
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/IOC_bracket.py}
+		
+		\item Et pour finir, on met en place une méthode de dichotomie dont la variable de tolérance s'appliquera à $v_x(t_{1^{er}\text{retour}})$. Le code (un peu long) est comme suit :
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/IOC_dichotomy.py}
+	\end{enumerate}
+	
+	Appliquée à notre cas, la méthode renvoie $v_{y0} = -21,898965265005835 \: m.s^{-1}$. On peut ainsi tracer l'orbite obtenue, ce qui donne
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\linewidth]{acceptable_orbit_traj_only.png}
+		\caption[]{Trajectoire tracée en python par intégration numérique des équations non-linéaires en prenant pour conditions initiales celles mentionnées précédemment.}
+	\end{figure}
 	
 	
 	

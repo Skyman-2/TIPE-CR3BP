@@ -21,6 +21,8 @@
 \contentsline {subsection}{\numberline {3.2}Introduction aux variétés d'une orbite périodique}{14}{}%
 \contentsline {subsection}{\numberline {3.3}La matrice de Monodromie}{14}{}%
 \contentsline {subsection}{\numberline {3.4}Lien avec le flot}{16}{}%
-\contentsline {subsection}{\numberline {3.5}Étude de la matrice de Monodromie}{16}{}%
+\contentsline {subsection}{\numberline {3.5}Étude théorique de la matrice de Monodromie}{16}{}%
 \contentsline {subsubsection}{\numberline {3.5.1}Première multiplicité de $1$ comme valeur propre}{16}{}%
 \contentsline {subsubsection}{\numberline {3.5.2}Deuxième multiplicité de $1$ comme valeur propre}{17}{}%
+\contentsline {subsection}{\numberline {3.6}Etude numérique de la matrice de Monodromie}{17}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}Calcul d'une orbite}{18}{}%

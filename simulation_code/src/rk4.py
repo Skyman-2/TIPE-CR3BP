@@ -5,7 +5,11 @@ import time
 
 
 # Numerical calculations
-def simulate_trajectory(initial_conditions,simulation_time,step,system):
+def simulate_trajectory(initial_conditions,simulation_time,step,system,inverse_time=False):
+
+    if inverse_time:
+        step = -step
+        simulation_time = -simulation_time
 
     # Tableau des instants où on souhaite résoudre le système
     dt = step
@@ -72,7 +76,7 @@ def simulate_trajectory(initial_conditions,simulation_time,step,system):
     alpha = 0.2               # lissage un peu plus fort (car mesures moins fréquentes)
 
 
-    while t < t_max:
+    while abs(t) < abs(t_max):
         t += dt
         # print("--------")
 
@@ -120,5 +124,5 @@ def simulate_trajectory(initial_conditions,simulation_time,step,system):
 
     result = []
     for i in range(len(P)):
-        result.append([P[i][0],P[i][1],V[i][0],V[i][1]])
+        result.append(np.array([P[i][0],P[i][1],V[i][0],V[i][1]]))
     return result

@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  14 MAY 2026 21:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  15 MAY 2026 21:09
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **overview.tex
 (./overview.tex
@@ -668,7 +668,7 @@ Package: amsthm 2020/05/29 v2.20.6
 
 Package french3.ldf Warning: OT1 encoding should not be used for French.
 (french3.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french3.ldf)                of your document; reported on input line 26.
+(french3.ldf)                of your document; reported on input line 44.
 
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
@@ -680,20 +680,20 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `overview.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -751,7 +751,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 26.
+LaTeX Info: Redefining \degres on input line 44.
 \c@lstlisting=\count355
 
 (c:/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
@@ -759,13 +759,13 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks51
 \inpenc@posthook=\toks52
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -778,37 +778,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../../images/RNG_diag.pdf, id=53, 283.15788pt x 146.85063pt>
+<../../images/RNG_diag.pdf, id=52, 283.15788pt x 146.85063pt>
 File: ../../images/RNG_diag.pdf Graphic file (type pdf)
 <use ../../images/RNG_diag.pdf>
-Package pdftex.def Info: ../../images/RNG_diag.pdf  used on input line 48.
+Package pdftex.def Info: ../../images/RNG_diag.pdf  used on input line 66.
 (pdftex.def)             Requested size: 379.4175pt x 196.7721pt.
  [2 <../../images/RNG_diag.pdf>]
 <../../images/potential_clear.png, id=99, 1387.584pt x 658.3797pt>
 File: ../../images/potential_clear.png Graphic file (type png)
 <use ../../images/potential_clear.png>
 Package pdftex.def Info: ../../images/potential_clear.png  used on input line 1
-49.
+67.
 (pdftex.def)             Requested size: 379.4175pt x 180.02525pt.
  [3]
 <../../images/colinear-graph.png, id=107, 1190.4475pt x 718.685pt>
 File: ../../images/colinear-graph.png Graphic file (type png)
 <use ../../images/colinear-graph.png>
-Package pdftex.def Info: ../../images/colinear-graph.png  used on input line 16
-8.
+Package pdftex.def Info: ../../images/colinear-graph.png  used on input line 18
+6.
 (pdftex.def)             Requested size: 202.3529pt x 122.1529pt.
  [4 <../../images/potential_clear.png> <../../images/colinear-graph.png (PNG co
 py)>] [5]
 
 LaTeX Warning: Reference `fig:lagrange_points_represented' on page 6 undefined 
-on input line 250.
+on input line 268.
 
 [6]
 <../../images/CR3BP_w_lagrange.pdf, id=119, 578.56152pt x 385.84149pt>
 File: ../../images/CR3BP_w_lagrange.pdf Graphic file (type pdf)
 <use ../../images/CR3BP_w_lagrange.pdf>
 Package pdftex.def Info: ../../images/CR3BP_w_lagrange.pdf  used on input line 
-281.
+299.
 (pdftex.def)             Requested size: 379.4175pt x 253.04298pt.
  [7{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 [8 <../../images/CR3BP_w_lagrange.pdf>] [9
@@ -816,39 +816,51 @@ Package pdftex.def Info: ../../images/CR3BP_w_lagrange.pdf  used on input line
 ] [10] [11] [12] [13] [14
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 702--705
+Underfull \hbox (badness 10000) in paragraph at lines 720--723
 
  []
 
-[15] [16] [17] [18
+[15] [16] [17] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(./codes/eigen_stuff_extract.py) (./codes/IOC_initial_guess.py) [18]
+(./codes/IOC_bracket.py) (./codes/IOC_dichotomy.py [19])
+<../../images/acceptable_orbit_traj_only.png, id=193, 547.2947pt x 308.65312pt>
 
-] [19
+File: ../../images/acceptable_orbit_traj_only.png Graphic file (type png)
+<use ../../images/acceptable_orbit_traj_only.png>
+Package pdftex.def Info: ../../images/acceptable_orbit_traj_only.png  used on i
+nput line 889.
+(pdftex.def)             Requested size: 303.53708pt x 171.18675pt.
+ [20 <../../images/acceptable_orbit_traj_only.png>] [21
+
+] [22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 944--946
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1042
 
  []
 
-[20
+[23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 968--970
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 987--992
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1088
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1021--1024
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1120
 
  []
 
-[21
+[24
 
-] [22] (./overview.aux)
+] [25] (./overview.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -859,13 +871,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 23160 strings out of 467538
- 492488 string characters out of 5423724
- 934661 words of memory out of 5000000
- 51671 multiletter control sequences out of 15000+600000
- 638891 words of font info for 83 fonts, out of 8000000 for 9000
+ 23651 strings out of 467538
+ 497878 string characters out of 5423724
+ 1375551 words of memory out of 5000000
+ 52144 multiletter control sequences out of 15000+600000
+ 639059 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,16n,118p,955b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,16n,118p,955b,1935s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2025/texmf-d
@@ -883,13 +895,14 @@ s/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/t
 exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1200.pfb>
-Output written on overview.pdf (22 pages, 2053640 bytes).
+ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2025/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
+/cm-super/sfrm1200.pfb>
+Output written on overview.pdf (25 pages, 2112447 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
+ 314 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

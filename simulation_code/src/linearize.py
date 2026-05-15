@@ -28,6 +28,7 @@ def Ubar_yy_wo_m(x,y,system):
 
 
 # N.B. : orbit is a 4D vector of the form [x,y,vx,vy]
+# renvoie A_state le linéarisé en la position state
 def linearized_system(state,working_system):
     x,y,vx,vy = state
     return np.array([
@@ -37,8 +38,15 @@ def linearized_system(state,working_system):
         [(-1)*Ubar_xy_wo_m(x,y,working_system),(-1)*Ubar_yy_wo_m(x,y,working_system),-2*po.omega(working_system),0]
     ])
 
-def Df(orbit,t,system):
-    return linearized_system(orbit[t],system)
+# Df : renvoie la liste des A_i où A_i est le linéarisé en la position gamma_i
+def Df(orbit,system):
+    linearized_map = []
+    for i in range(len(orbit)):
+        linearized_map.append(linearized_system(orbit[i],system))
+    return linearized_map
+
+
+
 
 
 def eigenvaluesL1(system):

@@ -1,0 +1,4 @@
+\def\minted@exec@error{%
+  \minted@error{^^J => \detokenize{./overview:842:} Cannot write \detokenize{"default"} style file outside working directory, \detokenize{TEXMFOUTPUT}, and \detokenize{TEXMF_OUTPUT_DIRECTORY}}%
+  \minted@error{Cannot write file \detokenize{"_BCE059749D61C1C247C303D0118D0D53.index.minted"} outside working directory, \detokenize{TEXMFOUTPUT}, and \detokenize{TEXMF_OUTPUT_DIRECTORY}}%
+}%

@@ -16,7 +16,7 @@
 \usetikzlibrary{calc}
 \usepackage{caption}
 \usepackage{subcaption}\usepackage{chngcntr}
-\usepackage{pgfplots}
+\usepackage{csvsimple}
 
 \graphicspath{{./figures/}}
 
@@ -28,6 +28,8 @@
 \setbeamertemplate{subsection in toc}[subsections numbered]
 \setbeamerfont{subsection in toc}{size=\scriptsize}
 \setbeamerfont{section in toc}{size=\small}
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{enumerate item}{fg=black}
 
 \title[Les points de Lagrange]{Orbiter autour de... rien?\\{\normalsize Stabilité des points de Lagrange et cinématique dans leur voisinage}}
 \author[ABDELOUAHAB Yannis]{\textbf{ABDELOUAHAB Yannis}, DUPLOUY Paul-Emmanuel}
@@ -191,7 +193,7 @@
 			\end{cases}
 		\end{equation*}
 		\pause
-		et on en déduit :
+		et on a
 		\begin{importantresult}{Expression du potentiel apparent}
 			\begin{equation}
 				\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
@@ -232,11 +234,10 @@
 		\end{importantresult}
 		
 		\bigskip
-		\bigskip
 		
 		\pause
 		
-		\begin{columns}
+		\begin{columns}[T]
 			\column{0.48\linewidth}
 			\textbf{Cas $y=0$ :}
 			\begin{figure}
@@ -366,7 +367,6 @@
 	\subsection{Schéma numérique pour le système non-linéaire}
 	\begin{frame}
 		\frametitle{Simulation de la dégénérescence autour de L1}
-		
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.75\linewidth]{degenerescence_L1_plots_RK4.png}
@@ -433,10 +433,10 @@
 			\column{0.4\linewidth}
 			{\small Conditions initiales proposées :
 			\begin{itemize}
-				\item $x_0 = 10 \: km$
+				\item $x_0 = 1000 \: km$
 				\item $y_0 = 0 \: km$
 				\item $v_{x0} = 0 \: m.s^{-1}$
-				\item $v_{y0} = 0,237 \: m.s^{-1}$
+				\item $v_{y0} = 23,7 \: m.s^{-1}$
 			\end{itemize}
 		car $\nu\tau = -2,37 \cdot 10^{-5} \: s^{-1}$
 		}
@@ -451,10 +451,19 @@
 			{\small Orbite corrigée par correction itérative :}
 			\begin{figure}
 				\centering
-				\includegraphics[width=1\linewidth]{acceptable_orbit_tmp.png}
-				\caption{Simulation d'une orbite, notée $\gamma$, avec les conditions initiales $x_0 = 10 \: km$, $y_0 = 0 \: km$, $v_{x0} = 0 \: m.s^{-1}$, et $v_{y0} = 0,231 \: m.s^{-1}$.}
+				\includegraphics[width=1\linewidth]{acceptable_orbit.png}
+				\caption{Simulation d'une orbite, notée $\gamma$, avec les conditions initiales $x_0 = 1000 \: km$, $y_0 = 0 \: km$, $v_{x0} = 0 \: m.s^{-1}$, et $v_{y0} = -21.898965265005835 \: m.s^{-1}$.}
 			\end{figure}
 		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Illustration de la correction itérative}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.85\linewidth]{iterative_correction_showcase.png}
+			\caption{Illustration de la méthode de correction itérative par dichotomie (Code python en annexe \ref{py:code de correction itérative d'orbite}).}
+		\end{figure}
 	\end{frame}
 	
 	
@@ -468,7 +477,7 @@
 			
 			Si $\Phi$ et $\Psi$ sont deux matrices fondamentales de la même équation différentielle, alors
 			\begin{equation*}
-				\exists M \in \mathcal{M}_n(\mathbb{C}), \Phi = \Psi M
+				\exists M \in GL_n(\mathbb{C}), \Phi = \Psi M
 			\end{equation*}
 		\end{mydefinition}
 		
@@ -503,14 +512,150 @@
 		}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Sensibilité du système aux conditions initiales}
+		{\small Le flot vérifie pour $t \in \mathbb{R}$ fixé, $x_0 \in \mathbb{R}^4$ et $\delta x_0$ une petite variation,
+		\begin{equation*}
+			\eta(t,x_0+\delta x_0) = \Phi(t)(x_0+\delta x_0) = \eta(t,x_0) + \Phi(t)\delta x_0 + \underset{\delta x_0 \to 0}{o}(\delta x_0)
+		\end{equation*}
+		\pause
+		\bigskip
+		dont on déduit le}
+		
+		\begin{importantresult}{Lien matrice de Monodromie/sensibilité aux C.I.}
+			\begin{equation}
+				\forall k \in \mathbb{N}^*, \delta x(kT) = M^k\delta x_0
+			\end{equation}
+		\end{importantresult}
+	\end{frame}
 	
+	\subsection{Vecteurs propres de la matrice de Monodromie}
 	
+	\begin{frame}
+		\frametitle{En quête de la Monodromie}
+		{\small 
+		\begin{importantresult}{Méthode numérique pour calculer $M$}
+			\begin{enumerate}
+				\item Calcul du linéarisé en chaque point de l'orbite $A : t \mapsto Jf(\gamma(t))$.
+				\item Intégration de $\Phi(0) = I_n$ par le linéarisé le long de l'orbite, pendant une période $T$.
+			\end{enumerate}
+		\end{importantresult}
+		}
+		
+		\pause
+		
+		\begin{columns}[T]
+			\column{0.48\linewidth}
+			\textbf{Linéarisé :}
+			\bigskip
+			{\footnotesize
+			\begin{equation*}
+				\begin{bmatrix}
+					0 & 0 & 1 & 0 \\
+					0 & 0 & 0 & 1 \\
+					-\frac{\bar{U}_{xx}(\gamma(t))}{m} & -\frac{\bar{U}_{xy}(\gamma(t))}{m} & 0 & 2\omega \\
+					-\frac{\bar{U}_{xy}(\gamma(t))}{m} & -\frac{\bar{U}_{yy}(\gamma(t))}{m} & -2\omega & 0
+				\end{bmatrix}
+			\end{equation*}
+			}
+			
+			\column{0.02\textwidth}
+			\centering
+			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
+			\pause	
+			
+			\column{0.48\linewidth}
+			\textbf{Orbite de référence :}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.7\linewidth]{acceptable_orbit_traj_only.png}
+				\caption{Trajectoire de l'orbite de référence $\gamma$.}
+			\end{figure}
+			
+		\end{columns}
+		
+	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Calcul numérique de $M$}
+		\begin{figure}
+			\centering
+			{\footnotesize \begin{equation*}
+				M = \begin{bmatrix} 
+					1.62 \cdot 10^{3} & -2.48 \cdot 10^{2} & 1.54 \cdot 10^{8} & 7.52 \cdot 10^{7}\\
+					-7.92 \cdot 10^{2} & 1.22 \cdot 10^{2} & -7.52 \cdot 10^{7} & -3.69 \cdot 10^{7}\\
+					1.28 \cdot 10^{-2} & -1.96 \cdot 10^{-3} & 1.22 \cdot 10^{3} & 5.96 \cdot 10^{2}\\
+					-6.01 \cdot 10^{-3} & 9.21 \cdot 10^{-4} & -5.72 \cdot 10^{2} & -2.79 \cdot 10^{2}\\
+				\end{bmatrix}
+			\end{equation*}
+			\begin{equation*}
+				\text{Sp}(M) = \{\underbrace{2.68 \cdot 10^{3}}_{=: \lambda_i}\: , \underbrace{3.74 \cdot 10^{-4}}_{=: \lambda_s}\: , 9.97 \cdot 10^{-1}\: , 1.00\}
+			\end{equation*}}
+			{\tiny \begin{equation*}
+				P = \begin{bmatrix}
+					-8.98 \cdot 10^{-1} & -8.98 \cdot 10^{-1} & -2.82 \cdot 10^{-1} & -2.84 \cdot 10^{-1}\\
+					4.40 \cdot 10^{-1} & -4.40 \cdot 10^{-1} & 9.59 \cdot 10^{-1} & -9.59 \cdot 10^{-1}\\
+					-7.11 \cdot 10^{-6} & 7.11 \cdot 10^{-6} & 1.55 \cdot 10^{-6} & -1.55 \cdot 10^{-6}\\
+					3.34 \cdot 10^{-6} & 3.34 \cdot 10^{-6} & 6.06 \cdot 10^{-6} & 6.10 \cdot 10^{-6}\\
+				\end{bmatrix}
+			\end{equation*}}
+			\caption{Matrice de Monodromie calculée numériquement (\textit{cf.} Annexe \ref{calcul de la matrice de monodromie}) pour l'orbite de référence $\gamma$.}
+		\end{figure}
+	\end{frame}
 	
+	\subsection{Calcul numérique des variétés}
+	\begin{frame}
+		\frametitle{Les directions propres}
+		Sensibilités aux variations de C.I. dans une direction propre pour le linéarisé :
+		\begin{equation*}
+			\forall k \in \mathbb{N}^*, \delta x(kT) = \lambda^k_u x_u, \: \text{ où } u \in \{s,i\}
+		\end{equation*}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\linewidth]{illustration_varietes_lin_non_lin.pdf}
+		\end{figure}
+	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Calcul numérique des variétés}
+		On utilise comme condition initiale $\gamma_0 \pm \varepsilon \mathcal{N} x_i$ où $\varepsilon = 10^{-6}$ et $\mathcal{N}$ est la dimensionalisation du problème pour l'espace des phases ($*$).
+		
+		\bigskip
+		\bigskip
+		
+		\begin{columns}[T]
+			\column{0.48\linewidth}
+			\textbf{Variété instable}
+			
+			{\footnotesize On intègre le système non-linéaire \ref{eq du mvt} en prenant comme condition initiale celle précédente.}
+			
+			\pause
+			
+			\column{0.02\textwidth}
+			\centering
+			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
+			
+			\column{0.48\linewidth}
+			\textbf{Variété stable}
+			
+			{\footnotesize On intègre le système non-linéaire en temps décroissant. Cela revient à intégrer
+			\begin{equation*}
+				X' = -f(X)
+			\end{equation*}
+			avec la condition initiale ci-dessus.}
+			
+			\photosources{($*$) Dynamical Systems, the Three-Body Problem
+				and Space Mission Design}
+		\end{columns}
+	\end{frame}
 	
-	
-	
+	\begin{frame}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.9\linewidth]{variete_instable_positive_tmp}
+			\caption{Projections dans le plan $(x,y)$ et dans le plan $(v_x,v_y)$ du sens positif de la variété instable de l'orbite de référence $\gamma$.}
+		\end{figure}
+	\end{frame}
 	
 	
 	
