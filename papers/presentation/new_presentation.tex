@@ -17,6 +17,24 @@
 \usepackage{caption}
 \usepackage{subcaption}\usepackage{chngcntr}
 \usepackage{csvsimple}
+\usepackage{comment}
+\usepackage{moresize}
+\usepackage{listings}
+
+\lstdefinestyle{pythonstyle}{
+	language=Python,
+	backgroundcolor=\color{gray!5},
+	commentstyle=\color{green!50!black},
+	keywordstyle=\color{blue},
+	stringstyle=\color{orange},
+	basicstyle=\ttfamily\scriptsize,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	frame=single,
+	showstringspaces=false,
+	tabsize=4
+}
 
 \graphicspath{{./figures/}}
 
@@ -166,9 +184,9 @@
 	
 	
 	
-	\section[Étude des points colinéaires]{Dynamique au voisinage des points d'équilibres colinéaires}
+	\section[Étude des points colinéaires]{Dynamique au voisinage des points L1 et L2}
 	
-	\subsection{Définition du système, équations du mouvement}
+	\subsection{Définition du système, points d'équilibres}
 	\begin{frame}
 		\frametitle{Choix du référentiel}
 		
@@ -182,88 +200,12 @@
 		
 	\end{frame}
 	
-	\begin{frame}
-		\frametitle{Équations du mouvement}
-		Les équations du mouvement dans le plan défini à la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2} sont :
-		\begin{equation*}
-			\label{eq du mvt}
-			\begin{cases}
-				\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\frac{\partial \bar{U}}{\partial x} \\
-				\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\frac{\partial \bar{U}}{\partial y}
-			\end{cases}
-		\end{equation*}
-		\pause
-		et on a
-		\begin{importantresult}{Expression du potentiel apparent}
-			\begin{equation}
-				\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
-				\label{expression du potentiel apparent}
-			\end{equation}
-		\end{importantresult}
-		{\small où $U(x,y) = \mathcal{E}_{p,1} + \mathcal{E}_{p,2}$ est la somme des énergies potentielles.}
-	\end{frame}
+	
+	
+	
 	
 	\begin{frame}
-		\frametitle{Représentation du potentiel apparent}
-		\begin{figure}
-			\includegraphics[width=1\linewidth]{potential_apparent_2D_moi.png}
-			\caption{Tracé du potentiel apparent $\bar{U}$ en Python (cf. Annexe \ref{code python du tracé de potentiel apparent}) avec des grandeurs arbitraires.}
-		\end{figure}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Représentation du potentiel apparent}
-		\begin{figure}
-			\includegraphics[width=0.7\linewidth]{potentiel_apparent_3D.png}
-			\caption{Représentation 3D du potentiel apparent.}
-		\end{figure}
-		\photosources{Dynamical Systems, the Three-Body Problem
-			and Space Mission Design}
-	\end{frame}
-	
-	\subsection{Localisation des points d'équilibre}
-	\begin{frame}
-		\begin{importantresult}{Condition nécessaire d'équilibre :}
-			\begin{equation}
-				\label{condition nécessaire d'équilibre}
-				\nabla \bar{U}(x,y) = \begin{bmatrix}
-					\frac{\partial \bar{U}}{\partial x} (x,y) \\ 
-					\frac{\partial \bar{U}}{\partial y} (x,y)
-				\end{bmatrix} = 0
-			\end{equation}
-		\end{importantresult}
-		
-		\bigskip
-		
-		\pause
-		
-		\begin{columns}[T]
-			\column{0.48\linewidth}
-			\textbf{Cas $y=0$ :}
-			\begin{figure}
-				\centering
-				\includegraphics[width=0.8\textwidth]{graphe_potentiel_en_x.png}
-				\caption{Tracé de $\bar{U}(\cdot, 0)$.}
-			\end{figure}
-			
-			\column{0.04\textwidth}
-			\centering
-			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
-			
-			\pause
-			\column{0.48\linewidth}
-			\textbf{Cas général :}
-			
-			{\small Si on suppose $y \neq 0$ alors on a la condition}
-			\begin{equation*}
-				r_1 = r_2 = R
-			\end{equation*}
-			{\small où $r_1$ et $r_2$ sont définis comme dans la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2}.}
-		\end{columns}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Solutions à la condition (\ref{condition nécessaire d'équilibre})}
+		\frametitle{Coordonnées des points de Lagrange}
 		\begin{figure}[H]
 			\centering
 			\label{tab:toutes_les_coord}
@@ -283,7 +225,7 @@
 				L5 & ($(\frac{1}{2}-\mu)R$) & $-\frac{\sqrt{3}}{2}R$
 				\\ \hline
 			\end{tabular}
-			\caption{Coordonnées des points de Lagrange.}
+			\caption{Coordonnées des points d'équilibres dans le référentiel tournant, dimensionalisées.}
 		\end{figure}
 	\end{frame}
 	
@@ -627,7 +569,7 @@
 			\column{0.48\linewidth}
 			\textbf{Variété instable}
 			
-			{\footnotesize On intègre le système non-linéaire \ref{eq du mvt} en prenant comme condition initiale celle précédente.}
+			{\footnotesize On intègre le système non-linéaire \ref{équations du mouvement} en prenant comme condition initiale celle précédente.}
 			
 			\pause
 			
@@ -652,7 +594,7 @@
 	\begin{frame}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.9\linewidth]{varietes_L1_1000km}
+			\includegraphics[width=0.9\linewidth]{varietes_L1_1000km.pdf}
 			\caption{Projections dans le plan $(x,y)$ et dans le plan $(v_x,v_y)$ des variétés de l'orbite de référence $\gamma$, intégrées numériquement en Python.}
 		\end{figure}
 	\end{frame}
@@ -660,20 +602,569 @@
 	
 	\section{Conclusion}
 	\begin{frame}
-		\frametitle{Transfert de Hohmann vs. utilisation des variétés}
+		\frametitle{Des applications concrètes}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.9\linewidth]{conclusion_ouverture.png}
+			\caption{Illustration d'une méthode pour créer des orbites de transfert.}
+		\end{figure}
+		
+		\photosources{Dynamical Systems, the Three-Body Problem and Space Mission Design}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Des applications concrètes}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.6\linewidth]{conclusion_comparaison_hohmann_cr3bp.png}
+			\caption{Comparaison des orbites de transfert utilisant les variétés aux orbites de transfert de type \textit{Hohmann}.}
+		\end{figure}
+		
+		\photosources{Dynamical Systems, the Three-Body Problem and Space Mission Design}
+	\end{frame}
+	
+	\begin{frame}
+		
+		\begin{figure}
+			\centering
+			{\Huge FIN}
+		\end{figure}
+		
+	\end{frame}
+	
+	
+	\section*{Annexes}
+	\begin{frame}
+		\begin{figure}
+			\centering
+			{\HUGE ANNEXES}
+		\end{figure}
+	\end{frame}
+	
+	
+	\subsection*{Coordonnées des points de Lagrange}
+	\begin{frame}
+	\frametitle{Calcul des points d'équilibre dans le référentiel tournant}{\scriptsize
 		\begin{columns}[T]
 			\column{0.48\linewidth}
-			\textbf{Transfert de Hohmann}
+			\centering
+			\includegraphics[
+			page=1,
+			width=\textwidth
+			]{../annexes/lagrange_points_coordinates_demo.pdf}
 			
 			\column{0.02\textwidth}
 			\centering
-			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
+			\textcolor{gray!40}{\rule{0.2pt}{1\textheight}}
 			
 			\column{0.48\linewidth}
-			\textbf{Transfert via les variétés}
+			\centering
+			\includegraphics[
+			page=2,
+			width=\textwidth
+			]{../annexes/lagrange_points_coordinates_demo.pdf}
 		\end{columns}
+	}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Calcul des points d'équilibre dans le référentiel tournant}{\scriptsize
+			\begin{columns}[T]
+				\column{0.48\linewidth}
+				\centering
+				\includegraphics[
+				page=3,
+				width=\textwidth
+				]{../annexes/lagrange_points_coordinates_demo.pdf}
+				
+				\column{0.02\textwidth}
+				\centering
+				\textcolor{gray!40}{\rule{0.2pt}{1\textheight}}
+				
+				\column{0.48\linewidth}
+				\centering
+				\includegraphics[
+				page=4,
+				width=\textwidth
+				]{../annexes/lagrange_points_coordinates_demo.pdf}
+			\end{columns}
+		}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Calcul des points d'équilibre dans le référentiel tournant}{\scriptsize
+			\begin{columns}[T]
+				\column{0.48\linewidth}
+				\centering
+				\includegraphics[
+				page=5,
+				width=\textwidth
+				]{../annexes/lagrange_points_coordinates_demo.pdf}
+				
+				\column{0.02\textwidth}
+				\centering
+				\textcolor{gray!40}{\rule{0.2pt}{1\textheight}}
+				
+				\column{0.48\linewidth}
+				\centering
+				\includegraphics[
+				page=6,
+				width=\textwidth
+				]{../annexes/lagrange_points_coordinates_demo.pdf}
+			\end{columns}
+		}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Calcul des points d'équilibre dans le référentiel tournant}{\scriptsize
+			\begin{columns}[T]
+				\column{0.48\linewidth}
+				\centering
+				\includegraphics[
+				page=7,
+				width=\textwidth
+				]{../annexes/lagrange_points_coordinates_demo.pdf}
+				
+				\column{0.02\textwidth}
+				\centering
+				\textcolor{gray!40}{\rule{0.2pt}{1\textheight}}
+				
+				\column{0.48\linewidth}
+				\centering
+				\includegraphics[
+				page=8,
+				width=\textwidth
+				]{../annexes/lagrange_points_coordinates_demo.pdf}
+			\end{columns}
+		}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Calcul des points d'équilibre dans le référentiel tournant}{\scriptsize
+		\begin{figure}
+			\centering
+			\includegraphics[
+			page=9,
+			width=0.48\textwidth
+			]{../annexes/lagrange_points_coordinates_demo.pdf}
+		\end{figure}
+		}
 	\end{frame}
 	
+	\subsection*{Equations du mouvement et linéarisé}
+	\begin{frame}
+		\frametitle{Expression des équations du mouvement}{\small
+		On connait $\bar{U}$ le potentiel apparent dans $R_{NG}$. Cela inclue les contributions de $F_{ie}$, $F_{1/M}$, et $F_{2/M}$. Il manque uniquement la force de Coriolis $F_{ic}$ qui n'est pas conservative donc n'apparait pas dans le potentiel. Or
+		\begin{equation*}
+			\vec{F}_{ic} = -2m\vec{\Omega} \times \vec{v} = -2m\Omega\vec{u}_z \times (\dot{x}\vec{u}_x + \dot{y}\vec{u}_y) 
+		\end{equation*}
+		
+		Alors par principe fondamentale de la dynamique, on déduit que
+		\begin{equation*}
+			\begin{cases}
+				\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\bar{U}_x \\
+				\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\bar{U}_y
+			\end{cases}
+		\end{equation*}
+		qui donne immédiatement les équations du mouvement.
+		
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Linéarisation des équations du mouvement}{\small
+		Avec une expansion en série de Taylor à l'ordre 1 en $(x_{Li}, y_{Li})$, on obtient
+		\begin{equation*}
+			\begin{cases}
+				\bar{U}_x(x,y) = \bar{U}_x(x_i,y_i) + \frac{\partial \bar{U}_x}{\partial x} (x_i,y_i) \times (x - x_i) + \frac{\partial \bar{U}_x}{\partial y} (x_i,y_i) \times (y - y_i)
+				\\
+				\bar{U}_y(x,y) = \bar{U}_y(x_i,y_i) + \frac{\partial \bar{U}_y}{\partial x} (x_i,y_i) \times (x - x_i) + \frac{\partial \bar{U}_y}{\partial y} (x_i,y_i) \times (y - y_i)
+			\end{cases}
+		\end{equation*}
+		donc en fixant l'origine spatiale, et du potentiel, en $Li$, le système linéarisé s'écrit
+		\begin{equation*}
+			\label{eq du mvt}
+			\dot{X}
+			=
+			\begin{bmatrix}
+				\dot{x} \\
+				\dot{y} \\
+				\dot{v_x} \\
+				\dot{v_y}
+			\end{bmatrix}
+			=
+			\underbrace{
+				\begin{bmatrix}
+					0 & 0 & 1 & 0 \\
+					0 & 0 & 0 & 1 \\
+					-\frac{1}{m}\bar{U}_{xx}^i & -\frac{1}{m}\bar{U}_{xy}^i
+					& 0 & 2\omega \\
+					-\frac{1}{m}\bar{U}_{yx}^i & -\frac{1}{m}\bar{U}_{yy}^i
+					& -2\omega & 0
+				\end{bmatrix}
+			}_{=: A}
+			\begin{bmatrix}
+				x \\ y \\ v_x \\ v_y
+			\end{bmatrix}
+		\end{equation*}
+		}
+	\end{frame}
+	
+	
+	\subsection*{Diagonalisation}
+	
+	
+	\begin{frame}
+		\frametitle{Calcul des valeurs et vecteurs propres}{\scriptsize
+		\begin{columns}[T]
+			\column{0.48\linewidth}
+			Approximation des dérivées secondes des potentiels :
+			\begin{equation*}
+				\begin{cases}
+					\bar{\mathcal{U}}_{xx} = -9m\omega^2
+					\\
+					\bar{\mathcal{U}}_{yy} = 3m\omega^2
+					\\
+					\bar{\mathcal{U}}_{xy} = \bar{\mathcal{U}}_{yx} = 0
+				\end{cases}
+			\end{equation*}
+			qui nous permet de calculer $\chi_A$ le polynôme caractéristique de $A$. On a
+			\begin{align*}
+			\chi_A &= \begin{vmatrix}
+				X & 0 & -1 & 0 
+				\\
+				0 & X & 0 & -1
+				\\
+				-9\omega^2 & 0 & X & - 2 \omega
+				\\
+				0 & 3\omega^2 & 2\omega & X
+			\end{vmatrix} \\
+			&= X^4 -2\omega^2X^2 - 27\omega^2 \\
+			&= (X-\lambda)(X+\lambda)(X-i\nu)(X+i\nu)
+			\end{align*}
+			où $\begin{cases}
+				\lambda := \omega\sqrt{1+2\sqrt{7}} \in \mathbb{R}_+ \\
+				\nu := \omega\sqrt{2\sqrt{7}-1} \in \mathbb{R}_+
+			\end{cases}$
+			
+			\column{0.02\textwidth}
+			\centering
+			\textcolor{gray!40}{\rule{0.2pt}{1\textheight}}
+			
+			\column{0.48\linewidth}
+			Equation aux valeurs propres pour déterminer les vecteurs propres :
+			\begin{equation*}
+				\begin{cases}
+					x_3 = \rho x_1
+					\\
+					x_4 = \rho x_2
+					\\
+					9\omega^2 x_1 + 2\omega x_4 = \rho x_3
+					\\
+					-3\omega^2 x_2 -2\omega x_3 = \rho x_4	
+				\end{cases}
+			\end{equation*}
+			d'où
+			\begin{equation*}
+				\begin{cases}
+					(9\omega^2-\rho^2) x_1 + 2\omega \rho x_2 = 0
+					\\
+					(-3\omega^2-\rho^2) x_2 -2\omega \rho x_1 =	0
+				\end{cases}
+			\end{equation*}
+			donc $P = \begin{bmatrix}
+					1 & 1 & 1 & 1 \\
+					-\sigma & \sigma & -i\tau & i\tau \\
+					\lambda & -\lambda & i\nu & -i\nu \\
+					-\lambda\sigma & -\lambda\sigma & \nu\tau & \nu\tau
+				\end{bmatrix}$, $\text{ avec } \sigma = \frac{9\omega^2-\lambda^2}{2\omega\lambda} \text{ et } \tau = -\frac{9\omega^2+\nu^2}{2\omega\nu}$
+			
+		\end{columns}
+		}
+	\end{frame}
+	
+	\subsection*{Existence d'une famille d'orbite à 1 paramètre}
+	\begin{frame}[fragile]
+		\frametitle{Orbites périodiques du système linéarisé}{\small
+		Forme des solutions périodiques du système linéarisé :
+		\begin{equation*}
+			\mathcal{S}_p = \{ t \mapsto
+			\begin{bmatrix}
+			R\cos(\nu t - \varphi) \\ \tau RA\sin(\nu t - \varphi) \\ \nu R \sin(\nu t - \varphi) \\ \nu\tau R \cos(\nu t - \varphi)
+			\end{bmatrix}, (R,\varphi) \in \mathbb{R}^2
+			\}
+		\end{equation*}
+		et on choisit comme paramètre $R$ l'amplitude de l'orbite selon l'axe $Ox$. Sans perte de généralité, on peut aussi choisir un déphasage $\varphi = 0$. Cela impose
+		\begin{equation*}
+			\begin{cases}
+				x(0) = R \\ y(0) = 0 \\ v_x(0) = 0 \\ v_y(0) = \nu\tau R
+			\end{cases}
+		\end{equation*}
+		
+		Grâce au module \verb|numpy|, on peut évaluer numériquement $A$ (cf. la partie Python des annexes). On obtient de cette manière que $\nu\tau = 2,37\cdot 10^{-5}$.
+		}
+	\end{frame}
+	
+
+	\subsection*{Théorie de Floquet}
+	\begin{frame}
+		
+		{\small
+		\begin{importantresult}{}
+			Si $\Phi$ et $\Psi$ sont deux matrices fondamentales d'une même équation différentielle. Alors il existe $M \in GL_n(\mathbb{C})$ tel que $\Phi = \Psi M$ et que $M$ soit indépendante de $t$.
+		\end{importantresult}
+		\textit{Démonstration :}
+		Soit $y_0 \in \mathbb{R}^n$, il existe une unique solution $y$ de l'équation différentielle tel que $y(0) = y_0$. De plus,
+		\begin{equation*}
+			\forall t \in \mathbb{R}, y(t) = \Phi(t)\Phi(0)^{-1}y_0
+		\end{equation*}
+		et de même pour $\Psi$. Donc
+		\begin{equation*}
+			\forall t \in \mathbb{R}, \Phi(t)\Phi(0)^{-1}y_0 = \Psi(t)\Psi(0)^{-1}y_0
+		\end{equation*}
+		
+		Etant vraie pour tout $y_0 \in \mathbb{R}^n$, on a
+		\begin{equation*}
+			\forall t \in \mathbb{R}, \Phi(t)\Phi(0)^{-1} = \Psi(t)\Psi(0)^{-1}
+		\end{equation*}
+		d'où le résultat en posant $M := \Psi(0)^{-1}\Phi(0)$. $M$ est en effet bien inversible car une matrice fondamentale est inversible pour tout $t \in \mathbb{R}$.
+		}
+	\end{frame}
+	
+	\begin{frame}
+		
+		{\small
+		\begin{importantresult}{Lien matrice de Monodromie/sensibilité aux C.I.}
+			\begin{equation*}
+				\forall k \in \mathbb{N}^*, \delta x(kT) = M^k \delta x_0
+			\end{equation*}
+		\end{importantresult}
+		Pour $x_0 \in \mathbb{R}^n$ une condition initiale, $t \in \mathbb{R}$ un instant, et $\delta x_0 \in \mathbb{R}^n$ une petite perturbation, on pose
+		\begin{equation*}
+			\delta x(t) := \eta(t,x_0 + \delta x_0) - \eta(t,x_0)
+		\end{equation*}
+		qui représente la variation de la trajectoire en $t$ pour une perturbation $\delta x_0$.
+		
+		\begin{columns}
+			\column{0.4\linewidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=1\linewidth]{../annexes/illustration_delta_x.png}
+			\end{figure}
+			
+			\column{0.5\linewidth}
+			On a que $J\eta(t,x_0) = \Phi(t)$. Et en $t = T$, on obtient bien
+			\begin{equation*}
+				\delta x(T) = \Phi(T) \delta x_0 = M \delta x_0
+			\end{equation*}
+			
+		\end{columns}
+		
+		}
+		
+		\photosources{Dynamical Systems, the Three-Body Problem and Space Mission Design}
+	\end{frame}
+	
+	\begin{frame}
+		
+		{\small
+		\begin{importantresult}{Théorème de Floquet}
+			Soit $X'=AX$ une équation différentielle où $A$ est à coefficients $T$-périodiques, et $\Phi$ la matrice fondamentale principale du système. Alors il existe $P \in \mathcal{C}^1_T(\mathbb{R}, \mathcal(M)_n(\mathbb{C}))$ et $B \in \mathcal(M)_n(\mathbb{C})$ tel que
+			\begin{equation*}
+				\forall t \in \mathbb{R}, \Phi(t) = P(t)e^{tB}
+			\end{equation*}
+			que l'on appelle la \textit{forme normale de Floquet}. En particulier, on appelle $e^{TB}=\Phi(T)$ la \textit{matrice de Monodromie} du système, et \textit{multiplicateurs caractéristiques du système} les valeurs propres de la matrice de Monodromie. Les multiplicateurs caractéristiques sont non nuls et indépendants du choix de $\Phi$ et du choix de $B$.
+		\end{importantresult}
+		
+		Avec la forme normale de Floquet, on observe que
+		\begin{equation*}
+			M^k = (e^{TB})^k = e^{kTB} = P(kT)e^{kTB} = \Phi(kT)
+		\end{equation*}
+		}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Démonstration du théorème de Floquet}
+		{\small
+		Soit $t \in \mathbb{R}$. Par $T$-périodicité de $A$, on a 
+		\begin{equation*}
+			\begin{cases}
+				\Phi'(t+T) = A(t+T)\Phi(t+T) = A(t)\Phi(t+T) \\
+				\det(\Phi(t+T)) = \det(\Phi(t)) \neq 0
+			\end{cases}
+		\end{equation*}
+		i.e. $t \mapsto \Phi(t+T)$ est une matrice fondamentale. Ainsi, il existe $M \in GL_n(\mathbb{C})$, tel que 
+		\begin{equation*}
+			\Phi(t+T) = \Phi(t)M
+		\end{equation*}
+		et par surjectivité de l'exponentielle sur $GL_n(\mathbb{C})$, il existe $B \in \mathcal{M}_n(\mathbb{C})$ tel que $M = e^{TB}$. 
+		
+		On pose $\forall t \in \mathbb{R}, P(t) := \Phi(t)e^{-tB}$. Pour tout $t \in \mathbb{R}$,
+		\begin{equation*}
+			P(t+T) = \Phi(t+T)e^{-(t+T)B} = \Phi(t)Me^{-TB}e^{-tB} = \Phi(t)e^{-tB} = P(t)
+		\end{equation*}
+		}
+	\end{frame}
+	
+	
+	\subsection*{Python - Valeurs numériques}
+	\begin{frame}
+		\frametitle{Fonction de calcul de $x_{L1}$ par dichotomie}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/dichotomy_L1.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Fonctions de calcul des valeurs et vecteurs propres}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/eigen_stuff_extract.py}
+		{\scriptsize où \verb|pythonMatrix_to_bmatrix| est une fonction simple de formattage.}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calcul de $\tau$ et de $\sigma$}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/tau_sigma_calc.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Espace de phase \textit{absolue}}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/phase_space.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Energie}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/energy.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Rayon dans le temps}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/radius_through_time.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Différence relative 1D}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/rel_diff_1D.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Différence relative 2D}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/rel_diff_2D.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Les $\bar{U}_{wz}$}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/u_wz_calc.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calculs d'informations utiles - Surfaces équipotentielles}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/pot_overlay.py}
+	\end{frame}
+	
+	
+	
+	
+	
+	\subsection*{Python - Utilitaire}
+	\begin{frame}
+		\frametitle{Calcul de trajectoires par schéma Runge-Kutta 4 (1/2)}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/rk4-1.py}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Calcul de trajectoires par schéma Runge-Kutta 4 (2/2)}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/rk4-2.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Affichage des trajectoires et d'informations utiles}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/traj_display_rel.py}
+	\end{frame}
+	
+	\begin{frame}
+	\frametitle{Affichage de multiples trajectoires}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codes/display_stacked.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Correction itérative d'une orbite du linéarisé (1/4)}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/iterative_corr-1.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Correction itérative d'une orbite du linéarisé (2/4)}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/iterative_corr-2.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Correction itérative d'une orbite du linéarisé (3/4)}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/iterative_corr-3.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Correction itérative d'une orbite du linéarisé (4/4)}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/iterative_corr-4.py}
+	\end{frame}
+	
+	
+	\subsection*{Python - Monodromie et Variétés}
+	
+	\begin{frame}
+		\frametitle{Calcul de l'application du linéarisé le long de l'orbite}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/orbit_lin.py}		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Calcul de la matrice de Monodromie}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/monodromy_calc.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Intégration d'un sens de la variété instable}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/unstable_manifold.py}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Intégration d'un sens de la variété stable}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/stable_manifold.py}
+	\end{frame}
 	
 	
 	

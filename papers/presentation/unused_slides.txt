@@ -1,0 +1,79 @@
+\begin{frame}
+		\frametitle{Équations du mouvement}
+		Les équations du mouvement dans le plan défini à la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2} sont :
+		\begin{equation*}
+			\label{eq du mvt}
+			\begin{cases}
+				\ddot{x} - 2\omega\dot{y} = - \frac{1}{m}\frac{\partial \bar{U}}{\partial x} \\
+				\ddot{y} + 2\omega\dot{x} = - \frac{1}{m}\frac{\partial \bar{U}}{\partial y}
+			\end{cases}
+		\end{equation*}
+		\pause
+		et on a
+		\begin{importantresult}{Expression du potentiel apparent}
+			\begin{equation}
+				\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
+				\label{expression du potentiel apparent}
+			\end{equation}
+		\end{importantresult}
+		{\small où $U(x,y) = \mathcal{E}_{p,1} + \mathcal{E}_{p,2}$ est la somme des énergies potentielles.}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Représentation du potentiel apparent}
+		\begin{figure}
+			\includegraphics[width=1\linewidth]{potential_apparent_2D_moi.png}
+			\caption{Tracé du potentiel apparent $\bar{U}$ en Python (cf. Annexe \ref{code python du tracé de potentiel apparent}) avec des grandeurs arbitraires.}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Représentation du potentiel apparent}
+		\begin{figure}
+			\includegraphics[width=0.7\linewidth]{potentiel_apparent_3D.png}
+			\caption{Représentation 3D du potentiel apparent.}
+		\end{figure}
+		\photosources{Dynamical Systems, the Three-Body Problem
+			and Space Mission Design}
+	\end{frame}
+	
+	\subsection{Localisation des points d'équilibre}
+	\begin{frame}
+		\begin{importantresult}{Condition nécessaire d'équilibre :}
+			\begin{equation}
+				\label{condition nécessaire d'équilibre}
+				\nabla \bar{U}(x,y) = \begin{bmatrix}
+					\frac{\partial \bar{U}}{\partial x} (x,y) \\ 
+					\frac{\partial \bar{U}}{\partial y} (x,y)
+				\end{bmatrix} = 0
+			\end{equation}
+		\end{importantresult}
+		
+		\bigskip
+		
+		\pause
+		
+		\begin{columns}[T]
+			\column{0.48\linewidth}
+			\textbf{Cas $y=0$ :}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\textwidth]{graphe_potentiel_en_x.png}
+				\caption{Tracé de $\bar{U}(\cdot, 0)$.}
+			\end{figure}
+			
+			\column{0.04\textwidth}
+			\centering
+			\textcolor{gray!40}{\rule{0.2pt}{0.4\textheight}}
+			
+			\pause
+			\column{0.48\linewidth}
+			\textbf{Cas général :}
+			
+			{\small Si on suppose $y \neq 0$ alors on a la condition}
+			\begin{equation*}
+				r_1 = r_2 = R
+			\end{equation*}
+			{\small où $r_1$ et $r_2$ sont définis comme dans la figure \ref{fig:schéma du référentiel de co-rotation avec la ligne M1-M2}.}
+		\end{columns}
+	\end{frame}

@@ -1,0 +1,281 @@
+\documentclass[20pt]{extarticle}
+
+\title{CR3BP Overview}
+\author{Yannis ABDELOUAHAB}
+\date{2025-2026}
+\usepackage[a4paper, total={7in,9in}]{geometry}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox}
+\usepackage[]{float}
+\usepackage{wrapfig}
+\usepackage{interval}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{xcolor}
+\graphicspath{{../../images/}}
+
+\lstdefinestyle{pythonstyle}{
+	language=Python,
+	backgroundcolor=\color{gray!5},
+	commentstyle=\color{green!50!black},
+	keywordstyle=\color{blue},
+	stringstyle=\color{orange},
+	basicstyle=\ttfamily\small,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	frame=single,
+	showstringspaces=false,
+	tabsize=4
+}
+
+
+\DeclareMathOperator{\sign}{sign}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Définition}
+
+\theoremstyle{definition}
+\newtheorem*{theorem}{Théorème}
+
+\begin{document}
+	\subsection*{Calcul pour L1}
+	On a
+	\begin{equation*}
+		\omega^2x - \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en remplaçant $\omega^2$ par son expression on obtient
+	\begin{equation*}
+		\frac{G(M_1 + M_2)}{R^3}x - \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en reconnaissant $\mu = \frac{M_2}{M_1+M_2}$ on peut simplifier en
+	\begin{equation*}
+		\frac{x}{R^3} - \frac{1-\mu}{(x+\mu R)^2} + \frac{\mu}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en utilisant le fait que $x=\varepsilon + (1-\mu)R$ on obtient
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{\varepsilon}{R^3} - \frac{1-\mu}{(\varepsilon+R)^2} + \frac{\mu}{\varepsilon^2} = 0
+	\end{equation*}
+	
+	On peut alors procéder à un développement limité en $\frac{\varepsilon}{R}$. Ce dernier est ici supposé, motivé par le fait que l'on suppose $\mu \to 0$ ce qui nous a permis de, qualitativement, supposer $\varepsilon \to 0$. Le résultat final permettra, ou non, de légitimiser notre supposition. On obtient ainsi
+	\begin{equation*}
+		\frac{1-\mu}{(\varepsilon+R)^2}=\frac{1-\mu}{R^2}(1+\frac{\varepsilon}{R})^{-2} \underset{\varepsilon \to 0}{=} \frac{1-\mu}{R^2}(1-\frac{2\varepsilon}{R}+O(\frac{\varepsilon^2}{R^2}))
+		\underset{\varepsilon \to 0}{=}
+		\frac{1-\mu}{R^2}-\frac{2(1-\mu)\varepsilon}{R^3} + O(\frac{\varepsilon^2}{R^4})
+	\end{equation*}
+	et en remplaçant dans l'expression que l'on avait avant on obtient
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{\varepsilon}{R^3} - \frac{1-\mu}{R^2}+\frac{2(1-\mu)\varepsilon}{R^3} + \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\frac{\varepsilon^2}{R^4}) = 0
+	\end{equation*}
+	ce qui se simplifie en
+	\begin{equation*}
+		\frac{\varepsilon}{R^3} +\frac{(2-2\mu)\varepsilon}{R^3} + \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\frac{\varepsilon^2}{R^4}) = \frac{3-2\mu}{R^3}\varepsilon + \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\frac{\varepsilon^2}{R^4}) = 0
+	\end{equation*}
+	et donc à l'ordre 1, cela devient
+	\begin{equation*}
+		\varepsilon^3 = -\frac{\mu}{3-2\mu}R^3 \underset{\mu \to 0}{\sim} -\frac{\mu}{3}R^3
+	\end{equation*}
+	et finalement
+	\begin{tcolorbox}[colframe=black,boxrule=0.8pt,colback=white]
+		\begin{equation*}
+			\varepsilon = -(\frac{\mu}{3})^\frac{1}{3}R
+		\end{equation*}
+	\end{tcolorbox}
+	Ainsi, notre DL en $\frac{\varepsilon}{R}$ est légitime car on observe que $\varepsilon = \underset{\mu \to 0}{O}(\mu^\frac{1}{3})$, R étant une constante.
+	
+	
+	
+	\clearpage
+	\subsection*{Calcul pour L2 \footnote{On pourra remarquer que les calculs sont identiques à ceux de L1 au signe près du terme en $\frac{\mu}{\varepsilon^2}$.} }
+	
+	On a
+	\begin{equation*}
+		\omega^2x - \frac{GM_1}{(x+\mu R)^2} - \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en remplaçant $\omega^2$ par son expression on obtient
+	\begin{equation*}
+		\frac{G(M_1 + M_2)}{R^3}x - \frac{GM_1}{(x+\mu R)^2} - \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en reconnaissant $\mu = \frac{M_2}{M_1+M_2}$ on peut simplifier en
+	\begin{equation*}
+		\frac{x}{R^3} - \frac{1-\mu}{(x+\mu R)^2} - \frac{\mu}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en utilisant le fait que $x=\varepsilon + (1-\mu)R$ on obtient
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{\varepsilon}{R^3} - \frac{1-\mu}{(\varepsilon+R)^2} - \frac{\mu}{\varepsilon^2} = 0
+	\end{equation*}
+	
+	On peut alors procéder à un développement limité en $\frac{\varepsilon}{R}$. Ce dernier est ici supposé, motivé par le fait que l'on suppose $\mu \to 0$ ce qui nous a permis de, qualitativement, supposer $\varepsilon \to 0$. Le résultat final permettra, ou non, de légitimiser notre supposition. On obtient ainsi
+	\begin{equation*}
+		\frac{1-\mu}{(\varepsilon+R)^2}=\frac{1-\mu}{R^2}(1+\frac{\varepsilon}{R})^{-2} \underset{\varepsilon \to 0}{=} \frac{1-\mu}{R^2}(1-\frac{2\varepsilon}{R}+O(\frac{\varepsilon^2}{R^2}))
+		\underset{\varepsilon \to 0}{=}
+		\frac{1-\mu}{R^2}-\frac{2(1-\mu)\varepsilon}{R^3} + O(\frac{\varepsilon^2}{R^4})
+	\end{equation*}
+	et en remplaçant dans l'expression que l'on avait avant on obtient
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{\varepsilon}{R^3} - \frac{1-\mu}{R^2}+\frac{2(1-\mu)\varepsilon}{R^3} - \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\frac{\varepsilon^2}{R^4}) = 0
+	\end{equation*}
+	ce qui se simplifie en
+	\begin{equation*}
+		\frac{\varepsilon}{R^3} +\frac{(2-2\mu)\varepsilon}{R^3} - \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\varepsilon^2) = \frac{3-2\mu}{R^3}\varepsilon - \frac{\mu}{\varepsilon^2} + \underset{\varepsilon \to 0}{O}(\varepsilon^2) = 0
+	\end{equation*}
+	et donc à l'ordre 1, cela devient
+	\begin{equation*}
+		\varepsilon^3 = \frac{\mu}{3-2\mu}R^3 \underset{\mu \to 0}{\sim} \frac{\mu}{3}R^3
+	\end{equation*}
+	et finalement
+	\begin{tcolorbox}[colframe=black,boxrule=0.8pt,colback=white]
+		\begin{equation*}
+			\varepsilon = (\frac{\mu}{3})^\frac{1}{3}R
+		\end{equation*}
+	\end{tcolorbox}
+	Ainsi, notre DL en $\frac{\varepsilon}{R}$ est légitime car on observe que $\varepsilon = \underset{\mu \to 0}{O}(\mu^\frac{1}{3})$, R étant une constante.
+	
+	
+	\clearpage
+	\subsection*{Calcul pour L3}
+	On a
+	\begin{equation*}
+		\omega^2x + \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en remplaçant $\omega^2$ par son expression on obtient
+	\begin{equation*}
+		\frac{G(M_1 + M_2)}{R^3}x + \frac{GM_1}{(x+\mu R)^2} + \frac{GM_2}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en reconnaissant $\mu = \frac{M_2}{M_1+M_2}$ on peut simplifier en
+	\begin{equation*}
+		\frac{x}{R^3} + \frac{1-\mu}{(x+\mu R)^2} + \frac{\mu}{(x-(1-\mu)R)^2} = 0
+	\end{equation*}
+	et en utilisant le fait que $x= \delta - R$ on obtient
+	\begin{equation*}
+		\frac{\delta}{R^3} - \frac{1}{R^2} + \frac{1-\mu}{(\delta-(1-\mu)R)^2} + \frac{\mu}{(\delta-(2-\mu)R)^2} = 0
+	\end{equation*}
+	
+	On peut alors procéder à deux développements limités en $w := \mu + \frac{\delta}{R}$. Ces derniers sont supposés, motivée par le fait que l'on suppose $\mu \to 0$ ce qui nous a permis de, qualitativement, supposer $\delta \to 0$ et donc $w \to 0$. Le résultat final permettra ici aussi de légitimiser, ou non, notre supposition. On obtient alors
+	\begin{equation*}
+		\frac{1-\mu}{(\delta-(1-\mu)R)^2}
+		= \frac{1-\mu}{R^2} (1-w)^{-2}
+		\underset{w \to 0}{=}
+		\frac{1-\mu}{R^2} (1 + 2w + o(w))
+		\underset{w \to 0}{=}
+		\frac{1-\mu}{R^2} + \frac{2(1-\mu)w}{R^2} + o(w))
+	\end{equation*}
+	or on a $(1-\mu)w = w - \mu w \underset{\mu \to 0}{=} w + o(w)$ ce qui simplifie le terme précédent en
+	\begin{equation*}
+		\frac{1-\mu}{R^2} + \frac{2w}{R^2} + \underset{w \to 0}{o}(w) = \frac{1+\mu+2\frac{\delta}{R}}{R^2} + \underset{w \to 0}{o}(w)
+	\end{equation*}
+	
+	On calcule de même
+	\begin{equation*}
+		\frac{\mu}{(\delta-(2-\mu)R)^2}
+		= \frac{\mu}{4R^2} (1-\frac{1}{2}w)^{-2}
+		\underset{w \to 0}{=}
+		\frac{\mu}{4R^2} (1 + w + o(w))
+		\underset{w \to 0}{=}
+		\frac{\mu}{4R^2} + \frac{\mu w}{4R^2} + o(w))
+		\underset{w \to 0}{=}
+		\frac{\mu}{4R^2} + o(w)
+	\end{equation*}
+	\\
+	
+	On peut remplacer ces deux expressions dans l'expression originale, et obtenir ainsi
+	\begin{equation*}
+		\frac{\delta}{R^3} - \frac{1}{R^2} + \frac{1+\mu+2\delta}{R^2} + \underset{w \to 0}{o}(w) + \frac{\mu}{4R^2} + \underset{w \to 0}{o}(w)
+		= \frac{3\delta}{R^3} + \frac{5\mu}{4R^2} + \underset{w \to 0}{o}(w) = 0
+	\end{equation*}
+	ce qui devient à l'ordre 1
+	\begin{equation*}
+		\frac{\delta}{R^3} = -\frac{5\mu}{12R^2}
+	\end{equation*}
+	et donc
+	\begin{tcolorbox}[colframe=black,boxrule=0.8pt,colback=white]
+		\begin{equation*}
+			\delta = - \frac{5\mu}{12}R
+		\end{equation*}
+	\end{tcolorbox}
+	
+	On peut alors constater que $o(w) = o(\mu + \frac{\delta}{R}) = o(\mu - \frac{5\mu}{12}) = o(\mu)$ ou aussi $o(w) = o(\delta)$. On vérifie ainsi que l'ordre 1 que l'on a écrit est bien celui en $\delta$.
+	
+	
+	\clearpage
+	\subsection*{Calcul pour L4 et L5}
+	On souhaite d'abord démontrer le passage des relations (\ref{equi_underived_eq}) aux relations (\ref{equi_derived_eq}). On utilise alors $(\frac{1}{u})' = \frac{u'}{u^2}$. On sépare chaque cas suivant si l'on dérive par rapport à $x$, où $y$.	
+	\\
+	
+	Cas de dérivation selon $x$ : \\
+	On a dans ce cas $f_1 : (x,y) \longmapsto \frac{GmM_1}{r_1} = \frac{GmM_1}{\sqrt{(x+\mu R)^2 + y^2}}$ et $f_2 : (x,y) \longmapsto \frac{GmM_2}{r_2}$, toutes deux des fonctions dérivables selon $x$ sur $\mathbb{R}^*$ comme inverse de fonctions dérivables selon x, à savoir $r_1$ et $r_2$. Ces dernières sont de dérivées partielles selon x
+	\begin{equation*}
+		\begin{cases}
+			\frac{\partial r_1}{\partial x}(x,y) = \frac{2(x+\mu R)}{2\sqrt{(x+\mu R)^2 + y^2}} = \frac{(x+\mu R)}{r_1(x,y)}
+			\\
+			\frac{\partial r_2}{\partial x}(x,y) = \frac{(x-(1-\mu)R)}{r_2(x,y)}
+		\end{cases}
+	\end{equation*}
+	ce qui nous donne les expressions des dérivées partielles de $f_1$ et $f_2$ suivantes (on utilisera la simple notation $f'$ par souci de lisibilité, mais on a bien à faire à des dérivés partielles, le contexte indiquant clairement que c'est selon $x$ ici) :
+	\begin{equation*}
+		\begin{cases}
+			f_1'(x,y) = \frac{GmM_1 r_1'(x,y)}{r_1^2(x,y)} = \frac{GmM_1}{r_1^2(x,y)} \times \frac{(x+\mu R)}{r_1(x,y)} = \frac{GmM_1(x+\mu R)}{r_1^3(x,y)}
+			\\
+			f_2'(x,y) = \frac{GmM_2 r_2'(x,y)}{r_2^2(x,y)} = \frac{GmM_2(x-(1-\mu)R)}{r_2^3(x,y)}
+		\end{cases}
+	\end{equation*}
+	et assez trivialement, $x \longmapsto -\frac{1}{2}m\omega^2(x^2+y^2)$ admet $x \longmapsto -m\omega^2x$ pour dérivée. On obtient ainsi exactement le terme pour $\frac{\partial \bar{U}}{\partial x}$ en sommant chacune des dérivées.
+	Quand au cas selon $y$, on peut appliquer exactement le même principe. Les calculs seront même plus simple car on voit assez clairement que dans ce cas, $\frac{\partial r_1}{\partial y}(x,y) = \frac{y}{r_1(x,y)}$.
+	Et on obtient bien ainsi les relations (\ref{equi_derived_eq}).
+	\\
+	
+	Explicitons le passage de la relation (\ref{equi_derived_eq}) à la relation (\ref{equilateral_CN}). On commence par imposer la condition d'équilibre, et remplacer par son expression $\omega^2 = \frac{G(M_1+M_2)}{R^3}$ :
+	\begin{equation*}
+		\begin{cases}
+			0 = -\frac{Gm(M_1+M_2)}{R^3}x+\frac{GmM_1(x+\mu R)}{r_1^3}+\frac{GmM_2(x-(1-\mu)R)}{r_2^3}
+			\\
+			0 = -\frac{Gm(M_1+M_2)}{R^3}y+\frac{GmM_1y}{r_1^3}+\frac{GmM_2y}{r_2^3}
+		\end{cases}
+	\end{equation*}
+	ce qui se simplifie en
+	\begin{equation*}
+		\begin{cases}
+			\frac{M_1+M_2}{R^3}x = \frac{M_1(x+\mu R)}{r_1^3}+\frac{M_2(x-(1-\mu)R)}{r_2^3}
+			\\
+			\frac{M_1+M_2}{R^3} = \frac{M_1}{r_1^3}+\frac{M_2}{r_2^3}
+		\end{cases}
+	\end{equation*}
+	On peut alors diviser par $M_1+M_2$. On reconnait alors deux termes : $1-\mu = \frac{M_1}{M_1+M_2}$ et $\mu = \frac{M_2}{M_1+M_2}$ ce qui donne alors
+	\begin{equation*}
+		\begin{cases}
+			\frac{x}{R^3} = \frac{(1-\mu)(x+\mu R)}{r_1^3}+\frac{\mu(x-(1-\mu)R)}{r_2^3}
+			\\
+			\frac{1}{R^3} = \frac{(1-\mu)}{r_1^3}+\frac{\mu}{r_2^3}
+		\end{cases}
+	\end{equation*}
+	et on peut simplifier encore plus la première expression de manière à faire apparaître la deuxième relation, donnant alors
+	
+	\begin{equation*}
+		\frac{x}{R^3} = (\frac{1-\mu}{r_1^3} + \frac{\mu}{r_2^3})x + \frac{\mu(1-\mu)R}{r_1^3} - \frac{\mu(1-\mu)R}{r_2^3}
+	\end{equation*}
+	ce qui est le résultat voulu.
+	\\
+	
+	Explicitons le passage des relations (\ref{equilateral_CN}) à la relation (\ref{equilateral_result}).
+	\begin{equation*}
+		\frac{x}{R^3} = \frac{x}{R^3} + \mu(1-\mu)(\frac{1}{r_1^3}-\frac{1}{r_2^3})R \ \ \text{i.e.} \ \ \frac{1}{r_1^3}-\frac{1}{r_2^3} = 0
+	\end{equation*}
+	ce qui, dans $\mathbb{R}$, nous donne
+	\begin{equation*}
+		r_1=r_2
+	\end{equation*}
+	et en remplaçant cela dans la deuxième relation de (\ref{equilateral_CN}) on obtient aussi
+	\begin{equation*}
+		\frac{1}{R^3} = \frac{1-\mu}{r_1^3} + \frac{\mu}{r_1^3} = \frac{1}{r_1^3}
+	\end{equation*}
+	et on a alors dans $\mathbb{R}$ que
+	\begin{equation*}
+		R=r_1=r_2
+	\end{equation*}
+	d'où la relation (\ref{equilateral_result}).
+
+
+\end{document}

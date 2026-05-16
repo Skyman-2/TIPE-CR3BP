@@ -1,13 +1,12 @@
 \babel@toc {french}{}\relax 
 \beamer@sectionintoc {1}{Objectif}{2}{0}{1}
-\beamer@sectionintoc {2}{Dynamique au voisinage des points d'équilibres colinéaires}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{Définition du système, équations du mouvement}{7}{0}{2}
-\beamer@subsectionintoc {2}{2}{Localisation des points d'équilibre}{12}{0}{2}
-\beamer@subsectionintoc {2}{3}{Résolution du système linéarisé}{17}{0}{2}
-\beamer@subsectionintoc {2}{4}{Schéma numérique pour le système non-linéaire}{20}{0}{2}
-\beamer@sectionintoc {3}{Globalisation des variétés des orbites autour de L1 et L2}{21}{0}{3}
-\beamer@subsectionintoc {3}{1}{Existence d'orbites périodiques}{22}{0}{3}
-\beamer@subsectionintoc {3}{2}{Introduction à la théorie de Floquet}{27}{0}{3}
-\beamer@subsectionintoc {3}{3}{Vecteurs propres de la matrice de Monodromie}{32}{0}{3}
-\beamer@subsectionintoc {3}{4}{Calcul numérique des variétés}{36}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{40}{0}{4}
+\beamer@sectionintoc {2}{Dynamique au voisinage des points L1 et L2}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Définition du système, points d'équilibres}{7}{0}{2}
+\beamer@subsectionintoc {2}{2}{Résolution du système linéarisé}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Schéma numérique pour le système non-linéaire}{13}{0}{2}
+\beamer@sectionintoc {3}{Globalisation des variétés des orbites autour de L1 et L2}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Existence d'orbites périodiques}{15}{0}{3}
+\beamer@subsectionintoc {3}{2}{Introduction à la théorie de Floquet}{20}{0}{3}
+\beamer@subsectionintoc {3}{3}{Vecteurs propres de la matrice de Monodromie}{25}{0}{3}
+\beamer@subsectionintoc {3}{4}{Calcul numérique des variétés}{29}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{33}{0}{4}

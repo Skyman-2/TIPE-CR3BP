@@ -1,0 +1,5 @@
+\frametitle{Fonctions de calcul des valeurs et vecteurs propres}
+		\lstinputlisting[
+		style=pythonstyle
+		]{codes/eigen_stuff_extract.py}
+		{\scriptsize où \verb|pythonMatrix_to_bmatrix| est une fonction simple de formattage.}

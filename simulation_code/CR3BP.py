@@ -55,14 +55,16 @@ traj_periodic = rk4.simulate_trajectory([x_0+x_L1, 0, 0, vy0], 1010880, 10, work
 lambda_s = np.array([-8.98e-1,-4.40e-1,7.11e-6,3.34e-6])
 lambda_u = np.array([-8.98e-1,4.40e-1,-7.11e-6,3.34e-6])
 
+sampling = 20
+
 unstable_manifold_pos = mf.unstable_manifold_sampling(
     lambda_u,
     dim,
-    1.8e6,
+    2e6,
     100,
     working_system,
     traj_periodic,
-    30
+    sampling
 )
 unstable_manifold_neg = mf.unstable_manifold_sampling(
     (-1)*lambda_u,
@@ -71,16 +73,16 @@ unstable_manifold_neg = mf.unstable_manifold_sampling(
     100,
     working_system,
     traj_periodic,
-    30
+    sampling
 )
 stable_manifold_pos = mf.stable_manifold_sampling(
     lambda_s,
     dim,
-    1.8e6,
+    2e6,
     100,
     working_system,
     traj_periodic,
-    30
+    sampling
 )
 stable_manifold_neg = mf.stable_manifold_sampling(
     (-1)*lambda_s,
@@ -89,7 +91,7 @@ stable_manifold_neg = mf.stable_manifold_sampling(
     100,
     working_system,
     traj_periodic,
-    30
+    sampling
 )
 
 manifolds = stable_manifold_pos + stable_manifold_neg + unstable_manifold_pos + unstable_manifold_neg
