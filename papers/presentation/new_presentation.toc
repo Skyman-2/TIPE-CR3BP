@@ -7,6 +7,7 @@
 \beamer@sectionintoc {3}{Globalisation des variétés des orbites autour de L1 et L2}{14}{0}{3}
 \beamer@subsectionintoc {3}{1}{Existence d'orbites périodiques}{15}{0}{3}
 \beamer@subsectionintoc {3}{2}{Introduction à la théorie de Floquet}{20}{0}{3}
-\beamer@subsectionintoc {3}{3}{Vecteurs propres de la matrice de Monodromie}{25}{0}{3}
-\beamer@subsectionintoc {3}{4}{Calcul numérique des variétés}{29}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{33}{0}{4}
+\beamer@subsectionintoc {3}{3}{Vecteurs propres de la matrice de Monodromie}{26}{0}{3}
+\beamer@subsectionintoc {3}{4}{Calcul numérique des variétés}{30}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{34}{0}{4}
+\beamer@subsectionintoc {5}{6}{Mécanique orbitale}{52}{0}{4}

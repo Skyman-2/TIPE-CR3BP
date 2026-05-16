@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  16 MAY 2026 17:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  16 MAY 2026 18:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1165,19 +1165,19 @@ Package caption Info: End \AtBeginDocument code.
 tion.toc) [2
 
 ]
-<./figures/./euler_portrait.jpg, id=227, 963.6pt x 1245.65375pt>
+<./figures/./euler_portrait.jpg, id=237, 963.6pt x 1245.65375pt>
 File: ./figures/./euler_portrait.jpg Graphic file (type jpg)
 <use ./figures/./euler_portrait.jpg>
 Package pdftex.def Info: ./figures/./euler_portrait.jpg  used on input line 173
 .
 (pdftex.def)             Requested size: 68.45801pt x 88.47815pt.
-<./figures/lagrange_portrait.jpg, id=228, 963.6pt x 1078.0275pt>
+<./figures/lagrange_portrait.jpg, id=238, 963.6pt x 1078.0275pt>
 File: ./figures/lagrange_portrait.jpg Graphic file (type jpg)
 <use ./figures/lagrange_portrait.jpg>
 Package pdftex.def Info: ./figures/lagrange_portrait.jpg  used on input line 17
 3.
 (pdftex.def)             Requested size: 78.72646pt x 88.06984pt.
-<./figures/webb_orbit.png, id=229, 359.09157pt x 239.39438pt>
+<./figures/webb_orbit.png, id=239, 359.09157pt x 239.39438pt>
 File: ./figures/webb_orbit.png Graphic file (type png)
 <use ./figures/webb_orbit.png>
 Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 173.
@@ -1203,34 +1203,33 @@ Package pdftex.def Info: ./figures/webb_orbit.png  used on input line 173.
 
 [4
 
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 181
-.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 181
-.
+] [5
 
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [5
+] (./new_presentation.toc) [6
 
 ]
-(./new_presentation.toc) [6
-
-]
-<./figures/ref_rng_diag.pdf, id=363, 283.15788pt x 146.85063pt>
+<./figures/ref_rng_diag.pdf, id=373, 283.15788pt x 146.85063pt>
 File: ./figures/ref_rng_diag.pdf Graphic file (type pdf)
 <use ./figures/ref_rng_diag.pdf>
 Package pdftex.def Info: ./figures/ref_rng_diag.pdf  used on input line 201.
 (pdftex.def)             Requested size: 239.60567pt x 124.26343pt.
- [7
+LaTeX Font Info:    Trying to load font information for U+msa on input line 201
+.
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 201
+.
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [7
 
  <./figures/ref_rng_diag.pdf>] [8
 
 ]
-<./figures/ref_rng_avec_points_deq.pdf, id=477, 578.56152pt x 385.84149pt>
+<./figures/ref_rng_avec_points_deq.pdf, id=488, 578.56152pt x 385.84149pt>
 File: ./figures/ref_rng_avec_points_deq.pdf Graphic file (type pdf)
 <use ./figures/ref_rng_avec_points_deq.pdf>
 Package pdftex.def Info: ./figures/ref_rng_avec_points_deq.pdf  used on input l
@@ -1255,7 +1254,7 @@ LaTeX Font Warning: Command \footnotesize invalid in math mode on input line 30
 [12
 
 ]
-<./figures/degenerescence_L1_plots_RK4.png, id=631, 633.8079pt x 388.8126pt>
+<./figures/degenerescence_L1_plots_RK4.png, id=642, 633.8079pt x 388.8126pt>
 File: ./figures/degenerescence_L1_plots_RK4.png Graphic file (type png)
 <use ./figures/degenerescence_L1_plots_RK4.png>
 Package pdftex.def Info: ./figures/degenerescence_L1_plots_RK4.png  used on inp
@@ -1271,7 +1270,7 @@ ut line 320.
 ] [16
 
 ]
-<./figures/acceptable_orbit.png, id=767, 867.24pt x 433.62pt>
+<./figures/acceptable_orbit.png, id=779, 867.24pt x 433.62pt>
 File: ./figures/acceptable_orbit.png Graphic file (type png)
 <use ./figures/acceptable_orbit.png>
 Package pdftex.def Info: ./figures/acceptable_orbit.png  used on input line 400
@@ -1288,7 +1287,7 @@ Package pdftex.def Info: ./figures/acceptable_orbit.png  used on input line 400
  [18
 
 ]
-<./figures/iterative_correction_showcase.png, id=831, 898.85812pt x 406.51875pt
+<./figures/iterative_correction_showcase.png, id=843, 898.85812pt x 406.51875pt
 >
 File: ./figures/iterative_correction_showcase.png Graphic file (type png)
 <use ./figures/iterative_correction_showcase.png>
@@ -1307,9 +1306,9 @@ LaTeX Warning: Reference `py:code de correction itérative d'orbite' on page 19
 [19
 
  <./figures/iterative_correction_showcase.png>]
-Underfull \hbox (badness 1112) in paragraph at lines 432--432
+Underfull \hbox (badness 1688) in paragraph at lines 432--432
 []\OT1/cmr/m/n/9 Soit $(\OML/cmm/m/it/9 y[]; [] ; y[]\OT1/cmr/m/n/9 )$ un syst^
-^Reme fon-da-men-tale de so-lu-tions d'une ^^Sequation
+^Reme fon-da-men-tal de so-lu-tions d'une ^^Sequation
  []
 
 [20
@@ -1322,14 +1321,16 @@ Underfull \hbox (badness 1112) in paragraph at lines 432--432
 
 ] [24
 
+] [25
+
 ]
-<./figures/acceptable_orbit_traj_only.png, id=1018, 547.2947pt x 308.65312pt>
+<./figures/acceptable_orbit_traj_only.png, id=1060, 547.2947pt x 308.65312pt>
 File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
 <use ./figures/acceptable_orbit_traj_only.png>
 Package pdftex.def Info: ./figures/acceptable_orbit_traj_only.png  used on inpu
 t line 519.
 (pdftex.def)             Requested size: 115.00969pt x 64.86145pt.
- [25
+ [26
 
  <./figures/acceptable_orbit_traj_only.png>]
 File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
@@ -1338,7 +1339,7 @@ Package pdftex.def Info: ./figures/acceptable_orbit_traj_only.png  used on inpu
 t line 519.
 (pdftex.def)             Requested size: 115.00969pt x 64.86145pt.
 
-[26
+[27
 
 ]
 File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
@@ -1346,55 +1347,55 @@ File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
 Package pdftex.def Info: ./figures/acceptable_orbit_traj_only.png  used on inpu
 t line 519.
 (pdftex.def)             Requested size: 115.00969pt x 64.86145pt.
- [27
+ [28
 
 ]
 
-LaTeX Warning: Reference `calcul de la matrice de monodromie' on page 28 undefi
+LaTeX Warning: Reference `calcul de la matrice de monodromie' on page 29 undefi
 ned on input line 546.
 
 
-LaTeX Warning: Reference `calcul de la matrice de monodromie' on page 28 undefi
+LaTeX Warning: Reference `calcul de la matrice de monodromie' on page 29 undefi
 ned on input line 546.
 
-[28
+[29
 
 ]
-<./figures/illustration_varietes_lin_non_lin.pdf, id=1147, 473.7168pt x 213.347
+<./figures/illustration_varietes_lin_non_lin.pdf, id=1188, 473.7168pt x 213.347
 06pt>
 File: ./figures/illustration_varietes_lin_non_lin.pdf Graphic file (type pdf)
 <use ./figures/illustration_varietes_lin_non_lin.pdf>
 Package pdftex.def Info: ./figures/illustration_varietes_lin_non_lin.pdf  used 
 on input line 559.
 (pdftex.def)             Requested size: 273.83728pt x 123.33444pt.
- [29
+ [30
 
- <./figures/illustration_varietes_lin_non_lin.pdf>] [30
+ <./figures/illustration_varietes_lin_non_lin.pdf>] [31
 
-] [31
+] [32
 
 ]
-<./figures/varietes_L1_1000km.pdf, id=1271, 597.23125pt x 315.72354pt>
+<./figures/varietes_L1_1000km.pdf, id=1310, 597.23125pt x 315.72354pt>
 File: ./figures/varietes_L1_1000km.pdf Graphic file (type pdf)
 <use ./figures/varietes_L1_1000km.pdf>
 Package pdftex.def Info: ./figures/varietes_L1_1000km.pdf  used on input line 6
 00.
 (pdftex.def)             Requested size: 308.06367pt x 162.85718pt.
- [32
+ [33
 
- <./figures/varietes_L1_1000km.pdf>] (./new_presentation.toc) [33
+ <./figures/varietes_L1_1000km.pdf>] (./new_presentation.toc) [34
 
 ]
-<./figures/conclusion_ouverture.png, id=1360, 550.30594pt x 259.7203pt>
+<./figures/conclusion_ouverture.png, id=1399, 550.30594pt x 259.7203pt>
 File: ./figures/conclusion_ouverture.png Graphic file (type png)
 <use ./figures/conclusion_ouverture.png>
 Package pdftex.def Info: ./figures/conclusion_ouverture.png  used on input line
  613.
 (pdftex.def)             Requested size: 308.06367pt x 145.39482pt.
- [34
+ [35
 
  <./figures/conclusion_ouverture.png>]
-<./figures/conclusion_comparaison_hohmann_cr3bp.png, id=1391, 546.54187pt x 432
+<./figures/conclusion_comparaison_hohmann_cr3bp.png, id=1431, 546.54187pt x 432
 .11438pt>
 File: ./figures/conclusion_comparaison_hohmann_cr3bp.png Graphic file (type png
 )
@@ -1402,14 +1403,14 @@ File: ./figures/conclusion_comparaison_hohmann_cr3bp.png Graphic file (type png
 Package pdftex.def Info: ./figures/conclusion_comparaison_hohmann_cr3bp.png  us
 ed on input line 624.
 (pdftex.def)             Requested size: 205.37926pt x 162.37875pt.
- [35
+ [36
 
- <./figures/conclusion_comparaison_hohmann_cr3bp.png>] [36
+ <./figures/conclusion_comparaison_hohmann_cr3bp.png>] [37
 
-] [37
+] [38
 
 ]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1482, page=1, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1521, page=1, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1417,7 +1418,7 @@ ype pdf)
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
 pdf , page1 used on input line 668.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1483, page=2, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1522, page=2, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1429,11 +1430,11 @@ pdf , page2 used on input line 668.
 Overfull \vbox (36.86493pt too high) detected at line 668
  []
 
-[38
+[39
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1549, page=3, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1588, page=3, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1441,7 +1442,7 @@ ype pdf)
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
 pdf , page3 used on input line 691.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1550, page=4, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1589, page=4, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1453,11 +1454,11 @@ pdf , page4 used on input line 691.
 Overfull \vbox (36.86493pt too high) detected at line 691
  []
 
-[39
+[40
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1615, page=5, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1654, page=5, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1465,7 +1466,7 @@ ype pdf)
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
 pdf , page5 used on input line 714.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1616, page=6, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1655, page=6, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1477,11 +1478,11 @@ pdf , page6 used on input line 714.
 Overfull \vbox (36.86493pt too high) detected at line 714
  []
 
-[40
+[41
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1669, page=7, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1709, page=7, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1489,7 +1490,7 @@ ype pdf)
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
 pdf , page7 used on input line 737.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1670, page=8, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1710, page=8, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1501,11 +1502,11 @@ pdf , page8 used on input line 737.
 Overfull \vbox (36.86493pt too high) detected at line 737
  []
 
-[41
+[42
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1735, page=9, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1774, page=9, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
@@ -1517,106 +1518,119 @@ pdf , page9 used on input line 748.
 Overfull \vbox (22.14856pt too high) detected at line 748
  []
 
-[42
+[43
 
- <./figures/../annexes/lagrange_points_coordinates_demo.pdf>] [43
+ <./figures/../annexes/lagrange_points_coordinates_demo.pdf>] [44
 
-] [44
+] [45
 
 ]
 Overfull \vbox (36.86493pt too high) detected at line 880
  []
 
-[45
+[46
 
 ]
 \openout4 = `new_presentation.vrb'.
 
- (./new_presentation.vrb) [46
+ (./new_presentation.vrb) [47
 
-] [47
+] [48
 
 ]
-<./figures/../annexes/illustration_delta_x.png, id=1957, 388.45125pt x 248.4281
+<./figures/../annexes/illustration_delta_x.png, id=1995, 388.45125pt x 248.4281
 3pt>
 File: ./figures/../annexes/illustration_delta_x.png Graphic file (type png)
 <use ./figures/../annexes/illustration_delta_x.png>
 Package pdftex.def Info: ./figures/../annexes/illustration_delta_x.png  used on
  input line 962.
 (pdftex.def)             Requested size: 136.91603pt x 87.56523pt.
- [48
+ [49
 
- <./figures/../annexes/illustration_delta_x.png>] [49
+ <./figures/../annexes/illustration_delta_x.png>] [50
 
-] [50
+] [51
 
 ]
+<./figures/Hohmann_transfer_orbit.pdf, id=2090, 752.8125pt x 903.375pt>
+File: ./figures/Hohmann_transfer_orbit.pdf Graphic file (type pdf)
+<use ./figures/Hohmann_transfer_orbit.pdf>
+Package pdftex.def Info: ./figures/Hohmann_transfer_orbit.pdf  used on input li
+ne 1014.
+(pdftex.def)             Requested size: 171.14764pt x 205.3734pt.
+
+Overfull \vbox (8.75264pt too high) detected at line 1014
+ []
+
+[52
+
+ <./figures/Hohmann_transfer_orbit.pdf>]
 (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-(./codes/dichotomy_L1.py) [51
+(./codes/dichotomy_L1.py) [53
 
 ]
 \openout4 = `new_presentation.vrb'.
 
  (./new_presentation.vrb
-(./codes/eigen_stuff_extract.py)) [52
+(./codes/eigen_stuff_extract.py)) [54
 
-] (./codes/tau_sigma_calc.py) [53
-
-]
-(./codes/phase_space.py) [54
-
-] (./codes/energy.py) [55
+] (./codes/tau_sigma_calc.py) [55
 
 ]
-(./codes/radius_through_time.py) [56
+(./codes/phase_space.py) [56
 
-] (./codes/rel_diff_1D.py) [57
+] (./codes/energy.py) [57
 
 ]
-(./codes/rel_diff_2D.py) [58
+(./codes/radius_through_time.py) [58
+
+] (./codes/rel_diff_1D.py) [59
+
+]
+(./codes/rel_diff_2D.py) [60
 
 ] (./codes/u_wz_calc.py)
-Overfull \vbox (15.07887pt too high) detected at line 1069
+Overfull \vbox (15.07887pt too high) detected at line 1080
  []
 
-[59
+[61
 
-] (./codes/pot_overlay.py) [60
+] (./codes/pot_overlay.py) [62
 
-] (./codes/rk4-1.py) [61
+] (./codes/rk4-1.py) [63
 
 ] (./codes/rk4-2.py)
-[62
+[64
 
 ] (./codes/traj_display_rel.py)
-Overfull \vbox (15.07887pt too high) detected at line 1101
+Overfull \vbox (15.07887pt too high) detected at line 1112
  []
 
-[63
+[65
 
-] (./codes/display_stacked.py) [64
+] (./codes/display_stacked.py) [66
 
-] (./codes/iterative_corr-1.py) [65
-
-]
-(./codes/iterative_corr-2.py) [66
-
-] (./codes/iterative_corr-3.py) [67
+] (./codes/iterative_corr-1.py) [67
 
 ]
-(./codes/iterative_corr-4.py) [68
+(./codes/iterative_corr-2.py) [68
 
-] (./codes/orbit_lin.py) [69
-
-]
-(./codes/monodromy_calc.py) [70
-
-] (./codes/unstable_manifold.py) [71
+] (./codes/iterative_corr-3.py) [69
 
 ]
-(./codes/stable_manifold.py) [72
+(./codes/iterative_corr-4.py) [70
+
+] (./codes/orbit_lin.py) [71
+
+]
+(./codes/monodromy_calc.py) [72
+
+] (./codes/unstable_manifold.py) [73
+
+]
+(./codes/stable_manifold.py) [74
 
 ]
 \tf@nav=\write8
@@ -1637,20 +1651,14 @@ L3 programming layer <2025-11-06>
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `new_presentation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `new_presentation.out':
-(rerunfilecheck)             Before: 704388BFEEE5258939EDB8DACCD5BEEA;4189
-(rerunfilecheck)             After:  31CE56E0107F8712B6E44C24CCC07BDA;4421.
+Package rerunfilecheck Info: File `new_presentation.out' has not changed.
+(rerunfilecheck)             Checksum: 1CFE834E95090F1EC3023E14B3E5342C;4576.
  ) 
 Here is how much of TeX's memory you used:
- 36950 strings out of 467538
- 769163 string characters out of 5423724
- 1662572 words of memory out of 5000000
- 64921 multiletter control sequences out of 15000+600000
+ 36974 strings out of 467538
+ 769743 string characters out of 5423724
+ 1662595 words of memory out of 5000000
+ 64940 multiletter control sequences out of 15000+600000
  641510 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,18n,123p,414b,1483s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1696,10 +1704,10 @@ pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><c:/te
 xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2025/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on new_presentation.pdf (72 pages, 2374048 bytes).
+Output written on new_presentation.pdf (74 pages, 2389430 bytes).
 PDF statistics:
- 2926 PDF objects out of 2984 (max. 8388607)
- 2407 compressed objects within 25 object streams
- 179 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3020 PDF objects out of 3580 (max. 8388607)
+ 2491 compressed objects within 25 object streams
+ 184 named destinations out of 1000 (max. 500000)
+ 511 words of extra memory for PDF output out of 10000 (max. 10000000)
 

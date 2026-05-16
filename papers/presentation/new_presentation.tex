@@ -177,7 +177,7 @@
 		\textbf{Objectif :}
 		\linebreak
 		
-		Comprendre en quoi les points de Lagrange $L_1$ et $L_2$ sont intéressants pour les missions spatiales d'observation, et leur utilité dans la création de trajectoires moins demandeuses en carburant.
+		Comprendre comment la structure hyperbolique des orbites périodiques autour de L1 et L2 engendre des variétés invariantes utilisables pour concevoir des trajectoires spatiales peu coûteuses en carburant.
 	\end{frame}
 	
 
@@ -298,7 +298,7 @@
 				\\
 				-\sigma C_1e^{\lambda t} + \sigma C_2e^{-\lambda t} + \tau (C_3+C_4) \sin(\nu t)
 			\end{bmatrix},
-			(C_1,C_2,C_3,C_4) \in \mathbb{R}^3
+			(C_1,C_2,C_3,C_4) \in \mathbb{R}^4
 			\}
 		\end{equation}}
 		
@@ -308,12 +308,12 @@
 	
 	\subsection{Schéma numérique pour le système non-linéaire}
 	\begin{frame}
-		\frametitle{Simulation de la dégénérescence autour de L1}
+		\frametitle{Simulation de la divergence orbitale autour de L1}
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.75\linewidth]{degenerescence_L1_plots_RK4.png}
 			\label{fig:instability simulation}
-			\caption[width=0.75\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la dégénérescence de l'orbite autour de L1.}
+			\caption[width=0.75\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la divergence de l'orbite autour de L1.}
 		\end{figure}
 		
 		
@@ -415,7 +415,7 @@
 		\frametitle{Une petite définition...}
 		{\footnotesize
 		\begin{mydefinition}{Matrice fondamentale}
-			Soit $(y_1,\dots,y_n)$ un système fondamentale de solutions d'une équation différentielle. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Phi(t)$ où $\Phi(t)$ est la matrice dont les colonnes sont les vecteurs $(y_1(t),\dots,y_n(t))$.
+			Soit $(y_1,\dots,y_n)$ un système fondamental de solutions d'une équation différentielle linéaire. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Phi(t)$ où $\Phi(t)$ est la matrice dont les colonnes sont les vecteurs $(y_1(t),\dots,y_n(t))$.
 			
 			Si $\Phi$ et $\Psi$ sont deux matrices fondamentales de la même équation différentielle, alors
 			\begin{equation*}
@@ -435,18 +435,14 @@
 		\frametitle{...et deux autres...}
 		{\footnotesize
 		\begin{mydefinition}{Le flot}
-			On définit le flot comme l'application $ \eta :
+			Soit un système non-linéaire $X' = f(X)$ où $f \in \mathcal{C}^1(\mathbb{R},\mathbb{R}^4)$. On définit le flot comme l'application $ \eta :
 			\begin{array}{rcl}
 				\mathbb{R} \times \mathbb{R}^4 & \to & \mathbb{R}^4 \\
 				(t,x_0) & \mapsto & x(t)
 			\end{array}
 			$ où $x$ correspond à l'unique solution au problème de Cauchy de condition initiale $x_0$.
-			
-			On peut remarquer qu'on a alors la relation
-			\begin{equation*}
-				\forall x_0 \in \mathbb{R}^4, \forall t \in \mathbb{R}, \eta(t,x_0) = \Phi(t)x_0
-			\end{equation*}
 		\end{mydefinition}
+		\bigskip
 		\pause
 		\begin{mydefinition}{Matrice de Monodromie}
 			Soit une équation différentielle de la forme $X'=A(t)X$ où A est à coefficients $T$-périodiques. On appelle \textit{matrice de Monodromie} la matrice $M = \Phi(T)$ où $\Phi$ est la matrice fondamentale principale du système.
@@ -456,19 +452,23 @@
 	
 	\begin{frame}
 		\frametitle{Sensibilité du système aux conditions initiales}
-		{\small Le flot vérifie pour $t \in \mathbb{R}$ fixé, $x_0 \in \mathbb{R}^4$ et $\delta x_0$ une petite variation,
+		{\small Soit $\gamma$ une solution $T$-périodique du système non-linéaire. Soit $\delta x_0 \in \mathbb{R}^4$ une petite perturbation initiale. On linéarise le flot le long de $\gamma$ :
 		\begin{equation*}
-			\eta(t,x_0+\delta x_0) = \Phi(t)(x_0+\delta x_0) = \eta(t,x_0) + \Phi(t)\delta x_0 + \underset{\delta x_0 \to 0}{o}(\delta x_0)
+			\eta(t,x_0+\delta x_0) = \eta(t,x_0) + D_{x_0}\eta(t,x_0)\delta x_0 + \underset{\delta x_0 \to 0}{o}(\delta x_0)
+		\end{equation*}
+		\pause		
+		et on remarque que $D_{x_0}\eta(t,x_0)$ vérifie 
+		\begin{equation*}
+			\Phi ' = Df(\gamma(t))\Phi, \text{ et } D_{x_0}\eta(0,x_0) = I_4
 		\end{equation*}
 		\pause
-		\bigskip
-		dont on déduit le}
-		
-		\begin{importantresult}{Lien matrice de Monodromie/sensibilité aux C.I.}
+		donc c'est la matrice fondamentale principale de $X' = Df(\gamma(t))X$. On en déduit le
+		\begin{importantresult}{Lien matrice de Monodromie du système linéarisé/sensibilité aux C.I.}
 			\begin{equation}
 				\forall k \in \mathbb{N}^*, \delta x(kT) = M^k\delta x_0
 			\end{equation}
 		\end{importantresult}
+		}
 	\end{frame}
 	
 	\subsection{Vecteurs propres de la matrice de Monodromie}
@@ -569,7 +569,7 @@
 			\column{0.48\linewidth}
 			\textbf{Variété instable}
 			
-			{\footnotesize On intègre le système non-linéaire \ref{équations du mouvement} en prenant comme condition initiale celle précédente.}
+			{\footnotesize On intègre le système non-linéaire en prenant comme condition initiale celle précédente.}
 			
 			\pause
 			
@@ -949,7 +949,7 @@
 			\end{figure}
 			
 			\column{0.5\linewidth}
-			On a que $J\eta(t,x_0) = \Phi(t)$. Et en $t = T$, on obtient bien
+			On a que $D_{x_0}\eta(t,x_0) = \Phi(t)$ comme démontré dans la présentation. Et en $t = T$, on obtient bien
 			\begin{equation*}
 				\delta x(T) = \Phi(T) \delta x_0 = M \delta x_0
 			\end{equation*}
@@ -1000,6 +1000,17 @@
 			P(t+T) = \Phi(t+T)e^{-(t+T)B} = \Phi(t)Me^{-TB}e^{-tB} = \Phi(t)e^{-tB} = P(t)
 		\end{equation*}
 		}
+	\end{frame}
+	
+	\subsection{Mécanique orbitale}
+	\begin{frame}
+		\frametitle{Transfert de Hohmann}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{Hohmann_transfer_orbit.pdf}
+		\end{figure}
+		\photosources{Wikimedia Commons}
+		
 	\end{frame}
 	
 	
