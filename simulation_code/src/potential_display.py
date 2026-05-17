@@ -46,16 +46,16 @@ vmax = np.percentile(potential, 99)
 # Plotting
 fig, ax = plt.subplots(figsize=(10, 8))
 cont = ax.contour(X, Y, potential, levels=10000, cmap='plasma', vmin=vmin, vmax=vmax, norm=PowerNorm(gamma=0.8))
-plt.colorbar(cont, label='Fake Gravitational Potential')
+plt.colorbar(cont, label='Energie Potentielle Apparente (grandeurs arbitraires)')
 
 # Mark Sun and Earth
 ax.plot(-sun_dist, 0, 'yo', label='Sun')
 ax.plot(d-sun_dist, 0, 'bo', label='Earth')
 
 ax.legend()
-ax.set_title("Simplified Lagrange Point Visualization")
-ax.set_xlabel("x (normalized units)")
-ax.set_ylabel("y (normalized units)")
+ax.set_title("Visualisation du potentiel apparent")
+ax.set_xlabel("x (non-dimensionnalisé)")
+ax.set_ylabel("y (non-dimensionnalisé)")
 ax.set_aspect('equal')
 plt.grid(True)
 plt.tight_layout()

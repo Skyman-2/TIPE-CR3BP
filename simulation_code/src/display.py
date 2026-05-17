@@ -209,49 +209,49 @@ def ref_traj_comp(ref_traj,comp_traj,working_system,time_step=10,color_palette="
 
     labels = {
         "ref_traj": {
-            "name": "Reference Trajectory",
+            "name": "Trajectoire 1",
             "xlabel": "x [m]",
             "ylabel": "y [m]",
         },
         "ref_phase": {
-            "name": "Reference Phase Space",
-            "xlabel": "x [m]",
-            "ylabel": "y [m]",
+            "name": "Espace de phase de la trajectoire 1",
+            "xlabel": "v_x [m/s]",
+            "ylabel": "v_y [m/s]",
         },
         "ref_energy": {
-            "name": "Reference Energy",
-            "xlabel": "Time [s]",
-            "ylabel": "Energy [J]",
+            "name": "Énergie de la trajectoire 1",
+            "xlabel": "Temps [s]",
+            "ylabel": "Énergie [J]",
         },
         "comp_traj": {
-            "name": "Trajectory compared",
+            "name": "Trajectoire 2",
             "xlabel": "x [m]",
             "ylabel": "y [m]",
         },
         "comp_phase": {
-            "name": "Phase Space of compared",
-            "xlabel": "x [m]",
-            "ylabel": "y [m]",
+            "name": "Espace de phase de la trajectoire 2",
+            "xlabel": "v_x [m/s]",
+            "ylabel": "v_y [m/s]",
         },
         "comp_energy": {
-            "name": "Energy of compared",
-            "xlabel": "Time [s]",
-            "ylabel": "Energy [J]",
+            "name": "Énergie de la trajectoire 2",
+            "xlabel": "Temps [s]",
+            "ylabel": "Énergie [J]",
         },
         "relative_radius": {
-            "name": "Relative Radius",
-            "xlabel": "Time [s]",
-            "ylabel": "Ratio",
+            "name": "Différence relative de rayon",
+            "xlabel": "Temps [s]",
+            "ylabel": "Rapport relatif",
         },
         "relative_phase": {
-            "name": "Relative Phase Space",
-            "xlabel": "Time [s]",
-            "ylabel": "Ratio",
+            "name": "Différence relative de l'état dans l'espace de phase en norme.",
+            "xlabel": "Temps [s]",
+            "ylabel": "Rapport relatif",
         },
         "relative_energy": {
-            "name": "Relative Energy",
-            "xlabel": "Time [s]",
-            "ylabel": "Ratio",
+            "name": "Différence relative de l'énergie",
+            "xlabel": "Temps [s]",
+            "ylabel": "Rapport relatif",
         },
     }
 
@@ -312,24 +312,24 @@ def one_traj_relative_origin_display(traj,working_system,time_step=10,color_pale
 
     labels = {
         "traj": {
-            "name": "Trajectory",
+            "name": "Trajectoire",
             "xlabel": "x [m]",
             "ylabel": "y [m]",
         },
         "phase": {
-            "name": "Phase Space",
-            "xlabel": "r [m]",
-            "ylabel": "v [m/s]",
+            "name": "Espace de phase en norme",
+            "xlabel": "rayon [m]",
+            "ylabel": "vitesse [m/s]",
         },
         "energy": {
-            "name": "Energy",
-            "xlabel": "Time [s]",
-            "ylabel": "Energy [J]",
+            "name": "Énergie",
+            "xlabel": "Temps [s]",
+            "ylabel": "Énergie [J]",
         },
         "relative_radius": {
-            "name": "Relative Radius",
-            "xlabel": "Time [s]",
-            "ylabel": "Ratio",
+            "name": "Distance à l'origine spatiale",
+            "xlabel": "Temps [s]",
+            "ylabel": "Rapport relatif [/]",
         },
     }
     autonamed_subplot(axes, labels)

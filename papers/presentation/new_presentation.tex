@@ -177,7 +177,7 @@
 		\textbf{Objectif :}
 		\linebreak
 		
-		Comprendre comment la structure hyperbolique des orbites périodiques autour de L1 et L2 engendre des variétés invariantes utilisables pour concevoir des trajectoires spatiales peu coûteuses en carburant.
+		Comprendre comment les orbites périodiques autour de L1 et L2 structurent l’espace des phases, et comment ces structures peuvent être exploitées pour concevoir des trajectoires spatiales peu coûteuses en carburant.
 	\end{frame}
 	
 
@@ -206,7 +206,15 @@
 	
 	\begin{frame}
 		\frametitle{Coordonnées des points de Lagrange}
+		\begin{importantresult}{Expression du potentiel apparent}
+			\begin{equation}
+				\bar{U} = U(x,y) - \frac{1}{2}m\omega^2(x^2+y^2)
+				\label{expression du potentiel apparent}
+			\end{equation}
+		\end{importantresult}
+		\pause
 		\begin{figure}[H]
+			\footnotesize
 			\centering
 			\label{tab:toutes_les_coord}
 			\renewcommand{\arraystretch}{1.6}
@@ -233,7 +241,7 @@
 		\frametitle{Représentation des points de Lagrange}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.8\textwidth]{ref_rng_avec_points_deq.pdf}
+			\includegraphics[width=0.9\textwidth]{potentiel_apparent_2D.pdf}
 			\caption{Positions des points de Lagrange dans le plan d'étude.}
 		\end{figure}
 	\end{frame}
@@ -250,9 +258,9 @@
 				\\
 				\dot{y} = v_y
 				\\
-				\dot{v_x} = \ddot{x} = 2\omega\dot{y} - \frac{1}{m}\bar{\mathcal{U}}_x
+				\dot{v_x} = \ddot{x} = 2\omega\dot{y} - \frac{1}{m}\bar{U}_x
 				\\
-				\dot{v_y} = \ddot{y} = - 2\omega\dot{x} - \frac{1}{m}\bar{\mathcal{U}}_y
+				\dot{v_y} = \ddot{y} = - 2\omega\dot{x} - \frac{1}{m}\bar{U}_y
 			\end{cases}
 		\end{equation*}
 		Ce qui se linéarise en
@@ -294,9 +302,9 @@
 		\begin{equation}
 			\mathcal{S}_{lin}^{pos} = \{ t \to
 			\begin{bmatrix}
-				C_1e^{\lambda t} + C_2e^{-\lambda t} + (C_3+C_4)\cos(\nu t)
+				C_1e^{\lambda t} + C_2e^{-\lambda t} + C_3\cos(\nu t) + C_4 \sin(\nu t)
 				\\
-				-\sigma C_1e^{\lambda t} + \sigma C_2e^{-\lambda t} + \tau (C_3+C_4) \sin(\nu t)
+				-\sigma C_1e^{\lambda t} + \sigma C_2e^{-\lambda t} + \tau (C_3 \sin(\nu t) - C_4 \cos(\nu t))
 			\end{bmatrix},
 			(C_1,C_2,C_3,C_4) \in \mathbb{R}^4
 			\}
@@ -308,17 +316,24 @@
 	
 	\subsection{Schéma numérique pour le système non-linéaire}
 	\begin{frame}
-		\frametitle{Simulation de la divergence orbitale autour de L1}
+		\frametitle{Allure des solutions du modèle linéaire}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.75\linewidth]{degenerescence_L1_plots_RK4.png}
-			\label{fig:instability simulation}
-			\caption[width=0.75\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la divergence de l'orbite autour de L1.}
+			\includegraphics[width=1\linewidth]{illustration_arbitraire_sol_lin.png}
+			\caption[width=1\linewidth]{Tracé de l'allure des solutions du système linéaire grâce à Desmos. \textit{Le choix des constantes est arbitraire ici.}}
 		\end{figure}
-		
-		
+		\photosources{Desmos}	
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Confrontation à la divergence du modèle non-linéaire (2/2)}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.90\linewidth]{degenerescence_L1_plots_RK4.png}
+			\label{fig:instability simulation}
+			\caption[width=1\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la divergence de l'orbite autour de L1. \textit{Condition initiale : immobile à $100 \: m$ de $L1$}.}
+		\end{figure}
+	\end{frame}
 	
 	
 	
@@ -354,7 +369,7 @@
 		\pause
 		
 		{\footnotesize	
-		On en déduit qu'une orbite de rayon $R$ à pour condition initiale	
+		On en déduit qu'une orbite d'amplitude $R$ selon $Ox$ a pour condition initiale	
 		$
 			\begin{cases}
 				x_0 = R
@@ -403,7 +418,7 @@
 		\frametitle{Illustration de la correction itérative}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.85\linewidth]{iterative_correction_showcase.png}
+			\includegraphics[width=0.75\linewidth]{iterative_correction_showcase.png}
 			\caption{Illustration de la méthode de correction itérative par dichotomie (Code python en annexe \ref{py:code de correction itérative d'orbite}).}
 		\end{figure}
 	\end{frame}
@@ -415,19 +430,16 @@
 		\frametitle{Une petite définition...}
 		{\footnotesize
 		\begin{mydefinition}{Matrice fondamentale}
-			Soit $(y_1,\dots,y_n)$ un système fondamental de solutions d'une équation différentielle linéaire. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Phi(t)$ où $\Phi(t)$ est la matrice dont les colonnes sont les vecteurs $(y_1(t),\dots,y_n(t))$.
+			Soit $(y_1,\dots,y_n)$ un système fondamental de solutions d'une équation différentielle linéaire. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Phi(t)$ où $\Phi(t)$ est la matrice dont les colonnes sont les vecteurs $(y_1(t),\dots,y_n(t))$. Alors si le système est $X' = A(t)X$, $\Phi$ vérifie $\Phi' = A(t)\Phi$.
 			
-			Si $\Phi$ et $\Psi$ sont deux matrices fondamentales de la même équation différentielle, alors
-			\begin{equation*}
-				\exists M \in GL_n(\mathbb{C}), \Phi = \Psi M
-			\end{equation*}
+			On appelle \textit{matrice fondamentale principale} la matrice fondamentale qui vérifie que $\Phi(t_0) = I_n$.
 		\end{mydefinition}
 		
 		\bigskip
 		
-		\textit{Remarque :} Un résultat utile
+		\textit{Remarque :}
 		
-		Si $y$ est une solution de l'équation différentielle, alors $\forall t \in \mathbb{R}, y(t) = \Phi(t)y_0$ où $\Phi$ est \textbf{la} matrice fondamentale principale.
+		Si $y$ est une solution de l'équation différentielle, een notant $y_0 := y(t_0)$, alors $\forall t \in \mathbb{R}, y(t) = \Phi(t)y_0$ où $\Phi$ est la matrice fondamentale principale.
 		}
 	\end{frame}
 	
@@ -435,12 +447,12 @@
 		\frametitle{...et deux autres...}
 		{\footnotesize
 		\begin{mydefinition}{Le flot}
-			Soit un système non-linéaire $X' = f(X)$ où $f \in \mathcal{C}^1(\mathbb{R},\mathbb{R}^4)$. On définit le flot comme l'application $ \eta :
+			Soit un système non-linéaire $X' = f(X)$ où $f \in \mathcal{C}^1(\mathbb{R},\mathbb{R}^4)$. On définit le flot avec origine de temps $t_0$ comme l'application $ \eta :
 			\begin{array}{rcl}
 				\mathbb{R} \times \mathbb{R}^4 & \to & \mathbb{R}^4 \\
 				(t,x_0) & \mapsto & x(t)
 			\end{array}
-			$ où $x$ correspond à l'unique solution au problème de Cauchy de condition initiale $x_0$.
+			$ où $x$ correspond à l'unique solution au problème de Cauchy de condition initiale $x_0$ au temps $t_0$.
 		\end{mydefinition}
 		\bigskip
 		\pause
@@ -452,14 +464,14 @@
 	
 	\begin{frame}
 		\frametitle{Sensibilité du système aux conditions initiales}
-		{\small Soit $\gamma$ une solution $T$-périodique du système non-linéaire. Soit $\delta x_0 \in \mathbb{R}^4$ une petite perturbation initiale. On linéarise le flot le long de $\gamma$ :
+		{\small Soit $\gamma$ une solution $T$-périodique du système non-linéaire correspondant à la condition initiale $\gamma(t_0) = x_0$. Soit $\delta x_0 \in \mathbb{R}^4$ une petite perturbation initiale. On linéarise le flot le long de $\gamma$ :
 		\begin{equation*}
 			\eta(t,x_0+\delta x_0) = \eta(t,x_0) + D_{x_0}\eta(t,x_0)\delta x_0 + \underset{\delta x_0 \to 0}{o}(\delta x_0)
 		\end{equation*}
 		\pause		
-		et on remarque que $D_{x_0}\eta(t,x_0)$ vérifie 
+		et on remarque qu'en notant $\Phi(t) := D_{x_0}\eta(t,x_0)$,
 		\begin{equation*}
-			\Phi ' = Df(\gamma(t))\Phi, \text{ et } D_{x_0}\eta(0,x_0) = I_4
+			\Phi ' = Df(\gamma(t))\Phi, \text{ et } \Phi(t_0) = I_4
 		\end{equation*}
 		\pause
 		donc c'est la matrice fondamentale principale de $X' = Df(\gamma(t))X$. On en déduit le
@@ -478,8 +490,8 @@
 		{\small 
 		\begin{importantresult}{Méthode numérique pour calculer $M$}
 			\begin{enumerate}
-				\item Calcul du linéarisé en chaque point de l'orbite $A : t \mapsto Jf(\gamma(t))$.
-				\item Intégration de $\Phi(0) = I_n$ par le linéarisé le long de l'orbite, pendant une période $T$.
+				\item Calcul du linéarisé $Df(\gamma(t))$ en chaque point $\gamma(t)$ de l'orbite.
+				\item Intégration du système linéaire précédent sur une période $T$ en partant de $\Phi(0) = I_4$.
 			\end{enumerate}
 		\end{importantresult}
 		}
@@ -560,7 +572,7 @@
 	
 	\begin{frame}
 		\frametitle{Calcul numérique des variétés}
-		On utilise comme condition initiale $\gamma_0 \pm \varepsilon \mathcal{N} x_i$ où $\varepsilon = 10^{-6}$ et $\mathcal{N}$ est la dimensionalisation du problème pour l'espace des phases ($*$).
+		On utilise comme condition initiale $\gamma_0 \pm \varepsilon \mathcal{N} x_i$ où $\varepsilon = 10^{-6}$ et $\mathcal{N}$ est le redimensionnement du problème pour l'espace des phases ($*$).
 		
 		\bigskip
 		\bigskip
@@ -904,11 +916,9 @@
 
 	\subsection*{Théorie de Floquet}
 	\begin{frame}
+		\frametitle{Lien entre deux matrices fondamentales}
 		
 		{\small
-		\begin{importantresult}{}
-			Si $\Phi$ et $\Psi$ sont deux matrices fondamentales d'une même équation différentielle. Alors il existe $M \in GL_n(\mathbb{C})$ tel que $\Phi = \Psi M$ et que $M$ soit indépendante de $t$.
-		\end{importantresult}
 		\textit{Démonstration :}
 		Soit $y_0 \in \mathbb{R}^n$, il existe une unique solution $y$ de l'équation différentielle tel que $y(0) = y_0$. De plus,
 		\begin{equation*}
@@ -928,19 +938,20 @@
 	\end{frame}
 	
 	\begin{frame}
+		\frametitle{Lien matrice de Monodromie/sensibilité aux C.I.}
 		
 		{\small
-		\begin{importantresult}{Lien matrice de Monodromie/sensibilité aux C.I.}
-			\begin{equation*}
-				\forall k \in \mathbb{N}^*, \delta x(kT) = M^k \delta x_0
-			\end{equation*}
-		\end{importantresult}
-		Pour $x_0 \in \mathbb{R}^n$ une condition initiale, $t \in \mathbb{R}$ un instant, et $\delta x_0 \in \mathbb{R}^n$ une petite perturbation, on pose
+		On considère
 		\begin{equation*}
-			\delta x(t) := \eta(t,x_0 + \delta x_0) - \eta(t,x_0)
+			x'(t) = f(x(t)), \qquad f \in \mathcal{C}^2(\mathbb{R}^n,\mathbb{R}^n)
 		\end{equation*}
-		qui représente la variation de la trajectoire en $t$ pour une perturbation $\delta x_0$.
+		et on fixe $t_0$ l'origine du temps.
 		
+		Supposons que l'on ait une solution périodique $\gamma$ tel que
+		\begin{equation*}
+			\gamma(t+T) = \gamma(t), \qquad \gamma(t_0) = x_0
+		\end{equation*}
+		Soit $\delta x_0 \in \mathbb{R}^4$ une petite perturbation. On note $x(t) := \eta(x_0 + \delta x_0, t)$ la solution correspondante à la C.I. $x_0 + \delta x_0$. 
 		\begin{columns}
 			\column{0.4\linewidth}
 			\begin{figure}
@@ -949,13 +960,12 @@
 			\end{figure}
 			
 			\column{0.5\linewidth}
-			On a que $D_{x_0}\eta(t,x_0) = \Phi(t)$ comme démontré dans la présentation. Et en $t = T$, on obtient bien
+			On note $\xi(t) := x(t) - \gamma(t)$ l'écart à la solution périodique à un instant $t$. Dans l'équation différentielle, cela donne :
 			\begin{equation*}
-				\delta x(T) = \Phi(T) \delta x_0 = M \delta x_0
+				\gamma'(t) + \xi'(t) = f(\gamma(t) + \xi(t))
 			\end{equation*}
 			
 		\end{columns}
-		
 		}
 		
 		\photosources{Dynamical Systems, the Three-Body Problem and Space Mission Design}
@@ -964,6 +974,35 @@
 	\begin{frame}
 		
 		{\small
+		Par développement de Taylor,
+		\begin{equation*}
+			f(p + \xi) = f(p) + Df(p)\xi + o(\xi)
+		\end{equation*}
+		et en notant $\delta x$ l'approximation de $\xi$ au premier ordre,
+		\begin{equation*}
+			\delta x'(t) = Df(\gamma(t))\delta x(t)
+		\end{equation*}
+		car $\gamma$ vérifie $x'(t) = f(x(t))$.
+		Comme $\gamma$ est $T$-périodique, $t \mapsto Df(\gamma(t)) =: A(t)$ l'est aussi.
+		
+		Or à $t$ fixé,
+		\begin{equation*}
+			\eta(t,x_0 + \delta x_0) = \eta(t,x_0) + D_{x_0}\eta(t,x_0)\delta x_0 + o(\delta x_0)
+		\end{equation*}
+		
+		On pose $\Psi(t) := D_{x_0}\eta(t,x_0)$. Or par déf du flot, $\frac{\partial}{\partial t}\eta(t,x_0) = f(\eta(t,x_0))$. Alors en différentiant par rapport à $x_0$, et grâce au théorème de Schwartz ($f$ étant de classe $C^2$),
+		\begin{equation*}
+			\frac{d}{dt}\Psi(t) = Df(\gamma(t))\Psi(t)
+		\end{equation*}
+		et comme $\eta(t_0,x_0) = x_0$, $D_{x_0}\eta(t_0,x_0) = \Psi(t_0) = I_n$ donc inversible. $\Psi(t)$ est donc la matrice fondamentale principale du système.
+		}
+	\end{frame}
+	
+	
+	\begin{frame}
+		
+		{\small
+			
 		\begin{importantresult}{Théorème de Floquet}
 			Soit $X'=AX$ une équation différentielle où $A$ est à coefficients $T$-périodiques, et $\Phi$ la matrice fondamentale principale du système. Alors il existe $P \in \mathcal{C}^1_T(\mathbb{R}, \mathcal(M)_n(\mathbb{C}))$ et $B \in \mathcal(M)_n(\mathbb{C})$ tel que
 			\begin{equation*}
@@ -974,8 +1013,9 @@
 		
 		Avec la forme normale de Floquet, on observe que
 		\begin{equation*}
-			M^k = (e^{TB})^k = e^{kTB} = P(kT)e^{kTB} = \Phi(kT)
+			M^k = (e^{TB})^k = e^{kTB} = P(kT)e^{kTB} = \Psi(kT)
 		\end{equation*}
+		et comme $\delta x(t) = \Psi(t)\delta x_0$, $\delta x(kT) = \Psi(kT)\delta x_0 = M^k \delta x_0$.
 		}
 	\end{frame}
 	
@@ -1002,7 +1042,7 @@
 		}
 	\end{frame}
 	
-	\subsection{Mécanique orbitale}
+	\subsection*{Mécanique orbitale}
 	\begin{frame}
 		\frametitle{Transfert de Hohmann}
 		\begin{figure}
