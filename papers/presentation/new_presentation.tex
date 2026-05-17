@@ -147,30 +147,42 @@
 		\frametitle{Introduction}
 		\begin{figure}[h]
 			\centering
-			\begin{subfigure}[b]{0.2\textwidth}
+			\begin{subfigure}[b]{0.3\textwidth}
 				\centering
-				\uncover<1->{\includegraphics[width=\linewidth]{./euler_portrait.jpg}}
+				\uncover<1->{\includegraphics[width=\linewidth]{./newton_portrait.jpg}}
+				\caption{Isaac Newton}
+				\label{fig:portrait de Newton}
+			\end{subfigure}\hfill
+			\begin{subfigure}[b]{0.3\textwidth}
+				\centering
+				\uncover<1->{\includegraphics[width=\linewidth]{euler_portrait.jpg}}
 				\caption{Leonhard Euler}
 				\label{fig:portrait de Euler}
 			\end{subfigure}\hfill
-			\begin{subfigure}[b]{0.23\textwidth}
+			\begin{subfigure}[b]{0.3\textwidth}
 				\centering
 				\uncover<1->{\includegraphics[width=\linewidth]{lagrange_portrait.jpg}}
 				\caption{Joseph-Louis Lagrange}
 				\label{fig:portrait de Lagrange}
-			\end{subfigure}\hfill
-			\begin{subfigure}[b]{0.45\textwidth}
-				\centering
-				\uncover<2->{\includegraphics[width=\linewidth]{webb_orbit.png}}
-				\uncover<2->{\caption{Orbite du James Webb Space Telescope}}
-				\label{fig:orbite de JWST}
 			\end{subfigure}
 			\label{fig:firstfig}
 			\caption{}
 		\end{figure}
 
-		\photosources{NASA \;|\; Wikimedia Commons}
+		\photosources{Wikimedia Commons}
 	\end{frame}
+	
+	\begin{frame}
+		\begin{figure}
+			\centering
+			\uncover{\includegraphics[width=0.8\linewidth]{webb_orbit.png}}
+			\uncover{\caption{Orbite du James Webb Space Telescope}}
+			\label{fig:orbite de JWST}
+		\end{figure}
+		\photosources{NASA}
+	\end{frame}
+	
+	
 	
 	\begin{frame}
 		\frametitle{Objectif}
@@ -909,7 +921,7 @@
 			\end{cases}
 		\end{equation*}
 		
-		Grâce au module \verb|numpy|, on peut évaluer numériquement $A$ (cf. la partie Python des annexes). On obtient de cette manière que $\nu\tau = 2,37\cdot 10^{-5}$.
+		Grâce au module \verb|numpy|, on peut évaluer numériquement $A$ (cf. la partie Python des annexes). On obtient de cette manière que $\nu\tau = 2,37\cdot 10^{-5} \: s^{-1}$.
 		}
 	\end{frame}
 	

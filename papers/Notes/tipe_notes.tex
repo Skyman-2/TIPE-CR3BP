@@ -1,16 +1,207 @@
-\documentclass[15pt]{article}
+\documentclass[12pt]{article}
 \title{Notes pour la présentation du TIPE}
 \author{Yannis ABDELOUAHAB}
 \date{2025-2026}
 \usepackage[a4paper, total={7in,9in}]{geometry}
 \usepackage[french]{babel}
 \usepackage{amsmath}
+\usepackage{mdframed}
 
 
-\begin{document}
-	\maketitle
-	\tableofcontents
-	
+\mdfdefinestyle{MyQuoteFrame}{
+	linecolor=blue,
+	rightline=false, topline=false, bottomline=false,
+	outerlinewidth=0.1pt,
+	innerleftmargin=3em,
+	backgroundcolor=white}
+
+
+\begin{document}	
 	\section{Introduction}
+	\subsection{Historique}
+	\textit{Wikipédia} :
+	En mécanique céleste, le problème à trois corps a passionné de nombreux mathématiciens. Newton, après avoir énoncé en 1687 sa loi universelle de la gravitation, [...] chercha à décrire le comportement de trois corps sans y parvenir. Leonhard Euler découvre les trois premiers points (L1, L2 et L3) en 1765. Joseph-Louis Lagrange découvre les deux autres (L4 et L5) en 1772. Joseph Liouville établit l'instabilité linéaire des trois premiers (L1, L2 et L3) en 1842. Gabriel Gascheau établit la condition de stabilité linéaire des points L4 et L5 en 1843. Edward J. Routh la redécouvre en 1875 et sa valeur numérique est nommée en son honneur.
+	
+	
+	\textit{Récap} :
+	\begin{itemize}
+		\item 1687 : Première étude par Newton. Inconclusive
+		\item 1765 : Euler découvre L1, L2 et L3
+		\item 1772 : Lagrange découvre L4 et L5
+		\item 1842 : Liouville établit l'instabilité linéaire de L1, L2 et L3
+		\item 1843 : Gascheau établit la condition de stabilité linéaire pour L4 et L5
+		\item 1875 : Routh redécouvre cette même condition
+	\end{itemize}
+	
+	
+	\subsection{Utilité dans les missions spatiales}
+	\begin{itemize}
+		\item Planck, 2009 : Observatoire spatial de l'ESA stationné à L2 qui étudiait le CMB (Cosmic Microwave Background, en français \textit{fond diffus cosmologique}).
+		\item James Webb, 2021 : Télescope spatial de la NASA stationné à L2 avec multiples objectifs scientifiques (étude des premières étoiles et galaxies, étude de l'évolution des galaxies, observation de la formation des étoiles, étude de la composition de systèmes planètaires).
+		\item SoHO, 1995 : Observatoire solaire spatial de l'ESA et de la NASA stationné à L1 avec pour objectif l'étude de la structure du Soleil, et des processus de création des vents solaires.
+		\item Queqiao, 2018 : Relai de communication de la CNSA stationné en L2, utilisé pour communiquer avec la sonde Chang'e 4.
+	\end{itemize}
+	Autres mentions : Herschel en L2 (Télescope de l'ESA, 2009), WMAP en L2 (Télescope de la NASA, 2021), Gaia en L2 (Télescope de l'ESA, 2013)
+	
+	\subsection{Objectif}
+	Comprendre comment les orbites périodiques autour de L1 et L2 structurent l'espace des phases, et comment ces structures peuvent être exploitées pour concervoir des trajectoires spatiales peu coûteuses en carburant.
+	
+	
+	\clearpage
+	\section{Étude des points colinéaires}
+	\subsection{Définition du référentiel et calcul des points d'équilibres}
+	\textit{Hypothèses de travail}
+	\begin{itemize}
+		\item Le système dont le mvt est étudié est de \textbf{masse négligeable}.
+		\item On néglige toutes forces gravitationelles extérieure aux deux masses.
+		\item $\mu << 1$.
+	\end{itemize}
+	
+	\textit{Points importants :}
+	\begin{itemize}
+		\item Le centre du système est le \textbf{barycentre} des masses.
+		\item Le mouvement de $M_1$ et de $M_2$ est circulaire uniforme dans $R_{gal} \implies$ on choisit le référentiel de \textbf{corotation}.
+	\end{itemize}
+	
+	\bigskip
+	
+	On cherche les points d'annulation du gradient du potentiel (\textbf{CN d'équilibre}). 
+	\begin{itemize}
+		\item Points colinéaires : Par DL
+		\item Points équilatéraux : Par calcul brut
+	\end{itemize}
+	
+	On peut visualiser les points en question sur le tracé python (\textit{tracé avec unités arbitraires}).
+	
+	
+	\subsection{Stabilité linéaire de L1 et L2}
+	On obtient les équations du mouvement par \textbf{PFD} : $\bar{U}_x$ et $\bar{U}_y$ donnent les forces conservatives (gravitationelles et inertie d'entrainement), il faut rajouter la force d'inertie de \textbf{Coriolis}.
+	
+	On fait un \textbf{DL du potentiel} pour obtenir un système linéaire. On l'encode par une matrice $A$.
+	
+	\textit{Point important :}
+	\begin{itemize}
+		\item Bien clarifier la notation de dérivé première et seconde avec les $x$ et $y$ en indice.
+	\end{itemize}
+	
+	\bigskip
+	
+	On fait une approximation des $\bar{U}_{xx}, \bar{U}_{xy}, \bar{U}_{yx}, \bar{U}_{yy}$. On diagonalise $A$ et on calcule les vecteurs propres. On en déduit l'expression des solutions du système \textit{linéaire}.
+	
+	On peut tracer l'\textbf{allure} des solutions avec des \textbf{constantes arbitraires}
+	\begin{itemize}
+		\item Mouvement \textbf{modulé exponentiellement} (+ et - donc temps croissant et décroissant)
+		\item Mouvement \textbf{oscillatoire} dans un sous-espace
+	\end{itemize}
+	donc on déduit l'existence de solution périodique pour le système \textit{linéaire}.
+	
+	
+	\subsection{Stabilité non-linéaire}	
+	On confronte le modèle linéaire qui prédit un terme exponentiel à une \textbf{simulation \textit{non-linéaire}} $\to$ pas exactement exponentiel, mais proche.
+	
+	\textit{Remarque :} On est très loin du voisinage à la fin de la simulation. Conclusion \textbf{qualitative} mais pas quantitative.
+	
+	\textit{N.B. :} Energie constante dans la simulation. C'est bon signe!
+	
+	
+	
+	\clearpage
+	\section{Variétés autour de L1}
+	\subsection{Obtention d'une orbite du système non-linéaire}
+	On repart des solutions du système linéaire obtenue à la partie précédente. Cela nous permet de faire une \textbf{première estimation} de notre solution. 
+	
+	On fixe les \textbf{caractéristiques} de l'orbite. Les conditions initiales vont dépendre de ce choix.
+	
+	\textit{Points importants}
+	\begin{itemize}
+		\item Choix d'expliciter la composante oscillatoire des solutions sous forme amplitude/déphasage plutôt que $Acos + Bsin \to$ explicite mieux que c'est une famille de courbe à \textbf{un seul paramètre}.
+		\item SPDG on suppose que $\varphi = 0$. On choisit l'amplitude de notre orbite \textbf{selon l'axe $Ox$}. L'orbite ne sera pas circulaire.
+		\item Introduire le concept d'instant de premier retour.
+	\end{itemize}
+	
+	\bigskip
+	
+	\textit{Méthode de correction itérative :}
+	\begin{enumerate}
+		\item On choisit l'amplitude en $x$. On en déduit les C.I. \textbf{de la solution linéaire}.
+		\item On cherche un intervalle pour $v_{y0}$ tel que en les bornes de l'intervalle, \textbf{$v_x(t_{1^{er}\text{retour}})$ soit de signe différent}.
+		\item On fait une \textbf{dichotomie} pour obtenir le meilleur $v_{y0}$ tel que $v_x(t_{1^{er}\text{retour}})$ soit le plus proche de $0$ à une tolérance choisie près.
+	\end{enumerate}
+	
+	\subsection{Introduction à la théorie de Floquet}
+	\textit{Points importants :}
+	\begin{itemize}
+		\item Mentionner que la matrice fondamentale principale est \textbf{unique} (démo cf. Annexes).
+		\item Parler des \textbf{hypothèses de régularité} (le CR3BP permettra d'avoir $C^\infty$).
+		\item Expliciter ce que fait le flot en langage courant : 
+			\begin{quotation}
+				"Le flot est donc l'application qui prend une condition initiale, et un instant t, et qui associe alors l'état que renverrait la solution à un instant $t$ si elle vérifie la C.I. (l'unicité est assurée avec C.L.)."
+			\end{quotation}
+		\item Mentionner que la matrice de Monodromie vient du \textbf{théorème de Floquet} pour EDO linéaire à coefficients périodiques.
+	\end{itemize}
+	
+	\bigskip
+	
+	On fait un \textbf{DL du flot} pour la variable C.I. (On a le droit de faire un DL car le flot est au moins $C^1$ car dans notre cas, $f$ est $C^1$. Démo pas en annexe). Expliquer pourquoi la différentielle du flot rend \textbf{intuitivement} compte de la sensibilité aux C.I.
+	
+	La différentielle du flot vérifie l'équation différentielle ayant pour coefficient le linéarisé le long de l'orbite et vaut $I$ en l'origine du temps $\to$ \textbf{matrice fondamentale principale du linéarisé}
+	
+	Avec la théorie de Floquet, en $T$, c'est la matrice de monodromie. Avec le théorème de Floquet, $\Phi(kT) = M^k$ (grâce à l'exponentielle matricielle, cf. Annexes).
+	
+	La lien Monodromie/sensibilité est le \textbf{premier ordre de la linéarisation du flot}.
+	
+	
+	\subsection{Recherche des vecteurs propres de la matrice de Monodromie}
+	\textbf{ZE idea} : la matrice de Monodromie est la matrice fondamentale principale à l'instant T du système linéaire. La matrice fondamentale vérifie le système linéaire périodique $\to$ on intègre le système linéaire périodique sur une période en partant de $I_4$. On a besoin pour cela du linéarisé en chaque point de l'orbite.
+	
+	\textit{Points importants :}
+	\begin{itemize}
+		\item Bien expliquer l'idée de \textbf{linéariser le long de l'orbite}
+		\item Expliquer clairement, et \textbf{intuitivement}, pourquoi cette méthode donne ce qu'on veut (et en quoi c'est bien la matrice de Monodromie qu'on veut).
+	\end{itemize}
+	
+	On utilise python pour faire ces calculs. On utilise un schéma RK4 pour intégrer le système linéaire. La matrice à l'instant final est la matrice de Monodromie.
+	
+	On utilise \verb|numpy.linalg.eig| pour calculer les valeurs propres et vecteurs propres de la matrice obtenue.
+	
+	
+	\subsection{Calcul numérique des variétés}
+	Dans une direction propre pour $M$, une petite variation verra son amplitude multipliée par la valeur propre associée $\to$ $|\lambda| < 1 \implies stable$ et $|\lambda| > 1 \implies instable$. La variété stable (\textit{resp.} instable) correspond à 
+	\begin{quotation}
+		L'ensemble des vecteurs de l'espace de phase tel que leur évolution temporelle est de tendre vers (\textit{resp.} s'éloigner de) l'orbite de référence.
+	\end{quotation}
+	(définition très peu rigoureuse car une variété est en gros une structure topologique qui ressemble à un espace euclidien si vu d'assez près.)
+	\bigskip
+	
+	On considère alors les "ombres" des variétés, qui sont les courbes traçées par une trajectoire contenue dans la variété. L'idée est alors
+	\begin{itemize}
+		\item Pour la variété instable : De se placer sur un point de l'orbite, induire une perturbation dans la direction linéaire instable, et d'intégrer dans le temps croissant le vecteur C.I. + perturbation.
+		\item Pour la variété stable : De se placer sur un point de l'orbite, induire une perturbation dans la direction linéaire stable, et d'intégrer dans le temps décroissant le vecteur C.I. + perturbation.
+	\end{itemize}
+	\bigskip
+	
+	\textit{Points importants}
+	\begin{itemize}
+		\item Bien expliciter la \textbf{différence entre les directions propres linéaires et les variétés} (utiliser le schéma de la slide \textit{directions propres}.)
+		\item Expliquer qu'il faut échantilloner la trajectoire pour obtenir un "quadrillage" des variétés.
+	\end{itemize}
+	
+	
+	
+	\clearpage
+	\section{Conclusion}
+	\subsection{Applications concrètes}
+	Comme on a des sortes de "\textbf{courants gravitationnels}" sur lesquels on est sûr de rester, on peut faire des transferts à niveaux d'énergie fixé. (Peut-être un peu trop d'info car on a pas parlé des royaumes selon les niveaux d'énergies, et du pot de chambre...)
+	
+	On fait du hopping : on se laisse porter vers une orbite via sa variété stable. Quand on l'atteint, on se modifie légèrement pour passer sur sa variété instable, etc... On peut faire des hoppings hors des orbites aussi (cf. Poincare Section $U_3$ sur présentation).
+	
+	\subsection{Pros and Cons}
+	\begin{itemize}
+		\item Pro : $\Delta V$ requise bien moindre
+		\item Con : $TOF$ bien plus long (Time of Flight) $\to$ pas un problème pour missions non-habitées!
+	\end{itemize}
+	
+	
+	
 	
 \end{document}

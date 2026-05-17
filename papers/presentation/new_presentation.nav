@@ -5,9 +5,11 @@
 \headcommand {\sectionentry {1}{Objectif}{2}{Objectif}{0}}
 \headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\slideentry {1}{0}{2}{3/4}{}{0}}
-\headcommand {\beamer@framepages {3}{4}}
-\headcommand {\slideentry {1}{0}{3}{5/5}{}{0}}
+\headcommand {\slideentry {1}{0}{2}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {1}{0}{3}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {1}{0}{4}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
 \headcommand {\beamer@sectionpages {2}{5}}
 \headcommand {\beamer@subsectionpages {2}{5}}
@@ -181,4 +183,4 @@
 \headcommand {\beamer@subsectionpages {74}{77}}
 \headcommand {\beamer@sectionpages {40}{77}}
 \headcommand {\beamer@documentpages {77}}
-\headcommand {\gdef \inserttotalframenumber {66}}
+\headcommand {\gdef \inserttotalframenumber {67}}
