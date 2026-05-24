@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  17 MAY 2026 16:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  24 MAY 2026 14:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -411,7 +411,7 @@ LaTeX Info: Redefining \degres on input line 19.
 \makeMPintoPDFobject=\count321
 \everyMPtoPDFconversion=\toks26
 )
-Overfull \hbox (21.12605pt too wide) in paragraph at lines 22--24
+Overfull \hbox (21.12605pt too wide) in paragraph at lines 29--31
 []\OT1/cmr/m/it/12 Wikip^^Sedia \OT1/cmr/m/n/12 : En m^^Secanique c^^Seleste, l
 e probl^^Reme ^^Ra trois corps a pas-sionn^^Se de nom-breux math^^Sematiciens.
  []
@@ -432,10 +432,10 @@ L3 programming layer <2025-11-06>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5946 strings out of 467538
- 102527 string characters out of 5423724
+ 5947 strings out of 467538
+ 102535 string characters out of 5423724
  546583 words of memory out of 5000000
- 34781 multiletter control sequences out of 15000+600000
+ 34782 multiletter control sequences out of 15000+600000
  634145 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,5n,79p,690b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -450,7 +450,7 @@ ts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/20
 25/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tipe_notes.pdf (5 pages, 148961 bytes).
+Output written on tipe_notes.pdf (5 pages, 150862 bytes).
 PDF statistics:
  80 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream

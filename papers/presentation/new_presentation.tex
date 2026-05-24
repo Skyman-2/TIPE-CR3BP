@@ -166,7 +166,7 @@
 				\label{fig:portrait de Lagrange}
 			\end{subfigure}
 			\label{fig:firstfig}
-			\caption{}
+			\caption{Historique de la résolution du problème à trois corps.}
 		\end{figure}
 
 		\photosources{Wikimedia Commons}
@@ -189,7 +189,7 @@
 		\textbf{Objectif :}
 		\linebreak
 		
-		Comprendre comment les orbites périodiques autour de L1 et L2 structurent l’espace des phases, et comment ces structures peuvent être exploitées pour concevoir des trajectoires spatiales peu coûteuses en carburant.
+		Comprendre la structure de l'espace des phases autour des points L1 et L2, et comment cette structure permet la conception de trajectoires spatiales peu coûteuses en carburant.
 	\end{frame}
 	
 
@@ -253,7 +253,7 @@
 		\frametitle{Représentation des points de Lagrange}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.9\textwidth]{potentiel_apparent_2D.pdf}
+			\includegraphics[width=0.75\textwidth]{potentiel_apparent_2D.pdf}
 			\caption{Positions des points de Lagrange dans le plan d'étude.}
 		\end{figure}
 	\end{frame}
@@ -311,7 +311,7 @@
 		\pause
 		On en déduit l'expression explicite des solutions dans le plan :
 		{\scriptsize 		
-		\begin{equation}
+		\begin{equation*}
 			\mathcal{S}_{lin}^{pos} = \{ t \to
 			\begin{bmatrix}
 				C_1e^{\lambda t} + C_2e^{-\lambda t} + C_3\cos(\nu t) + C_4 \sin(\nu t)
@@ -320,30 +320,30 @@
 			\end{bmatrix},
 			(C_1,C_2,C_3,C_4) \in \mathbb{R}^4
 			\}
-		\end{equation}}
+		\end{equation*}}
 		
-		où $\sigma > 0$ et $\tau < 0$ sont des constantes.
+		où $\sigma$ et $\tau$ sont des constantes.
 	\end{frame}
 	
 	
 	\subsection{Schéma numérique pour le système non-linéaire}
 	\begin{frame}
-		\frametitle{Allure des solutions du modèle linéaire}
+		\frametitle{Allure de la composante $x$ d'une solution du modèle linéaire}
 		\begin{figure}
 			\centering
 			\includegraphics[width=1\linewidth]{illustration_arbitraire_sol_lin.png}
-			\caption[width=1\linewidth]{Tracé de l'allure des solutions du système linéaire grâce à Desmos. \textit{Le choix des constantes est arbitraire ici.}}
+			\caption[width=1\linewidth]{Tracé de l'allure de la composante $x$ d'une solution du système linéaire grâce à Desmos. \textit{Le choix des constantes est arbitraire ici.}}
 		\end{figure}
 		\photosources{Desmos}	
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Confrontation à la divergence du modèle non-linéaire (2/2)}
+		\frametitle{Confrontation à la divergence du modèle non-linéaire}
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.90\linewidth]{degenerescence_L1_plots_RK4.png}
 			\label{fig:instability simulation}
-			\caption[width=1\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la divergence de l'orbite autour de L1. \textit{Condition initiale : immobile à $100 \: m$ de $L1$}.}
+			\caption[width=1\linewidth]{Simulation numérique par schéma de Runge-Kutta 4 de la divergence de l'orbite autour de L1. \textit{Condition initiale : $d_{L1} < 100 \: m$ et $v = 0 \: m.s^{-1}$}.}
 		\end{figure}
 	\end{frame}
 	
@@ -381,7 +381,7 @@
 		\pause
 		
 		{\footnotesize	
-		On en déduit qu'une orbite d'amplitude $R$ selon $Ox$ a pour condition initiale	
+		On en déduit qu'une orbite d'amplitude $R$ selon $Ox$ vérifie	
 		$
 			\begin{cases}
 				x_0 = R
@@ -392,7 +392,7 @@
 				\\
 				v_{y0} = \nu\tau R
 			\end{cases}
-		$}
+		$.}
 		
 	\end{frame}
 	
@@ -402,12 +402,12 @@
 			\column{0.4\linewidth}
 			{\small Conditions initiales proposées :
 			\begin{itemize}
-				\item $x_0 = 1000 \: km$
+				\item $x_0 = 100 000 \: km$
 				\item $y_0 = 0 \: km$
 				\item $v_{x0} = 0 \: m.s^{-1}$
-				\item $v_{y0} = 23,7 \: m.s^{-1}$
+				\item $v_{y0} = 136 \: m.s^{-1}$
 			\end{itemize}
-		car $\nu\tau = -2,37 \cdot 10^{-5} \: s^{-1}$
+		car $\nu\tau = -1,36 \cdot 10^{-6} \: s^{-1}$
 		}
 		
 			\column{0.02\textwidth}
@@ -421,7 +421,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=1\linewidth]{acceptable_orbit.png}
-				\caption{Simulation d'une orbite, notée $\gamma$, avec les conditions initiales $x_0 = 1000 \: km$, $y_0 = 0 \: km$, $v_{x0} = 0 \: m.s^{-1}$, et $v_{y0} = -21.898965265005835 \: m.s^{-1}$.}
+				\caption{Simulation d'une orbite, notée $\gamma$, avec les conditions initiales $x_0 = 1000 \: km$, $y_0 = 0 \: km$, $v_{x0} = 0 \: m.s^{-1}$, et $v_{y0} = -128.8143495396376 \: m.s^{-1}$.}
 			\end{figure}
 		\end{columns}
 	\end{frame}
@@ -439,39 +439,60 @@
 	\subsection{Introduction à la théorie de Floquet}
 	
 	\begin{frame}
-		\frametitle{Une petite définition...}
+		\frametitle{Quelques définitions}
 		{\footnotesize
 		\begin{mydefinition}{Matrice fondamentale}
-			Soit $(y_1,\dots,y_n)$ un système fondamental de solutions d'une équation différentielle linéaire. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Phi(t)$ où $\Phi(t)$ est la matrice dont les colonnes sont les vecteurs $(y_1(t),\dots,y_n(t))$. Alors si le système est $X' = A(t)X$, $\Phi$ vérifie $\Phi' = A(t)\Phi$.
+			Soit $(y_1,\dots,y_n)$ un système fondamental de solutions d'une équation différentielle linéaire. Une matrice fondamentale de cette équation différentielle est l'application $t \mapsto \Psi(t) = (y_1(t)^T,\dots,y_n(t)^T)$, et $\Psi$ vérifie $\Psi' = A(t)\Psi$.
 			
-			On appelle \textit{matrice fondamentale principale} la matrice fondamentale qui vérifie que $\Phi(t_0) = I_n$.
+			On appelle \textit{matrice fondamentale principale} la matrice fondamentale $\Phi$ qui vérifie que $\Phi(t_0) = I_n$.
 		\end{mydefinition}
 		
 		\bigskip
 		
-		\textit{Remarque :}
+		\textit{Remarques :}
+		\begin{itemize}
+			\item Si $y$ est une solution de l'équation différentielle, alors $\forall t \in \mathbb{R}, y(t) = \Phi(t)y(t_0)$.
+			\item Si $A$ est périodique, et $\Phi'(t) = A(t)\Phi(t)$, alors $M = \Phi(T)$ est appelée \textit{matrice de Monodromie}.
+		\end{itemize}
 		
-		Si $y$ est une solution de l'équation différentielle, een notant $y_0 := y(t_0)$, alors $\forall t \in \mathbb{R}, y(t) = \Phi(t)y_0$ où $\Phi$ est la matrice fondamentale principale.
+		
 		}
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{...et deux autres...}
+		\frametitle{Une autre définition}
 		{\footnotesize
 		\begin{mydefinition}{Le flot}
 			Soit un système non-linéaire $X' = f(X)$ où $f \in \mathcal{C}^1(\mathbb{R},\mathbb{R}^4)$. On définit le flot avec origine de temps $t_0$ comme l'application $ \eta :
 			\begin{array}{rcl}
 				\mathbb{R} \times \mathbb{R}^4 & \to & \mathbb{R}^4 \\
-				(t,x_0) & \mapsto & x(t)
+				(t,X_0) & \mapsto & X(t)
 			\end{array}
-			$ où $x$ correspond à l'unique solution au problème de Cauchy de condition initiale $x_0$ au temps $t_0$.
-		\end{mydefinition}
-		\bigskip
-		\pause
-		\begin{mydefinition}{Matrice de Monodromie}
-			Soit une équation différentielle de la forme $X'=A(t)X$ où A est à coefficients $T$-périodiques. On appelle \textit{matrice de Monodromie} la matrice $M = \Phi(T)$ où $\Phi$ est la matrice fondamentale principale du système.
+			$ où $X$ correspond à l'unique solution au problème de Cauchy de condition initiale $X_0$ au temps $t_0$.
 		\end{mydefinition}
 		}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Illustration du flot sur un exemple simple}	
+		\begin{columns}
+			\column{0.2\linewidth}
+			\begin{equation*}
+				(t,X_0) \in \mathbb{R}\times\mathbb{R}^4 \longrightarrow
+			\end{equation*}
+			
+			\column{0.6\linewidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\linewidth]{illustration_flot.pdf}
+				\caption{Espace de phase d'un oscillateur harmonique (\textit{grandeurs arbitraires}).}
+			\end{figure}
+			
+			\column{0.2\linewidth}
+			\begin{equation*}
+				\longrightarrow X(t) \in \mathbb{R}^4
+			\end{equation*}
+		\end{columns}
 	\end{frame}
 	
 	\begin{frame}
@@ -534,7 +555,7 @@
 			\textbf{Orbite de référence :}
 			\begin{figure}
 				\centering
-				\includegraphics[width=0.7\linewidth]{acceptable_orbit_traj_only.png}
+				\includegraphics[width=0.9\linewidth]{acceptable_orbit_traj_only.png}
 				\caption{Trajectoire de l'orbite de référence $\gamma$.}
 			\end{figure}
 			
@@ -548,21 +569,21 @@
 			\centering
 			{\footnotesize \begin{equation*}
 				M = \begin{bmatrix} 
-					1.62 \cdot 10^{3} & -2.48 \cdot 10^{2} & 1.54 \cdot 10^{8} & 7.52 \cdot 10^{7}\\
-					-7.92 \cdot 10^{2} & 1.22 \cdot 10^{2} & -7.52 \cdot 10^{7} & -3.69 \cdot 10^{7}\\
-					1.28 \cdot 10^{-2} & -1.96 \cdot 10^{-3} & 1.22 \cdot 10^{3} & 5.96 \cdot 10^{2}\\
-					-6.01 \cdot 10^{-3} & 9.21 \cdot 10^{-4} & -5.72 \cdot 10^{2} & -2.79 \cdot 10^{2}\\
+					1.33 \cdot 10^{3} & -1.54 \cdot 10^{2} & 1.64 \cdot 10^{9} & 1.08 \cdot 10^{9}\\ 
+					-8.80 \cdot 10^{2} & 1.03 \cdot 10^{2} & -1.08 \cdot 10^{9} & -7.17 \cdot 10^{8}\\ 
+					7.25 \cdot 10^{-4} & -8.40 \cdot 10^{-5} & 8.93 \cdot 10^{2} & 5.91 \cdot 10^{2}\\ 
+					-4.10 \cdot 10^{-4} & 4.76 \cdot 10^{-5} & -5.05 \cdot 10^{2} & -3.33 \cdot 10^{2}\\ 
 				\end{bmatrix}
 			\end{equation*}
 			\begin{equation*}
-				\text{Sp}(M) = \{\underbrace{2.68 \cdot 10^{3}}_{=: \lambda_i}\: , \underbrace{3.74 \cdot 10^{-4}}_{=: \lambda_s}\: , 9.97 \cdot 10^{-1}\: , 1.00\}
+				\text{Sp}(M) = \{1.99 \cdot 10^{3}\: , 5.03 \cdot 10^{-4}\: , 9.96 \cdot 10^{-1}\: , 1.00\}
 			\end{equation*}}
 			{\tiny \begin{equation*}
-				P = \begin{bmatrix}
-					-8.98 \cdot 10^{-1} & -8.98 \cdot 10^{-1} & -2.82 \cdot 10^{-1} & -2.84 \cdot 10^{-1}\\
-					4.40 \cdot 10^{-1} & -4.40 \cdot 10^{-1} & 9.59 \cdot 10^{-1} & -9.59 \cdot 10^{-1}\\
-					-7.11 \cdot 10^{-6} & 7.11 \cdot 10^{-6} & 1.55 \cdot 10^{-6} & -1.55 \cdot 10^{-6}\\
-					3.34 \cdot 10^{-6} & 3.34 \cdot 10^{-6} & 6.06 \cdot 10^{-6} & 6.10 \cdot 10^{-6}\\
+				P = \begin{bmatrix} 
+					-8.34 \cdot 10^{-1} & -8.34 \cdot 10^{-1} & -3.38 \cdot 10^{-2} & -3.39 \cdot 10^{-2}\\ 
+					5.52 \cdot 10^{-1} & -5.52 \cdot 10^{-1} & 9.99 \cdot 10^{-1} & -9.99 \cdot 10^{-1}\\ 
+					-4.55 \cdot 10^{-7} & 4.55 \cdot 10^{-7} & 9.41 \cdot 10^{-8} & -9.41 \cdot 10^{-8}\\ 
+					2.58 \cdot 10^{-7} & 2.58 \cdot 10^{-7} & 4.14 \cdot 10^{-8} & 4.16 \cdot 10^{-8}\\ 
 				\end{bmatrix}
 			\end{equation*}}
 			\caption{Matrice de Monodromie calculée numériquement (\textit{cf.} Annexe \ref{calcul de la matrice de monodromie}) pour l'orbite de référence $\gamma$.}
@@ -618,7 +639,7 @@
 	\begin{frame}
 		\begin{figure}
 			\centering
-			\includegraphics[width=0.9\linewidth]{varietes_L1_1000km.pdf}
+			\includegraphics[width=\linewidth]{variete_soleil_L1_10e5km_t1000}
 			\caption{Projections dans le plan $(x,y)$ et dans le plan $(v_x,v_y)$ des variétés de l'orbite de référence $\gamma$, intégrées numériquement en Python.}
 		\end{figure}
 	\end{frame}

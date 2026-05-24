@@ -105,11 +105,29 @@ def one_traj_display(traj,working_system,time_step=10,color_palette="plasma"):
     plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
 
     axes["phase"].grid(True)
-    plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
+    plot_on_ax(axes["phase"],velocity_traj(traj),color_palette,isTraj=True)
 
     axes["energy"].grid(True)
     plot_on_ax(axes["energy"],en.energy(traj,working_system,time_step),color_palette)
-    plot_on_ax(axes["energy"],en.radius_through_time(traj,time_step),"viridis")
+
+    labels = {
+        "traj": {
+            "name": "Trajectoire",
+            "xlabel": "x [m]",
+            "ylabel": "y [m]",
+        },
+        "phase": {
+            "name": "Espace des vitesses",
+            "xlabel": "v_x [m/s]",
+            "ylabel": "v_y [m/s]",
+        },
+        "energy": {
+            "name": "Énergie",
+            "xlabel": "Temps [s]",
+            "ylabel": "Énergie [J]",
+        }
+    }
+    autonamed_subplot(axes, labels)
 
 
 
@@ -286,18 +304,17 @@ def phase_spaces(traj,working_system,color_palette):
 
 def one_traj_relative_origin_display(traj,working_system,time_step=10,color_palette="plasma"):
     layout = [
-        ["traj","traj","phase","phase"],
-        ["traj","traj","phase","phase"],
-        ["relative_radius", "relative_radius", "energy", "energy"],
-        ["relative_radius", "relative_radius", "energy", "energy"]
+        ["traj","traj","relative_radius","relative_radius"],
+        ["traj","traj","relative_radius","relative_radius"],
+        ["energy", "energy", "energy", "energy"]
     ]
     fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
     plot_on_ax(axes["traj"],traj,color_palette,isTraj=True)
     plot_on_ax_bodies(axes["traj"],working_system)
-    plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
+    plot_potential(axes["traj"],working_system,pmin=98,levels=50,steps=4000,alpha=0.2)
 
-    axes["phase"].grid(True)
-    plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
+    # axes["phase"].grid(True)
+    # plot_on_ax(axes["phase"],ps.phase_space_diag(traj),color_palette)
 
     axes["energy"].grid(True)
     plot_on_ax(axes["energy"],en.energy(traj,working_system,time_step),color_palette)
@@ -316,11 +333,11 @@ def one_traj_relative_origin_display(traj,working_system,time_step=10,color_pale
             "xlabel": "x [m]",
             "ylabel": "y [m]",
         },
-        "phase": {
-            "name": "Espace de phase en norme",
-            "xlabel": "rayon [m]",
-            "ylabel": "vitesse [m/s]",
-        },
+        # "phase": {
+        #     "name": "Espace de phase en norme",
+        #     "xlabel": "rayon [m]",
+        #     "ylabel": "vitesse [m/s]",
+        # },
         "energy": {
             "name": "Énergie",
             "xlabel": "Temps [s]",
@@ -329,7 +346,7 @@ def one_traj_relative_origin_display(traj,working_system,time_step=10,color_pale
         "relative_radius": {
             "name": "Distance à l'origine spatiale",
             "xlabel": "Temps [s]",
-            "ylabel": "Rapport relatif [/]",
+            "ylabel": "Déplacement relatif [/]",
         },
     }
     autonamed_subplot(axes, labels)
@@ -344,6 +361,14 @@ def one_traj_relative_origin_display(traj,working_system,time_step=10,color_pale
 def velocity_traj(traj):
     traj_np = np.array(traj)
     return traj_np[:,2:4]
+
+def coordinate_projection(traj,coord,time_step):
+    traj_np = np.array(traj)
+    traj_return = []
+    for i in range(len(traj)):
+        traj_return.append([i*time_step, traj_np[i][coord]])
+    return np.array(traj_return)
+
 
 
 def stacked_trajectories_display(trajs,working_system,time_step=10,color_palette=[]):
@@ -371,6 +396,64 @@ def stacked_trajectories_display(trajs,working_system,time_step=10,color_palette
         "phase": {
             "name": "Espace des vitesse",
             "xlabel": "vx [m/s]",
+            "ylabel": "vy [m/s]",
+        }
+    }
+    autonamed_subplot(axes, labels)
+
+
+
+
+def traj_all_variable_through_time(traj,working_system,time_step=10,color_palette="plasma"):
+    layout = [
+        ["traj","x_proj"],
+        ["traj","y_proj"],
+        ["vitesse_proj","vx_proj"],
+        ["vitesse_proj","vy_proj"]
+    ]
+
+    fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
+    plot_on_ax(axes["traj"],traj,color_palette,isTraj=True)
+    plot_on_ax_bodies(axes["traj"],working_system)
+    velocity = velocity_traj(traj)
+    plot_on_ax(axes["vitesse_proj"],velocity,color_palette,isTraj=True)
+    plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
+
+    plot_on_ax(axes["x_proj"],coordinate_projection(traj,0,time_step),color_palette)
+    plot_on_ax(axes["y_proj"],coordinate_projection(traj,1,time_step),color_palette)
+    plot_on_ax(axes["vx_proj"],coordinate_projection(traj,2,time_step),color_palette)
+    plot_on_ax(axes["vy_proj"],coordinate_projection(traj,3,time_step),color_palette)
+
+
+    labels = {
+        "traj": {
+            "name": "Trajectoire dans le plan",
+            "xlabel": "x [m]",
+            "ylabel": "y [m]",
+        },
+        "vitesse_proj": {
+            "name": "Espace des vitesse",
+            "xlabel": "vx [m/s]",
+            "ylabel": "vy [m/s]",
+        },
+        "x_proj": {
+            "name": "Projection de la trajectoire sur x",
+            "xlabel": "Temps [s]",
+            "ylabel": "x [m]",
+        },
+        "y_proj": {
+            "name": "Projection de la trajectoire sur y",
+            "xlabel": "Temps [s]",
+            "ylabel": "y [m]",
+        },
+        "vx_proj": {
+            "name": "Projection de la trajectoire sur vx",
+            "xlabel": "Temps [s]",
+            "ylabel": "vx [m/s]",
+        },
+        "vy_proj": {
+            "name": "Projection de la trajectoire sur vy",
+            "xlabel": "Temps [s]",
             "ylabel": "vy [m/s]",
         }
     }

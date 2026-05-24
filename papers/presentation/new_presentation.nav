@@ -53,9 +53,11 @@
 \headcommand {\beamer@subsectionentry {0}{3}{2}{22}{Introduction à la théorie de Floquet}}
 \headcommand {\slideentry {3}{2}{1}{22/22}{Introduction à la théorie de Floquet}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\slideentry {3}{2}{2}{23/24}{Introduction à la théorie de Floquet}{0}}
-\headcommand {\beamer@framepages {23}{24}}
-\headcommand {\slideentry {3}{2}{3}{25/27}{Introduction à la théorie de Floquet}{0}}
+\headcommand {\slideentry {3}{2}{2}{23/23}{Introduction à la théorie de Floquet}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {3}{2}{3}{24/24}{Introduction à la théorie de Floquet}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {3}{2}{4}{25/27}{Introduction à la théorie de Floquet}{0}}
 \headcommand {\beamer@framepages {25}{27}}
 \headcommand {\beamer@subsectionpages {22}{27}}
 \headcommand {\beamer@subsectionentry {0}{3}{3}{28}{Vecteurs propres de la matrice de Monodromie}}
@@ -183,4 +185,4 @@
 \headcommand {\beamer@subsectionpages {74}{77}}
 \headcommand {\beamer@sectionpages {40}{77}}
 \headcommand {\beamer@documentpages {77}}
-\headcommand {\gdef \inserttotalframenumber {67}}
+\headcommand {\gdef \inserttotalframenumber {68}}

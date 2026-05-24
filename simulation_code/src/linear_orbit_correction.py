@@ -10,11 +10,11 @@ import src.dichotomy as dich
 import src.display as display
 
 
-T = 1010880
+T = 15e6
 
 
-def linear_orbit_guess_0(amplitude):
-    return np.array([amplitude, 0, 0, -2.37e-5*amplitude])
+def linear_orbit_guess_0(amplitude,init_guess_coef):
+    return np.array([amplitude, 0, 0, init_guess_coef*amplitude])
 
 
 def nearest_in_index(liste, reference, index_considered):
@@ -31,12 +31,13 @@ def nearest_in_index(liste, reference, index_considered):
 
 
 # Hypothèse : il n'y a qu'une seule branche qui repasse par y = 0 après T/4 et l'impulsion initiale est en v_y < 0
-def return_state(traj):
+def return_state(traj, working_system):
     for i in range(2, len(traj)):
         if traj[i-1][1] < 0 and traj[i][1] > 0:
             alpha = -traj[i-1][1] / (traj[i][1] - traj[i-1][1])
             return traj[i-1] + alpha * (traj[i] - traj[i-1])
-    return None
+    display.one_traj_display(traj, working_system)
+    plt.show()
         
 
 def find_bracket(system,gamma_0):
@@ -44,23 +45,28 @@ def find_bracket(system,gamma_0):
     i = 1
     while not found:
         print("Recherche n°", i)
-        perturbation = np.array([0, 0, 0, 0.1*i*gamma_0[3]])
-        traj_a = rk4.simulate_trajectory(gamma_0+perturbation, 2*T/3, 10, system)
-        traj_b = rk4.simulate_trajectory(gamma_0-perturbation, 2*T/3, 10, system)
-        x_dot_a = return_state(traj_a)[2]
-        x_dot_b = return_state(traj_b)[2]
-        print(x_dot_a, x_dot_b)
+        perturbation = np.array([0, 0, 0, 0.01*i*gamma_0[3]])
+        traj_a = rk4.simulate_trajectory(gamma_0+perturbation, 2*T/3, 100, system)
+        traj_b = rk4.simulate_trajectory(gamma_0-perturbation, 2*T/3, 100, system)
         display.ref_traj_comp(traj_a,traj_b,system)
         plt.show()
+        x_dot_a = return_state(traj_a,system)[2]
+        x_dot_b = return_state(traj_b,system)[2]
+        print(x_dot_a, x_dot_b)
         if x_dot_a * x_dot_b < 0:
             found = True
         else:
             i += 1
-    return [gamma_0[3] - 0.1*i*gamma_0[3], gamma_0[3] + 0.1*i*gamma_0[3]]
+    print()
+    print("------------------------------")
+    print("Bracket trouvé : ", gamma_0[3] - 0.01*i*gamma_0[3], gamma_0[3] + 0.01*i*gamma_0[3])
+    print("------------------------------")
+    print()
+    return [gamma_0[3] - 0.01*i*gamma_0[3], gamma_0[3] + 0.01*i*gamma_0[3]]
 
-def dichotomy_vy(amplitude,system,precision):
+def dichotomy_vy(amplitude,system,precision,init_guess_coef):
     x_L1 = dich.dichotomy(0, system["radius"], precision=1, system=system, step=10)
-    gamma_0 = linear_orbit_guess_0(amplitude) + np.array([x_L1, 0, 0, 0])
+    gamma_0 = linear_orbit_guess_0(amplitude,init_guess_coef) + np.array([x_L1, 0, 0, 0])
     bracket = find_bracket(system,gamma_0)
     c = (bracket[0]+bracket[1])/2
     gamma_a = gamma_0.copy()
@@ -69,12 +75,15 @@ def dichotomy_vy(amplitude,system,precision):
     gamma_a[3] = bracket[0]
     gamma_b[3] = bracket[1]
     gamma_c[3] = c
-    traj_a = rk4.simulate_trajectory(gamma_a, 2*T/3, 10, system)
-    traj_b = rk4.simulate_trajectory(gamma_b, 2*T/3, 10, system)
-    traj_c = rk4.simulate_trajectory(gamma_c, 2*T/3, 10, system)
-    x_dot_a = return_state(traj_a)[2]
-    x_dot_b = return_state(traj_b)[2]
-    x_dot_c = return_state(traj_c)[2]
+    traj_a = rk4.simulate_trajectory(gamma_a, 2*T/3, 100, system)
+    traj_b = rk4.simulate_trajectory(gamma_b, 2*T/3, 100, system)
+    traj_c = rk4.simulate_trajectory(gamma_c, 2*T/3, 100, system)
+    x_dot_a = return_state(traj_a, system)[2]
+    print("Returned state a")
+    x_dot_b = return_state(traj_b, system)[2]
+    print("Returned state b")
+    x_dot_c = return_state(traj_c, system)[2]
+    print("Returned state c")
     print("Précision actuelle : ", abs(x_dot_c))
     while abs(x_dot_c) > precision:
         print()
@@ -88,8 +97,8 @@ def dichotomy_vy(amplitude,system,precision):
         
         c = (bracket[0]+bracket[1])/2
         gamma_c[3] = c
-        traj_c = rk4.simulate_trajectory(gamma_c, 2*T/3, 10, system)
-        x_dot_c = return_state(traj_c)[2]
+        traj_c = rk4.simulate_trajectory(gamma_c, 2*T/3, 100, system)
+        x_dot_c = return_state(traj_c, system)[2]
         print("Précision actuelle : ", abs(x_dot_c))
     return c
 

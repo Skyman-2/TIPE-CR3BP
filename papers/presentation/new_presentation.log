@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  17 MAY 2026 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  24 MAY 2026 19:08
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1230,12 +1230,12 @@ Overfull \vbox (7.33052pt too high) detected at line 250
 [9
 
 ]
-<./figures/potentiel_apparent_2D.pdf, id=520, 597.23125pt x 354.75536pt>
+<./figures/potentiel_apparent_2D.pdf, id=520, 592.76614pt x 429.39423pt>
 File: ./figures/potentiel_apparent_2D.pdf Graphic file (type pdf)
 <use ./figures/potentiel_apparent_2D.pdf>
 Package pdftex.def Info: ./figures/potentiel_apparent_2D.pdf  used on input lin
 e 259.
-(pdftex.def)             Requested size: 308.06367pt x 182.99063pt.
+(pdftex.def)             Requested size: 256.72147pt x 185.96597pt.
  [10
 
  <./figures/potentiel_apparent_2D.pdf>] [11
@@ -1262,35 +1262,34 @@ File: ./figures/illustration_arbitraire_sol_lin.png Graphic file (type png)
 Package pdftex.def Info: ./figures/illustration_arbitraire_sol_lin.png  used on
  input line 338.
 (pdftex.def)             Requested size: 342.2953pt x 153.5519pt.
- [14
+
+Overfull \vbox (5.0811pt too high) detected at line 338
+ []
+
+[14
 
  <./figures/illustration_arbitraire_sol_lin.png>]
-<./figures/degenerescence_L1_plots_RK4.png, id=696, 838.332pt x 433.62pt>
+<./figures/degenerescence_L1_plots_RK4.png, id=697, 571.6557pt x 295.5843pt>
 File: ./figures/degenerescence_L1_plots_RK4.png Graphic file (type png)
 <use ./figures/degenerescence_L1_plots_RK4.png>
 Package pdftex.def Info: ./figures/degenerescence_L1_plots_RK4.png  used on inp
 ut line 348.
-(pdftex.def)             Requested size: 308.06367pt x 159.34515pt.
+(pdftex.def)             Requested size: 308.06367pt x 159.29742pt.
+ [15
 
-Overfull \vbox (0.12437pt too high) detected at line 348
- []
-
-[15
-
- <./figures/degenerescence_L1_plots_RK4.png>] (./new_presentation.toc)
-[16
+ <./figures/degenerescence_L1_plots_RK4.png>] (./new_presentation.toc) [16
 
 ] [17
 
 ] [18
 
 ]
-<./figures/acceptable_orbit.png, id=831, 867.24pt x 433.62pt>
+<./figures/acceptable_orbit.png, id=832, 614.295pt x 433.62pt>
 File: ./figures/acceptable_orbit.png Graphic file (type png)
 <use ./figures/acceptable_orbit.png>
 Package pdftex.def Info: ./figures/acceptable_orbit.png  used on input line 427
 .
-(pdftex.def)             Requested size: 198.53189pt x 99.26073pt.
+(pdftex.def)             Requested size: 198.53189pt x 140.13747pt.
  [19
 
  <./figures/acceptable_orbit.png>]
@@ -1298,11 +1297,11 @@ File: ./figures/acceptable_orbit.png Graphic file (type png)
 <use ./figures/acceptable_orbit.png>
 Package pdftex.def Info: ./figures/acceptable_orbit.png  used on input line 427
 .
-(pdftex.def)             Requested size: 198.53189pt x 99.26073pt.
+(pdftex.def)             Requested size: 198.53189pt x 140.13747pt.
  [20
 
 ]
-<./figures/iterative_correction_showcase.png, id=895, 558.58687pt x 380.92313pt
+<./figures/iterative_correction_showcase.png, id=896, 558.58687pt x 380.92313pt
 >
 File: ./figures/iterative_correction_showcase.png Graphic file (type png)
 <use ./figures/iterative_correction_showcase.png>
@@ -1321,7 +1320,7 @@ LaTeX Warning: Reference `py:code de correction itérative d'orbite' on page 21
 [21
 
  <./figures/iterative_correction_showcase.png>]
-Underfull \hbox (badness 1688) in paragraph at lines 456--456
+Underfull \hbox (badness 1688) in paragraph at lines 460--460
 []\OT1/cmr/m/n/9 Soit $(\OML/cmm/m/it/9 y[]; [] ; y[]\OT1/cmr/m/n/9 )$ un syst^
 ^Reme fon-da-men-tal de so-lu-tions d'une ^^Sequation
  []
@@ -1330,29 +1329,55 @@ Underfull \hbox (badness 1688) in paragraph at lines 456--456
 
 ] [23
 
-] [24
+]
+Overfull \hbox (25.85138pt too wide) detected at line 496
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t; X[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/
+n/10.95 2 \U/msb/m/n/10.95 R \OMS/cmsy/m/n/10.95 ^^B \U/msb/m/n/10.95 R[] [][]\
+OMS/cmsy/m/n/10.95 !
+ []
 
-] [25
+<./figures/illustration_flot.pdf, id=996, 322.8281pt x 322.6153pt>
+File: ./figures/illustration_flot.pdf Graphic file (type pdf)
+<use ./figures/illustration_flot.pdf>
+Package pdftex.def Info: ./figures/illustration_flot.pdf  used on input line 49
+6.
+(pdftex.def)             Requested size: 164.30403pt x 164.2018pt.
+
+Overfull \hbox (0.6689pt too wide) detected at line 496
+[][]\OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 X\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
+t/10.95 t\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 2 \U/msb/m/n/10.95 R[]
+ []
+
+[24
+
+ <./figures/illustration_flot.pdf>] [25
 
 ] [26
 
 ] [27
 
 ]
-<./figures/acceptable_orbit_traj_only.png, id=1110, 547.2947pt x 308.65312pt>
+<./figures/acceptable_orbit_traj_only.png, id=1143, 563.706pt x 297.0297pt>
 File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
 <use ./figures/acceptable_orbit_traj_only.png>
 Package pdftex.def Info: ./figures/acceptable_orbit_traj_only.png  used on inpu
-t line 543.
-(pdftex.def)             Requested size: 115.00969pt x 64.86145pt.
- [28
+t line 564.
+(pdftex.def)             Requested size: 147.86923pt x 77.9148pt.
+
+Overfull \vbox (4.83461pt too high) detected at line 564
+ []
+
+[28
 
  <./figures/acceptable_orbit_traj_only.png>]
 File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
 <use ./figures/acceptable_orbit_traj_only.png>
 Package pdftex.def Info: ./figures/acceptable_orbit_traj_only.png  used on inpu
-t line 543.
-(pdftex.def)             Requested size: 115.00969pt x 64.86145pt.
+t line 564.
+(pdftex.def)             Requested size: 147.86923pt x 77.9148pt.
+
+Overfull \vbox (4.83461pt too high) detected at line 564
+ []
 
 [29
 
@@ -1360,28 +1385,32 @@ t line 543.
 File: ./figures/acceptable_orbit_traj_only.png Graphic file (type png)
 <use ./figures/acceptable_orbit_traj_only.png>
 Package pdftex.def Info: ./figures/acceptable_orbit_traj_only.png  used on inpu
-t line 543.
-(pdftex.def)             Requested size: 115.00969pt x 64.86145pt.
- [30
+t line 564.
+(pdftex.def)             Requested size: 147.86923pt x 77.9148pt.
+
+Overfull \vbox (4.83461pt too high) detected at line 564
+ []
+
+[30
 
 ]
 
 LaTeX Warning: Reference `calcul de la matrice de monodromie' on page 31 undefi
-ned on input line 570.
+ned on input line 591.
 
 
 LaTeX Warning: Reference `calcul de la matrice de monodromie' on page 31 undefi
-ned on input line 570.
+ned on input line 591.
 
 [31
 
 ]
-<./figures/illustration_varietes_lin_non_lin.pdf, id=1238, 473.7168pt x 213.347
+<./figures/illustration_varietes_lin_non_lin.pdf, id=1269, 473.7168pt x 213.347
 06pt>
 File: ./figures/illustration_varietes_lin_non_lin.pdf Graphic file (type pdf)
 <use ./figures/illustration_varietes_lin_non_lin.pdf>
 Package pdftex.def Info: ./figures/illustration_varietes_lin_non_lin.pdf  used 
-on input line 583.
+on input line 604.
 (pdftex.def)             Requested size: 273.83728pt x 123.33444pt.
  [32
 
@@ -1390,33 +1419,34 @@ on input line 583.
 ] [34
 
 ]
-<./figures/varietes_L1_1000km.pdf, id=1359, 597.23125pt x 315.72354pt>
-File: ./figures/varietes_L1_1000km.pdf Graphic file (type pdf)
-<use ./figures/varietes_L1_1000km.pdf>
-Package pdftex.def Info: ./figures/varietes_L1_1000km.pdf  used on input line 6
-24.
-(pdftex.def)             Requested size: 308.06367pt x 162.85718pt.
+<./figures/variete_soleil_L1_10e5km_t1000.png, id=1390, 867.24pt x 433.62pt>
+File: ./figures/variete_soleil_L1_10e5km_t1000.png Graphic file (type png)
+<use ./figures/variete_soleil_L1_10e5km_t1000.png>
+Package pdftex.def Info: ./figures/variete_soleil_L1_10e5km_t1000.png  used on 
+input line 645.
+(pdftex.def)             Requested size: 342.2953pt x 171.149pt.
  [35
 
- <./figures/varietes_L1_1000km.pdf>] (./new_presentation.toc) [36
+ <./figures/variete_soleil_L1_10e5km_t1000.png>] (./new_presentation.toc) [36
 
 ]
-<./figures/conclusion_ouverture.png, id=1448, 550.30594pt x 259.7203pt>
+<./figures/conclusion_ouverture.png, id=1464, 550.30594pt x 259.7203pt>
 File: ./figures/conclusion_ouverture.png Graphic file (type png)
 <use ./figures/conclusion_ouverture.png>
 Package pdftex.def Info: ./figures/conclusion_ouverture.png  used on input line
- 637.
+ 658.
 (pdftex.def)             Requested size: 308.06367pt x 145.39482pt.
- [37
+
+[37
 
  <./figures/conclusion_ouverture.png>]
-<./figures/conclusion_comparaison_hohmann_cr3bp.png, id=1480, 546.54187pt x 432
+<./figures/conclusion_comparaison_hohmann_cr3bp.png, id=1496, 546.54187pt x 432
 .11438pt>
 File: ./figures/conclusion_comparaison_hohmann_cr3bp.png Graphic file (type png
 )
 <use ./figures/conclusion_comparaison_hohmann_cr3bp.png>
 Package pdftex.def Info: ./figures/conclusion_comparaison_hohmann_cr3bp.png  us
-ed on input line 648.
+ed on input line 669.
 (pdftex.def)             Requested size: 205.37926pt x 162.37875pt.
  [38
 
@@ -1425,112 +1455,112 @@ ed on input line 648.
 ] [40
 
 ]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1570, page=1, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1586, page=1, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 1>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page1 used on input line 692.
+pdf , page1 used on input line 713.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1571, page=2, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1587, page=2, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 2>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page2 used on input line 692.
+pdf , page2 used on input line 713.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
 
-Overfull \vbox (36.86493pt too high) detected at line 692
+Overfull \vbox (36.86493pt too high) detected at line 713
  []
 
 [41
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1636, page=3, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1652, page=3, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 3>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page3 used on input line 715.
+pdf , page3 used on input line 736.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1637, page=4, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1653, page=4, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 4>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page4 used on input line 715.
+pdf , page4 used on input line 736.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
 
-Overfull \vbox (36.86493pt too high) detected at line 715
+Overfull \vbox (36.86493pt too high) detected at line 736
  []
 
 [42
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1703, page=5, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1719, page=5, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 5>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page5 used on input line 738.
+pdf , page5 used on input line 759.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1704, page=6, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1720, page=6, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 6>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page6 used on input line 738.
+pdf , page6 used on input line 759.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
 
-Overfull \vbox (36.86493pt too high) detected at line 738
+Overfull \vbox (36.86493pt too high) detected at line 759
  []
 
 [43
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1758, page=7, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1774, page=7, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 7>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page7 used on input line 761.
+pdf , page7 used on input line 782.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1759, page=8, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1775, page=8, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 8>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page8 used on input line 761.
+pdf , page8 used on input line 782.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
 
-Overfull \vbox (36.86493pt too high) detected at line 761
+Overfull \vbox (36.86493pt too high) detected at line 782
  []
 
 [44
 
  <./figures/../annexes/lagrange_points_coordinates_demo.pdf> <./figures/../anne
 xes/lagrange_points_coordinates_demo.pdf>]
-<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1824, page=9, 59
+<./figures/../annexes/lagrange_points_coordinates_demo.pdf, id=1840, page=9, 59
 7.50829pt x 845.0471pt>
 File: ./figures/../annexes/lagrange_points_coordinates_demo.pdf Graphic file (t
 ype pdf)
 <use ./figures/../annexes/lagrange_points_coordinates_demo.pdf, page 9>
 Package pdftex.def Info: ./figures/../annexes/lagrange_points_coordinates_demo.
-pdf , page9 used on input line 772.
+pdf , page9 used on input line 793.
 (pdftex.def)             Requested size: 164.30028pt x 232.36932pt.
 
-Overfull \vbox (22.14856pt too high) detected at line 772
+Overfull \vbox (22.14856pt too high) detected at line 793
  []
 
 [45
@@ -1540,7 +1570,7 @@ Overfull \vbox (22.14856pt too high) detected at line 772
 ] [47
 
 ]
-Overfull \vbox (36.86493pt too high) detected at line 904
+Overfull \vbox (36.86493pt too high) detected at line 925
  []
 
 [48
@@ -1553,12 +1583,12 @@ Overfull \vbox (36.86493pt too high) detected at line 904
 ] [50
 
 ]
-<./figures/../annexes/illustration_delta_x.png, id=2046, 388.45125pt x 248.4281
+<./figures/../annexes/illustration_delta_x.png, id=2062, 388.45125pt x 248.4281
 3pt>
 File: ./figures/../annexes/illustration_delta_x.png Graphic file (type png)
 <use ./figures/../annexes/illustration_delta_x.png>
 Package pdftex.def Info: ./figures/../annexes/illustration_delta_x.png  used on
- input line 984.
+ input line 1005.
 (pdftex.def)             Requested size: 136.91603pt x 87.56523pt.
  [51
 
@@ -1569,14 +1599,14 @@ Package pdftex.def Info: ./figures/../annexes/illustration_delta_x.png  used on
 ] [54
 
 ]
-<./figures/Hohmann_transfer_orbit.pdf, id=2171, 752.8125pt x 903.375pt>
+<./figures/Hohmann_transfer_orbit.pdf, id=2187, 752.8125pt x 903.375pt>
 File: ./figures/Hohmann_transfer_orbit.pdf Graphic file (type pdf)
 <use ./figures/Hohmann_transfer_orbit.pdf>
 Package pdftex.def Info: ./figures/Hohmann_transfer_orbit.pdf  used on input li
-ne 1066.
+ne 1087.
 (pdftex.def)             Requested size: 171.14764pt x 205.3734pt.
 
-Overfull \vbox (8.75264pt too high) detected at line 1066
+Overfull \vbox (8.75264pt too high) detected at line 1087
  []
 
 [55
@@ -1609,7 +1639,7 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 (./codes/rel_diff_2D.py) [63
 
 ] (./codes/u_wz_calc.py)
-Overfull \vbox (15.07887pt too high) detected at line 1132
+Overfull \vbox (15.07887pt too high) detected at line 1153
  []
 
 [64
@@ -1622,7 +1652,7 @@ Overfull \vbox (15.07887pt too high) detected at line 1132
 [67
 
 ] (./codes/traj_display_rel.py)
-Overfull \vbox (15.07887pt too high) detected at line 1164
+Overfull \vbox (15.07887pt too high) detected at line 1185
  []
 
 [68
@@ -1672,10 +1702,10 @@ Package rerunfilecheck Info: File `new_presentation.out' has not changed.
 (rerunfilecheck)             Checksum: E84835F137693834DFC8D4C7FDAC3555;4576.
  ) 
 Here is how much of TeX's memory you used:
- 37008 strings out of 467538
- 770741 string characters out of 5423724
- 1663148 words of memory out of 5000000
- 64967 multiletter control sequences out of 15000+600000
+ 37017 strings out of 467538
+ 771218 string characters out of 5423724
+ 1663300 words of memory out of 5000000
+ 64976 multiletter control sequences out of 15000+600000
  641202 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,18n,123p,414b,1483s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1720,10 +1750,10 @@ c/amsfonts/cm/cmti7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
 pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/t
 exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/202
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on new_presentation.pdf (77 pages, 3975894 bytes).
+Output written on new_presentation.pdf (77 pages, 4019800 bytes).
 PDF statistics:
- 3098 PDF objects out of 3580 (max. 8388607)
- 2562 compressed objects within 26 object streams
+ 3114 PDF objects out of 3580 (max. 8388607)
+ 2568 compressed objects within 26 object streams
  192 named destinations out of 1000 (max. 500000)
- 521 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 526 words of extra memory for PDF output out of 10000 (max. 10000000)
 
