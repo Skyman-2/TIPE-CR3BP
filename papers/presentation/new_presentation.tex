@@ -496,13 +496,22 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Sensibilité du système aux conditions initiales}
-		{\small Soit $\gamma$ une solution $T$-périodique du système non-linéaire correspondant à la condition initiale $\gamma(t_0) = x_0$. Soit $\delta x_0 \in \mathbb{R}^4$ une petite perturbation initiale. On linéarise le flot le long de $\gamma$ :
+		\frametitle{Sensibilité du système aux conditions initiales (1/2)}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.8\linewidth]{illustration_sensibilite_ci.pdf}
+			\caption{Espace de phase d'un oscillateur de Duffing (\textit{grandeurs arbitraires}).}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Sensibilité du système aux conditions initiales (2/2)}
+		{\small Soit $\gamma$ une solution $T$-périodique du système non-linéaire correspondant à la condition initiale $\gamma(t_0) = X_0$. Soit $\delta X_0 \in \mathbb{R}^4$ une petite perturbation initiale. On fait un développement limité du flot :
 		\begin{equation*}
-			\eta(t,x_0+\delta x_0) = \eta(t,x_0) + D_{x_0}\eta(t,x_0)\delta x_0 + \underset{\delta x_0 \to 0}{o}(\delta x_0)
+			\eta(t,X_0+\delta X_0) = \eta(t,X_0) + D_{X_0}\eta(t,X_0)\delta X_0 + \underset{\delta X_0 \to 0}{o}(\delta X_0)
 		\end{equation*}
-		\pause		
-		et on remarque qu'en notant $\Phi(t) := D_{x_0}\eta(t,x_0)$,
+		\pause
+		On remarque qu'en notant $\Phi(t) := D_{x_0}\eta(t,x_0)$,
 		\begin{equation*}
 			\Phi ' = Df(\gamma(t))\Phi, \text{ et } \Phi(t_0) = I_4
 		\end{equation*}
@@ -639,33 +648,9 @@
 	\begin{frame}
 		\begin{figure}
 			\centering
-			\includegraphics[width=\linewidth]{variete_soleil_L1_10e5km_t1000}
+			\includegraphics[width=\linewidth]{varietes_L1_1e5km.pdf}
 			\caption{Projections dans le plan $(x,y)$ et dans le plan $(v_x,v_y)$ des variétés de l'orbite de référence $\gamma$, intégrées numériquement en Python.}
 		\end{figure}
-	\end{frame}
-	
-	
-	\section{Conclusion}
-	\begin{frame}
-		\frametitle{Des applications concrètes}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.9\linewidth]{conclusion_ouverture.png}
-			\caption{Illustration d'une méthode pour créer des orbites de transfert.}
-		\end{figure}
-		
-		\photosources{Dynamical Systems, the Three-Body Problem and Space Mission Design}
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Des applications concrètes}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.6\linewidth]{conclusion_comparaison_hohmann_cr3bp.png}
-			\caption{Comparaison des orbites de transfert utilisant les variétés aux orbites de transfert de type \textit{Hohmann}.}
-		\end{figure}
-		
-		\photosources{Dynamical Systems, the Three-Body Problem and Space Mission Design}
 	\end{frame}
 	
 	\begin{frame}

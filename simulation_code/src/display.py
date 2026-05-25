@@ -385,7 +385,7 @@ def stacked_trajectories_display(trajs,working_system,time_step=10,color_palette
         plot_on_ax(axes["traj"],trajs[i],color_palette[i],isTraj=True)
         plot_on_ax(axes["phase"],velocity_traj(trajs[i]),color_palette[i],isTraj=True)
     plot_on_ax_bodies(axes["traj"],working_system)
-    plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
+    plot_potential(axes["traj"],working_system,pmin=98,levels=50,steps=4000,alpha=0.2)
 
     labels = {
         "traj": {

@@ -91,67 +91,67 @@ x_0 = 100000000
 # print(vy0)
 vy0 = -128.8143495396376
 
-# traj = rk4.simulate_trajectory([x_0+x_L1, 0, 0, vy0], T, 100, working_system)
+traj = rk4.simulate_trajectory([x_0+x_L1, 0, 0, vy0], 5*T, 1000, working_system)
 
-# display.one_traj_display(
-#     traj,
-#     working_system,
-#     100,
-#     "plasma"
-# )
-# plt.show()
+display.traj_all_variable_through_time(
+    traj,
+    working_system,
+    100,
+    "plasma"
+)
+plt.show()
 
 # # Attention a bien mettre le bon pas dans l'appelle monodromie....
 # M = mon.monodromy_matrix(working_system, traj, 100)
 # print(mon.latexformat_eigenstuff(M))
 
 
-system_period = 2*np.pi/po.omega(working_system)
+# system_period = 2*np.pi/po.omega(working_system)
 
-dim = [working_system["radius"], working_system["radius"], working_system["radius"]/system_period, working_system["radius"]/system_period]
-traj_periodic = rk4.simulate_trajectory([x_0+x_L1, 0, 0, vy0], T, 100, working_system)
-lambda_s = np.array([-8.34e-1,5.52e-1,-4.55e-7,2.58e-7])
-lambda_u = np.array([-8.34e-1,-5.52e-1,4.55e-7,2.58e-7])
+# dim = [working_system["radius"], working_system["radius"], working_system["radius"]/system_period, working_system["radius"]/system_period]
+# traj_periodic = rk4.simulate_trajectory([x_0+x_L1, 0, 0, vy0], T, 100, working_system)
+# lambda_s = np.array([-8.34e-1,5.52e-1,-4.55e-7,2.58e-7])
+# lambda_u = np.array([-8.34e-1,-5.52e-1,4.55e-7,2.58e-7])
 
-sampling = 25
+# sampling = 25
 
-unstable_manifold_pos = mf.unstable_manifold_sampling(
-    lambda_u,
-    dim,
-    1.8*T,
-    1000,
-    working_system,
-    traj_periodic,
-    sampling
-)
-unstable_manifold_neg = mf.unstable_manifold_sampling(
-    (-1)*lambda_u,
-    dim,
-    1.5*T,
-    1000,
-    working_system,
-    traj_periodic,
-    sampling
-)
-stable_manifold_pos = mf.stable_manifold_sampling(
-    lambda_s,
-    dim,
-    1.8*T,
-    1000,
-    working_system,
-    traj_periodic,
-    sampling
-)
-stable_manifold_neg = mf.stable_manifold_sampling(
-    (-1)*lambda_s,
-    dim,
-    1.5*T,
-    1000,
-    working_system,
-    traj_periodic,
-    sampling
-)
+# unstable_manifold_pos = mf.unstable_manifold_sampling(
+#     lambda_u,
+#     dim,
+#     1.8*T,
+#     100,
+#     working_system,
+#     traj_periodic,
+#     sampling
+# )
+# unstable_manifold_neg = mf.unstable_manifold_sampling(
+#     (-1)*lambda_u,
+#     dim,
+#     1.5*T,
+#     100,
+#     working_system,
+#     traj_periodic,
+#     sampling
+# )
+# stable_manifold_pos = mf.stable_manifold_sampling(
+#     lambda_s,
+#     dim,
+#     1.8*T,
+#     100,
+#     working_system,
+#     traj_periodic,
+#     sampling
+# )
+# stable_manifold_neg = mf.stable_manifold_sampling(
+#     (-1)*lambda_s,
+#     dim,
+#     1.5*T,
+#     100,
+#     working_system,
+#     traj_periodic,
+#     sampling
+# )
 
-manifolds = stable_manifold_pos + stable_manifold_neg + unstable_manifold_pos + unstable_manifold_neg
-display.stacked_trajectories_display(manifolds,working_system)
-plt.show()
+# manifolds = stable_manifold_pos + stable_manifold_neg + unstable_manifold_pos + unstable_manifold_neg
+# display.stacked_trajectories_display(manifolds,working_system)
+# plt.show()
