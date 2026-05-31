@@ -20,6 +20,7 @@
 \usepackage{comment}
 \usepackage{moresize}
 \usepackage{listings}
+\usepackage{appendixnumberbeamer}
 
 \lstdefinestyle{pythonstyle}{
 	language=Python,
@@ -123,12 +124,18 @@
 	arc=.5mm
 }
 
+\newif\ifinappendix
+\inappendixfalse
+
 \AtBeginSection[]
 {
+	\ifinappendix
+	\else
 	\begin{frame}
 		\frametitle{Sommaire}
 		\tableofcontents[currentsection]
 	\end{frame}
+	\fi
 }
 
 
@@ -499,7 +506,7 @@
 		\frametitle{Sensibilité du système aux conditions initiales (1/2)}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.8\linewidth]{illustration_sensibilite_ci_sobre.pdf}
+			\includegraphics[width=.8\linewidth]{illustration_sensibilite_ci.pdf}
 			\caption{Illustration de $\delta X(t)$ (\textit{grandeurs arbitraires}).}
 		\end{figure}
 	\end{frame}
@@ -663,7 +670,9 @@
 	\end{frame}
 	
 	
-	\section*{Annexes}
+	\appendix
+	\inappendixtrue
+	\section{Annexes}
 	\begin{frame}
 		\begin{figure}
 			\centering
@@ -671,8 +680,67 @@
 		\end{figure}
 	\end{frame}
 	
+	\begin{frame}
+		\frametitle{Annexes - Sommaire}
+		\tableofcontents
+	\end{frame}
 	
-	\subsection*{Coordonnées des points de Lagrange}
+	\subsection{Problème à deux corps}
+	\begin{frame}
+		\frametitle{Étude du mouvement de deux masses}{\scriptsize
+			\begin{columns}[T]
+				\column{0.48\linewidth}
+				\textbf{Systèmes :} $M_1$ de masse $m_1$ et $M_2$ de masse $m_2$.
+				
+				\textbf{Référentiel :} Supposé galiléen, de centre $G = $ barycentre du système.
+				
+				\textbf{Bilan :} $M_1$ subit $\overrightarrow{f_{2/1}}$ et $M_2$ subit $\overrightarrow{f_{1/2}}$.
+				
+				\bigskip
+				
+				Par deuxième loi de Newton, on obtient
+				\begin{equation*}
+					\begin{cases}
+						m_1 \frac{d^2\overrightarrow{GM_1}}{dt^2} = \overrightarrow{f_{2/1}} = -\overrightarrow{f_{1/2}} \\
+						m_2 \frac{d^2\overrightarrow{GM_2}}{dt^2} = \overrightarrow{f_{1/2}}
+					\end{cases}
+				\end{equation*}
+				
+				Alors en notant $\overrightarrow{r} = \overrightarrow{M_1 M_2}$, en soustrayant les deux équations précédentes, on obtient
+				\begin{equation*}
+					\frac{d^2 \overrightarrow{r}}{dt^2} = \overrightarrow{f_{1/2}}(\frac{1}{m_2} + \frac{1}{m_1}) = \frac{1}{\kappa}\overrightarrow{f_{1/2}}
+				\end{equation*}
+				où $\kappa = \frac{m_1m_2}{m_1+m_2}$.
+				
+				\column{0.02\textwidth}
+				\centering
+				\textcolor{gray!40}{\rule{0.2pt}{1\textheight}}
+				
+				\column{0.48\linewidth}
+				Donc cela revient à étudier une particule de masse $\kappa$ située au point $M$ subissant la force $\overrightarrow{f_{1/2}}$, où $\overrightarrow{GM} = \overrightarrow{M_1M_2}$.
+				
+				Comme on a alors
+				\begin{equation*}
+					\begin{cases}
+						m_1 \overrightarrow{GM_1} + m_2 \overrightarrow{GM_2} = \vec{0} \\
+						\overrightarrow{GM} = \overrightarrow{GM_2} - \overrightarrow{GM_1}
+					\end{cases}
+				\end{equation*}
+				le mouvement de $M_1$ et $M_2$ est alors entièrement déterminé par le mouvement de $M$ grâce aux expressions suivantes :
+				\begin{equation*}
+					\begin{cases}
+						\overrightarrow{GM_1} = \frac{-m_2}{m_1 + m_2} \overrightarrow{GM} \\
+						\overrightarrow{GM_2} = \frac{m_1}{m_1 + m_2} \overrightarrow{GM}
+					\end{cases}
+				\end{equation*}
+				
+				En faisant l'hypothèse simplificatrice que $M_2$ possède une orbite circulaire, alors $M_1$ et $M_2$ sont en orbite circulaire autour de $G$, de période de révolution identique.
+			\end{columns}
+		}
+	\end{frame}
+	
+	
+	\subsection{Coordonnées des points de Lagrange}
 	\begin{frame}
 	\frametitle{Calcul des points d'équilibre dans le référentiel tournant}{\scriptsize
 		\begin{columns}[T]
@@ -777,7 +845,7 @@
 		}
 	\end{frame}
 	
-	\subsection*{Equations du mouvement et linéarisé}
+	\subsection{Equations du mouvement et linéarisé}
 	\begin{frame}
 		\frametitle{Expression des équations du mouvement}{\small
 		On connait $\bar{U}$ le potentiel apparent dans $R_{NG}$. Cela inclue les contributions de $F_{ie}$, $F_{1/M}$, et $F_{2/M}$. Il manque uniquement la force de Coriolis $F_{ic}$ qui n'est pas conservative donc n'apparait pas dans le potentiel. Or
@@ -837,7 +905,7 @@
 	\end{frame}
 	
 	
-	\subsection*{Diagonalisation}
+	\subsection{Diagonalisation}
 	
 	
 	\begin{frame}
@@ -909,7 +977,7 @@
 		}
 	\end{frame}
 	
-	\subsection*{Existence d'une famille d'orbite à 1 paramètre}
+	\subsection{Existence d'une famille d'orbite à 1 paramètre}
 	\begin{frame}[fragile]
 		\frametitle{Orbites périodiques du système linéarisé}{\small
 		Forme des solutions périodiques du système linéarisé :
@@ -927,12 +995,12 @@
 			\end{cases}
 		\end{equation*}
 		
-		Grâce au module \verb|numpy|, on peut évaluer numériquement $A$ (cf. la partie Python des annexes). On obtient de cette manière que $\nu\tau = 2,37\cdot 10^{-5} \: s^{-1}$.
+		Grâce au module \verb|numpy|, on peut évaluer numériquement $A$ (cf. la partie Python des annexes). On obtient de cette manière que $\nu\tau = 1,36\cdot 10^{-6} \: s^{-1}$.
 		}
 	\end{frame}
 	
 
-	\subsection*{Théorie de Floquet}
+	\subsection{Théorie de Floquet}
 	\begin{frame}
 		\frametitle{Lien entre deux matrices fondamentales}
 		
@@ -1060,7 +1128,7 @@
 		}
 	\end{frame}
 	
-	\subsection*{Mécanique orbitale}
+	\subsection{Mécanique orbitale}
 	\begin{frame}
 		\frametitle{Transfert de Hohmann}
 		\begin{figure}
@@ -1072,7 +1140,7 @@
 	\end{frame}
 	
 	
-	\subsection*{Python - Valeurs numériques}
+	\subsection{Python - Valeurs numériques}
 	\begin{frame}
 		\frametitle{Fonction de calcul de $x_{L1}$ par dichotomie}
 		\lstinputlisting[
@@ -1148,7 +1216,7 @@
 	
 	
 	
-	\subsection*{Python - Utilitaire}
+	\subsection{Python - Utilitaire}
 	\begin{frame}
 		\frametitle{Calcul de trajectoires par schéma Runge-Kutta 4 (1/2)}
 		\lstinputlisting[
@@ -1205,7 +1273,7 @@
 	\end{frame}
 	
 	
-	\subsection*{Python - Monodromie et Variétés}
+	\subsection{Python - Monodromie et Variétés}
 	
 	\begin{frame}
 		\frametitle{Calcul de l'application du linéarisé le long de l'orbite}

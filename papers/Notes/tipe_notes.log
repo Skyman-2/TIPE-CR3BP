@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  24 MAY 2026 14:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  31 MAY 2026 15:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -410,20 +410,21 @@ LaTeX Info: Redefining \degres on input line 19.
 \MPnumerator=\count320
 \makeMPintoPDFobject=\count321
 \everyMPtoPDFconversion=\toks26
-)
-Overfull \hbox (21.12605pt too wide) in paragraph at lines 29--31
+) [1
+
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (21.12605pt too wide) in paragraph at lines 60--62
 []\OT1/cmr/m/it/12 Wikip^^Sedia \OT1/cmr/m/n/12 : En m^^Secanique c^^Seleste, l
 e probl^^Reme ^^Ra trois corps a pas-sionn^^Se de nom-breux math^^Sematiciens.
  []
 
-[1
-
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+[2
 
 ] [3
 
-]
-[4] [5
+] [4
+
+] [5] [6
 
 ] (./tipe_notes.aux)
  ***********
@@ -450,10 +451,10 @@ ts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/20
 25/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on tipe_notes.pdf (5 pages, 150862 bytes).
+Output written on tipe_notes.pdf (6 pages, 154514 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

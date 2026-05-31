@@ -9,3 +9,14 @@
 \beamer@subsectionintoc {3}{2}{Introduction à la théorie de Floquet}{22}{0}{3}
 \beamer@subsectionintoc {3}{3}{Vecteurs propres de la matrice de Monodromie}{29}{0}{3}
 \beamer@subsectionintoc {3}{4}{Calcul numérique des variétés}{33}{0}{3}
+\beamer@sectionintoc {4}{Annexes}{38}{1}{4}
+\beamer@subsectionintoc {4}{1}{Problème à deux corps}{40}{1}{4}
+\beamer@subsectionintoc {4}{2}{Coordonnées des points de Lagrange}{41}{1}{4}
+\beamer@subsectionintoc {4}{3}{Equations du mouvement et linéarisé}{46}{1}{4}
+\beamer@subsectionintoc {4}{4}{Diagonalisation}{48}{1}{4}
+\beamer@subsectionintoc {4}{5}{Existence d'une famille d'orbite à 1 paramètre}{49}{1}{4}
+\beamer@subsectionintoc {4}{6}{Théorie de Floquet}{50}{1}{4}
+\beamer@subsectionintoc {4}{7}{Mécanique orbitale}{55}{1}{4}
+\beamer@subsectionintoc {4}{8}{Python - Valeurs numériques}{56}{1}{4}
+\beamer@subsectionintoc {4}{9}{Python - Utilitaire}{66}{1}{4}
+\beamer@subsectionintoc {4}{10}{Python - Monodromie et Variétés}{74}{1}{4}
