@@ -1,20 +1,19 @@
-def simulate_trajectory(initial_conditions,simulation_time,step,system,inverse_time=False):
-    if inverse_time:
-        step = -step
-        simulation_time = -simulation_time
-    dt = step
-    t_max = simulation_time
+def simuler_trajectoire(conditions_initiales,temps_simulation,pas,systeme,inverse_temps=False):
+    if inverse_temps:
+        pas = -pas
+        temps_simulation = -temps_simulation
+    dt = pas
+    t_max = temps_simulation
     t = 0
-    i = 0
-    def eqx(x,y,vy):
+    def equation_x(x,y,vy):
         coriolis = 2 * omega * vy
-        centrifugal = omega**2 * x
-        pull1 = body_pull_x(x,y,body1_pos,body1_mass)
-        pull2 = body_pull_x(x,y,body2_pos,body2_mass)
-        return pull1 + pull2 + coriolis + centrifugal
-    def eqy(x,y,vx):
+        centrifuge = omega**2 * x
+        traction1 = traction_corps_x(x,y,position_corps1,masse_corps1)
+        traction2 = traction_corps_x(x,y,position_corps2,masse_corps2)
+        return traction1 + traction2 + coriolis + centrifuge
+    def equation_y(x,y,vx):
         coriolis = -2 * omega * vx
-        centrifugal = omega**2 * y
-        pull1 = body_pull_y(x,y,body1_pos,body1_mass)
-        pull2 = body_pull_y(x,y,body2_pos,body2_mass)
-        return pull1 + pull2 + coriolis + centrifugal
+        centrifuge = omega**2 * y
+        traction1 = traction_corps_y(x,y,position_corps1,masse_corps1)
+        traction2 = traction_corps_y(x,y,position_corps2,masse_corps2)
+        return traction1 + traction2 + coriolis + centrifuge

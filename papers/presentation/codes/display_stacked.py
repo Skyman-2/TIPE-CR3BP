@@ -1,15 +1,15 @@
-def stacked_trajectories_display(trajs,working_system,time_step=10,color_palette=[]):
+def affichage_trajectoires_empilees(trajs,systeme_actif,pas_temps=10,color_palette=[]):
     if color_palette == []:
         for i in range(len(trajs)//2):
             color_palette.append("plasma")
         for i in range(len(trajs)//2):
             color_palette.append("viridis")
-    layout = [
+    disposition = [
         ["traj","phase"]
     ]
-    fig, axes = plt.subplot_mosaic(layout, figsize=(12, 6),constrained_layout=True)
+    fig, axes = plt.subplot_mosaic(disposition, figsize=(12, 6),constrained_layout=True)
     for i in range(len(trajs)):
-        plot_on_ax(axes["traj"],trajs[i],color_palette[i],isTraj=True)
-        plot_on_ax(axes["phase"],velocity_traj(trajs[i]),color_palette[i],isTraj=True)
-    plot_on_ax_bodies(axes["traj"],working_system)
-    plot_potential(axes["traj"],working_system,pmin=30,levels=50,alpha=0.2)
+        tracer_sur_ax(axes["traj"],trajs[i],color_palette[i],isTraj=True)
+        tracer_sur_ax(axes["phase"],trajectoire_vitesse(trajs[i]),color_palette[i],isTraj=True)
+    tracer_sur_ax_corps(axes["traj"],systeme_actif)
+    tracer_potentiel(axes["traj"],systeme_actif,pmin=98,levels=50,steps=4000,alpha=0.2)

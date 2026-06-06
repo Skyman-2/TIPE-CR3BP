@@ -1,7 +1,7 @@
-def dichotomy_vy(amplitude,system,precision):
-    x_L1 = dich.dichotomy(0, system["radius"], precision=1, system=system, step=10)
-    gamma_0 = linear_orbit_guess_0(amplitude) + np.array([x_L1, 0, 0, 0])
-    bracket = find_bracket(system,gamma_0)
+def dichotomie_vy(amplitude,systeme,precision,estimation_init_coef):
+    x_L1 = dich.dichotomie(0, systeme["rayon"], precision=1, systeme=systeme, pas=10)
+    gamma_0 = estimation_orbite_lineaire_0(amplitude,estimation_init_coef) + np.array([x_L1, 0, 0, 0])
+    bracket = trouver_intervalle(systeme,gamma_0)
     c = (bracket[0]+bracket[1])/2
     gamma_a = gamma_0.copy()
     gamma_b = gamma_0.copy()
@@ -9,9 +9,9 @@ def dichotomy_vy(amplitude,system,precision):
     gamma_a[3] = bracket[0]
     gamma_b[3] = bracket[1]
     gamma_c[3] = c
-    traj_a = rk4.simulate_trajectory(gamma_a, 2*T/3, 10, system)
-    traj_b = rk4.simulate_trajectory(gamma_b, 2*T/3, 10, system)
-    traj_c = rk4.simulate_trajectory(gamma_c, 2*T/3, 10, system)
-    x_dot_a = return_state(traj_a)[2]
-    x_dot_b = return_state(traj_b)[2]
-    x_dot_c = return_state(traj_c)[2]
+    traj_a = rk4.simuler_trajectoire(gamma_a, 2*T/3, 100, systeme)
+    traj_b = rk4.simuler_trajectoire(gamma_b, 2*T/3, 100, systeme)
+    traj_c = rk4.simuler_trajectoire(gamma_c, 2*T/3, 100, systeme)
+    x_point_a = etat_retour(traj_a, systeme)[2]
+    x_point_b = etat_retour(traj_b, systeme)[2]
+    x_point_c = etat_retour(traj_c, systeme)[2]

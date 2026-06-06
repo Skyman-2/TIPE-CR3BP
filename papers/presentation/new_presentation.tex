@@ -45,8 +45,15 @@
 
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
-\setbeamerfont{subsection in toc}{size=\scriptsize}
+\setbeamertemplate{subsubsection in toc}{%
+	\leavevmode
+	\leftskip=4em
+	\llap{\inserttocsectionnumber.\inserttocsubsectionnumber.\inserttocsubsubsectionnumber\quad}%
+	\inserttocsubsubsection\par
+}
 \setbeamerfont{section in toc}{size=\small}
+\setbeamerfont{subsection in toc}{size=\scriptsize}
+\setbeamerfont{subsubsection in toc}{size=\tiny}
 \setbeamertemplate{enumerate items}[default]
 \setbeamercolor{enumerate item}{fg=black}
 
@@ -438,7 +445,7 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.75\linewidth]{iterative_correction_showcase.png}
-			\caption{Illustration de la méthode de correction itérative par dichotomie (Code python en annexe \ref{py:code de correction itérative d'orbite}).}
+			\caption{Illustration de la méthode de correction itérative par dichotomie (Code python en annexe 4.9.\ref{correction iterative}).}
 		\end{figure}
 	\end{frame}
 	
@@ -602,7 +609,7 @@
 					2.58 \cdot 10^{-7} & 2.58 \cdot 10^{-7} & 4.14 \cdot 10^{-8} & 4.16 \cdot 10^{-8}\\ 
 				\end{bmatrix}
 			\end{equation*}}
-			\caption{Matrice de Monodromie calculée numériquement (\textit{cf.} Annexe \ref{calcul de la matrice de monodromie}) pour l'orbite de référence $\gamma$.}
+			\caption{Matrice de Monodromie calculée numériquement (\textit{cf.} Annexe 4.10.\ref{calcul monodromie}) pour l'orbite de référence $\gamma$.}
 		\end{figure}
 	\end{frame}
 	
@@ -680,7 +687,7 @@
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}
+	\begin{frame}[allowframebreaks]{Outline}
 		\frametitle{Annexes - Sommaire}
 		\tableofcontents
 	\end{frame}
@@ -1141,6 +1148,8 @@
 	
 	
 	\subsection{Python - Valeurs numériques}
+	
+	\subsubsection{Fonction de calcul de $x_{L1}$ par dichotomie}
 	\begin{frame}
 		\frametitle{Fonction de calcul de $x_{L1}$ par dichotomie}
 		\lstinputlisting[
@@ -1148,6 +1157,7 @@
 		]{codes/dichotomy_L1.py}
 	\end{frame}
 	
+	\subsubsection{Fonctions de calcul des valeurs et vecteurs propres}
 	\begin{frame}[fragile]
 		\frametitle{Fonctions de calcul des valeurs et vecteurs propres}
 		\lstinputlisting[
@@ -1156,6 +1166,7 @@
 		{\scriptsize où \verb|pythonMatrix_to_bmatrix| est une fonction simple de formattage.}
 	\end{frame}
 	
+	\subsubsection{Calcul de $\tau$ et de $\sigma$}
 	\begin{frame}
 		\frametitle{Calcul de $\tau$ et de $\sigma$}
 		\lstinputlisting[
@@ -1163,6 +1174,7 @@
 		]{codes/tau_sigma_calc.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Espace de phase \textit{absolue}}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Espace de phase \textit{absolue}}
 		\lstinputlisting[
@@ -1170,6 +1182,7 @@
 		]{codes/phase_space.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Energie}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Energie}
 		\lstinputlisting[
@@ -1177,6 +1190,7 @@
 		]{codes/energy.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Rayon dans le temps}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Rayon dans le temps}
 		\lstinputlisting[
@@ -1184,6 +1198,7 @@
 		]{codes/radius_through_time.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Différence relative 1D}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Différence relative 1D}
 		\lstinputlisting[
@@ -1191,6 +1206,7 @@
 		]{codes/rel_diff_1D.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Différence relative 2D}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Différence relative 2D}
 		\lstinputlisting[
@@ -1198,6 +1214,7 @@
 		]{codes/rel_diff_2D.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Les $\bar{U}_{wz}$}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Les $\bar{U}_{wz}$}
 		\lstinputlisting[
@@ -1205,6 +1222,7 @@
 		]{codes/u_wz_calc.py}
 	\end{frame}
 	
+	\subsubsection{Calculs d'informations utiles - Surfaces équipotentielles}
 	\begin{frame}
 		\frametitle{Calculs d'informations utiles - Surfaces équipotentielles}
 		\lstinputlisting[
@@ -1217,6 +1235,7 @@
 	
 	
 	\subsection{Python - Utilitaire}
+	\subsubsection{Calcul de trajectoires par schéma Runge-Kutta 4}
 	\begin{frame}
 		\frametitle{Calcul de trajectoires par schéma Runge-Kutta 4 (1/2)}
 		\lstinputlisting[
@@ -1230,13 +1249,15 @@
 		]{codes/rk4-2.py}
 	\end{frame}
 	
-	\begin{frame}
+	\subsubsection{Affichage des trajectoires et d'informations utiles}
+	\begin{frame}[allowframebreaks]{Outline}
 		\frametitle{Affichage des trajectoires et d'informations utiles}
 		\lstinputlisting[
 		style=pythonstyle
 		]{codes/traj_display_rel.py}
 	\end{frame}
 	
+	\subsubsection{Affichage de multiples trajectoires}
 	\begin{frame}
 	\frametitle{Affichage de multiples trajectoires}
 	\lstinputlisting[
@@ -1244,6 +1265,8 @@
 	]{codes/display_stacked.py}
 	\end{frame}
 	
+	\subsubsection{Correction itérative d'une orbite du linéarisé}
+	\label{correction iterative}
 	\begin{frame}
 		\frametitle{Correction itérative d'une orbite du linéarisé (1/4)}
 		\lstinputlisting[
@@ -1275,6 +1298,7 @@
 	
 	\subsection{Python - Monodromie et Variétés}
 	
+	\subsubsection{Calcul de l'application du linéarisé le long de l'orbite}
 	\begin{frame}
 		\frametitle{Calcul de l'application du linéarisé le long de l'orbite}
 		\lstinputlisting[
@@ -1282,6 +1306,8 @@
 		]{codes/orbit_lin.py}		
 	\end{frame}
 	
+	\subsubsection{Calcul de la matrice de Monodromie}
+	\label{calcul monodromie}
 	\begin{frame}
 		\frametitle{Calcul de la matrice de Monodromie}
 		\lstinputlisting[
@@ -1289,6 +1315,7 @@
 		]{codes/monodromy_calc.py}
 	\end{frame}
 	
+	\subsubsection{Intégration d'un sens de la variété instable}
 	\begin{frame}
 		\frametitle{Intégration d'un sens de la variété instable}
 		\lstinputlisting[
@@ -1296,6 +1323,7 @@
 		]{codes/unstable_manifold.py}
 	\end{frame}
 	
+	\subsubsection{Intégration d'un sens de la variété stable}
 	\begin{frame}
 		\frametitle{Intégration d'un sens de la variété stable}
 		\lstinputlisting[

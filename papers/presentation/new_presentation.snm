@@ -11,4 +11,6 @@
 \beamer@slide {tab:toutes_les_coord}{8}
 \beamer@slide {équations du mouvement}{11}
 \beamer@slide {fig:instability simulation}{15}
-\beamer@slide {eq du mvt}{47}
+\beamer@slide {eq du mvt}{48}
+\beamer@slide {correction iterative}{72}
+\beamer@slide {calcul monodromie}{77}

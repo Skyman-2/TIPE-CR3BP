@@ -1,17 +1,17 @@
-def latexformat_eigenstuff(M):
-    eigM = np.linalg.eig(M)
-    eigenvaluesM = eigM[0]
-    eigenvectorsM = eigM[1]
+def latex_formater_valeurs_propres(M):
+    propM = np.linalg.eig(M)
+    valpM = propM[0]
+    vecpM = propM[1]
 
-    latex_matrix_monodromy = pythonMatrix_to_bmatrix(M)
-    latex_eigen_vectors = pythonMatrix_to_bmatrix(eigenvectorsM)
-    print(latex_matrix_monodromy)
-    print(latex_eigen_vectors)
+    latex_matrice_monodromie = matrice_python_vers_bmatrix(M)
+    latex_matrice_vecp = matrice_python_vers_bmatrix(vecpM)
+    print(latex_matrice_monodromie)
+    print(latex_matrice_vecp)
 
-    latex_eigenvalues = "\{"
-    for i in range(len(eigenvaluesM)):
-        latex_eigenvalues += latex_sci(eigenvaluesM[i])
-        if i != len(eigenvaluesM)-1:
-            latex_eigenvalues += "\: , "
-    latex_eigenvalues += "\}"
-    print(latex_eigenvalues)
+    latex_valp = "\{"
+    for i in range(len(valpM)):
+        latex_valp += latex_sci(valpM[i])
+        if i != len(valpM)-1:
+            latex_valp += "\: , "
+    latex_valp += "\}"
+    print(latex_valp)

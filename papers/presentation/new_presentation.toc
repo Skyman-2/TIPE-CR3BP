@@ -10,13 +10,31 @@
 \beamer@subsectionintoc {3}{3}{Vecteurs propres de la matrice de Monodromie}{29}{0}{3}
 \beamer@subsectionintoc {3}{4}{Calcul numérique des variétés}{33}{0}{3}
 \beamer@sectionintoc {4}{Annexes}{38}{1}{4}
-\beamer@subsectionintoc {4}{1}{Problème à deux corps}{40}{1}{4}
-\beamer@subsectionintoc {4}{2}{Coordonnées des points de Lagrange}{41}{1}{4}
-\beamer@subsectionintoc {4}{3}{Equations du mouvement et linéarisé}{46}{1}{4}
-\beamer@subsectionintoc {4}{4}{Diagonalisation}{48}{1}{4}
-\beamer@subsectionintoc {4}{5}{Existence d'une famille d'orbite à 1 paramètre}{49}{1}{4}
-\beamer@subsectionintoc {4}{6}{Théorie de Floquet}{50}{1}{4}
-\beamer@subsectionintoc {4}{7}{Mécanique orbitale}{55}{1}{4}
-\beamer@subsectionintoc {4}{8}{Python - Valeurs numériques}{56}{1}{4}
-\beamer@subsectionintoc {4}{9}{Python - Utilitaire}{66}{1}{4}
-\beamer@subsectionintoc {4}{10}{Python - Monodromie et Variétés}{74}{1}{4}
+\beamer@subsectionintoc {4}{1}{Problème à deux corps}{41}{1}{4}
+\beamer@subsectionintoc {4}{2}{Coordonnées des points de Lagrange}{42}{1}{4}
+\beamer@subsectionintoc {4}{3}{Equations du mouvement et linéarisé}{47}{1}{4}
+\beamer@subsectionintoc {4}{4}{Diagonalisation}{49}{1}{4}
+\beamer@subsectionintoc {4}{5}{Existence d'une famille d'orbite à 1 paramètre}{50}{1}{4}
+\beamer@subsectionintoc {4}{6}{Théorie de Floquet}{51}{1}{4}
+\beamer@subsectionintoc {4}{7}{Mécanique orbitale}{56}{1}{4}
+\beamer@subsectionintoc {4}{8}{Python - Valeurs numériques}{57}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{1}{Fonction de calcul de $x_{L1}$ par dichotomie}{57}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{2}{Fonctions de calcul des valeurs et vecteurs propres}{58}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{3}{Calcul de $\tau $ et de $\sigma $}{59}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{4}{Calculs d'informations utiles - Espace de phase \textit {absolue}}{60}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{5}{Calculs d'informations utiles - Energie}{61}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{6}{Calculs d'informations utiles - Rayon dans le temps}{62}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{7}{Calculs d'informations utiles - Différence relative 1D}{63}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{8}{Calculs d'informations utiles - Différence relative 2D}{64}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{9}{Calculs d'informations utiles - Les $\bar {U}_{wz}$}{65}{1}{4}
+\beamer@subsubsectionintoc {4}{8}{10}{Calculs d'informations utiles - Surfaces équipotentielles}{66}{1}{4}
+\beamer@subsectionintoc {4}{9}{Python - Utilitaire}{67}{1}{4}
+\beamer@subsubsectionintoc {4}{9}{1}{Calcul de trajectoires par schéma Runge-Kutta 4}{67}{1}{4}
+\beamer@subsubsectionintoc {4}{9}{2}{Affichage des trajectoires et d'informations utiles}{69}{1}{4}
+\beamer@subsubsectionintoc {4}{9}{3}{Affichage de multiples trajectoires}{71}{1}{4}
+\beamer@subsubsectionintoc {4}{9}{4}{Correction itérative d'une orbite du linéarisé}{72}{1}{4}
+\beamer@subsectionintoc {4}{10}{Python - Monodromie et Variétés}{76}{1}{4}
+\beamer@subsubsectionintoc {4}{10}{1}{Calcul de l'application du linéarisé le long de l'orbite}{76}{1}{4}
+\beamer@subsubsectionintoc {4}{10}{2}{Calcul de la matrice de Monodromie}{77}{1}{4}
+\beamer@subsubsectionintoc {4}{10}{3}{Intégration d'un sens de la variété instable}{78}{1}{4}
+\beamer@subsubsectionintoc {4}{10}{4}{Intégration d'un sens de la variété stable}{79}{1}{4}

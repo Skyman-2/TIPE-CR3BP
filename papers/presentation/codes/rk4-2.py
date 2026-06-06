@@ -2,7 +2,7 @@
     V = [np.array([vx0,vy0])]
 
     def F(P,V):
-        return np.array([eqx(P[0],P[1],V[1]), eqy(P[0],P[1],V[0])]) 
+        return np.array([equation_x(P[0],P[1],V[1]), equation_y(P[0],P[1],V[0])]) 
     
     while abs(t) < abs(t_max):
         t += dt

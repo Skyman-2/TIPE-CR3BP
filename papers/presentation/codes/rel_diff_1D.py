@@ -1,14 +1,14 @@
-def relative_diff_1D(ref, data, steps):
-    relative = []
+def difference_relatif_1D(ref, donnees, pas):
+    relatif = []
     t = 0
-    if (len(ref) != len(data)):
-        print("Error: relative difference not possible due to different array lengths")
+    if (len(ref) != len(donnees)):
+        print("Erreur : les donnees et la reference n'ont pas la meme longueur.")
         return [[0,0]]
-    for i in range(len(data)):
+    for i in range(len(donnees)):
         if (ref[i][1] == 0):
-            print("division by 0")
-            relative.append([ref[i][0],0])
+            print("Erreur : division par 0.")
+            relatif.append([ref[i][0],0])
         else:
-            relative.append([ref[i][0],(data[i][1]-ref[i][1])/ref[i][1]])
-        t += steps
-    return relative
+            relatif.append([ref[i][0],(donnees[i][1]-ref[i][1])/ref[i][1]])
+        t += pas
+    return relatif

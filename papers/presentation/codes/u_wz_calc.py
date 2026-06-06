@@ -1,16 +1,16 @@
-def Ubar_xx_wo_m(x,y,system):
-    term1 = -po.omega(system)**2
-    term2 = G*system["body1"]["mass"]*((r1(x,y,system))**2-3*(x+system["barycenter"])**2)/(r1(x,y,system)**5)
-    term3 = G*system["body2"]["mass"]*((r2(x,y,system))**2-3*(x-system["radius"]+system["barycenter"])**2)/(r2(x,y,system)**5)
-    return term1 + term2 + term3
+def Ubar_xx_sans_m(x,y,systeme):
+    terme1 = -po.omega(systeme)**2
+    terme2 = G*systeme["corps1"]["masse"]*((r1(x,y,systeme))**2-3*(x+systeme["barycentre"])**2)/(r1(x,y,systeme)**5)
+    terme3 = G*systeme["corps2"]["masse"]*((r2(x,y,systeme))**2-3*(x-systeme["rayon"]+systeme["barycentre"])**2)/(r2(x,y,systeme)**5)
+    return terme1 + terme2 + terme3
 
-def Ubar_xy_wo_m(x,y,system):
-    term1 = (system["body1"]["mass"]*(x+system["barycenter"]))*y/(r1(x,y,system)**5)
-    term2 = (system["body2"]["mass"]*(x-system["radius"]+system["barycenter"]))*y/(r2(x,y,system)**5)
-    return -3*G*(term1 + term2)
+def Ubar_xy_sans_m(x,y,systeme):
+    terme1 = (systeme["corps1"]["masse"]*(x+systeme["barycentre"]))*y/(r1(x,y,systeme)**5)
+    terme2 = (systeme["corps2"]["masse"]*(x-systeme["rayon"]+systeme["barycentre"]))*y/(r2(x,y,systeme)**5)
+    return -3*G*(terme1 + terme2)
 
-def Ubar_yy_wo_m(x,y,system):
-    term1 = -po.omega(system)**2
-    term2 = G*system["body1"]["mass"]*((r1(x,y,system))**2-3*y**2)/(r1(x,y,system)**5)
-    term3 = G*system["body2"]["mass"]*((r2(x,y,system))**2-3*y**2)/(r2(x,y,system)**5)
-    return term1 + term2 + term3
+def Ubar_yy_sans_m(x,y,systeme):
+    terme1 = -po.omega(systeme)**2
+    terme2 = G*systeme["corps1"]["masse"]*((r1(x,y,systeme))**2-3*y**2)/(r1(x,y,systeme)**5)
+    terme3 = G*systeme["corps2"]["masse"]*((r2(x,y,systeme))**2-3*y**2)/(r2(x,y,systeme)**5)
+    return terme1 + terme2 + terme3

@@ -1,5 +1,5 @@
-def monodromy_matrix(system, gamma, dt):
-    A = lin.Df(gamma,system)
+def matrice_monodromie(systeme, gamma, dt):
+    A = lin.derivee(gamma,systeme)
     Phi = np.eye(4)
     for n in range(len(A)-1):
         A1 = A[n]
