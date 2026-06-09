@@ -202,7 +202,7 @@
 	
 	\clearpage
 	\subsection*{Calcul pour L4 et L5}
-	On souhaite d'abord démontrer le passage des relations (\ref{equi_underived_eq}) aux relations (\ref{equi_derived_eq}). On utilise alors $(\frac{1}{u})' = \frac{-u'}{u^2}$. On sépare chaque cas suivant si l'on dérive par rapport à $x$, où $y$.	
+	On souhaite d'abord trouver les dérivées premières de $\bar{U}$. On utilise alors $(\frac{1}{u})' = \frac{-u'}{u^2}$. On sépare chaque cas suivant si l'on dérive par rapport à $x$, où $y$.	
 	\\
 	
 	Cas de dérivation selon $x$ : \\
@@ -224,10 +224,10 @@
 	\end{equation*}
 	et assez trivialement, $x \longmapsto -\frac{1}{2}m\omega^2(x^2+y^2)$ admet $x \longmapsto -m\omega^2x$ pour dérivée. On obtient ainsi exactement le terme pour $\frac{\partial \bar{U}}{\partial x}$ en sommant chacune des dérivées.
 	Quand au cas selon $y$, on peut appliquer exactement le même principe. Les calculs seront même plus simple car on voit assez clairement que dans ce cas, $\frac{\partial r_1}{\partial y}(x,y) = \frac{y}{r_1(x,y)}$.
-	Et on obtient bien ainsi les relations (\ref{equi_derived_eq}).
+	Et on obtient bien ainsi les dérivées premières.
 	\\
 	
-	Explicitons le passage de la relation (\ref{equi_derived_eq}) à la relation (\ref{equilateral_CN}). On commence par imposer la condition d'équilibre, et remplacer par son expression $\omega^2 = \frac{G(M_1+M_2)}{R^3}$ :
+	Explicitons le lien entre R et $r_{1}$ et $r_{2}$. On commence par imposer la condition d'équilibre, et remplacer par son expression $\omega^2 = \frac{G(M_1+M_2)}{R^3}$ :
 	\begin{equation*}
 		\begin{cases}
 			0 = -\frac{Gm(M_1+M_2)}{R^3}x+\frac{GmM_1(x+\mu R)}{r_1^3}+\frac{GmM_2(x-(1-\mu)R)}{r_2^3}
@@ -259,7 +259,7 @@
 	ce qui est le résultat voulu.
 	\\
 	
-	Explicitons le passage des relations (\ref{equilateral_CN}) à la relation (\ref{equilateral_result}).
+	Explicitons le lien entre $r_1$ et $r_2$.
 	\begin{equation*}
 		\frac{x}{R^3} = \frac{x}{R^3} + \mu(1-\mu)(\frac{1}{r_1^3}-\frac{1}{r_2^3})R \ \ \text{i.e.} \ \ \frac{1}{r_1^3}-\frac{1}{r_2^3} = 0
 	\end{equation*}
@@ -267,7 +267,7 @@
 	\begin{equation*}
 		r_1=r_2
 	\end{equation*}
-	et en remplaçant cela dans la deuxième relation de (\ref{equilateral_CN}) on obtient aussi
+	et on obtient aussi
 	\begin{equation*}
 		\frac{1}{R^3} = \frac{1-\mu}{r_1^3} + \frac{\mu}{r_1^3} = \frac{1}{r_1^3}
 	\end{equation*}
@@ -275,7 +275,7 @@
 	\begin{equation*}
 		R=r_1=r_2
 	\end{equation*}
-	d'où la relation (\ref{equilateral_result}).
+	d'où les triangles équilatéraux.
 
 
 \end{document}

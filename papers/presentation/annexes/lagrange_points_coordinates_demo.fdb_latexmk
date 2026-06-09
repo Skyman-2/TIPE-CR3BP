@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1780493692.92983 "/home/yannis/Desktop/Class/TIPE/Numerical Trajectory Integration/papers/presentation/annexes/lagrange_points_coordinates_demo.tex" "lagrange_points_coordinates_demo.pdf" "lagrange_points_coordinates_demo" 1780493694.99633 0
+["pdflatex"] 1780495382.90847 "/home/yannis/Desktop/Class/TIPE/Numerical Trajectory Integration/papers/presentation/annexes/lagrange_points_coordinates_demo.tex" "lagrange_points_coordinates_demo.pdf" "lagrange_points_coordinates_demo" 1780495385.14257 0
   "/etc/texmf/web2c/texmf.cnf" 1763124648.10088 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/yannis/Desktop/Class/TIPE/Numerical Trajectory Integration/papers/presentation/annexes/lagrange_points_coordinates_demo.tex" 1780493688.37656 12980 ca30482be246e48b5672599233837c3f ""
+  "/home/yannis/Desktop/Class/TIPE/Numerical Trajectory Integration/papers/presentation/annexes/lagrange_points_coordinates_demo.tex" 1780495382.14078 12721 3773e75823139382288c7c5b4dacd945 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -164,8 +164,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763124688.11042 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763124752 8213703 aa68bc7c4021442b96c1f45776fc0d67 ""
-  "lagrange_points_coordinates_demo.aux" 1780493694.78634 191 790b997bf00784dda96fd5fa4f6ac2af "pdflatex"
-  "lagrange_points_coordinates_demo.tex" 1780493688.37656 12980 ca30482be246e48b5672599233837c3f ""
+  "lagrange_points_coordinates_demo.aux" 1780495384.92875 191 790b997bf00784dda96fd5fa4f6ac2af "pdflatex"
+  "lagrange_points_coordinates_demo.tex" 1780495382.14078 12721 3773e75823139382288c7c5b4dacd945 ""
   (generated)
   "lagrange_points_coordinates_demo.aux"
   "lagrange_points_coordinates_demo.log"
