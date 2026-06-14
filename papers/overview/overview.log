@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  16 MAY 2026 11:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.23)  14 JUN 2026 17:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -665,11 +665,14 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip56
 \dth@everypar=\toks48
 )
-
-Package french3.ldf Warning: OT1 encoding should not be used for French.
-(french3.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(french3.ldf)                of your document; reported on input line 44.
-
+(c:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(c:/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks49
+\inpenc@posthook=\toks50
+)
 (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count348
@@ -680,20 +683,20 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `overview.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -736,131 +739,194 @@ LaTeX Font Info:    ... okay on input line 44.
 \scratchbox=\box84
 \nofMPsegments=\count350
 \nofMParguments=\count351
-\everyMPshowfont=\toks49
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count352
 \MPscratchDim=\dimen295
 \MPnumerator=\count353
 \makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks50
+\everyMPtoPDFconversion=\toks52
 ) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(c:/texlive/2025/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(c:/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(c:/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(c:/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 44.
+LaTeX Info: Redefining \degres on input line 80.
 \c@lstlisting=\count355
-
-(c:/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks51
-\inpenc@posthook=\toks52
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
 
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
 
 
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./overview.toc)
+) (./overview.toc
+[1
+
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texlive/2025/texmf-dist
+/fonts/enc/dvips/cm-super/cm-super-ts1.enc}])
 \tf@toc=\write4
 \openout4 = `overview.toc'.
 
-
-[1
-
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../../images/RNG_diag.pdf, id=52, 283.15788pt x 146.85063pt>
+ [2]
+<../../images/RNG_diag.pdf, id=62, 283.15788pt x 146.85063pt>
 File: ../../images/RNG_diag.pdf Graphic file (type pdf)
 <use ../../images/RNG_diag.pdf>
-Package pdftex.def Info: ../../images/RNG_diag.pdf  used on input line 66.
+Package pdftex.def Info: ../../images/RNG_diag.pdf  used on input line 103.
 (pdftex.def)             Requested size: 379.4175pt x 196.7721pt.
- [2 <../../images/RNG_diag.pdf>]
-<../../images/potential_clear.png, id=99, 1387.584pt x 658.3797pt>
+ [3 <../../images/RNG_diag.pdf>]
+<../../images/potential_clear.png, id=112, 1387.584pt x 658.3797pt>
 File: ../../images/potential_clear.png Graphic file (type png)
 <use ../../images/potential_clear.png>
-Package pdftex.def Info: ../../images/potential_clear.png  used on input line 1
-67.
+Package pdftex.def Info: ../../images/potential_clear.png  used on input line 2
+04.
 (pdftex.def)             Requested size: 379.4175pt x 180.02525pt.
- [3]
-<../../images/colinear-graph.png, id=107, 1190.4475pt x 718.685pt>
+ [4 <../../images/potential_clear.png>]
+<../../images/colinear-graph.png, id=118, 1190.4475pt x 718.685pt>
 File: ../../images/colinear-graph.png Graphic file (type png)
 <use ../../images/colinear-graph.png>
-Package pdftex.def Info: ../../images/colinear-graph.png  used on input line 18
-6.
+Package pdftex.def Info: ../../images/colinear-graph.png  used on input line 22
+3.
 (pdftex.def)             Requested size: 202.3529pt x 122.1529pt.
- [4 <../../images/potential_clear.png> <../../images/colinear-graph.png (PNG co
-py)>] [5]
+ [5 <../../images/colinear-graph.png (PNG copy)>] [6]
 
-LaTeX Warning: Reference `fig:lagrange_points_represented' on page 6 undefined 
-on input line 268.
+LaTeX Warning: Reference `fig:lagrange_points_represented' on page 7 undefined 
+on input line 305.
 
-[6]
-<../../images/CR3BP_w_lagrange.pdf, id=119, 578.56152pt x 385.84149pt>
+[7]
+<../../images/CR3BP_w_lagrange.pdf, id=131, 578.56152pt x 385.84149pt>
 File: ../../images/CR3BP_w_lagrange.pdf Graphic file (type pdf)
 <use ../../images/CR3BP_w_lagrange.pdf>
 Package pdftex.def Info: ../../images/CR3BP_w_lagrange.pdf  used on input line 
-299.
+336.
 (pdftex.def)             Requested size: 379.4175pt x 253.04298pt.
- [7{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-[8 <../../images/CR3BP_w_lagrange.pdf>] [9
+ [8 <../../images/CR3BP_w_lagrange.pdf>] [9
 
 ] [10] [11] [12] [13] [14
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 720--723
+Underfull \hbox (badness 10000) in paragraph at lines 757--760
 
  []
 
-[15] [16] [17] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2025/11/14 1.11b listings language file
-)
-(./codes/eigen_stuff_extract.py) (./codes/IOC_initial_guess.py) [18]
-(./codes/IOC_bracket.py) (./codes/IOC_dichotomy.py [19])
-<../../images/acceptable_orbit_traj_only.png, id=193, 547.2947pt x 308.65312pt>
+[15] [16] [17]
+<../../images/acceptable_orbit_traj_only.png, id=192, 547.2947pt x 308.65312pt>
 
 File: ../../images/acceptable_orbit_traj_only.png Graphic file (type png)
 <use ../../images/acceptable_orbit_traj_only.png>
 Package pdftex.def Info: ../../images/acceptable_orbit_traj_only.png  used on i
-nput line 889.
+nput line 913.
 (pdftex.def)             Requested size: 303.53708pt x 171.18675pt.
- [20 <../../images/acceptable_orbit_traj_only.png>] [21
+ [18] [19 <../../images/acceptable_orbit_traj_only.png>]
+(c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(./codebase_fr/CR3BP.py [20
 
-] [22
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1040--1042
-
- []
-
-[23
+] [21]) [22] (./codebase_fr/src/VFVDP.py [23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
+[24]) (./codebase_fr/src/rk.py [25] [26] [27]) (./codebase_fr/src/rk4.py
+[28] [29] [30]) (./codebase_fr/src/verlet.py [31] [32] [33])
+<../../images/verlet_vs_euler 1e8 sim time.png, id=248, 1387.584pt x 698.8509pt
+>
+File: ../../images/verlet_vs_euler 1e8 sim time.png Graphic file (type png)
+<use ../../images/verlet_vs_euler 1e8 sim time.png>
+Package pdftex.def Info: ../../images/verlet_vs_euler 1e8 sim time.png  used on
+ input line 961.
+(pdftex.def)             Requested size: 505.89pt x 254.7852pt.
+ [34]
+<../../images/rk.png, id=252, 1387.584pt x 698.8509pt>
+File: ../../images/rk.png Graphic file (type png)
+<use ../../images/rk.png>
+Package pdftex.def Info: ../../images/rk.png  used on input line 969.
+(pdftex.def)             Requested size: 505.89pt x 254.7852pt.
+<../../images/rk4.png, id=253, 1387.584pt x 698.8509pt>
+File: ../../images/rk4.png Graphic file (type png)
+<use ../../images/rk4.png>
+Package pdftex.def Info: ../../images/rk4.png  used on input line 974.
+(pdftex.def)             Requested size: 505.89pt x 254.7852pt.
+ [35 <../../images/verlet_vs_euler 1e8 sim time.png> <../../images/rk.png>] [36
+ <../../images/rk4.png>] (./codebase_fr/src/affichage.py [37
+
+] [38] [39] [40] [41] [42]
+[43] [44] [45] [46] [47]) [48] (./codebase_fr/src/superposition_potentielle.py
+[49
+
+]) [50] (./codebase_fr/src/affichage_potentiel.py [51
+
+] [52] [53] [54]
+[55]) [56] (./codebase_fr/src/difference_relative.py)
+(./codebase_fr/src/energie.py [57
+
+]) (./codebase_fr/src/espace_de_phase.py
+[58]) [59] (./codebase_fr/src/correction_orbite_lineaire.py [60
+
+] [61]) [62]
+(./codebase_fr/src/lineariser.py [63
+
+]) [64]
+Overfull \hbox (5.31223pt too wide) in paragraph at lines 1039--1039
+[]\T1/cmr/bx/n/14.4 Calcul de la ma-trice de mo-no-dro-mie et ob-ten-tion des é
+lé-ments propres 
+ []
+
+(./codebase_fr/src/monodromie.py [65
+
+]) [66] [67
+
+] [68
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1188--1190
+
+ []
+
+[69
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1212--1214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1083--1088
+Underfull \hbox (badness 10000) in paragraph at lines 1231--1236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1117--1120
+Underfull \hbox (badness 10000) in paragraph at lines 1265--1268
 
  []
 
-[24
+[70
 
-] [25] (./overview.aux)
+] [71] (./overview.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
@@ -871,38 +937,44 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 23651 strings out of 467538
- 497878 string characters out of 5423724
- 1375551 words of memory out of 5000000
- 52144 multiletter control sequences out of 15000+600000
- 639059 words of font info for 84 fonts, out of 8000000 for 9000
+ 24671 strings out of 467538
+ 514001 string characters out of 5423724
+ 1495608 words of memory out of 5000000
+ 53103 multiletter control sequences out of 15000+600000
+ 649067 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,16n,118p,955b,1935s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2025/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c
-:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/
-2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/t
-exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/202
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2025/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2025/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public
-/cm-super/sfrm1200.pfb>
-Output written on overview.pdf (25 pages, 2112447 bytes).
+ 98i,16n,118p,955b,1999s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx10
+95.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:
+/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2
+025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-
+dist/fonts/type1/public/cm-super/sfcc1200.pfb><c:/texlive/2025/texmf-dist/fonts
+/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm109
+5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/
+texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/20
+25/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb><c:/texlive/2025/texmf-d
+ist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texlive/2025/texmf-dist/fonts/
+type1/public/cm-super/sftt1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
+ic/cm-super/sftt1200.pfb>
+Output written on overview.pdf (71 pages, 3883681 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
+ 510 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

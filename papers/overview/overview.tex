@@ -1,8 +1,8 @@
 \documentclass[12pt]{article}
 
-\title{CR3BP Overview}
-\author{Yannis ABDELOUAHAB}
-\date{2025-2026}
+\title{Annexes rédigées de la présentation}
+\author{Yannis ABDELOUAHAB - n°21691}
+\date{Session 2026}
 \usepackage[a4paper, total={7in,9in}]{geometry}
 \usepackage{graphicx}
 \usepackage[french]{babel}
@@ -16,6 +16,42 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \graphicspath{{../../images/}}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % inutile avec LuaLaTeX/XeLaTeX, utile avec pdfLaTeX
+
+\lstset{
+	inputencoding=utf8,
+	extendedchars=true,
+	literate=
+	{à}{{\`a}}1
+	{â}{{\^a}}1
+	{ä}{{\"a}}1
+	{é}{{\'e}}1
+	{è}{{\`e}}1
+	{ê}{{\^e}}1
+	{ë}{{\"e}}1
+	{î}{{\^i}}1
+	{ï}{{\"i}}1
+	{ô}{{\^o}}1
+	{ö}{{\"o}}1
+	{ù}{{\`u}}1
+	{û}{{\^u}}1
+	{ü}{{\"u}}1
+	{ç}{{\c c}}1
+	{À}{{\`A}}1
+	{Â}{{\^A}}1
+	{É}{{\'E}}1
+	{È}{{\`E}}1
+	{Ê}{{\^E}}1
+	{Î}{{\^I}}1
+	{Ô}{{\^O}}1
+	{Ù}{{\`U}}1
+	{Ç}{{\c C}}1
+	{≈}{{$\approx$}}1
+	{Φ}{{$\Phi$}}1
+	{°}{{$^o$}}1
+}
 
 \lstdefinestyle{pythonstyle}{
 	language=Python,
@@ -59,6 +95,7 @@
 	On cherche à exprimer les coordonnées de $M$ dans le référentiel \textit{non-galiléen} -- $R_{NG}$ -- en rotation dans le référentiel galiléen $R_G$ pour simplifier les équations du mouvement. $R_{NG}$ est alors défini comme le référentiel dans lequel $M_1$ et $M_2$ sont immobiles (cf. figure \ref{fig:RNG_diag}). On mènera la majorité de notre étude dans ce référentiel.
 	
 	\subsection{Mouvement relatif des masses $M_1$ et $M_2$}
+	\textit{cf.} les annexes du fichier \verb|pdf| de la présentation.
 	
 	\subsection{Expression du potentiel effectif dans $R_{NG}$}
 	\begin{figure}[H]
@@ -161,7 +198,7 @@
 	\end{equation}
 	\end{tcolorbox}
 	
-	On peut tracer ce potentiel à l'aide du programme python en annexe (INSERT ANNEXE HERE). On obtient alors la figure suivante :
+	On peut tracer ce potentiel à l'aide d'un programme python disponible dans la section python. On obtient alors la figure suivante :
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.75\linewidth]{potential_clear.png}
@@ -657,13 +694,13 @@
 			\\
 			\nu = 6,62217\cdot 10^{-6} \: s^{-1}
 			\\
-			\sigma = -3,39222
+			\sigma = 3,39222 % la vraie valeur est -3,39222 < 0. Je n'ai pas la réponse à pourquoi. Peut-être une erreur de signe dans le programme python.
 			\\
 			\tau = -3,58654
 		\end{cases}
 	\end{equation}
 	
-	Ces valeurs nous permettront de faire de meilleures prédictions pour les conditions initiales d'orbites dans le système non-linéaire, ainsi qu'avoir une meilleure précision quand à la période de ces dernières. (On peut remarquer que $\sigma < 0$. Cela pose en effet un \textbf{problème auquel je n'ai pas encore la réponse}.)
+	Ces valeurs nous permettront de faire de meilleures prédictions pour les conditions initiales d'orbites dans le système non-linéaire, ainsi qu'avoir une meilleure précision quand à la période de ces dernières.
 	
 	
 	\clearpage
@@ -850,11 +887,7 @@
 	\end{equation}
 	car quitte à déphaser l'orbite, on considère $\varphi = 0$ sans perte de généralité.
 	
-	Pour avoir de meilleurs résultats, on se débarasse de nos approximations pour $\lambda$ et $\nu$ que l'on avait précédemment faite, et on utilise la fonction \verb|linalg.eig| du module \verb|numpy| qui renvoie les valeurs propres et les vecteurs propres d'une matrice donnée. Il faut alors se mouiller quand à nos données. Par la suite, nous prendrons $R_0 = 1000 \: km$. Pour les valeurs propres du linéarisé en $L1$, ce n'est pas encore nécessaire. Le code python
-	\lstinputlisting[
-	style=pythonstyle
-	]{codes/eigen_stuff_extract.py}
-	permet de calculer numériquement ces valeurs. On obtient ainsi
+	Pour avoir de meilleurs résultats, on se débarasse de nos approximations pour $\lambda$ et $\nu$ que l'on avait précédemment faite, et on utilise la fonction \verb|linalg.eig| du module \verb|numpy| qui renvoie les valeurs propres et les vecteurs propres d'une matrice donnée. Il faut alors se mouiller quand à nos données. Par la suite, nous prendrons $R_0 = 1000 \: km$. Pour les valeurs propres du linéarisé en $L1$, ce n'est pas encore nécessaire. Un code python permet de calculer numériquement ces valeurs. On obtient alors
 	\begin{equation}
 		\begin{cases}
 			\nu = 6,62217\cdot 10^{-6} \: s^{-1}
@@ -866,20 +899,11 @@
 	
 	Cette méthode de correction itérative procède de la manière suivante :
 	\begin{enumerate}
-		\item On fait une estimation initiale de l'orbite grâce au système linéaire
-		\lstinputlisting[
-		style=pythonstyle
-		]{codes/IOC_initial_guess.py}
+		\item On fait une estimation initiale de l'orbite grâce au système linéaire.
 		
 		\item On trouve un intervalle de $v_{y0}$ tel que les $v_x$ au premier retour ne soit pas du même signe. Cela nous permet de mettre en place une méthode de résolution par dichotomie.
-		\lstinputlisting[
-		style=pythonstyle
-		]{codes/IOC_bracket.py}
 		
-		\item Et pour finir, on met en place une méthode de dichotomie dont la variable de tolérance s'appliquera à $v_x(t_{1^{er}\text{retour}})$. Le code (un peu long) est comme suit :
-		\lstinputlisting[
-		style=pythonstyle
-		]{codes/IOC_dichotomy.py}
+		\item Et pour finir, on met en place une méthode de dichotomie dont la variable de tolérance s'appliquera à $v_x(t_{1^{er}\text{retour}})$.
 	\end{enumerate}
 	
 	Appliquée à notre cas, la méthode renvoie $v_{y0} = -21,898965265005835 \: m.s^{-1}$. On peut ainsi tracer l'orbite obtenue, ce qui donne
@@ -890,9 +914,133 @@
 		\caption[]{Trajectoire tracée en python par intégration numérique des équations non-linéaires en prenant pour conditions initiales celles mentionnées précédemment.}
 	\end{figure}
 	
+	La condition initiale n'est pas réaliste. Les directions stables de la matrice de monodromie nous assurent cependant l'existence d'une direction de stabilité marginale (liée à la deuxième multiplicité de la valeur propre 1). Ainsi, même si la condition initiale n'est pas parfaite, on trouvera une orbite assez proche de celle désirée (disons à un $O(\delta X_0)$ près, où $\delta X_0$ est la différence en valeur absolue entre la CI réelle et la CI théorique).
 	
 	
 	
+	\clearpage
+	
+	\section{Listings Python}
+	Dans cette section, on regroupe l'ensemble des codes pythons développés dans cette étude, ainsi que des figures tracés à partir de ces programmes, soit dans l'optique de résoudre le problème de cette étude, soit pour comparer les méthodes d'intégrations numériques. Les codes sont séparés dans multiples fichiers importés ensuite dans un seul fichier, pour simplifier l'édition, et l'organisation.
+	
+	
+	\subsection{"Hub centrale" de la base de codes}
+	Ce code, dans le fichier nommé \verb|CR3BP.py| (CR3BP signifiant \textit{Circular Restricted 3 Body Problem}), est celui permettant de rassembler tous les codes écrit et de pouvoir les utiliser ensemble. On importe ainsi la majorité des autres codes au début de ce fichier (\textit{cf.} la suite de la section pour ces codes). Ceux qui nous seront le plus utiles ici seront les modules implémentant Runge-Kutta 4 et ceux permettant l'affichage. La majorité de ce code est constitué d'appels à des fonctions donc implémentés dans des sous-modules de la base.
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/CR3BP.py}
+	
+	\clearpage
+	\subsection{Codes d'implémentations de méthodes d'intégration numérique}
+	Dû à la sensibilité du système (système chaotique), le schéma Euler Explicite n'est pas viable. Nous optons alors pour un schéma Runge-Kutta, plus efficace, mais présentant des dérives sur la durée importante. Le schéma Runge-Kutta 4 se prouve lui d'une bien plus grande efficacité, maintenant les invariants du système à une grande précision durant les calculs des trajectoires. Ci-après sont disponibles les codes implémentant chacunes de ces méthodes, ainsi que celle dite de \textit{Verlet} modifiée : elle a été adapté avec une prédiction intermédiaire par Runge-Kutta 4 dû à la forme de nos équations qui ne fonctionnait pas pour le schéma original. Des comparaisons entre ces schémas sont disponibles après les codes dans cette même subsection.
+	\subsubsection{Implémentation de Euler Implicite}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/VFVDP.py}
+	
+	\subsubsection{Implémentation de Runge-Kutta}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/rk.py}
+	
+	\subsubsection{Implémentation de Runge-Kutta 4}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/rk4.py}
+	
+	\subsubsection{Implémentation de Verlet}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/verlet.py}
+	
+	\subsubsection{Comparaison de performance de différents schémas}
+	Remarque utile sur la lecture des graphes qui suivent : Pour illustrer l'évolution du temps sans avoir recourt à un axe, ou une flèche sur les courbes, nous avons opté pour un gradient de couleur : le temps évolue du foncé au clair (le plus souvent, du noir, au violet puis rouge, orange et enfin jaune).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{verlet_vs_euler 1e8 sim time.png}
+		\caption{Comparaison entre la méthode Verlet et la méthode Euler Implicite}
+	\end{figure}
+	
+	Cette comparaison nous permet d'observer que la variation de l'énergie, qui est l'intégrale du mouvement que l'on considère, est bornée dans la méthode de Verlet. On utilise alors Verlet comme point d'étude pour comparer avec les méthodes RK et RK4. La méthode d'Euler Implicite est évidemment oubliée rien qu'à la vue de la trajectoire obtenue.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\linewidth]{rk.png}
+		\caption{Comparaison entre la méthode Verlet et la méthode Runge-Kutta}
+	\end{figure}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\linewidth]{rk4.png}
+	\caption{Comparaison entre la méthode Verlet et la méthode Runge-Kutta 4}
+	\end{figure}
+	
+	On observe alors que RK et RK4 diffèrent du résultat donné par le schéma de Verlet à un ordre près égal pour les deux (RK4 étant visiblement 2x plus précis que RK). Cependant, la méthode de Verlet prend en moyenne 150\% à 200\% plus de temps que RK4. Cela explique pourquoi nous faisons tous nos calculs avec RK4.
+	
+	
+	\clearpage
+	\subsection{Méthodes d'affichage}
+	Pour répondre à plusieurs besoins (affichage de la trajectoire, de l'espace de phase, d'une tranche de l'espace de phase, de l'énergie, de comparaison entre deux trajectoires ou entre deux méthodes, d'afficher plusieurs trajectoires, \textit{etc...}), une bonne quantité de fonctions utilitaires d'affichage ont été développé, bien que leur mdoe de fonctionnement soit généralement le même. Ce fonctionnement en question est d'initialiser un \verb|layout| qui donne la mise en page de la fenêtre d'affichage. On remplit ensuite chaque sous-fenêtre avec le graphe souhaité (en utilisant des fonctions utilitaires permettant de traiter l'information brute de la trajectoire en informations utiles).
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/affichage.py}
+	
+	\clearpage
+	\subsection{Affichage du potentiel apparent sur les fenêtres de trajectoires}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/superposition_potentielle.py}
+	
+	
+	\clearpage
+	\subsection{Visualisations du potentiel apparent}
+	Ce code possède des résultats plus ou moins fructueux. Les fonctions ayant pour but un affichage 3D n'ont pas abouti (résultat visuellement peu clair). On se contentera alors de la représentation au moyen des équipotentielles en 2D.
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/affichage_potentiel.py}
+	
+	\clearpage
+	\subsection{Codes utilitaires}
+	Dans cette sous-section, on recense différents codes utilitaires, utilisés dans le traitement des données brutes fournies par les simulations de trajectoires de \verb|rk4.py|.
+	
+	\subsubsection{Calcul des écarts relatifs}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/difference_relative.py}
+	
+	\subsubsection{Calcul de l'énergie}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/energie.py}
+	
+	\subsubsection{Calcul de l'espace de phase}
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/espace_de_phase.py}
+	
+	
+	\clearpage
+	\subsection{Calcul d'une condition initiale pour le système non-linéaire}
+	Cette sous-section possède le code dont le fonctionnement est illustré avant le début des listings.
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/correction_orbite_lineaire.py}
+	
+	Il est important de mentionner que le code est imparfait : il nécessite parfois une intervention de l'utilisateur pour trouver un intervalle correct. Pour parfaire ce système, il serait potentiellement intéressant de parcourir l'orbite pendant 2*T/3 et de marquer l'instant de premier retour ainsi. Cette méthode n'a pas été mise en place dû à un manque de temps et d'utilité dans le cadre de cette étude (qui ne cherche qu'à montrer une capacité de calculer numériquement les variétés d'\textit{une} orbite).
+	
+	\clearpage
+	\subsection{Calcul du linéarisé en tout point d'une trajectoire}
+	Ce code en particulier viendra en fait servir celui qui calcule la matrice de monodromie, ainsi que ses objets propres. C'est ces objets précisement qui sont au coeur de toute l'étude menée dans cette présentation.
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/lineariser.py}
+	
+	\clearpage
+	\subsection{Calcul de la matrice de monodromie et obtention des éléments propres}
+	Des codes de formattage \LaTeX $\:$sont présents ici pour faciliter la recopie dans la présentation des valeurs numériques (sans quoi cela serait très long).
+	\lstinputlisting[
+	style=pythonstyle
+	]{codebase_fr/src/monodromie.py}
 	
 	
 	

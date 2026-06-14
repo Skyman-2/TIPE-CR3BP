@@ -1,0 +1,30 @@
+{
+    "terre_lune":
+    {
+        "corps1": {
+            "nom": "Terre",
+            "masse": 5.972e24,
+            "rayon": 6.371e6
+        },
+        "corps2": {
+            "nom": "Lune",
+            "masse": 7.34767309e22,
+            "rayon": 1.737e6
+        },
+        "rayon": 3.844e8
+    },
+    "soleil_terre":
+    {
+        "corps1": {
+            "nom": "Soleil",
+            "masse": 1.988e30,
+            "rayon": 6.96e8
+        },
+        "corps2": {
+            "nom": "Terre",
+            "masse": 5.972e24,
+            "rayon": 6.371e6
+        },
+        "rayon": 1.484e11
+    }
+}
